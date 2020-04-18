@@ -170,6 +170,10 @@ ul.toolbar li:not(:last-child):after {
 }
 
 /* サイドバー */
+aside#sidebar {
+  position: relative;
+  top:300px;               /* この指定で、サイドバーの位置を下げる*/
+}
 
 aside#sidebar h2 {
   color: #080;
@@ -205,4 +209,10 @@ aside#sidebar li {
   border: 3px solid black;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+
+.image {
+  width: 100%;
+  height: auto;
 }
