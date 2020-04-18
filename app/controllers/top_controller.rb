@@ -3,6 +3,6 @@ class TopController < ApplicationController
   end
 
   def about
-    render :layout => false
+    # render :layout => false
   end
 end
