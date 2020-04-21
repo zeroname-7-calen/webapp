@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      article: ニュース記事
+    atrributes:
+      article:
+        title: タイトル
+        content: 本文
