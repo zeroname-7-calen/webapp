@@ -41,4 +41,14 @@ class ArticlesController < ApplicationController
     @artcile.destroy
     redirect_to :articles
   end
+
+
+  private
+
+  def article_params
+    params.require(:article).permit(
+      :title,
+      :content
+    )
+  end
 end
