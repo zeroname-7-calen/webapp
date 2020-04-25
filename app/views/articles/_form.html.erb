@@ -1,15 +1,10 @@
-
 <table class="attr">
-  <div class="title-field">
-    <tr>
-      <th><%= form.label :title %></th>
-      <td><%= form.text_field :title, size: 50, cols: 45 %></td>
-    </tr>
-  </div>
-  <div class="content-field">
-    <tr>
-      <th><%= form.label :content %></th>
-      <td><%= form.rich_text_area :content, rows: 1000, cols: 450 %></td>
-    </tr>
-  </div>
+  <tr>
+    <th><%= form.label :title %></th>
+    <td><%= form.text_field :title, size: 50, cols: 45 %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :content %></th>
+    <td><%= form.rich_text_area :content, rows: 10, cols: 45 %></td>
+  </tr>
 </table>
