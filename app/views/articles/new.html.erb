@@ -1,7 +1,15 @@
-<% @page_title = "ニュースの新規登録" %>
-<h1><%= @page_title %></h1>
+<div class="artcile">
 
-<%= form_for @article do |form| %>
-  <%= render "form", form: form %>
-  <div><%= form.submit %></div>
+  <div class="article-title">
+    <% @page_title = "ニュースの新規登録" %>
+    <h1><%= @page_title %></h1>
+  </div>
+
+  <div class="article-content">
+    <%= form_for @article do |form| %>
+    <%= render "form", form: form %>
+
+    <button type="button" class="btn btn-default btn-sm">投稿する</button>
+  </div>
+</div>
 <% end %>

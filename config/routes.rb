@@ -9,6 +9,16 @@ Rails.application.routes.draw do
  }
 
   resources :articles
+
+  # post "articles/:id/update" => "articles#update"
+  # get "articles/:id/edit" => "articles#edit"
+  # post "articles/create" => "articles#create"
+  # get "article/new", to: "article#new"
+  # get "articles", to: "articles#index"
+  # get "/articles/:id", to: "articles#show"
+
+
+
   # get "index", to: "articles#index"
   # get "new", to: "articles#new"
   # get "articles/:id", to: "articles#show"
