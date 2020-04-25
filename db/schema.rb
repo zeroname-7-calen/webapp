@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_04_19_084001) do
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.string "title", null: false
-    t.text "content", null: false
     t.datetime "released_at", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -19,7 +19,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
-    if @article.save
+    @article.user_id = current_user.id
+    @article.released_at = Time.now
+    if @article.save!
       redirect_to @article, notice: "投稿しました"
     else
       render "new"
@@ -47,8 +49,7 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(
-      :title,
-      :content
+      :title
     )
   end
 end

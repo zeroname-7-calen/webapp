@@ -1,3 +1,39 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.artcile {
+  height: 500px;
+}
+body {
+  color: darkgray;
+  font-size: 10px;
+}
+
+
+h1 {
+  color: darkgray;
+  margin: 25px 0px;
+}
+
+.article-title {
+  height: 50px;
+}
+
+.article-content {
+  height: 300px;
+}
+
+
+input[type="text"] {
+  width: 500px;
+  height: 40px;
+}
+// .trix-title {
+//   width: 900px;
+//   height: 200px;
+// }
+
+.trix-content {
+  width: auto;
+  height: 200px;
+}
