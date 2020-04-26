@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   # before_action :loign_required, except: [:index, :show]
 
   def index
-    @articles = Article.order(released_at: :desc)
+    @articles = Article.order(released_at: :desc).page(params[:page]).per(3)
   end
 
   def show
