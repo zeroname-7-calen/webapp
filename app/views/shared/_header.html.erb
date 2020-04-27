@@ -3,7 +3,9 @@
     <%= image_tag "item1.gif", size: "200x48", alt: "北羽新報" %>
   </div>
       <!-- ↑↑↑↑↑↑↑↑"IMG_2858.jpg"はあくまで仮データ↑↑↑↑↑↑↑↑↑↑ -->
+
 </a>
+
 <nav class="menubar">
   <ul>
     <%= menu_link_to "トップ", :root %>
@@ -13,7 +15,11 @@
     <%= menu_link_to "イベントガイド", "#" %>
     <%= menu_link_to "観光情報", "#" %>
     <%= menu_link_to "釣り情報", "#" %>
-    <%= menu_link_to "ログイン", :new_user_session %>
-
+    <% if user_signed_in? %>
+      <%= "ログイン中:" + current_user.email + "さん" %>
+      <%= link_to "ログアウトする", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "ログイン", new_user_session_path %>
+    <% end %>
   </ul>
 </nav>
