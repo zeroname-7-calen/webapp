@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   # before_action :loign_required, except: [:index, :show]
 
   def index
-    @articles = Article.order(released_at: :desc)
+    @articles = Article.order(released_at: :desc).page(params[:page]).per(3)
   end
 
   def show
@@ -29,9 +29,9 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:article])
-    @article.assing_attributes(params[:article])
-    if @article.save
+    @article = Article.find(params[:id])
+    @article.assign_attributes(params[:article])
+    if @article.save!
       redirect_to @article, notice: "投稿を更新しました"
     else
       render "edit"
@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @artcile.destroy
+    @article.destroy
     redirect_to :articles
   end
 

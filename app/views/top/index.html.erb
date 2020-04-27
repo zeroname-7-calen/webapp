@@ -1,8 +1,4 @@
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-
-<% 5.times do |x| %>
-  <h4>記事見出し</h4>
-  <p>ここに記事が入ります
-    <%= link_to "もっと読む", "#" %>
-  </p>
+<% @articles.each do |article| %>
+  <h2><%= link_to article.title, article %></h2>
+  <%= article.content %>
 <% end %>
