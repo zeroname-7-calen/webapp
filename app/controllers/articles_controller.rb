@@ -18,8 +18,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    # puts "----------------"
-    # puts params
     @article = Article.new(params[:article])
     @article.user_id = current_user.id
     @article.released_at = Time.now
