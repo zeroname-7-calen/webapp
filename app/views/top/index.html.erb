@@ -1,4 +1,5 @@
 <% @articles.each do |article| %>
   <h2><%= link_to article.title, article %></h2>
-  <%= truncate(article.content, length: 30) %>
+  <%= strip_tags(article.content.to_s).truncate(200) %>
+    <%= link_to "もっと読む", article %>
 <% end %>
