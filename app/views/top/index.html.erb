@@ -4,11 +4,13 @@
     <%= link_to "もっと読む", article %>
 <% end %>
 
-<h1><%= link_to 'Append jpg', new_fileupload_url %></h1>
-<% @img_path %>
-<img src="http://127.0.0.1:3000/<%= @img_path %>" format: "jpeg">
 
+  <%# <%= link_to image_tag('/kitten.jpg') %>
+  <%# <% @img_path %>
+  <img src="http://127.0.0.1:3000/kitten.jpg %>">
 
-<% if current_user %>
-<div class="toolbar"><%= link_to "写真の送信", :new_fileupload %></div>
-<% end %>
+<div class="toolbar">
+  <% if current_user %>
+    <div class="toolbar"><%= link_to "写真の送信", :new_fileupload %></div>
+  <% end %>
+</div>

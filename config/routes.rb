@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :fileuploads, only: [:create, :new]
+  resources :fileuploads, only: [:index, :create, :new]
 
   # devise_for :users
   root "top#index"
