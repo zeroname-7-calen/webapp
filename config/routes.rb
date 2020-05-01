@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :fileuploads, only: [:index, :create, :new]
+
   # devise_for :users
   root "top#index"
   get "about", to: "top#about", as: "about"
