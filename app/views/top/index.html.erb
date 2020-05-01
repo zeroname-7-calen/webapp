@@ -4,13 +4,12 @@
     <%= link_to "もっと読む", article %>
 <% end %>
 
-
-  <%# <%= link_to image_tag('/kitten.jpg') %>
-  <%# <% @img_path %>
-  <img src="http://127.0.0.1:3000/kitten.jpg %>">
+<div class="toppage_picture">
+  <img src="http://127.0.0.1:3000/kitten.jpg">
+</div>
 
 <div class="toolbar">
   <% if current_user %>
-    <div class="toolbar"><%= link_to "写真の送信", :new_fileupload %></div>
+    <%= link_to "写真の送信", :new_fileupload %>
   <% end %>
 </div>
