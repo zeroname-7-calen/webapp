@@ -5,9 +5,9 @@ class FileuploadsController < ApplicationController
     jpgs = Dir.glob(Rails.root.join('public', '*.jpg'))
     jpgs.each do |png|
       @img_paths.push('/'+File.basename(png))
+    end
   end
 
-end
 
   def create
     uploaded_file = fileupload_param[:file]

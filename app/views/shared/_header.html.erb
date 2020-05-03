@@ -16,10 +16,14 @@
     <%= menu_link_to "観光情報", "#" %>
     <%= menu_link_to "釣り情報", "#" %>
     <% if user_signed_in? %>
-      <%= "ログイン中:" + current_user.email + "さん" %>
-      <%= link_to "ログアウトする", destroy_user_session_path, method: :delete %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "ログイン", new_user_session_path %>
     <% end %>
   </ul>
 </nav>
+<div align="right">
+  <% if user_signed_in? %>
+    <%= "ログイン中:" + current_user.email + "さん" %>
+  <% end %>
+</div>

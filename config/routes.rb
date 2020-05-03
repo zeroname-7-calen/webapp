@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   sessions:      'users/sessions',
  }
 
-  resources :articles
+  resources :articles do
+    collection do
+      get "search"
+    end
+  end
 end

@@ -1,7 +1,12 @@
-<% @page_title = "最新ニュース" %>
+<% @page_title = "ニュース一覧" %>
 <h1><%= @page_title %></h1>
 
 <div class="toolbar"><%= link_to "新規作成", :new_article %></div>
+
+<%= form_tag :search_articles, method: :get,class: "search" do %>
+ <%= text_field_tag "q", params[:q] %>
+  <%= submit_tag "検索" %>
+<% end %>
 
 <% if @articles.present? %>
   <table class=list>
