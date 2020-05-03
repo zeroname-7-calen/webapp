@@ -2,12 +2,19 @@ class ArticlesController < ApplicationController
   # before_action :loign_required, except: [:index, :show]
 
   def index
-    @articles = Article.order(released_at: :desc).page(params[:page]).per(3)
+    @articles = Article.order(released_at: :desc).page(params[:page]).per(10)
   end
 
   def show
     @article = Article.find(params[:id])
   end
+
+  # 検索
+  def search
+    @articles = Article.search(params[:q]).page(params[:page]).per(10)
+      render "index"
+  end
+
 
   def new
     @article = Article.new
