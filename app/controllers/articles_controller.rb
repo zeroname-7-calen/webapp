@@ -11,10 +11,9 @@ class ArticlesController < ApplicationController
 
   # 検索
   def search
-    @articles = Article.search(params[:q]).page(params[:page]).per(10)
+        @articles = Article.search(params[:q]).page(params[:page]).per(10)
       render "index"
   end
-
 
   def new
     @article = Article.new

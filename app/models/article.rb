@@ -8,8 +8,8 @@ class Article < ApplicationRecord
     def search(query)
       if query.present?
         Article.where("title LIKE ?","%#{query}%")
-        # Article.where("content LIKE ? OR title LIKE ?",
-        #   "%#{query}%", "%#{query}%")
+      else
+        @articles = Article.order(released_at: :desc)
       end
     end
   end
