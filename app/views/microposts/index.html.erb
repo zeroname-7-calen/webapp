@@ -1,0 +1,18 @@
+<% @page_title = @user ? @user.name + "さんのツイート" : "会員のツイート" %>
+<h1><%= @page_title %></h1>
+
+<% if current_user %>
+  <div class="toolbar"><%= link_to "ツイートの作成", :new_micropost %></div>
+<% end %>
+
+<% if @microposts.present? %>
+  <% @microposts.each do |micropost| %>
+    <h2><%= micropost.title %></h2>
+    <p><%= strip_tags(micropost.content.to_s).truncate(80) %></p>
+      <%= link_to "もっと読む", micropost %>
+      <%= render "footer", micropost: micropost %>
+  <% end %>
+  <%= paginate @microposts %>
+<% else %>
+  <p>ツイートはありません</p>
+<% end %>

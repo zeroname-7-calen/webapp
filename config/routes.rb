@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'microposts/index'
+  get 'microposts/show'
+  get 'microposts/new'
+  get 'microposts/edit'
   resources :fileuploads, only: [:index, :create, :new]
 
   # devise_for :users
@@ -16,4 +20,12 @@ Rails.application.routes.draw do
       get "search"
     end
   end
+
+  resources :users do
+    resources :microposts, only: [:index]
+  end
+  
+  resources :microposts
+
+
 end
