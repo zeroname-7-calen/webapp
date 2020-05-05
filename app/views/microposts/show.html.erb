@@ -1,2 +1,6 @@
-<h1>Microposts#show</h1>
-<p>Find me in app/views/microposts/show.html.erb</p>
+<% @page_title = @micropost.author.email + "さんのツイート" %>
+<h1><%= @micropost.author.email %>さんのツイート</h1>
+
+<%= @micropost.content %>
+
+<%= render "footer", micropost: @micropost %>

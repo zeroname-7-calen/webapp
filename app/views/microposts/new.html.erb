@@ -1,2 +1,7 @@
-<h1>Microposts#new</h1>
-<p>Find me in app/views/microposts/new.html.erb</p>
+<% @page_title = "ツイートの新規作成" %>
+<h1><%= @page_title %></h1>
+
+<%= form_for @micropost do |form| %>
+  <%= render "form", form: form %>
+  <div><%= form.submit %></div>
+<% end %>
