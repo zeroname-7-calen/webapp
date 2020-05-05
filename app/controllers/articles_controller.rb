@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = current_user.microposts.find(params[:id])
   end
 
   def create

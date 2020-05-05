@@ -7,6 +7,5 @@ ja:
         title: タイトル
         content: 本文
       micropost:
-        title: タイトル
         content: 本文
-        posted_at: 日時
+        created_at: 日時

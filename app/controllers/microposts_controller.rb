@@ -6,7 +6,7 @@ class MicropostsController < ApplicationController
       @user = User.find(params[:user_id])
       @microposts = @user.microposts.page(params[:page]).per(10)
     else
-      @microposts = Micropost.all
+      @microposts = Micropost.order(created_at: :desc).page(params[:page]).per(10)
     end
   end
 
@@ -19,7 +19,7 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    @micropost = current_user.find(params[:id])
+    @micropost = Micropost.find(params[:id])
   end
 
   def create

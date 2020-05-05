@@ -1,3 +1,24 @@
 // Place all the styles related to the microposts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+main ul.micropost-footer {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px #ccf dashed;
+  padding-top: 4px;
+  margin-bottom: 15px;
+  text-align: right;
+  font-size: 150%;
+}
+
+main ul.micropost-footer li {
+  display: inline;
+}
+
+main ul.micropost-footer li:not(:last-child):after {
+  color: #444;
+  content: " | ";
+  margin: 0 2px;
+}
