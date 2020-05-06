@@ -6,3 +6,6 @@ ja:
       article:
         title: タイトル
         content: 本文
+      micropost:
+        content: 本文
+        created_at: 日時
