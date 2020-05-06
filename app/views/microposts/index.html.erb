@@ -7,7 +7,16 @@
 
 <% if @microposts.present? %>
   <% @microposts.each do |micropost| %>
-    <p><%= micropost.content %></p>
+    <p><%= strip_tags(micropost.content.to_s).truncate(100) %></p>
+    <% if micropost.picture? %>
+      <% if micropost.picture.file.content_type.include?('image/') %>
+        <%= image_tag micropost.picture.url(:thumb) %>
+      <% else %>
+        <%= video_tag micropost.picture.url, width: "30%", height: "30%",
+                      controls: true, autobuffer: true %>
+      <% end %>
+    <% end %>
+    <%= link_to "全文表示", micropost %>
     <%= render "footer", micropost: micropost %>
   <% end %>
   <%= paginate @microposts %>
