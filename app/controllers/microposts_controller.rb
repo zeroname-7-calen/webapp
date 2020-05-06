@@ -44,7 +44,7 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
-    @micropost = current_user.micropost.find(params[:id])
+    @micropost = current_user.microposts.find(params[:id])
     @micropost.destroy
     redirect_to :microposts, notice: "ツイートを削除しました"
   end

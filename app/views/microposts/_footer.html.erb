@@ -2,7 +2,7 @@
   <% if current_user %>
     <% if current_user == micropost.author %>
     <%= menu_link_to "編集", [:edit, micropost] %>
-    <%= menu_link_to "削除", micropost, medhod: :delete,
+    <%= menu_link_to "削除", micropost, method: :delete,
           data: { confirm: "本当に削除しますか？" } %>
     <% end %>
   <% end %>

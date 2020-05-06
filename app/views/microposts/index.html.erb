@@ -7,9 +7,8 @@
 
 <% if @microposts.present? %>
   <% @microposts.each do |micropost| %>
-    <p><%= strip_tags(micropost.content.to_s).truncate(80) %></p>
-      <%= link_to "もっと読む", micropost %>
-      <%= render "footer", micropost: micropost %>
+    <p><%= micropost.content %></p>
+    <%= render "footer", micropost: micropost %>
   <% end %>
   <%= paginate @microposts %>
 <% else %>
