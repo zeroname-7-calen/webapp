@@ -23,7 +23,7 @@ class MicropostsController < ApplicationController
   end
 
   def create
-    @micropost = Micropost.new(params[:micropost])
+    @micropost = Micropost.new(micropost_params)
     @micropost.author = current_user
     @micropost.created_at = Time.now
     if @micropost.save!
@@ -35,7 +35,7 @@ class MicropostsController < ApplicationController
 
   def update
     @micropost = current_user.microposts.find(params[:id])
-    @micropost.assign_attributes(params[:micropost])
+    @micropost.assign_attributes(micropost_params)
     if @micropost.save
       redirect_to @micropost, notice: "ツイートを更新しました"
     else
@@ -48,4 +48,12 @@ class MicropostsController < ApplicationController
     @micropost.destroy
     redirect_to :microposts, notice: "ツイートを削除しました"
   end
+
+    private
+      def micropost_params
+        params.require(:micropost).permit(
+          :content,
+          :created_at
+        )
+      end
 end
