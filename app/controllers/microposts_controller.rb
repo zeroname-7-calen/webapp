@@ -19,7 +19,7 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    @micropost = Micropost.find(params[:id])
+    @micropost = current_user.microposts.find(params[:id])
   end
 
   def create
