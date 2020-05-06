@@ -4,7 +4,7 @@ class MicropostsController < ApplicationController
   def index
     if params[:user_id]
       @user = User.find(params[:user_id])
-      @microposts = @user.microposts.page(params[:page]).per(10)
+      @microposts = @user.microposts.order(created_at: :desc).page(params[:page]).per(10)
     else
       @microposts = Micropost.order(created_at: :desc).page(params[:page]).per(10)
     end
@@ -53,6 +53,7 @@ class MicropostsController < ApplicationController
       def micropost_params
         params.require(:micropost).permit(
           :content,
+          :picture,
           :created_at
         )
       end
