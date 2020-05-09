@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params[:article])
+    @article = Article.new(article_params)
     @article.user_id = current_user.id
     @article.released_at = Time.now
     if @article.save!
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.assign_attributes(params[:article])
+    @article.assign_attributes(article_params)
     if @article.save!
       redirect_to @article, notice: "投稿を更新しました"
     else

@@ -12,4 +12,7 @@
   <li>
   <%= micropost.created_at.strftime("%Y/%m/%d %H:%M") %>
 </li>
+<% if (count = micropost.votes.count) > 0 %>
+  <li><span class="vote">♡<%= count %></span></li>
+<% end %>
 </ul>

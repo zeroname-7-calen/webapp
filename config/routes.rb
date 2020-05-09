@@ -21,11 +21,32 @@ Rails.application.routes.draw do
     end
   end
 
+  # resources :users do
+  #   resources :microposts, only: [:index]
+  # end
+# 　　上記ブロックを一時コメントアウト。以下のブロックに変更してみた（８日ＰＭ３：50）
+  #
   resources :users do
-    resources :microposts, only: [:index]
+      resources :microposts, only: [:index] do
+      get :like, :unlike
+    end
   end
 
-  resources :microposts
+
+    # get '/index' => "microposts#index"
+    # get '/:id' => "microposts#show"
+    # get '/new' => "microposts#new"
+    # get '/:id/edit' => "microposts#edit"
+    # post "/create" => "microposts#create"
+    # post "/:id/update" => "microposts#update"
+    # post "/:id/destroy" => "microposts#destroy"
+
+    resources :microposts
+
+  # resources :microposts do
+  #   patch "like", "unlike", on: :user
+  #   get "voted", on: :collection
+  # end
 
 
 end
