@@ -28,7 +28,8 @@ Rails.application.routes.draw do
   #
   resources :users do
       resources :microposts, only: [:index] do
-      get :like, :unlike
+      patch :like, :unlike
+      get :voted
     end
   end
 

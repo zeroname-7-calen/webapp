@@ -4,7 +4,6 @@
   <% end %>
 
   <% if current_user && current_user.votable_for?(@micropost) %>
-    <%= link_to "♡いいね!", [:like_micropost, @micropost],
-      method: :patch, class: "button" %>
+    <%= link_to "♡いいね!", user_micropost_like_path(@micropost, user_id: current_user.id), method: :patch, class: "button" %>
   <% end %>
 </div>

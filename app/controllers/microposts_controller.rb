@@ -50,9 +50,20 @@ class MicropostsController < ApplicationController
   end
 
   def like
-    @micropost = Micropost.find(params[:id])
-    current_member.voted_microposts << @micropost
+    @micropost = Micropost.find(params[:micropost_id])
+    current_user.voted_microposts << @micropost
     redirect_to @micropost, notice: "投票しました。"
+  end
+
+  def unlike
+    current_user.voted_microposts.destroy(Micropost.find(params[:micropost_id]))
+    redirect_to :voted_microposts, notice: "削除しました。"
+  end
+
+  def voted
+    @microposts = current_user.voted_microposts
+      .order("votes.created_at DESC")
+      .page(params[:page]).per(15)
   end
 
     private
