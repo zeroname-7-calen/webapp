@@ -57,7 +57,7 @@ class MicropostsController < ApplicationController
 
   def unlike
     current_user.voted_microposts.destroy(Micropost.find(params[:micropost_id]))
-    redirect_to :voted_microposts, notice: "削除しました。"
+    redirect_to :microposts, notice: "解除しました。"
   end
 
   def voted

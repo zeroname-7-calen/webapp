@@ -4,7 +4,7 @@
 <% if current_user %>
   <ul class="toolbar">
     <%= link_to "ツイートの作成", :new_micropost %>
-    <%= link_to "投票したツイート" %>
+    <%= link_to "投票したツイート", user_micropost_voted_path(@microposts, user_id: current_user.id) %>
   </ul>
 <% end %>
 

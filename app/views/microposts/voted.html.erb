@@ -1,0 +1,16 @@
+<% @page_title = "投票したツイート" %>
+<h1><%= @page_title %></h1>
+
+<% if @microposts.present? %>
+  <ul>
+    <% @microposts.each do |micropost| %>
+    <li>
+      <%= micropost.content %>
+      - <%= link_to "いいね解除", user_micropost_unlike_path(micropost, user_id: current_user.id), method: :patch, data: { confirm: "削除しますか?" } %>
+    </li>
+    <% end %>
+  </ul>
+  <%= paginate @microposts %>
+<% else %>
+  <p>記事がありません。</p>
+<% end %>
