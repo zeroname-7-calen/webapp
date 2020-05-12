@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
 
-  # get 'microposts/index'
-  # get 'microposts/show'
-  # get 'microposts/new'
-  # get 'microposts/edit'
   resources :fileuploads, only: [:index, :create, :new]
 
-  # devise_for :users
   root "top#index"
   get "about", to: "top#about", as: "about"
 
@@ -22,10 +17,12 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :microposts, only: [:index]
+      resources :microposts, only: [:index] do
+      patch :like, :unlike
+      get :voted
+    end
   end
 
   resources :microposts
-
 
 end

@@ -37,4 +37,5 @@ yarn-debug.log*
 
 /.env
 /vendor
-/public/upalods 
+# アップロードされたテスト画像を無視する
+/public/uploads

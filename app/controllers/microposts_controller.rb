@@ -49,6 +49,23 @@ class MicropostsController < ApplicationController
     redirect_to :microposts, notice: "ツイートを削除しました"
   end
 
+  def like
+    @micropost = Micropost.find(params[:micropost_id])
+    current_user.voted_microposts << @micropost
+    redirect_to @micropost, notice: "投票しました。"
+  end
+
+  def unlike
+    current_user.voted_microposts.destroy(Micropost.find(params[:micropost_id]))
+    redirect_to :microposts, notice: "解除しました。"
+  end
+
+  def voted
+    @microposts = current_user.voted_microposts
+      .order("votes.created_at DESC")
+      .page(params[:page]).per(15)
+  end
+
     private
       def micropost_params
         params.require(:micropost).permit(
