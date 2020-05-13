@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'messages/index'
-  get 'messages/show'
-  get 'messages/new'
-  get 'messages/edit'
+  # get 'messages/index'
+  # get 'messages/show'
+  # get 'messages/new'
+  # get 'messages/edit'
   resources :fileuploads, only: [:index, :create, :new]
 
   root "top#index"
