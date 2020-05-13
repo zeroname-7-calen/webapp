@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'messages/index'
+  get 'messages/show'
+  get 'messages/new'
+  get 'messages/edit'
   resources :fileuploads, only: [:index, :create, :new]
 
   root "top#index"
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :users do
+      resources :messages, only: [:index]
       resources :microposts, only: [:index] do
       patch :like, :unlike
       get :voted
@@ -24,5 +29,7 @@ Rails.application.routes.draw do
   end
 
   resources :microposts
+
+  resources :messages
 
 end
