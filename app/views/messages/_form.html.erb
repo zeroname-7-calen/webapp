@@ -1,0 +1,12 @@
+<%= render "shared/errors", obj: @message %>
+
+<table class="attr">
+  <tr>
+    <th width="80"><%= form.label :title %></th>
+    <td><%= form.text_field :title, size: 50 %></td>
+  </tr>
+  <tr>  
+    <th><%= form.label :content %></th>
+    <td><%= form.text_area :content, rows: 10, cols: 45 %></td>
+  </tr>
+</table>

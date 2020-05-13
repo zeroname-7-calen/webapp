@@ -1,0 +1,9 @@
+<% @page_title = "お知らせ記事の編集" %>
+<h1><%= @page_title %></h1>
+
+<div class="toolbar"><%= link_to "お知らせ記事の表示に戻る", @message %></div>
+
+<%= form_for @message do |form| %>
+  <%= render "form", form: form %>
+  <div><%= form.submit %></div>
+<% end %>
