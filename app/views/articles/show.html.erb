@@ -2,20 +2,12 @@
 <h1><%= @article.title %></h1>
 
 <% if current_user %>
-  <div class="toobar"><%= link_to "編集", [:edit, :article] %></div>
+  <div class="toolbar"><%= link_to "編集", [:edit, :article] %></div>
 <% end %>
 
-<table class="attr" border="1">
-  <tr>
-    <th width="100">タイトル</th>
-    <td><%= @article.title %></td>
-  </tr>
-  <tr>
-    <th>本文</th>
-    <td><%= @article.content %></td>
-  </tr>
+  <%= @article.content %>
+
   <tr>
     <th>掲載開始日時</th>
     <td><%= @article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
   </tr>
-</table>
