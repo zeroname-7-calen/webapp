@@ -1,5 +1,4 @@
 <h2>サインアップ</h2>
-<div class="wrapper">
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -17,11 +16,10 @@
       <div class="field">
         <dt><%= f.label :password_confirmation %><br /></dt>
         <dd><%= f.password_field :password_confirmation, autocomplete: "new-password" %></dd>
-    </div>
+      </div>
     <div class="actions">
       <%= f.submit "サインアップ" %>
     </div>
   <% end %>
 
   <%= render "devise/shared/links" %>
-</div>

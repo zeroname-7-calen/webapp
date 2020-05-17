@@ -1,5 +1,4 @@
 <h2>パスワードを忘れた?</h2>
-<div class="wrapper">
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -8,11 +7,10 @@
         <dt><%= f.label :email %><br /></dt>
         <dd><%= f.email_field :email, autofocus: true, autocomplete: "email" %></dd>
       </div>
-</div>
 
-    <div class="actions">
-      <%= f.submit "パスワードをリセットする" %>
-    </div>
+      <div class="actions">
+        <%= f.submit "パスワードをリセットする" %>
+      </div>
     <% end %>
 
     <%= render "devise/shared/links" %>
