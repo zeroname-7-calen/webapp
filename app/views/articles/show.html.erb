@@ -1,13 +1,17 @@
 <% @page_title = @article.title %>
 <h1><%= @article.title %></h1>
 
-<% if current_user %>
-  <div class="toolbar"><%= link_to "編集", [:edit, :article] %></div>
-<% end %>
-
-  <%= @article.content %>
+<div class="article">
+  <% if current_user %>
+    <div class="toolbar"><%= link_to "編集", [:edit, :article] %></div>
+  <% end %>
 
   <tr>
-    <th>掲載開始日時</th>
+    <th>掲載日時</th>
     <td><%= @article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
   </tr>
+
+  <div class="content">
+    <%= @article.content %>
+  </div>
+</div>

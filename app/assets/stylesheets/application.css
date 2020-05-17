@@ -29,9 +29,9 @@ a:hover { color: #f00; }
 a img { border: none; }
 
 /* ブロック要素 */
-p, h1, h2, h3, table, ul {
+/* p, h1, h2, h3, table, ul {
   margin: 0 0 1em;
-}
+} */
 
 /* ナビゲーション */
 nav ul,
@@ -61,14 +61,18 @@ main {
   float: left;
   width: 530px;
   padding: 10px 10px 10px 0;
+  /* background-color: lightgray; */
+  font-size: 1.1em;
+  line-height: 1.5;
 }
 
 /* 右の枠（サイドバーを入れる） */
 aside#sidebar {
   float: left;
+  height: 550px;
   width: 230px;
-  /* background-color: #e8ffff; */
-  padding: 5px;
+  background-color: #e8ffff;
+  padding: 20px;
   font-size: 86%;
 }
 
@@ -90,6 +94,7 @@ footer {
   padding: 8px 0;
   border-top: 4px solid #6bb;
   text-align: center;
+  background-color: #f5deb3;
 }
 
 footer nav ul li:not(:last-child):after {
@@ -135,15 +140,15 @@ nav.menubar span {
 }
 
 /* メインコンテンツ */
-main h1 {
-  color: #88c;
+/* main h1 { */
+  /* color: #88c;
   font-weight: normal;
   font-size: 150%;
   border-bottom: 2px solid #88c;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5em; */
 }
 
-main h2 {
+/* main h2 {
   color: #99d;
   font-weight: bold;
   font-size: 120%;
@@ -154,7 +159,7 @@ main h2 {
 main p {
   font-size: 90%;
   line-height: 1.5;
-}
+} */
 
 ul.toolbar,
 div.toolbar {

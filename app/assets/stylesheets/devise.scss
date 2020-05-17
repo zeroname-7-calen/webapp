@@ -12,11 +12,22 @@
 //   padding: 1em;
 //   color: #998484;
 // }
+p {
+  margin: 0 0 1em;
+}
+
+h1 {
+  // color: #3399FF;
+  font-size: 25px;
+  margin: 0 0 1em;
+}
 
 dt {
   float: left;
   padding: 1em;
+  // padding: 12px;
   color: #998484;
+  width: auto;
 }
 
 // .wrapper dd {
@@ -29,11 +40,19 @@ dd {
   border: 1px solid #cccccc;
   margin: 0;
   padding: 1em 0 1em 18em;
+  width: auto;
+}
+
+dd input {
+  width: 90%;
+  height: 25px;
 }
 
 .actions {
   padding: 10px;
 }
+
+
 
 .log_in {
   font-size: 12px;
