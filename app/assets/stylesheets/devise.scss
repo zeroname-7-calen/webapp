@@ -1,0 +1,77 @@
+@charset "UTF-8";
+// .wrapper {
+//   width: auto;
+//   border-top: 1px solid #cccccc;
+//   border-right: 1px solid #cccccc;
+//   border-left: 1px solid #cccccc;
+//   border-bottom: 1px solid #cccccc;
+// }
+
+// .wrapper dt {
+//   float: left;
+//   padding: 1em;
+//   color: #998484;
+// }
+p {
+  margin: 0 0 1em;
+}
+
+h1 {
+  // color: #3399FF;
+  font-size: 25px;
+  margin: 0 0 1em;
+}
+
+dt {
+  float: left;
+  padding: 1em;
+  // padding: 12px;
+  color: #998484;
+  width: auto;
+}
+
+// .wrapper dd {
+//   border: 1px solid #cccccc;
+//   margin: 0;
+//   padding: 1em 0 1em 18em;
+// }
+
+dd {
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 1em 0 1em 18em;
+  width: auto;
+}
+
+dd input {
+  width: 90%;
+  height: 25px;
+}
+
+.actions {
+  padding: 10px;
+}
+
+
+
+.log_in {
+  font-size: 12px;
+  padding: 10px;
+  float: left;
+}
+
+.rememberable {
+  padding: 3px 10px;
+}
+
+.sign_up {
+  font-size: 12px;
+  padding: 10px;
+  float: left;
+}
+
+.forgotten_password {
+  font-size: 12px;
+  padding: 10px 10px 20px 10px;
+  // float: right;
+}
