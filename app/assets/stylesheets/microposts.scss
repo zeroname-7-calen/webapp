@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+p {
+  margin: 0 0 1em;
+}
+
 main ul.micropost-footer {
   list-style-type: none;
   margin: 0;
