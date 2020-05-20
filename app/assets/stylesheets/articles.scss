@@ -10,6 +10,12 @@
 //   font-size: 22px;
 // }
 
+.top_title h1 {
+  color: black;
+  font-size: 2.5em;
+  width: auto;
+
+}
 p {
   margin: 0 0 1em;
 }
@@ -38,4 +44,14 @@ input[type="text"] {
   width: auto;
   height: auto;
   font-size: 20px;
+}
+
+.list {
+  width: auto;
+}
+
+tbody td {
+  padding: 0.5em;
+  line-height: 1.5;
+  float: left;
 }

@@ -11,20 +11,26 @@ class ArticlesController < ApplicationController
 
   # 検索
   def search
-        @articles = Article.search(params[:q]).page(params[:page]).per(10)
-      render "index"
+    @articles = Article.search(params[:q]).page(params[:page]).per(10)
+    render "index"
   end
 
   def new
+    authorize! @article
+    
     @article = Article.new
   end
 
   def edit
     # @article = current_user.articles.find(params[:id])
+    authorize! @article
+
     @article = Article.find(params[:id])
   end
 
   def create
+    authorize! @article
+
     @article = Article.new(article_params)
     @article.user_id = current_user.id
     @article.released_at = Time.now
@@ -36,6 +42,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    authorize! @article
+
     @article = Article.find(params[:id])
     @article.assign_attributes(article_params)
     if @article.save!
@@ -46,6 +54,8 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    authorize! @article
+
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to :articles
