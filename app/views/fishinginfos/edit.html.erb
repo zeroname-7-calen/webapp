@@ -1,2 +1,8 @@
-<h1>Fishinginfos#edit</h1>
-<p>Find me in app/views/fishinginfos/edit.html.erb</p>
+<% @page_title = "釣り情報の編集" %>
+<h1><%= @page_title %></h1>
+<div class="toolbar"><%= link_to "釣り情報記事に戻る", @fishinginfo %></div>
+
+<%= form_for @fishinginfo do |form| %>
+  <%= render "form", form: form %>
+  <div><%= form.submit %></div>
+<% end %>

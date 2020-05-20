@@ -1,2 +1,4 @@
-<h1>Fishinginfos#show</h1>
-<p>Find me in app/views/fishinginfos/show.html.erb</p>
+<% @page_title = "釣り情報" %>
+<h1><%= @fishinginfo.title %></h1>
+<%= @fishinginfo.content %>
+<%= render "footer", fishinginfo: @fishinginfo %>

@@ -3,6 +3,7 @@ class Fishinginfo < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 100 }
   validates :content, presence: true, length: { maximum: 3000 }
+  # 上記１行はコメントアウトが必要か？
 
   has_rich_text :content
 
