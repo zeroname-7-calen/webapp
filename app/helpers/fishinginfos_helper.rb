@@ -1,0 +1,2 @@
+module FishinginfosHelper
+end

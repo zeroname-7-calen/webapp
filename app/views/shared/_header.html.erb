@@ -14,7 +14,7 @@
     <%= menu_link_to "スポーツ", "#" %>
     <%= menu_link_to "イベントガイド", "#" %>
     <%= menu_link_to "観光情報", "#" %>
-    <%= menu_link_to "釣り情報", "#" %>
+    <%= menu_link_to "釣り情報", :fishinginfos %>
     <% if user_signed_in? %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
