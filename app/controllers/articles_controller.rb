@@ -16,20 +16,18 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    authorize! @article
-    
     @article = Article.new
+    # authorize! @article
   end
 
   def edit
     # @article = current_user.articles.find(params[:id])
     authorize! @article
-
     @article = Article.find(params[:id])
   end
 
   def create
-    authorize! @article
+    # authorize! @article
 
     @article = Article.new(article_params)
     @article.user_id = current_user.id
@@ -42,7 +40,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    authorize! @article
+    # authorize! @article
 
     @article = Article.find(params[:id])
     @article.assign_attributes(article_params)
@@ -54,9 +52,8 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    authorize! @article
-
     @article = Article.find(params[:id])
+    authorize! @article
     @article.destroy
     redirect_to :articles
   end

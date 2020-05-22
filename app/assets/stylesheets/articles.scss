@@ -14,7 +14,6 @@
   color: black;
   font-size: 2.5em;
   width: auto;
-
 }
 p {
   margin: 0 0 1em;
@@ -35,9 +34,18 @@ h1 {
 //   height: 300px;
 // }
 
+.toolbar {
+  float: right;
+}
+
 input[type="text"] {
   width: 500px;
-  height: 40px;
+  height: 2em;
+  margin: 2px;
+}
+
+.submit_tag {
+  padding: 0.5em;
 }
 
 .trix-content {
@@ -46,11 +54,14 @@ input[type="text"] {
   font-size: 20px;
 }
 
-.list {
+.list thead {
   width: auto;
+  display: flex;
 }
 
+
 tbody td {
+  // width: auto;
   padding: 0.5em;
   line-height: 1.5;
   float: left;
