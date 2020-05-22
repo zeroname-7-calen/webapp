@@ -5,7 +5,7 @@ class ArticlesLoyalty < ApplicationLoyalty
   # end
   #
   def edit?
-    user.admin? || user_id == record.user_id
+    user.admin? || user_id == record.user
   end
 
   def destroy?

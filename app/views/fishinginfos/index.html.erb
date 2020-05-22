@@ -1,3 +1,4 @@
+<% @page_title = "釣り情報" %>
 <div class="logo">
   <%= image_tag "/assets/turi1.gif", size: "150x52", alt: "釣り情報" %>
 </div>
@@ -6,6 +7,7 @@
   <div class="toolbar"><%= link_to "釣り情報の記事作成", new_fishinginfo_path %></div>
 <% end %>
 
+<div class="fishinginfo">
   <% if @fishinginfos.present? %>
     <% @fishinginfos.each do |fishinginfo| %>
     <h2><%= fishinginfo.title %></h2>
@@ -15,3 +17,4 @@
   <% else %>
   <p>釣り情報は現在ありません</p>
 <% end %>
+</div>

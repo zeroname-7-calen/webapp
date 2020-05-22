@@ -39,7 +39,7 @@ h1 {
 }
 
 input[type="text"] {
-  width: 500px;
+  width: 450px;
   height: 2em;
   margin: 2px;
 }
@@ -48,9 +48,14 @@ input[type="text"] {
   padding: 0.5em;
 }
 
+trix-toolbar {
+  font-size: 0.7em;
+  width: 100%;
+}
+
 .trix-content {
-  width: auto;
-  height: auto;
+  width: 450px;
+  height: 10em;
   font-size: 20px;
 }
 
