@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    # authorize! @article
+    authorize! @article
   end
 
   def edit
@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    # authorize! @article
+    authorize! @article
 
     @article = Article.new(article_params)
     @article.user_id = current_user.id
@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    # authorize! @article
+    authorize! @article
 
     @article = Article.find(params[:id])
     @article.assign_attributes(article_params)

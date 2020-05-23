@@ -1,14 +1,22 @@
 class ArticlesLoyalty < ApplicationLoyalty
 
-  # def new?
-  #   user.admin? || user == record.user
-  # end
-  #
+  def new?
+    user.admin?
+  end
+
+  def create?
+    user.admin?
+  end
+
   def edit?
-    user.admin? || user_id == record.user
+    user.admin? || user.id == record.user_id
+  end
+
+  def update?
+    user.admin?
   end
 
   def destroy?
-    user.admin? || user_id == record.user_id
+    user.admin? || user.id == record.user_id
   end
 end
