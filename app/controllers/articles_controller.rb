@@ -22,8 +22,8 @@ class ArticlesController < ApplicationController
 
   def edit
     # @article = current_user.articles.find(params[:id])
-    authorize! @article
     @article = Article.find(params[:id])
+    authorize! @article
   end
 
   def create
@@ -40,9 +40,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    authorize! @article
-
     @article = Article.find(params[:id])
+    authorize! @article
     @article.assign_attributes(article_params)
     if @article.save!
       redirect_to @article, notice: "投稿を更新しました"
