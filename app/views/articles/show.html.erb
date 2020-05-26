@@ -3,8 +3,12 @@
 
 <div class="article">
   <% if current_user %>
-    <div class="toolbar"><%= link_to "編集", [:edit, :article] %></div>
+    <% if loyalty(@article, :articles).edit? %>
+
+      <div class="toolbar"><%= link_to "編集", [:edit, :article] %></div>
+    <% end %>
   <% end %>
+
 
   <tr>
     <th>掲載日時</th>
@@ -14,4 +18,5 @@
   <div class="content">
     <%= @article.content %>
   </div>
+
 </div>

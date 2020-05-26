@@ -27,7 +27,7 @@ class MessagesController < ApplicationController
     @message.author = current_user
     @message.created_at = Time.now
     if @message.save!
-      redirect_to @message, notice: "ツイートしました"
+      redirect_to @message, notice: "掲示板に掲載しました"
     else
       render "new"
     end
@@ -38,7 +38,7 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     @message.assign_attributes(message_params)
     if @message.save
-      redirect_to @message, notice: "ツイートを更新しました"
+      redirect_to @message, notice: "掲示板を更新しました"
     else
       render "edit"
     end
