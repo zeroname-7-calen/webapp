@@ -10,6 +10,11 @@
 //   font-size: 22px;
 // }
 
+.top_title h1 {
+  color: black;
+  font-size: 2.5em;
+  width: auto;
+}
 p {
   margin: 0 0 1em;
 }
@@ -29,13 +34,40 @@ h1 {
 //   height: 300px;
 // }
 
+// .toolbar {
+//   float: right;
+// }
+
 input[type="text"] {
-  width: 500px;
-  height: 40px;
+  width: 450px;
+  height: 2em;
+  margin: 2px;
+}
+
+.submit_tag {
+  padding: 0.5em;
+}
+
+trix-toolbar {
+  font-size: 0.7em;
+  width: 100%;
 }
 
 .trix-content {
-  width: auto;
-  height: auto;
+  width: 450px;
+  height: 10em;
   font-size: 20px;
+}
+
+.list thead {
+  width: auto;
+  display: flex;
+}
+
+
+tbody td {
+  // width: auto;
+  padding: 0.5em;
+  line-height: 1.5;
+  float: left;
 }

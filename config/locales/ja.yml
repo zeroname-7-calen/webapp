@@ -1,4 +1,12 @@
 ja:
+  # banken:
+  #   default: "管理者権限がないので操作は許可されません"
+  #   artcile_loyalty:
+  #     new?: "管理者権限がないので作成できません"
+  #     create?:　"管理者権限がないので投稿できません"
+  #     edit?: "管理者権限がないので編集できません"
+  #     update?: "管理者権限がないので更新できません"
+  #     destroy?: "管理者権限がないので削除できません"
   activerecord:
     models:
       article: ニュース記事
@@ -13,7 +21,10 @@ ja:
         created_at: 日時
       message:
         title: タイトル
-        content: 本文        
+        content: 本文
+      Fishinginfo:
+        title: タイトル
+        content:  本文
     errors:
       messages:
         carrierwave_processing_error: 処理できませんでした
