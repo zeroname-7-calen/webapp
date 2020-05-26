@@ -1,5 +1,9 @@
 class ArticlesLoyalty < ApplicationLoyalty
 
+  def index?
+    user.admin?
+  end
+
   def new?
     puts "------------------"
     puts user
@@ -18,7 +22,7 @@ class ArticlesLoyalty < ApplicationLoyalty
     # puts record(pramas[:id])
     # puts article(pramas[:id])
     # puts params(:id)
-    puts params[:id]
+    # puts params[:id]
     # puts record.find(params[:id])
     # puts @article.find(params[:id])
     # puts record(params)

@@ -2,12 +2,13 @@ class FishinginfosController < ApplicationController
    # before_action :login_required, except: [:index, :show]
 
   def index
-    if params[:user_id]
-      @user = User.find(params[:user_id])
-      @fishinginfos = @user.fishinginfos.order(created_at: :desc)
-    else
-      @fishinginfos = Fishinginfo.order(created_at: :desc)
-    end
+    # if params[:user_id]
+    #   @user = User.find(params[:user_id])
+    #   @fishinginfos = @user.fishinginfos.order(created_at: :desc)
+    # else
+    #   @fishinginfos = Fishinginfo.order(created_at: :desc)
+    # end
+    @fishinginfos = Fishinginfo.order(created_at: :desc)
   end
 
   def show

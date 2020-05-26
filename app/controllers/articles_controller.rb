@@ -2,10 +2,16 @@ class ArticlesController < ApplicationController
   # before_action :loign_required, except: [:index, :show]
 
   def index
+    puts "111111111111111"
+    puts params[:id]
+    puts "333333333333333"
     @articles = Article.order(released_at: :desc).page(params[:page]).per(10)
   end
 
   def show
+    puts "111111111111111"
+    puts params[:id]
+    puts "333333333333333"
     @article = Article.find(params[:id])
   end
 
@@ -21,6 +27,9 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    puts "111111111111111"
+    puts params[:id]
+    puts "333333333333333"
     # @article = current_user.articles.find(params[:id])
     @article = Article.find(params[:id])
     authorize! @article
