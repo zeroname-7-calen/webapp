@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-  # before_action :loign_required, except: [:index, :show]
 
   def index
     puts "111111111111111"
@@ -41,7 +40,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user_id = current_user.id
     @article.released_at = Time.now
-    if @article.save!
+    if @article.save
       redirect_to @article, notice: "投稿しました"
     else
       render "new"
