@@ -4,9 +4,22 @@
 
 @charset "UTF-8";
 
+// 掲示板に掲載するボタンの位置など
+.current_user_toolbar {
+  float: right;
+  padding: 0.4em;
+}
+
+// 掲示板本文
+.message_content {
+  float: left;
+}
+
 td {
   padding: 20px;
 }
+
+// 掲示板フォームの位置など
 .form {
   padding: 20px 0 25px 0;
 }
