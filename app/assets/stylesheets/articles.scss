@@ -38,25 +38,29 @@ h1 {
 //   float: right;
 // }
 
+// 記事一覧の「検索フォーム」、入力ページの「タイトル」フォームの大きさを整形
 input[type="text"] {
   width: 450px;
   height: 2em;
   margin: 2px;
 }
 
+// 記事入力フォーム（コンテント）のサイズ整形
+.trix-content {
+  // width: 450px;
+  width: 100%;
+  height: 10em;
+  font-size: 20px;
+}
+// 検索ボタンの配置を整える（要素間の上下左右の間隔を整える）
 .submit_tag {
   padding: 0.5em;
 }
 
+// アクションテキスト（記事入力フォーム）のツールバー
 trix-toolbar {
   font-size: 0.7em;
   width: 100%;
-}
-
-.trix-content {
-  width: 450px;
-  height: 10em;
-  font-size: 20px;
 }
 
 .list thead {

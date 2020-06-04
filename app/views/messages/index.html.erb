@@ -1,10 +1,13 @@
 <% @page_title = "掲示板" %>
 <h1><%= @page_title %></h1>
 
-<% if current_user %>
-  <div class="toolbar"><%= link_to "掲示板掲載", new_message_path %></div>
-<% end %>
+<div class="current_user_toolbar">
+  <% if current_user %>
+    <div class="toolbar"><%= link_to "掲示板に掲載する", new_message_path %></div>
+  <% end %>
+</div>
 
+<div class="message_content">
 <% if @messages.present? %>
   <% @messages.each do |message| %>
     <h1><%= link_to message.title, message %></h1>
@@ -22,3 +25,4 @@
 <% else %>
   <p>掲載はありません</p>
 <% end %>
+</div>
