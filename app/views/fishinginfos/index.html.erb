@@ -3,7 +3,7 @@
   <%= image_tag "/assets/turi1.gif", size: "150x52", alt: "釣り情報" %>
 </div>
 
-<% if current_user %>
+<% if current_user && loyalty(@fishinginfo, :fishinginfos).index? %>
   <div class="toolbar"><%= link_to "釣り情報の記事作成", new_fishinginfo_path %></div>
 <% end %>
 
