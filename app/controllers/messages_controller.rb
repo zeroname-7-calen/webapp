@@ -16,13 +16,17 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    authorize! @message
   end
 
   def edit
     @message = Message.find(params[:id])
+    authorize! @message
   end
 
   def create
+    authorize! @message
+
     @message = Message.new(message_params)
     @message.author = current_user
     @message.created_at = Time.now
@@ -36,6 +40,7 @@ class MessagesController < ApplicationController
   def update
     # @message = current_user.messages.find(params[:id])
     @message = Message.find(params[:id])
+    authorize! @message
     @message.assign_attributes(message_params)
     if @message.save
       redirect_to @message, notice: "掲示板を更新しました"
@@ -46,6 +51,7 @@ class MessagesController < ApplicationController
 
   def destroy
     @message = Message.find(params[:id])
+    authorize! @message
     @message.destroy
     redirect_to :messages, notice: "削除しました"
   end
