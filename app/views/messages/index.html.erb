@@ -2,7 +2,7 @@
 <h1><%= @page_title %></h1>
 
 <div class="current_user_toolbar">
-  <% if current_user %>
+  <% if current_user && loyalty(@message, :messages).index? %>
     <div class="toolbar"><%= link_to "掲示板に掲載する", new_message_path %></div>
   <% end %>
 </div>
