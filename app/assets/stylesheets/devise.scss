@@ -1,47 +1,67 @@
-@charset "UTF-8";
+// @charset "UTF-8";
+//
 
-p {
-  margin: 0 0 1em;
-}
+// // ログイン画面
+//
+// .container-login {
+  // @extend .container-fruid;
+  // max-width: 576px;
+//   max-width: 700px;
+//   padding: 2rem;
+// }
+//
+// // 「ログインしました」などのフラッシュ用スタイル
+//
+// .alert-notice {
+//   @extend .alert-info;
+// }
+//
+// .alert-alert {
+//   @extend .alert-danger;
+// }
+// p {
+//   margin: 0 0 1em;
+// }
+//
+// h1 {
+//   // color: #3399FF;
+//   font-size: 25px;
+//   margin: 0 0 1em;
+// }
+//
+// dt {
+//   float: left;
+//   padding: 1em;
+//   // padding: 12px;
+//   color: #998484;
+//   width: auto;
+// }
+//
+// dd {
+//   border: 1px solid #cccccc;
+//   margin: 0;
+//   padding: 1em 0 1em 18em;
+//   width: auto;
+// }
+//
+// dd input {
+//   width: 80%;
+//   height: 2.5em;
+// }
 
-h1 {
-  // color: #3399FF;
-  font-size: 25px;
-  margin: 0 0 1em;
-}
-
-dt {
-  float: left;
-  padding: 1em;
-  // padding: 12px;
-  color: #998484;
-  width: auto;
-}
-
-dd {
-  border: 1px solid #cccccc;
-  margin: 0;
-  padding: 1em 0 1em 18em;
-  width: auto;
-}
-
-dd input {
-  width: 90%;
-  height: 25px;
-}
-
+// ログインボタン
 .actions {
   padding: 10px;
 }
-
-
-
-.log_in {
-  font-size: 12px;
-  padding: 10px;
-  float: left;
-}
-
+//
+//
+//
+// .log_in {
+//   font-size: 12px;
+//   padding: 10px;
+//   float: left;
+// }
+//
 .rememberable {
   padding: 3px 10px;
 }

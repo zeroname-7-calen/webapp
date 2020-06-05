@@ -34,8 +34,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'devise-i18n-views'
 gem 'rails-i18n', '~> 6.0.0'
+
+# Bootstrap
 # gem 'bootstrap', '~> 4.1.1'
-# gem 'devise-bootstrap-views', '~> 1.0'
+gem 'devise-bootstrap-views', '~> 1.0'
 gem 'kaminari'
 gem 'kaminari-i18n'
 gem 'carrierwave', '~> 2.0'
