@@ -19,13 +19,19 @@ p {
   margin: 0 0 1em;
 }
 
-h1 {
-  font-size: 25px;
-  color: dimgray;
+h5 {
+  // font-size: 25px;
+  font-size: 10px;
+  // color: dimgray;
+  // color: red;
   margin: 0;
   padding: 0;
 }
 
+.btn-info {
+    // background: 好きな色; ボタンの背景色
+    color: black; //ボタンのテキストの色
+}
 // .article-title {
 //   height: 50px;
 // }
@@ -67,7 +73,6 @@ trix-toolbar {
   width: auto;
   display: flex;
 }
-
 
 tbody td {
   // width: auto;

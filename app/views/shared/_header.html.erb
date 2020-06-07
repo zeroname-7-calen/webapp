@@ -1,27 +1,37 @@
-<a href="http://www.hokuu.jp" target="blank">
-  <div class="logo">
-    <%= image_tag "item1.gif", size: "200x48", alt: "北羽新報" %>
-  </div>
-</a>
+<!-- <div class="container-fruid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-12 col-sm-6"> -->
+          <a href="http://www.hokuu.jp" target="blank">
+            <div class="logo">
+              <%= image_tag "item1.gif", size: "200x48", alt: "北羽新報" %>
+            </div>
+          </a>
+          <nav class="menubar">
+            <ul>
+              <%= menu_link_to "トップ", :root %>
+              <%= menu_link_to "過去のニュース", :articles %>
+              <%= menu_link_to "コラム・企画", "#" %>
+              <%= menu_link_to "スポーツ", "#" %>
+              <%= menu_link_to "イベントガイド", "#" %>
+              <%= menu_link_to "観光情報", "#" %>
+              <%= menu_link_to "釣り情報", :fishinginfos %>
+              <% if user_signed_in? %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              <% else %>
+                <%= link_to "ログイン", new_user_session_path %>
+              <% end %>
+            </ul>
+          </nav>
 
-<nav class="menubar">
-  <ul>
-    <%= menu_link_to "トップ", :root %>
-    <%= menu_link_to "過去のニュース", :articles %>
-    <%= menu_link_to "コラム・企画", "#" %>
-    <%= menu_link_to "スポーツ", "#" %>
-    <%= menu_link_to "イベントガイド", "#" %>
-    <%= menu_link_to "観光情報", "#" %>
-    <%= menu_link_to "釣り情報", :fishinginfos %>
-    <% if user_signed_in? %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
-  </ul>
-</nav>
-<div align="right">
-  <% if user_signed_in? %>
-    <%= "ログイン中:" + current_user.email + "さん" %>
-  <% end %>
-</div>
+          <div align="right">
+            <% if user_signed_in? %>
+              <%= "ログイン中:" + current_user.email + "さん" %>
+            <% end %>
+          </div>
+        <!-- </div>
+      </div>
+    </div>
+  </div>
+</div> -->

@@ -1,14 +1,12 @@
 <% @page_title = @article.title %>
-<h1><%= @article.title %></h1>
+<h5><%= @article.title %></h5>
 
 <div class="article">
   <% if current_user %>
     <% if loyalty(@article, :articles).edit? %>
-
       <div class="toolbar"><%= link_to "編集", [:edit, :article] %></div>
     <% end %>
   <% end %>
-
 
   <tr>
     <th>掲載日時</th>
@@ -18,5 +16,4 @@
   <div class="content">
     <%= @article.content %>
   </div>
-
 </div>

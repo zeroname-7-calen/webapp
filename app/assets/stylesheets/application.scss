@@ -18,12 +18,12 @@
 
  // // ログイン画面
  //
- .container-login {
-   @extend .container-fluid;
-   max-width: 576px;
+ // .container-login {
+ //   @extend .container-fluid;
+ //   max-width: 576px;
    // width: 720px;
-   padding: 2rem;
- }
+   // padding: 2rem;
+ // }
  //
  // // 「ログインしました」などのフラッシュ用スタイル
  //
@@ -38,7 +38,12 @@
 
 /* ページ全体 */
 body {
+  min-height: 100vh; //全体枠の高さの最小値
+  // position: relative; //相対位置
+  // padding-bottom: 100px; //footerの高さ
+  // box-sizing: border-box; //全て含めてmin-height:100vhに
   background-color: white;
+  // background-color: lightgray;
   color: black;
   margin: 0; padding: 0;
   font-family: Meiryo, sans-serif;
@@ -60,6 +65,7 @@ a img { border: none; }
 nav ul,
 ul.toolbar,
 ul.links {
+  // width: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -74,25 +80,39 @@ ul.links li {
 
 /* 全体の枠 */
 div#container {
+  // min-height: 100vh; //全体枠の高さの最小値
+  // position: relative; //相対位置
+  // padding-bottom: 100px; //footerの高さ
+  // box-sizing: border-box; //全て含めてmin-height:100vhに
   margin: 0 auto;
   padding-top: 5px;
-  width: 780px;
+  // width: 780px;
+  width: auto;
+  // background-color: lightgray;
+  height: auto;
 }
 
 /* 左の枠（コンテンツを入れる） */
 main {
+  // min-height: 100vh; //全体枠の高さの最小値
+  // position: relative; //相対位置
+  // padding-bottom: 100px; //footerの高さ
+  // box-sizing: border-box; //全て含めてmin-height:100vhに
   float: left;
+  height: 1800px;
   width: 530px;
   padding: 10px 10px 10px 0;
-  /* background-color: lightgray; */
+  // background-color: lightgray;
   font-size: 1.1em;
   line-height: 1.5;
 }
 
 /* 右の枠（サイドバーを入れる） */
 aside#sidebar {
-  float: left;
-  height: 550px;
+  // float: left;
+  float: right;
+  // height: 550px;
+  height: auto;
   width: 230px;
   background-color: #e8ffff;
   padding: 20px;
@@ -101,8 +121,19 @@ aside#sidebar {
 
 /* ヘッダー */
 header {
+  width: auto;
   border-top: 4px solid #6bb;
   padding-top: 4px;
+}
+
+/* メニューバー */
+nav.menubar {
+  padding: 2px;
+  background-color: #000;
+  color: #ccc;
+  font-size: 80%;
+  width: 100%;
+  padding: 8px 16px;
 }
 
 ul.account-menu {
@@ -118,21 +149,15 @@ footer {
   border-top: 4px solid #6bb;
   text-align: center;
   background-color: #f5deb3;
+  // position: absolute; //絶対位置
+  // bottom: 0; //下に固定
+  margin-top: auto;
 }
 
 footer nav ul li:not(:last-child):after {
   color: #888;
   content: " | ";
   margin: 0 5px;
-}
-
-/* メニューバー */
-nav.menubar {
-  padding: 2px;
-  background-color: #000;
-  color: #ccc;
-  font-size: 80%;
-  padding: 8px 16px;
 }
 
 nav.menubar ul li:not(:last-child):after {

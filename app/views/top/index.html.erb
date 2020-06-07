@@ -8,36 +8,13 @@
 
 
 <% @articles.each do |article| %>
-  <h2><%= link_to article.title, article %></h2>
+  <h6><%= link_to article.title, article %></h6>
       <%= strip_tags(article.content.to_s).truncate(200) %>
       <%= link_to "もっと読む", article %>
   <% end %>
 
   <div class="toolbar">
     <% if current_user %>
-      <%= link_to "写真の送信", :new_fileupload %>
+      <%= link_to "写真の送信", :new_fileupload, class: "btn btn-outline-dark btn-sm" %>
     <% end %>
-  </div>
-
-
-  <div class="container">
-    <h1>【Bootstraptest】</h1>
-
-    <div class="row">
-        <div class="col-lg-7 col-md-6 col-sm-4">
-          <div>メインカラム</div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-4">
-          <div>サブカラム</div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-4">
-          <div>サブカラム</div>
-        </div>
-    </div>
   </div>

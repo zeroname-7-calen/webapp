@@ -1,4 +1,4 @@
-// @charset "UTF-8";
+@charset "UTF-8";
 //
 
 // // ログイン画面
@@ -23,45 +23,53 @@
 //   margin: 0 0 1em;
 // }
 //
-// h1 {
-//   // color: #3399FF;
-//   font-size: 25px;
-//   margin: 0 0 1em;
+h1 {
+  // color: #3399FF;
+  font-size: 0.5em;
+  margin: 0 0 1em;
+}
+
+// メールアドレス、パスワード入力フォームのサイズ
+// .field {
+//   width: 100%;
 // }
-//
+
 // dt {
 //   float: left;
 //   padding: 1em;
-//   // padding: 12px;
+//   padding: 12px;
 //   color: #998484;
-//   width: auto;
+//   // width: auto;
+//   width: 50%;
 // }
-//
+
 // dd {
 //   border: 1px solid #cccccc;
 //   margin: 0;
 //   padding: 1em 0 1em 18em;
-//   width: auto;
+//   // width: auto;
+//   width: 100%;
 // }
-//
-// dd input {
-//   width: 80%;
-//   height: 2.5em;
-// }
+
+// メールアドレス,パスワード入力フォーム
+dd input {
+  width: 80%;
+  height: 2em;
+}
 
 // ログインボタン
 .actions {
   padding: 10px;
 }
-//
-//
-//
+
+
+
 // .log_in {
 //   font-size: 12px;
 //   padding: 10px;
 //   float: left;
 // }
-//
+
 .rememberable {
   padding: 3px 10px;
 }

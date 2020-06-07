@@ -17,25 +17,25 @@
         <!-- Bootstrap JavaScript -->
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
    </head>
-   <body class="container">
-      <div id="container">
-        <header>
-          <%= render "shared/header" %>
-        </header>
+      <body class="container">
+        <div id="container">
+          <header>
+            <%= render "shared/header" %>
+          </header>
+        </div>
         <main>
           <% if flash.notice %>
             <p class="notice"><%= flash.notice %></p>
-         <% end %>
+          <% end %>
 
-         <%= yield %>
-       </main>
-       <aside id="sidebar">
-         <%= render "shared/sidebar" %>
-       </aside>
-       <footer>
-         <%= render "shared/footer" %>
-         <%= debug(params) if Rails.env.development? %>
-       </footer>
-     </div>
-   </body>
+          <%= yield %>
+        </main>
+        <aside id="sidebar">
+          <%= render "shared/sidebar" %>
+        </aside>
+        <footer>
+           <%= render "shared/footer" %>
+           <%= debug(params) if Rails.env.development? %>
+        </footer>
+      </body>
 </html>
