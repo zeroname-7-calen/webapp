@@ -54,9 +54,14 @@ h1 {
 // メールアドレス,パスワード入力フォーム
 dd input {
   width: 80%;
-  height: 2em;
+  height: 2.5em;
 }
 
+// メールアドレス、パスワード入力欄
+.field {
+  padding: 1em 0em;
+
+}
 // ログインボタン
 .actions {
   padding: 10px;

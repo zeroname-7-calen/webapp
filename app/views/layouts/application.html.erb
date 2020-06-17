@@ -17,13 +17,13 @@
         <!-- Bootstrap JavaScript -->
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
    </head>
-      <body class="container">
-        <div id="container">
-          <header>
+      <body id="container">
+        <!-- <div id="container"> -->
+          <header class="header">
             <%= render "shared/header" %>
           </header>
-        </div>
-        <main>
+        <!-- </div> -->
+        <main id="main">
           <% if flash.notice %>
             <p class="notice"><%= flash.notice %></p>
           <% end %>

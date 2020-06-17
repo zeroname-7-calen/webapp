@@ -26,7 +26,7 @@ class MicropostsController < ApplicationController
     @micropost = Micropost.new(micropost_params)
     @micropost.author = current_user
     @micropost.created_at = Time.now
-    if @micropost.save!
+    if @micropost.save
       redirect_to @micropost, notice: "ツイートしました"
     else
       render "new"

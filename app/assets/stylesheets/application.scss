@@ -1,18 +1,18 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+// *
+//  * This is a manifest file that'll be compiled into application.css, which will include all the files
+//  * listed below.
+//  *
+//  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+//  * vendor/assets/stylesheets directory can be referenced here using a relative path.
+//  *
+//  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+//  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+//  * files in this directory. Styles in this file should be added after the last require_* statement.
+//  * It is generally better to create a new file per style scope.
+//  *
+//  *= require_tree .
+//  *= require_self
+//  */
 
  @import "bootstrap/scss/bootstrap";
 
@@ -35,20 +35,79 @@
  //   @extend .alert-danger;
  // }
 
+html {
+  height: 100%
+}
 
 /* ページ全体 */
-body {
-  min-height: 100vh; //全体枠の高さの最小値
-  // position: relative; //相対位置
+body#container {
+  display: flex;
+  flex-wrap: wrap;
+  // flex-direction: column;
   // padding-bottom: 100px; //footerの高さ
   // box-sizing: border-box; //全て含めてmin-height:100vhに
-  background-color: white;
-  // background-color: lightgray;
+  background-color: palegreen;
   color: black;
   margin: 0; padding: 0;
   font-family: Meiryo, sans-serif;
   font-size: 0.6em;
+  // min-height: auto;
+  min-height: 100%;
+  // height: 100%;
+  // height: auto;
+  // height: 1000px;
+  // height: 100vh;
+  // padding-bottom: 60px;
 }
+
+/* ヘッダー */
+.header {
+  width: auto; //flexbox適用時はオート（つまり100%になる？)
+  width: 100%;
+  // border-top: 4px solid #6bb;
+  padding-top: 4px;
+  background-color: red;
+}
+
+/* 全体の枠 （ヘッダー部分？）*/
+
+
+/* 左の枠（コンテンツを入れる） */
+#main {
+  flex: auto; //flexbox適用
+  width: 70%; //flexbox適用時、７０％幅に
+  // min-height: 100vh; //全体枠の高さの最小値
+  // position: relative; //相対位置
+  // height: auto;
+  // height: 100%;
+  // height: 1000px;
+  // height: 100vh;
+  // height: 90vh;
+  min-height: auto;
+  margin: 20px;
+  padding: 10px 50px 10px 50px;
+  background-color: skyblue;
+  font-size: 1.1em;
+  line-height: 1.5;
+  padding-bottom: 200px;
+}
+
+/* 右の枠（サイドバーを入れる） */
+#sidebar {
+  flex: auto; //flexbox
+  width: 20%; //flexbox適用時、20%幅に
+  // height: auto;
+  // height: 100%;
+  // height: 1000px;
+  // height: 90vh;
+  // background-color: #e8ffff;
+  background-color: orange;
+  margin: 10px;
+  padding: 20px;
+  // font-size: 86%;
+  // position: relative;
+}
+
 
 /* リンク */
 a:link { color: #00c; }
@@ -78,58 +137,11 @@ ul.links li {
   display: inline;
 }
 
-/* 全体の枠 */
-div#container {
-  // min-height: 100vh; //全体枠の高さの最小値
-  // position: relative; //相対位置
-  // padding-bottom: 100px; //footerの高さ
-  // box-sizing: border-box; //全て含めてmin-height:100vhに
-  margin: 0 auto;
-  padding-top: 5px;
-  // width: 780px;
-  width: auto;
-  // background-color: lightgray;
-  height: auto;
-}
-
-/* 左の枠（コンテンツを入れる） */
-main {
-  // min-height: 100vh; //全体枠の高さの最小値
-  // position: relative; //相対位置
-  // padding-bottom: 100px; //footerの高さ
-  // box-sizing: border-box; //全て含めてmin-height:100vhに
-  float: left;
-  // height: 1800px;
-  width: 530px;
-  padding: 10px 10px 10px 0;
-  // background-color: lightgray;
-  font-size: 1.1em;
-  line-height: 1.5;
-}
-
-/* 右の枠（サイドバーを入れる） */
-aside#sidebar {
-  // float: left;
-  float: right;
-  // height: 550px;
-  height: auto;
-  width: 230px;
-  background-color: #e8ffff;
-  padding: 20px;
-  font-size: 86%;
-}
-
-/* ヘッダー */
-header {
-  width: auto;
-  border-top: 4px solid #6bb;
-  padding-top: 4px;
-}
-
 /* メニューバー */
 nav.menubar {
   padding: 2px;
   background-color: #000;
+  text-align: center;
   color: #ccc;
   font-size: 80%;
   width: 100%;
@@ -142,16 +154,23 @@ ul.account-menu {
 
 /* フッター */
 footer {
+  // flex: auto; //flexbox適用時オートで100%幅に
+  width: 100%;
   clear: both;
   font: 11px Verdana;
   color: #888;
-  padding: 8px 0;
-  border-top: 4px solid #6bb;
+  margin: 10px;
+  padding: 20px 0px;
+  // border-top: 4px solid #6bb;
   text-align: center;
-  background-color: #f5deb3;
-  // position: absolute; //絶対位置
+  // background-color: #f5deb3;
+  background-color: yellow;
   // bottom: 0; //下に固定
-  margin-top: auto;
+  margin: 0px 20px;
+  // position: absolute;
+  // position: relative;
+  height: 120px;
+  // margin-top: -120px;
 }
 
 footer nav ul li:not(:last-child):after {
@@ -187,27 +206,28 @@ nav.menubar span {
   font-weight: bold;
 }
 
-/* メインコンテンツ */
-/* main h1 { */
-  /* color: #88c;
+// /* メインコンテンツ */
+ main h5 {
+  // color: #88c;
   font-weight: normal;
   font-size: 150%;
-  border-bottom: 2px solid #88c;
+  // border-bottom: 2px solid #88c;
   margin-bottom: 0.5em;
+  text-align: center;
 }
 
-/* main h2 {
-  color: #99d;
-  font-weight: bold;
-  font-size: 120%;
-  margin-bottom: 0.5em;
-  border-bottom: 1px solid #ccf;
-}
+// main h2 {
+//   color: #99d;
+//   font-weight: bold;
+//   font-size: 120%;
+//   margin-bottom: 0.5em;
+//   border-bottom: 1px solid #ccf;
+// }
 
 main p {
-  font-size: 90%;
-  line-height: 1.5;
-} */
+ font-size: 90%;
+ line-height: 1.5;
+}
 
 ul.toolbar,
 div.toolbar {
@@ -223,16 +243,22 @@ ul.toolbar li:not(:last-child):after {
 }
 
 /* サイドバー */
-/* aside#sidebar {
-  position: relative;      この指定で、サイドバーの位置を下げる
-} */
+// aside#sidebar {
+  // position: relative;     //この指定で、サイドバーの位置を下げる
+  // height: auto;
+  // height: 100%;
+// }
 
-aside#sidebar h2 {
-  color: #080;
+#sidebar h2 {
+  // color: #080;
   font-weight: bold;
   border-bottom: 1px dotted #080;
   margin-bottom: 0.5em;
-  font-size: 100%;
+  font-size: 200%;
+}
+
+#sidebar h3 {
+  color: black;
 }
 
 aside#sidebar ul {
@@ -244,33 +270,126 @@ aside#sidebar li {
   margin-bottom: 0.3em;
 }
 
-.advertisement_1 {
-  border: 3px solid black;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: pink;
-  height: 60px;
+// =====ここからコメントアウト========
+// .advertisement_1 {
+//   border: 3px solid black;
+//   margin-top: 10px;
+//   margin-bottom: 10px;
+//   background-color: pink;
+//   // height: 100px;
+//
+// }
+//
+// .notice_boad {
+//   border: 3px solid black;
+//   margin-top: 10px;
+//   margin-bottom: 10px;
+//   background-color: lightgreen;
+//   // height: 150px;
+// }
+//
+// .twitter {
+//   border: 3px solid black;
+//   margin-top: 10px;
+//   margin-bottom: 10px;
+//   // background-color: skyblue;
+//   // height: 200px;
+// }
+//
+//
+// .image {
+//   width: 100%;
+//   height: auto;
+// }
+// ======ここまでコメントアウト=======
 
-}
+// ----------ここから書き直し--------------------
+// body {
+//   display: flex;
+  // flex-direction: column;
+  // background-color: palegreen;
+// }
+// header {
+//   width: 100%;
+//   background-color: pink;
+// }
+// body {
+  // display: flex;
+  // background-color: lightblue;
+  // flex-wrap: wrap;
+//   height: auto !important;
+//   height: 100%;
+//   min-height: 100%;
+// }
 
-.notice_boad {
-  border: 3px solid black;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: lightgreen;
-  height: 150px;
-}
+// head {
+//   flex:auto;
+//   width: 100%;
+// }
 
-.twitter {
-  border: 3px solid black;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: skyblue;
-  height: 200px;
-}
+// ヘッダー部分
+// header {
+//   flex: auto;
+//   width: 100%;
+//   display: inline-block;
+//   background-color: silver;
+//   padding: 2px;
+// }
 
+// グローバルナビゲーション
+// nav {
+//   background-color: pink;
+//   display: flex;
+// }
 
-.image {
-  width: 100%;
-  height: auto;
-}
+// .menubar {
+//   flex: auto;
+// }
+
+// .menubar ul li {
+//   display: inline-block;
+  // flex: auto;
+//   list-style: none;
+//   margin: 0;
+//   padding-right: 2px;
+//   font-size: 0.6em;
+// }
+
+/* ブロック要素 */
+// p, h1, h2, h3, table, ul {
+//   margin: 0 0 1em;
+// }
+
+// ul {
+//   display: inline-block;
+//   // display: auto;
+//   style: none;
+//   padding-right: 1px;
+//   margin: 1px;
+// }
+
+// main {
+//   flex: auto;
+//   width: 80%;
+//   height: 1800px;
+//   height: auto;
+  // background-color: palegreen;
+// }
+
+// aside {
+  // flex: 0 0 auto;
+//   flex: auto;
+//   width: 20%;
+//   background-color: turquoise;
+// }
+
+// footer {
+//   background-color: lightyellow;
+//   width: 100%;
+// }
+
+/* リンク */
+// a:link { color: #00c; }
+// a:visited { color: #00c; }
+// a:hover { color: #f00; }
+// a img { border: none; }

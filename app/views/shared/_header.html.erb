@@ -10,17 +10,18 @@
           </a>
           <nav class="menubar">
             <ul>
-              <%= menu_link_to "トップ", :root %>
-              <%= menu_link_to "過去のニュース", :articles %>
-              <%= menu_link_to "コラム・企画", "#" %>
-              <%= menu_link_to "スポーツ", "#" %>
-              <%= menu_link_to "イベントガイド", "#" %>
-              <%= menu_link_to "観光情報", "#" %>
-              <%= menu_link_to "釣り情報", :fishinginfos %>
-              <% if user_signed_in? %>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              <li><%= menu_link_to "トップ", :root %></li>
+              <li><%= menu_link_to "過去のニュース", :articles %></li>
+              <li><%= menu_link_to "コラム・企画", "#" %></li>
+              <li><%= menu_link_to "スポーツ", "#" %></li>
+              <li><%= menu_link_to "イベントガイド", "#" %></li>
+              <li><%= menu_link_to "観光情報", "#" %></li>
+              <li><%= menu_link_to "釣り情報", :fishinginfos %></li>
+              <li><%= menu_link_to "ツイッター", :microposts %></li>
+              <li><% if user_signed_in? %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
               <% else %>
-                <%= link_to "ログイン", new_user_session_path %>
+                <li><%= link_to "ログイン", new_user_session_path %></li>
               <% end %>
             </ul>
           </nav>

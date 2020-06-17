@@ -27,3 +27,7 @@ main ul.micropost-footer li:not(:last-child):after {
   content: " | ";
   margin: 0 2px;
 }
+
+.micorpostarea {
+  height: auto;
+}
