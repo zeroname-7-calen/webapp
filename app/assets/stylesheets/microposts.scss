@@ -31,3 +31,8 @@ main ul.micropost-footer li:not(:last-child):after {
 .micorpostarea {
   height: auto;
 }
+
+// マイクロポスト新規「登録」するボタン
+.micropost_registrator {
+  padding: 1.5em 0;
+}

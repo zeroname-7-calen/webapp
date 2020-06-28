@@ -8,10 +8,12 @@
     <% end %>
   <% end %>
 
+<div class="article_strftime">
   <tr>
     <th>掲載日時</th>
     <td><%= @article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
   </tr>
+</div>
 
   <div class="content">
     <%= @article.content %>

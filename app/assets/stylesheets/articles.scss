@@ -13,6 +13,10 @@
 //   height: auto;
 // }
 
+// tbody {
+//   width: 100%;
+// }
+
 .top_title h2 {
   color: black;
   font-size: 2.5em;
@@ -26,6 +30,15 @@
 
 p {
   margin: 0 0 1em;
+}
+
+// 記事indexの「ニュース一覧」タイトル
+h4 {
+  text-align: center;
+  font-style: oblique;
+  // font-family: sans-serif;
+  // background-color: skyblue;
+  padding: 0.3em 5em;
 }
 
 h5 {
@@ -63,6 +76,12 @@ input[type="text"] {
   margin: 2px;
 }
 
+// ニュース新規登録時のタイトル欄サイズ
+#article_title {
+  height: 3em;
+  width: 100%;
+}
+
 // 記事入力フォーム（コンテント）のサイズ整形
 .trix-content {
   // width: 450px;
@@ -70,15 +89,23 @@ input[type="text"] {
   height: 25em;
   font-size: 20px;
 }
+
 // 検索ボタンの配置を整える（要素間の上下左右の間隔を整える）
 .submit_tag {
   padding: 0.5em;
+  // padding-top: 3em;
+}
+
+// ニュース「登録する」ボタン
+.new_article_submit {
+  padding-top: 2em;
 }
 
 // アクションテキスト（記事入力フォーム）のツールバー
 trix-toolbar {
-  font-size: 0.7em;
+  font-size: 1em;//ツールバーボタンの大きさ
   width: 100%;
+  padding-top: 1em;
 }
 
 .list thead {
@@ -86,6 +113,37 @@ trix-toolbar {
   display: flex;
 }
 
+tbody tr {
+  // white-space: nowrap;
+  text-align: left;
+  // font-size: 1em;
+  // font-size: 0.5em;
+}
+
+// 記事indexの日時
+.strftime {
+  // color: blue;
+  font-size: 1em;
+  white-space: nowrap;// 記事indexの日時を１行で表示
+}
+
+// 記事indexのタイトル
+.indextitle {
+  font-size: 1.5em;
+  text-align: left;
+  display: block;
+  word-wrap: break-word;//見出しが長い場合は折り返す
+}
+
+// 「編集｜削除」を１行で表示
+td.article_edit_delete {
+  white-space: nowrap;
+}
+
+// articleshowページの日時表示
+.article_strftime {
+  padding-bottom: 1em;
+}
 // tbody td {
   // width: auto;
   // padding: 0.5em;

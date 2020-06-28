@@ -9,3 +9,24 @@
 .fishinginfo {
   height: auto;
 }
+
+// .div {
+//   padding: 5px 10px;
+// }
+
+// 釣り情報新規作成フォーム・タイトル
+#fishinginfo_title {
+  width: 90%;
+  height: 2.5em;
+}
+
+// 釣り情報新規作成フォーム・コンテント
+#fishinginfo_content {
+  width: 90%;
+  padding-top: 3em;
+}
+
+// 「釣り情報登録ボタン」
+.fishinginfo_button {
+  padding-top: 2em;
+}

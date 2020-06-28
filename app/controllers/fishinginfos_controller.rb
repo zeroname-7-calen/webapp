@@ -31,7 +31,7 @@ class FishinginfosController < ApplicationController
     @fishinginfo = Fishinginfo.new(fishinginfo_params)
     @fishinginfo.author = current_user
     @fishinginfo.created_at = Time.now
-      if @fishinginfo.save!
+      if @fishinginfo.save
         redirect_to @fishinginfo, notice: "アップしました"
       else
         render "new"
