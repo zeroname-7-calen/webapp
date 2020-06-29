@@ -2,6 +2,9 @@ class Article < ApplicationRecord
   validates :title, :released_at, presence: true
   validates :title, length: { maximum: 80 }
 
+  # belongs_to :author, class_name: "User", foreign_key: "user_id"
+  belongs_to :user
+
   has_rich_text :content
 
   class << self

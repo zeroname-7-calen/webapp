@@ -1,43 +1,21 @@
-<div class="top_title">
-  <h1>【最新ニュース】</h1>
-</div>
-
-<div class="toppage_picture">
-  <img src="http://127.0.0.1:3000/kitten.jpg">
-</div>
-
-
-<% @articles.each do |article| %>
-  <h2><%= link_to article.title, article %></h2>
-      <%= strip_tags(article.content.to_s).truncate(200) %>
-      <%= link_to "もっと読む", article %>
-  <% end %>
-
-  <div class="toolbar">
-    <% if current_user %>
-      <%= link_to "写真の送信", :new_fileupload %>
-    <% end %>
-  </div>
-
-
-  <div class="container">
-    <h1>【Bootstraptest】</h1>
-
-    <div class="row">
-        <div class="col-lg-7 col-md-6 col-sm-4">
-          <div>メインカラム</div>
-        </div>
+    <div class="top_title">
+      <h2>最新ニュース</h2>
     </div>
 
-    <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-4">
-          <div>サブカラム</div>
-        </div>
-    </div>
+      <div class="toppage_picture">
+        <img src="http://127.0.0.1:3000/kitten.jpg">
+      </div>
 
-    <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-4">
-          <div>サブカラム</div>
-        </div>
+    <div class="articles">
+    <% @articles.each do |article| %>
+      <h6><%= link_to article.title, article %></h6>
+          <%= strip_tags(article.content.to_s).truncate(200) %>
+          <%= link_to "もっと読む", article %>
+      <% end %>
+
+      <div class="toolbar">
+        <% if current_user %>
+          <%= link_to "写真の送信", :new_fileupload, class: "btn btn-outline-dark btn-sm" %>
+        <% end %>
+      </div>
     </div>
-  </div>

@@ -3,5 +3,5 @@
 
     <%= form_for @article do |form| %>
     <%= render "form", form: form %>
-    <div><%= form.submit %></div>
+    <div class="new_article_submit"><%= form.submit class: "btn btn-outline-dark btn-sm" %></div>
 <% end %>

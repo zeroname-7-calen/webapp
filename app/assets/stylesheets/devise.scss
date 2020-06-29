@@ -1,46 +1,91 @@
 @charset "UTF-8";
+//
 
-p {
-  margin: 0 0 1em;
+// // ログイン画面
+//
+// .container-login {
+  // @extend .container-fruid;
+  // max-width: 576px;
+//   max-width: 700px;
+//   padding: 2rem;
+// }
+//
+// // 「ログインしました」などのフラッシュ用スタイル
+//
+// .alert-notice {
+//   @extend .alert-info;
+// }
+//
+// .alert-alert {
+//   @extend .alert-danger;
+// }
+// p {
+//   margin: 0 0 1em;
+// }
+//
+.session_new_body {
+  padding-top: 1em;
+  padding-left: 1em;
 }
 
 h1 {
   // color: #3399FF;
-  font-size: 25px;
+  font-size: 0.5em;
   margin: 0 0 1em;
 }
 
-dt {
-  float: left;
-  padding: 1em;
-  // padding: 12px;
-  color: #998484;
-  width: auto;
+h4 {
+  text-align: left;
+  white-space: nowrap;
 }
 
-dd {
-  border: 1px solid #cccccc;
-  margin: 0;
-  padding: 1em 0 1em 18em;
-  width: auto;
-}
+// メールアドレス、パスワード入力フォームのサイズ
+// .field {
+//   width: 100%;
+// }
 
+// dt {
+//   float: left;
+//   padding: 1em;
+//   padding: 12px;
+//   color: #998484;
+//   // width: auto;
+//   width: 50%;
+// }
+
+// dd {
+//   border: 1px solid #cccccc;
+//   margin: 0;
+//   padding: 1em 0 1em 18em;
+//   // width: auto;
+//   width: 100%;
+// }
+
+// メールアドレス,パスワード入力フォーム
 dd input {
-  width: 90%;
-  height: 25px;
+  width: 80%;
+  height: 2.5em;
 }
 
+// メールアドレス、パスワード入力欄
+.field {
+  // width: 80%;
+  // height: 2.5em;
+  padding: 1em 0em;
+
+}
+// ログインボタン
 .actions {
-  padding: 10px;
+  padding: 0px 10px 10px 0;
 }
 
 
 
-.log_in {
-  font-size: 12px;
-  padding: 10px;
-  float: left;
-}
+// .log_in {
+//   font-size: 12px;
+//   padding: 10px;
+//   float: left;
+// }
 
 .rememberable {
   padding: 3px 10px;

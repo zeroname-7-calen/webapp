@@ -1,18 +1,25 @@
-<ul class="micropost-footer">
-  <% if current_user %>
-    <% if current_user == micropost.author %>
-    <%= link_to "編集", [:edit, micropost] %>
-    <%= link_to "削除", micropost, method: :delete,
-          data: { confirm: "本当に削除しますか？" } %>
-    <% end %>
-  <% end %>
-  <li>
-    by <%= link_to micropost.author.email, [micropost.author, :microposts] %>
-  </li>
-  <li>
-  <%= micropost.created_at.strftime("%Y/%m/%d %H:%M") %>
-</li>
-<% if (count = micropost.votes.count) > 0 %>
-  <li><span class="vote">♡<%= count %></span></li>
-<% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+
+      <ul class="micropost-footer">
+        <% if current_user %>
+          <% if current_user == micropost.author %>
+          <%= link_to "編集", [:edit, micropost] %>
+          <%= link_to "削除", micropost, method: :delete,
+                data: { confirm: "本当に削除しますか？" } %>
+          <% end %>
+        <% end %>
+        <li>
+          by <%= link_to micropost.author.email, [micropost.author, :microposts] %>
+        </li>
+        <li>
+        <%= micropost.created_at.strftime("%Y/%m/%d %H:%M") %>
+      </li>
+      <% if (count = micropost.votes.count) > 0 %>
+        <li><span class="vote">♡<%= count %></span></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

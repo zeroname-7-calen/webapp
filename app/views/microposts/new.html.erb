@@ -3,7 +3,7 @@
 
 <%= form_for @micropost do |form| %>
   <%= render "form", form: form %>
-  <div><%= form.submit %></div>
+  <div class="micropost_registrator"><%= form.submit class: "btn btn-outline-dark btn-xs" %></div>
   <div>
     <span class="picture">
       <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png, video/*' %>

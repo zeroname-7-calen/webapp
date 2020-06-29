@@ -1,21 +1,15 @@
-<h1>サインアップ</h1>
+<h4>サインアップ</h4>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
       <div class="field">
-        <dt><%= f.label :email %><br /></dt>
-        <dd><%= f.email_field :email, autofocus: true, autocomplete: "email" %></dd>
+        <dd><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %></dd>
       </div>
       <div class="field">
-        <dt><%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> 文字以上)</em>
-        <% end %></dt>
-        <dd><%= f.password_field :password, autocomplete: "new-password" %></dd>
+        <dd><%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(６文字以上)" %></dd>
       </div>
       <div class="field">
-        <dt><%= f.label :password_confirmation %><br /></dt>
-        <dd><%= f.password_field :password_confirmation, autocomplete: "new-password" %></dd>
+        <dd><%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワードの再確認" %></dd>
       </div>
     <div class="actions">
       <%= f.submit "サインアップ", class: "btn btn-primary" %>

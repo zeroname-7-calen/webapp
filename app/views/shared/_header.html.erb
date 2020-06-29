@@ -1,25 +1,36 @@
 <a href="http://www.hokuu.jp" target="blank">
   <div class="logo">
-    <%= image_tag "item1.gif", size: "200x48", alt: "北羽新報" %>
+    <%= image_tag "item1.gif", size: "400x80", alt: "北羽新報" %>
   </div>
 </a>
-
 <nav class="menubar">
-  <ul>
-    <%= menu_link_to "トップ", :root %>
-    <%= menu_link_to "過去のニュース", :articles %>
-    <%= menu_link_to "コラム・企画", "#" %>
-    <%= menu_link_to "スポーツ", "#" %>
-    <%= menu_link_to "イベントガイド", "#" %>
-    <%= menu_link_to "観光情報", "#" %>
-    <%= menu_link_to "釣り情報", :fishinginfos %>
-    <% if user_signed_in? %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
-  </ul>
+  <div class="nav-item-dropdown">
+    <ul>
+      <li><%= menu_link_to "トップ", :root %></li>
+      <li><%= menu_link_to "過去のニュース", :articles %></li>
+      <li class="dropdown">コラムと企画</li>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class=caret></span></a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#"><%= menu_link_to "最新コラム１", "#" %></a>
+        <a class="dropdown-item" href="#"><%= menu_link_to "最新コラム２", "#" %></a>
+        <a class="dropdown-item" href="#"><%= menu_link_to "最新コラム３", "#" %></a>
+        <a class="dropdown-item" href="#"><%= menu_link_to "最新コラム４", "#" %></a>
+        <a class="dropdown-item" href="#"><%= menu_link_to "最新コラム５", "#" %></a>
+      </div>
+      <li><%= menu_link_to "スポーツ", "#" %></li>
+      <li><%= menu_link_to "イベントガイド", "#" %></li>
+      <li><%= menu_link_to "観光情報", "#" %></li>
+      <li><%= menu_link_to "釣り情報", :fishinginfos %></li>
+      <li><%= menu_link_to "ツイッター", :microposts %></li>
+      <li><% if user_signed_in? %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+        <li><%= link_to "ログイン", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
 </nav>
+
 <div align="right">
   <% if user_signed_in? %>
     <%= "ログイン中:" + current_user.email + "さん" %>

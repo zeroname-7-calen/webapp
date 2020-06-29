@@ -1,0 +1,420 @@
+// *
+//  * This is a manifest file that'll be compiled into application.css, which will include all the files
+//  * listed below.
+//  *
+//  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+//  * vendor/assets/stylesheets directory can be referenced here using a relative path.
+//  *
+//  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+//  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+//  * files in this directory. Styles in this file should be added after the last require_* statement.
+//  * It is generally better to create a new file per style scope.
+//  *
+//  *= require_tree .
+//  *= require_self
+//  */
+
+ @import "bootstrap/scss/bootstrap";
+
+/* ページ全体 */
+#container {
+  display: flex;
+  // flex-direction: row;
+  flex-wrap: wrap;
+  // flex-direction: column;
+  // padding-bottom: 100px; //footerの高さ
+  // box-sizing: border-box; //全て含めてmin-height:100vhに
+  background-color: palegreen;
+  // color: black;
+  // margin: 0; padding: 0;
+  font-family: Meiryo, sans-serif;
+  font-size: 0.6em;
+  // min-height: 100vh;
+  // min-height: auto;
+  // min-height: 100%;
+  height: 100%;
+  // height: auto;
+  // height: 1800px;
+  // height: 100vh;
+  // padding-bottom: 60px;
+  padding: 0;
+  margin: 0;
+}
+
+/* ヘッダー */
+.header {
+  // width: auto;
+  width: 100%;
+  // flex-wrap: wrap;
+  height: 200px;
+  border: 1px solid;
+  padding-top: 4px;
+  // background-color: red;
+  background-color: white;
+}
+
+// .wrapper {
+//   display: flex;
+//   align-items: stretch;
+  // alignment: flex-end;
+  // flex-wrap: wrap;
+// }
+/* 左の枠（コンテンツを入れる） */
+#main {
+  flex: auto;
+  width: 72%;
+  // width: 65%; //flexbox適用時、７０％幅に
+  // min-height: 100vh; //全体枠の高さの最小値
+  // position: relative; //相対位置
+  // height: auto;
+  // height: 100%;
+  // height: 2300px;
+  // height: 100vh;
+  // height: 90vh;
+  // min-height: auto;
+  margin: 20px;
+  border: 1px solid;
+  // padding: 10px 50px 10px 50px;
+  padding: 10px 0px 10px 28px;
+  background-color: skyblue;
+  font-size: 1.1em;
+  line-height: 1.5;
+  // padding-bottom: 300px;
+}
+
+/* 右の枠（サイドバーを入れる） */
+#sidebar {
+  flex: auto; //flexbox
+  width: 23%; //flexbox適用時、20%幅に
+  // min-height: 100vh;
+  // height: auto;
+  // height: 100%;
+  // height: 1000px;
+  // height: 90vh;
+  background-color: orange;
+  // margin: 1em 1.5em 1em 0;
+  margin: 20px 0px;
+  padding: 10px 0px;
+  // padding: 1em 3em 1em 0;
+  // font-size: 86%;
+  // position: relative;
+}
+
+/* フッター */
+footer {
+  // flex: auto;
+  width: 100%;
+  clear: both;
+  // font: 11px Verdana;
+  font: 0.7em Verdana;
+  color: #888;
+  margin: 20px 10px;
+  // padding: 20px 0px;
+  padding: 2em 1.5em;
+  // border-top: 4px solid #6bb;
+  text-align: center;
+  // background-color: #f5deb3;
+  background-color: yellow;
+  // bottom: 0; //下に固定
+  margin: 0px 20px;
+  // position: relative;
+  // height: 120px;
+  // margin-top: -120px;
+  border: 1px solid;
+  // position: absolute;
+}
+
+/* リンク */
+a:link { color: #00c; }
+a:visited { color: #00c; }
+a:hover { color: #f00; }
+a img { border: none; }
+
+/* ブロック要素 */
+// p, h1, h2, h3, table, ul {
+//   margin: 0 0 1em;
+// }
+
+// 本来のナビゲーションここから
+// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+/* ナビゲーション */
+nav ul,
+ul.toolbar,
+ul.links {
+  // width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li,
+div.toolbar li,
+ul.toolbar li,
+ul.links li {
+  display: inline-block;
+  width: auto;
+  padding-left: 0.5em;
+  height: 2em;
+  // background-color: red;
+  // color: black;
+}
+
+/* メニューバー */
+nav.menubar {
+  padding: 2px;
+  // background-color: #000;
+  border: 1px solid;
+  text-align: center;
+  color: #ccc;
+  // color: black;
+  // font-size: 80%;
+  font-size: 1.3em;
+  width: 100%;
+  padding: 8px 16px;
+}
+
+nav.menubar li {
+color: black;
+}
+
+ul.account-menu {
+  text-align: right;
+}
+
+nav.menubar ul li {
+  color: black;
+}
+
+footer nav ul li:not(:last-child):after {
+  color: #888;
+  // content: " | ";
+  margin: 0 5px;
+}
+
+nav.menubar ul li:not(:last-child):after {
+  color: #ccc;
+  // content: " | "; メニューアイコンの｜｜表示
+  margin: 0 2px;
+}
+
+/* メニューバーのリンク */
+// nav.menubar a { text-decoration: none; }
+
+/* メニューバーのリンク（未訪問） */
+nav.menubar a:link {
+  color: #ccc;
+ }
+
+/* メニューバーのリンク（訪問済） メニューの文字色も*/
+// nav.menubar a:visited { color: #ccc; }
+nav.menubar a:visited {
+  color: black;
+}
+
+/* メニューバーのリンク（マウスを合わせたとき） */
+nav.menubar a:hover {
+  // color: #f88;
+  text-decoration: underline;
+}
+
+// マウスオーバー（効いていない）
+// .drop-hover:hover > .dropdown-menu {
+//   display: block !important;
+// }
+
+/* メニューバーのリンク（現在のページ） */
+nav.menubar span {
+  // color: #ff8;
+  color: #ffa07a;
+  // background-color: black;
+  // mix-blend-mode: difference;
+  font-weight: bold;
+}
+
+// /* メインコンテンツ */
+ main h5 {
+  // color: #88c;
+  font-weight: normal;
+  font-size: 150%;
+  // border-bottom: 2px solid #88c;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+// main h2 {
+//   color: #99d;
+//   font-weight: bold;
+//   font-size: 120%;
+//   margin-bottom: 0.5em;
+//   border-bottom: 1px solid #ccf;
+// }
+
+main p {
+ font-size: 90%;
+ line-height: 1.5;
+}
+
+ul.toolbar,
+div.toolbar {
+  padding: 15px 0;
+  font-size: 90%;
+  text-align: right;
+}
+
+ul.toolbar li:not(:last-child):after {
+  color: #888;
+  content: " | ";
+  margin: 0 2px;
+}
+
+/* サイドバー */
+// aside#sidebar {
+  // position: relative;     //この指定で、サイドバーの位置を下げる
+  // height: auto;
+  // height: 100%;
+// }
+
+#sidebar h2 {
+  // color: #080;
+  font-weight: bold;
+  border-bottom: 1px dotted #080;
+  margin-bottom: 0.5em;
+  font-size: 200%;
+}
+
+#sidebar h3 {
+  color: black;
+}
+
+aside#sidebar ul {
+  padding-left: 1em;
+  list-style-type: none;
+}
+
+aside#sidebar li {
+  margin-bottom: 0.3em;
+}
+//
+// // =====ここからコメントアウト========
+// // .advertisement_1 {
+// //   border: 3px solid black;
+// //   margin-top: 10px;
+// //   margin-bottom: 10px;
+// //   background-color: pink;
+// //   // height: 100px;
+// //
+// // }
+// //
+// // .notice_boad {
+// //   border: 3px solid black;
+// //   margin-top: 10px;
+// //   margin-bottom: 10px;
+// //   background-color: lightgreen;
+// //   // height: 150px;
+// // }
+// //
+// // .twitter {
+// //   border: 3px solid black;
+// //   margin-top: 10px;
+// //   margin-bottom: 10px;
+// //   // background-color: skyblue;
+// //   // height: 200px;
+// // }
+// //
+// //
+// // .image {
+// //   width: 100%;
+// //   height: auto;
+// // }
+// // ======ここまでコメントアウト=======
+//
+// // ----------ここから書き直し--------------------
+// // body {
+// //   display: flex;
+//   // flex-direction: column;
+//   // background-color: palegreen;
+// // }
+// // header {
+// //   width: 100%;
+// //   background-color: pink;
+// // }
+// // body {
+//   // display: flex;
+//   // background-color: lightblue;
+//   // flex-wrap: wrap;
+// //   height: auto !important;
+// //   height: 100%;
+// //   min-height: 100%;
+// // }
+//
+// // head {
+// //   flex:auto;
+// //   width: 100%;
+// // }
+//
+// // ヘッダー部分
+// // header {
+// //   flex: auto;
+// //   width: 100%;
+// //   display: inline-block;
+// //   background-color: silver;
+// //   padding: 2px;
+// // }
+//
+// // グローバルナビゲーション
+// // nav {
+// //   background-color: pink;
+// //   display: flex;
+// // }
+//
+// // .menubar {
+// //   flex: auto;
+// // }
+//
+// // .menubar ul li {
+// //   display: inline-block;
+//   // flex: auto;
+// //   list-style: none;
+// //   margin: 0;
+// //   padding-right: 2px;
+// //   font-size: 0.6em;
+// // }
+//
+// /* ブロック要素 */
+// // p, h1, h2, h3, table, ul {
+// //   margin: 0 0 1em;
+// // }
+//
+// // ul {
+// //   display: inline-block;
+// //   // display: auto;
+// //   style: none;
+// //   padding-right: 1px;
+// //   margin: 1px;
+// // }
+//
+// // main {
+// //   flex: auto;
+// //   width: 80%;
+// //   height: 1800px;
+// //   height: auto;
+//   // background-color: palegreen;
+// // }
+//
+// // aside {
+//   // flex: 0 0 auto;
+// //   flex: auto;
+// //   width: 20%;
+// //   background-color: turquoise;
+// // }
+//
+// // footer {
+// //   background-color: lightyellow;
+// //   width: 100%;
+// // }
+//
+// /* リンク */
+// // a:link { color: #00c; }
+// // a:visited { color: #00c; }
+// // a:hover { color: #f00; }
+// // a img { border: none; }
