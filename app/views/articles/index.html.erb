@@ -26,20 +26,20 @@
     <tbody>
       <% @articles.each do |article| %>
       <!-- <div class="article_footer"> -->
-          <tr>
-            <td class="strftime"><%= article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
-            <td class="indextitle"><%= link_to article.title, article %></td>
+        <tr>
+          <td class="strftime"><%= article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
+          <td class="indextitle"><%= link_to article.title, article %></td>
 
-            <% if current_user && loyalty(@article, :articles).index? %>
-            <div class="article_footer">
-              <td class="article_edit_delete">
-                <%= link_to "編集", [:edit, article ] %> |
-                <%= link_to "削除", article, method: :delete,
+          <% if current_user && loyalty(@article, :articles).index? %>
+          <div class="article_footer">
+            <td class="article_edit_delete">
+              <%= link_to "編集", [:edit, article ] %> |
+              <%= link_to "削除", article, method: :delete,
                   data: { confirm: "本当に削除してもよろしいですか？" } %>
-              </td>
-            </div>
-            <% end %>
-          </tr>
+            </td>
+          </div>
+          <% end %>
+        </tr>
         <!-- </div> -->
       <% end %>
     </tbody>

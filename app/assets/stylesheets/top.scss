@@ -10,10 +10,10 @@
   // border-bottom: 1px solid;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
+// .container {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
 
 .top_title {
   // display: flex;
@@ -25,7 +25,7 @@
 
 .top_title h2 {
   padding-top: 15px;
-  
+
 }
 
 // トップページ写真の位置
@@ -36,6 +36,8 @@
 
 .articles {
   display: column;
+  font-size: 1.2em;
+  padding: 0em 1em;
 }
 
 h3 {
@@ -50,6 +52,7 @@ h2 {
 
 p {
 margin: 0 0 1em;
+font-size: 1em;
 }
 
 .toppage_picture {

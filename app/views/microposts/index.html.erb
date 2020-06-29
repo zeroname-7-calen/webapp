@@ -1,5 +1,6 @@
 <% @page_title = @user ? @user.email + "さんのツイート" : "ツイートコーナー" %>
-<h4><%= @page_title %></h4>
+  <h4><%= @page_title %></h4>
+
 
 <% if current_user %>
   <ul class="toolbar">
@@ -13,29 +14,28 @@
   <table class="table table-striped">
     <tbody>
     <%# <!-- <p><%= strip_tags(micropost.content.to_s).truncate(10) %></p>
-        <tr>
-          <td><%= micropost.content %></td>
-        </tr>
-        <% if micropost.picture? %>
-      <% if micropost.picture.file.content_type.include?('image/') %>
-        <%= image_tag micropost.picture.url(:thumb) %>
-      <% else %>
-        <%= video_tag micropost.picture.url, width: "30%", height: "30%",
+      <tr>
+        <td><%= micropost.content %></td>
+      </tr>
+      <% if micropost.picture? %>
+        <% if micropost.picture.file.content_type.include?('image/') %>
+          <%= image_tag micropost.picture.url(:thumb) %>
+        <% else %>
+          <%= video_tag micropost.picture.url, width: "30%", height: "30%",
                       controls: true, autobuffer: true %>
+        <% end %>
       <% end %>
-    <% end %>
-    <tr>
-      <td><%= link_to "個別表示", micropost %></td>
-    </tr>
-
-    <tr>
-      <td><%= render "footer", micropost: micropost %></td>
-    </tr>
+      <tr>
+       <td><%= link_to "個別表示", micropost %></td>
+      </tr>
+      <tr>
+        <td><%= render "footer", micropost: micropost %></td>
+      </tr>
   <% end %>
   </tbody>
 </table>
 
-  <%= paginate @microposts %>
+<%= paginate @microposts %>
 <% else %>
   <p>ツイートはありません</p>
 <% end %>
