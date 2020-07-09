@@ -1,35 +1,33 @@
-<a href="http://www.hokuu.jp" target="blank">
-  <div class="logo">
-    <%= image_tag "item1.gif", size: "400x80", alt: "北羽新報" %>
-  </div>
-</a>
-<nav class="menubar">
-  <div class="nav-item-dropdown">
-    <ul>
-      <li><%= menu_link_to "トップ", :root %></li>
-      <li><%= menu_link_to "過去のニュース", :articles %></li>
-      <li class="dropdown">コラムと企画</li>
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class=caret></span></a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#"><%= menu_link_to "最新コラム１", "#" %></a>
-        <a class="dropdown-item" href="#"><%= menu_link_to "最新コラム２", "#" %></a>
-        <a class="dropdown-item" href="#"><%= menu_link_to "最新コラム３", "#" %></a>
-        <a class="dropdown-item" href="#"><%= menu_link_to "最新コラム４", "#" %></a>
-        <a class="dropdown-item" href="#"><%= menu_link_to "最新コラム５", "#" %></a>
+<div class="heading-menu">
+  <div class="header-logo">
+    <a href="http://www.hokuu.jp" target="blank">
+      <div class="logo">
+        <%= image_tag "item1.gif", size: "300x70", alt: "北羽新報" %>
       </div>
-      <li><%= menu_link_to "スポーツ", "#" %></li>
-      <li><%= menu_link_to "イベントガイド", "#" %></li>
-      <li><%= menu_link_to "観光情報", "#" %></li>
-      <li><%= menu_link_to "釣り情報", :fishinginfos %></li>
-      <li><%= menu_link_to "ツイッター", :microposts %></li>
-      <li><% if user_signed_in? %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-        <li><%= link_to "ログイン", new_user_session_path %></li>
-      <% end %>
-    </ul>
+    </a>
   </div>
-</nav>
+</div>
+<ul id="dropmenu">
+  <li><%= link_to "トップ", :root %></li>
+  <li><%= link_to "過去の記事", :articles %></li>
+  <li><%= link_to "コラムと企画", "#" %>
+    <ul>
+      <li><%= link_to "最新コラム１", "#" %></li>
+      <li><%= link_to "最新コラム２", "#" %></li>
+      <li><%= link_to "最新コラム３", "#" %></li>
+      <li><%= link_to "最新コラム４", "#" %></li>
+    </ul>
+  </li>
+  <li><%= link_to "スポーツ", "#" %></li>
+  <li><%= link_to "イベントガイド", "#" %></li>
+  <li><%= link_to "釣り情報", :fishinginfos %></li>
+  <li><%= link_to "ツイッター", :microposts %></li>
+  <li><% if user_signed_in? %></li>
+    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+    <li><%= link_to "ログイン", new_user_session_path %></li>
+    <% end %>
+    </ul>
 
 <div align="right">
   <% if user_signed_in? %>

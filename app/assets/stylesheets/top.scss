@@ -4,38 +4,27 @@
 
 @charset "UTF-8";
 
-.logo {
-  height: 100px;
-  padding: 8px 0px 10px 20px;
-  // border-bottom: 1px solid;
-}
-
-// .container {
-//   display: flex;
-//   flex-wrap: wrap;
+// .top_page {
+  // display: flex;
+  // flex-direction: column;
 // }
 
 .top_title {
-  // display: flex;
-  width: 100%;
+  // flex: auto;
+  width: 95%;
   text-align: center;
-  border: 1px solid;
-  // margin: auto;
+  margin-top: 2em;
+  background-color: pink;
 }
 
 .top_title h2 {
   padding-top: 15px;
-
-}
-
-// トップページ写真の位置
-.toppage_picture {
-  // float: right;
-  padding: 20px;
+  background-color: pink;
 }
 
 .articles {
-  display: column;
+  // flex:auto;
+  // display: column;
   font-size: 1.2em;
   padding: 0em 1em;
 }
@@ -56,17 +45,19 @@ font-size: 1em;
 }
 
 .toppage_picture {
-  display: flex;
-  justify-content: flex-end;
+  // display: flex;
+  // justify-content: flex-end;
+  padding: 20px;
 }
+
 
 // トップページ写真のサイズ
 .toppage_picture img {
   // width: 500px;
-  width: auto;
-  // height: 300px;
-  height: auto;
+  // width: auto;
+  height: 300px;
+  // height: auto;
   margin: 1px;
   padding: 1px;
-
+  float: right;
 }
