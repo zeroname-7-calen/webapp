@@ -1,21 +1,22 @@
-    <div class="top_title">
-      <h2>最新ニュース</h2>
-    </div>
+<div class="top_page">
+  <div class="top_title">
+    <h2>最新ニュース</h2>
+  </div>
 
-      <div class="toppage_picture">
-        <img src="http://127.0.0.1:3000/kitten.jpg">
-      </div>
+  <div class="toppage_picture">
+    <img src="http://127.0.0.1:3000/kitten.jpg">
+  </div>
 
-    <div class="articles">
+  <div class="articles">
     <% @articles.each do |article| %>
       <h6><%= link_to article.title, article %></h6>
-          <%= strip_tags(article.content.to_s).truncate(200) %>
-          <%= link_to "もっと読む", article %>
-      <% end %>
-
-      <div class="toolbar">
-        <% if current_user %>
-          <%= link_to "写真の送信", :new_fileupload, class: "btn btn-outline-dark btn-sm" %>
-        <% end %>
-      </div>
-    </div>
+        <%= strip_tags(article.content.to_s).truncate(200) %>
+        <%= link_to "もっと読む", article %>
+    <% end %>
+  </div>
+  <div class="toolbar">
+    <% if current_user %>
+      <%= link_to "写真の送信", :new_fileupload, class: "btn btn-outline-dark btn-sm" %>
+    <% end %>
+  </div>
+</div>

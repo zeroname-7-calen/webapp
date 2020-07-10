@@ -2,19 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// .article {
+// .articles {
   // height: 1800px;
   // height: 100%;
   // height: auto;
-// }
-
-// .content {
-//   font-size: 1em;
-//   height: auto;
-// }
-
-// tbody {
-//   width: 100%;
+  // padding-bottom: 2em;
 // }
 
 .top_title h2 {
@@ -34,11 +26,13 @@ p {
 
 // 記事indexの「ニュース一覧」タイトル
 h4 {
-  text-align: center;
+  // text-align: center;
   font-style: oblique;
-  // font-family: sans-serif;
-  // background-color: skyblue;
-  padding: 0.3em 5em;
+  font-family: sans-serif;
+  background-color: skyblue;
+  height: 3em;
+  // padding: 0.3em 5em;
+  padding: 1em 0em 1em 3em;
 }
 
 h5 {
@@ -51,23 +45,9 @@ h5 {
 }
 
 .btn-info {
-    // background: 好きな色; ボタンの背景色
-    color: black; //ボタンのテキストの色
+  // background: 好きな色; ボタンの背景色
+  color: black; //ボタンのテキストの色
 }
-// .article-title {
-//   height: 50px;
-// }
-
-// .article-content {
-//   height: 300px;
-// }
-
-// .toolbar {
-//   float: right;
-// }
-// .content {
-//   height: 1500px;
-// }
 
 // 記事一覧の「検索フォーム」、入力ページの「タイトル」フォームの大きさを整形
 input[type="text"] {
@@ -84,7 +64,6 @@ input[type="text"] {
 
 // 記事入力フォーム（コンテント）のサイズ整形
 trix-editor {
-  height: 25em;
   width: 100%;
   font-size: 20px;
 }
@@ -93,7 +72,6 @@ trix-editor {
 .trix-content {
   // width: 450px;
   width: 100%;
-  // height: 25em;
   font-size: 1.2em;
 }
 
@@ -151,27 +129,7 @@ td.article_edit_delete {
 .article_strftime {
   padding-bottom: 1em;
 }
-// tbody td {
-  // width: auto;
-  // padding: 0.5em;
-  // line-height: 1.5;
-  // float: left;
-  // display: flex;
-// }
 
-// .list {
-//   display: flex;
-// }
-// tbody {
-//   flex: left;
-// }
-//
-// tr {
-//   flex: left;
-// }
-
-// .paginate {
-//   padding: 20px;
-//   letter-spacing: 0.7em;
-//   word-spacing: 1em;
+// .articles a {
+//   color: gray;
 // }
