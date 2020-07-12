@@ -1,19 +1,22 @@
-<% @page_title = @user ? @user.email + "さんのツイート" : "ツイートコーナー" %>
+<div class="micropostpage_title">
+  <% @page_title = @user ? @user.email + "さんのツイート" : "ツイートコーナー" %>
   <h4><%= @page_title %></h4>
+</div>
 
+<div class="micropost_tool_link">
+  <% if current_user %>
+    <ul class="toolbar">
+      <%= link_to "ツイートの作成", :new_micropost, class: "btn btn-primary btn-sm" %>
+      <%= link_to "投票したツイート", user_micropost_voted_path(@microposts, user_id: current_user.id), class: "btn btn-outline-primary btn-sm" %>
+    </ul>
+  <% end %>
+</div>
 
-<% if current_user %>
-  <ul class="toolbar">
-    <%= link_to "ツイートの作成", :new_micropost %>
-    <%= link_to "投票したツイート", user_micropost_voted_path(@microposts, user_id: current_user.id) %>
-  </ul>
-<% end %>
-
+<div class="micropost_content">
 <% if @microposts.present? %>
   <% @microposts.each do |micropost| %>
   <table>
     <tbody>
-    <%# <!-- <p><%= strip_tags(micropost.content.to_s).truncate(10) %></p>
       <tr>
         <td><%= micropost.content %></td>
       </tr>
@@ -34,6 +37,7 @@
   <% end %>
   </tbody>
 </table>
+</div>
 
 <%= paginate @microposts %>
 <% else %>

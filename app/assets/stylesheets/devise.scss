@@ -39,28 +39,6 @@ h4 {
   white-space: nowrap;
 }
 
-// メールアドレス、パスワード入力フォームのサイズ
-// .field {
-//   width: 100%;
-// }
-
-// dt {
-//   float: left;
-//   padding: 1em;
-//   padding: 12px;
-//   color: #998484;
-//   // width: auto;
-//   width: 50%;
-// }
-
-// dd {
-//   border: 1px solid #cccccc;
-//   margin: 0;
-//   padding: 1em 0 1em 18em;
-//   // width: auto;
-//   width: 100%;
-// }
-
 // メールアドレス,パスワード入力フォーム
 dd input {
   width: 80%;
@@ -69,8 +47,6 @@ dd input {
 
 // メールアドレス、パスワード入力欄
 .field {
-  // width: 80%;
-  // height: 2.5em;
   padding: 1em 0em;
 
 }
@@ -78,18 +54,6 @@ dd input {
 .actions {
   padding: 0px 10px 10px 0;
 }
-
-// ログインボタン
-.btn {
-  // box-shadow: 5px 5px #000000;
-}
-
-
-// .log_in {
-//   font-size: 12px;
-//   padding: 10px;
-//   float: left;
-// }
 
 .rememberable {
   padding: 3px 10px;

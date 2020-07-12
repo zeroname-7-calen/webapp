@@ -39,7 +39,6 @@
   flex: auto;
   width: 73%;
   min-height: 100vh;
-  // margin: 20px;
   border: 1px solid;
   margin: 20px 10px 10px 10px;
   padding: 10px;
@@ -55,15 +54,12 @@
   border: 1px solid;
   margin: 20px 0px;
   padding: 10px 10px 10px 0px;
-  background-color: orange;
 }
 
 /* フッター */
 footer {
-  // flex: auto;
   width: 100%;
   clear: both;
-  // font: 11px Verdana;
   font: 0.7em Verdana;
   color: #888;
   margin: 20px 10px;
@@ -74,29 +70,6 @@ footer {
   border: 1px solid;
 }
 
-// // /* メインコンテンツ */
-//  main h5 {
-//   // color: #88c;
-//   font-weight: normal;
-//   font-size: 150%;
-//   // border-bottom: 2px solid #88c;
-//   margin-bottom: 0.5em;
-//   text-align: center;
-// }
-//
-// // main h2 {
-// //   color: #99d;
-// //   font-weight: bold;
-// //   font-size: 120%;
-// //   margin-bottom: 0.5em;
-// //   border-bottom: 1px solid #ccf;
-// // }
-//
-// main p {
-//  font-size: 90%;
-//  line-height: 1.5;
-// }
-
 // ヘッダー部分
 .heading-menu {
   display: flex;
@@ -106,7 +79,6 @@ footer {
 // 会社ロゴが入るボックス
 .header-logo {
   height: 100px;
-  // background-color: red;
 }
 
 // ロゴの子要素が入るボックス
@@ -114,7 +86,6 @@ footer {
   flex: auto;
   margin: 3px;
   padding: 0;
-  // background-color: purple;
 }
 
 // 会社ロゴ自体
@@ -150,13 +121,13 @@ footer {
   display: block;
   margin: 0;
   padding: 16px 0;
-  // background-color: pink;
   color: black;
   font-size: 0.8em;
   font-weight: bold;
   line-height: 1;
   border: 1px solid;
-  border-radius: 4px
+  border-radius: 4px;
+  background: #ffedab;
 }
 
 #dropmenu li ul {
@@ -188,5 +159,41 @@ footer {
 #dropmenu > li:hover li:hover > a { background: #6e7c0c }
 #dropmenu > li:hover > ul > li {
   overflow: visible;
-  height: 50px;
+  height: 40px;
 }
+
+// 【サイドバーの設定】
+//※以下↓↓↓↓↓↓ここから将来的に不要
+.advertisement_1 h2 {
+  font-size: 1em;
+}
+
+.notice_board {
+  padding: 3px;
+  border: solid 1px;
+  background: orange;
+}
+
+.notice_board ul {
+  list-style: none;
+}
+
+.notice_board h3 {
+  font-size: 2em;
+}
+
+.twitter {
+  margin-top: 20px;
+  border: solid 1px;
+  background: purple;
+}
+
+.twitter ul {
+  list-style: none;
+}
+
+.twitter h3 {
+  padding-top: 30px;
+  font-size: 2em;
+}
+// ↑↑↑↑↑↑↑将来的にここまで不要

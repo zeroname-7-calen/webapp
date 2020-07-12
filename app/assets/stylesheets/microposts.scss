@@ -2,9 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// タイトル（「ツイートコーナー」）中央寄せ
+.micropostpage_title {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+// 操作リンク「ツイートの作成」「投票したツイート」右寄せ
+.micropost_tool_link {
+  display: flex;
+  justify-content: flex-end;
+}
+
 p {
   margin: 0 0 1em;
 }
+
+// .micropost_content {
+//   padding-bottom: 20px;
+// }
 
 // マイクロポスト入力欄のサイズ
 .micropost_form textarea {
@@ -16,7 +32,8 @@ p {
 main ul.micropost-footer {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  // padding: 0;
+  padding-bottom: 3em;
   border-top: 1px #ccf dashed;
   padding-top: 4px;
   margin-bottom: 15px;

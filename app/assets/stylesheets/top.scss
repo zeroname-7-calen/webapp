@@ -4,13 +4,7 @@
 
 @charset "UTF-8";
 
-// .top_page {
-  // display: flex;
-  // flex-direction: column;
-// }
-
 .top_title {
-  // flex: auto;
   width: 95%;
   text-align: center;
   margin-top: 2em;
@@ -23,8 +17,6 @@
 }
 
 .articles {
-  // flex:auto;
-  // display: column;
   font-size: 1.2em;
   padding: 0em 1em;
 }
@@ -45,18 +37,13 @@ font-size: 1em;
 }
 
 .toppage_picture {
-  // display: flex;
-  // justify-content: flex-end;
   padding: 20px;
 }
 
 
 // トップページ写真のサイズ
 .toppage_picture img {
-  // width: 500px;
-  // width: auto;
   height: 300px;
-  // height: auto;
   margin: 1px;
   padding: 1px;
   float: right;

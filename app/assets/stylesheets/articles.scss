@@ -2,13 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// .articles {
-  // height: 1800px;
-  // height: 100%;
-  // height: auto;
-  // padding-bottom: 2em;
-// }
-
 .top_title h2 {
   color: black;
   font-size: 2.5em;
@@ -25,27 +18,24 @@ p {
 }
 
 // 記事indexの「ニュース一覧」タイトル
-h4 {
-  // text-align: center;
+.article_index_title h4 {
   font-style: oblique;
   font-family: sans-serif;
   background-color: skyblue;
   height: 3em;
-  // padding: 0.3em 5em;
   padding: 1em 0em 1em 3em;
 }
 
-h5 {
-  // font-size: 25px;
+.articles h5 {
   font-size: 10px;
-  // color: dimgray;
-  // color: red;
   margin: 0;
   padding: 0;
 }
 
+.articles h6 {
+  padding-top: 3em;
+}
 .btn-info {
-  // background: 好きな色; ボタンの背景色
   color: black; //ボタンのテキストの色
 }
 
@@ -70,7 +60,6 @@ trix-editor {
 
 // 記事表示領域フォーム
 .trix-content {
-  // width: 450px;
   width: 100%;
   font-size: 1.2em;
 }
@@ -78,7 +67,6 @@ trix-editor {
 // 検索ボタンの配置を整える（要素間の上下左右の間隔を整える）
 .submit_tag {
   padding: 0.5em;
-  // padding-top: 3em;
 }
 
 // ニュース「登録する」ボタン
@@ -99,15 +87,11 @@ trix-toolbar {
 }
 
 tbody tr {
-  // white-space: nowrap;
   text-align: left;
-  // font-size: 1em;
-  // font-size: 0.5em;
 }
 
 // 記事indexの日時
 .strftime {
-  // color: blue;
   font-size: 1em;
   white-space: nowrap;// 記事indexの日時を１行で表示
 }
@@ -129,7 +113,3 @@ td.article_edit_delete {
 .article_strftime {
   padding-bottom: 1em;
 }
-
-// .articles a {
-//   color: gray;
-// }
