@@ -43,8 +43,19 @@ font-size: 1em;
 
 // トップページ写真のサイズ
 .toppage_picture img {
-  height: 300px;
+  width: auto;
+  height: auto;
+  // height: 300px;
   margin: 1px;
   padding: 1px;
   float: right;
+}
+
+// **メディアクエリ**
+@media screen and (max-width: 559px) {
+  .toppage_picture img {
+    width: 100%;
+    height: auto;
+  }
+
 }

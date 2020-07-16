@@ -16,50 +16,34 @@
 
  @import "bootstrap/scss/bootstrap";
 
-/* ページ全体 */
+// ページ全体
 #container {
-  display: flex;
-  flex-wrap: wrap;
   font-family: Meiryo, sans-serif;
-  font-size: 0.6em;
-  height: 100%;
-  padding: 28px 40px;
-  margin: 10px 40px;
-  // background-color: #fff0de;
-}
-
-// ヘッダーのボックス
-.header {
-  flex: auto;
-  width: auto;
+    font-size: 0.6em;
+    height: 100%;
+    padding: 28px 40px;
+    margin: 10px 40px;
 }
 
 /* 左の枠（コンテンツを入れる） */
 #main {
-  flex: auto;
-  width: 73%;
   min-height: 100vh;
   border: 1px solid;
-  margin: 20px 10px 10px 10px;
+  margin: 20px 0px 10px 10px;
   padding: 10px;
-  // background-color: skyblue;
   font-size: 1.1em;
   line-height: 1.5;
 }
 
-/* 右の枠（サイドバーを入れる） */
-#sidebar {
-  flex: auto;
-  width: 20%;
-  border: 1px solid;
-  margin: 20px 0px;
-  padding: 10px 10px 10px 0px;
+// サイドバー
+#aside {
+  margin-top: 20px;
+  padding-top: 10px;
+  border: solid 1px;
 }
 
-/* フッター */
-footer {
-  width: 100%;
-  clear: both;
+// /* フッター */
+#footer {
   font: 0.7em Verdana;
   color: #888;
   margin: 20px 10px;
@@ -70,16 +54,17 @@ footer {
   border: 1px solid;
 }
 
-// ヘッダー部分
+// // ヘッダー部分
 .heading-menu {
   display: flex;
   justify-content: start;
 }
 
-// 会社ロゴが入るボックス
-.header-logo {
-  height: 100px;
-}
+// 会社ロゴが入るボックス application.htmlでサイズを規定しているので不要？
+// .header-logo {
+//   width: 300px;
+//   height: 70px;
+// }
 
 // ロゴの子要素が入るボックス
 .heading-menu .header-logo .logo {
@@ -91,9 +76,9 @@ footer {
 // 会社ロゴ自体
 .header-logo a {
   flex: auto;
-  padding-left: 400px;
   align-items: center;
 }
+
 
 // グローバルナビ
 // ナビが入るコンテナーボックス
@@ -101,7 +86,7 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   list-style-type: none;
-  width: 960px;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
 }
@@ -171,7 +156,6 @@ footer {
 .notice_board {
   padding: 3px;
   border: solid 1px;
-  background: orange;
 }
 
 .notice_board ul {
@@ -181,19 +165,52 @@ footer {
 .notice_board h3 {
   font-size: 2em;
 }
-
-.twitter {
-  margin-top: 20px;
-  border: solid 1px;
-  background: purple;
-}
-
-.twitter ul {
-  list-style: none;
-}
-
-.twitter h3 {
-  padding-top: 30px;
-  font-size: 2em;
-}
 // ↑↑↑↑↑↑↑将来的にここまで不要
+
+// **メディアクエリ**
+// 320px（最小）
+
+// 560px未満
+
+// // 960px未満をタブレットと想定
+@media screen and (max-width: 959px) {
+  #container {
+    font-family: Meiryo, sans-serif;
+      font-size: 0.6em;
+      width: 100%;
+      border: 1px solid;
+  }
+
+  #main {
+    min-height: 100vh;
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
+
+  #container.toppage_picture {
+    width: 100vw;
+    height: auto;
+  }
+}
+
+// 560px以下をスマートフォンと想定
+@media screen and (max-width: 559px) {
+  #container {
+    font-family: Meiryo, sans-serif;
+      font-size: 0.6em;
+      width: 100%;
+      border: 1px solid;
+  }
+
+  #main {
+    width: 100%;
+    border: 1px solid;
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
+
+  #container.toppage_picture {
+    width: 100vw;
+    height: auto;
+  }
+}

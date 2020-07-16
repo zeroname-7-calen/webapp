@@ -3,14 +3,15 @@
 <div class="micropostarea">
 
 <%= @micropost.content %>
-<% if @micropost.picture? %>
-  <% if @micropost.picture.file.content_type.include?('image/') %>
-    <%= image_tag @micropost.picture.url(:thumb) %>
-  <% else %>
-    <%= video_tag @micropost.picture.url, width: "30%", height: "30%",
-                  controls: true, autobuffer: true %>
+  <% if @micropost.picture? %>
+    <% if @micropost.picture.file.content_type.include?('image/') %>
+      <%= image_tag @micropost.picture.url(:thumb) %>
+    <% else %>
+      <%= video_tag @micropost.picture.url, width: "30%", height: "30%",
+                    controls: true, autobuffer: true %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 <%= render "footer", micropost: @micropost %>
 <%= render "votes" %>
