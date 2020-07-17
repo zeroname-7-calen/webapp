@@ -17,7 +17,7 @@
  @import "bootstrap/scss/bootstrap";
 
 // ページ全体
-#container {
+.container {
   font-family: Meiryo, sans-serif;
     font-size: 0.6em;
     height: 100%;
@@ -25,10 +25,15 @@
     margin: 10px 40px;
 }
 
+.header-logo.logo image_tag {
+  width: 300px;
+  height: 70px;
+}
+
 /* 左の枠（コンテンツを入れる） */
 #main {
   min-height: 100vh;
-  border: 1px solid;
+  border: solid 1px;
   margin: 20px 0px 10px 10px;
   padding: 10px;
   font-size: 1.1em;
@@ -43,14 +48,13 @@
 }
 
 // /* フッター */
-#footer {
+footer {
   font: 0.7em Verdana;
   color: #888;
-  margin: 20px 10px;
+  margin: 0 0 0 10px;
   padding: 2em 1.5em;
   text-align: center;
   background-color: yellow;
-  margin: 10px;
   border: 1px solid;
 }
 
@@ -147,6 +151,13 @@
   height: 40px;
 }
 
+// 会社ロゴのサイズ指定。本来はtop.scssに記述する？
+.logo img {
+  width: 300px;
+  height: 70px;
+}
+
+
 // 【サイドバーの設定】
 //※以下↓↓↓↓↓↓ここから将来的に不要
 .advertisement_1 h2 {
@@ -174,11 +185,11 @@
 
 // // 960px未満をタブレットと想定
 @media screen and (max-width: 959px) {
-  #container {
+  .container {
     font-family: Meiryo, sans-serif;
-      font-size: 0.6em;
-      width: 100%;
-      border: 1px solid;
+    font-size: 0.6em;
+    width: 100%;
+    border: 1px solid;
   }
 
   #main {
@@ -187,15 +198,20 @@
     line-height: 1.5;
   }
 
-  #container.toppage_picture {
+  .container.toppage_picture {
     width: 100vw;
     height: auto;
+  }
+
+  .logo img {
+    width: 100%;
+    height: 70px;
   }
 }
 
 // 560px以下をスマートフォンと想定
 @media screen and (max-width: 559px) {
-  #container {
+  .container {
     font-family: Meiryo, sans-serif;
       font-size: 0.6em;
       width: 100%;
@@ -209,8 +225,13 @@
     line-height: 1.5;
   }
 
-  #container.toppage_picture {
+  .container.toppage_picture {
     width: 100vw;
     height: auto;
+  }
+
+  .logo img {
+    width: 100%;
+    height: 70px;
   }
 }

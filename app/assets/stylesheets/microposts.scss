@@ -18,10 +18,6 @@ p {
   margin: 0 0 1em;
 }
 
-// .micropost_content {
-//   padding-bottom: 20px;
-// }
-
 // マイクロポスト入力欄のサイズ
 .micropost_form textarea {
   width: 100%; //100%とすることで画面を縮小しても入力欄がはみ出さない
@@ -32,7 +28,6 @@ p {
 ul.micropost-footer {
   list-style-type: none;
   margin: 0;
-  // padding: 0;
   padding-bottom: 3em;
   border-top: 1px #ccf dashed;
   padding-top: 4px;
@@ -53,6 +48,28 @@ ul.micropost-footer li:not(:last-child):after {
 
 .micorpostarea {
   height: auto;
+}
+
+// マイクロポストに投稿された写真とビデオの表示サイズ（※micropost.indexページ）
+.micropost_content {
+  img {
+    width: 100%;
+  }
+
+  video {
+    width: 100%;
+  }
+}
+
+// マイクロポストに投稿された写真とビデオの表示サイズ（※micropost.showページ）
+.micropostarea {
+  img {
+    width: 100%;
+  }
+
+  video {
+    width: 100%;
+  }
 }
 
 // マイクロポスト新規「登録」するボタン
