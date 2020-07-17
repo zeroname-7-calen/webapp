@@ -10,10 +10,6 @@
   height: auto;
 }
 
-// .div {
-//   padding: 5px 10px;
-// }
-
 // 釣り情報新規作成フォーム・タイトル
 #fishinginfo_title {
   width: 90%;
@@ -29,4 +25,12 @@
 // 「釣り情報登録ボタン」
 .fishinginfo_button {
   padding-top: 2em;
+}
+
+.col-lg-12 .row .col-lg-4 {
+  // padding: 10px;
+  height: 50px;
+  border: solid 1px;
+  background: red;
+
 }

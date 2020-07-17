@@ -1,33 +1,41 @@
-<div class="heading-menu">
-  <div class="header-logo">
-    <a href="http://www.hokuu.jp" target="blank">
-      <div class="logo">
-        <%= image_tag "item1.gif", size: "300x70", alt: "北羽新報" %>
+<div class="header-icon-container">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-12">
+      <div class="heading-menu">
+        <div class="header-logo">
+          <a href="http://www.hokuu.jp" target="blank">
+            <div class="logo">
+              <%= image_tag "item1.gif", alt: "北羽新報" %>
+            </div>
+          </a>
+        </div>
       </div>
-    </a>
+    </div>
   </div>
 </div>
-<ul id="dropmenu">
-  <li><%= link_to "トップ", :root %></li>
-  <li><%= link_to "過去の記事", :articles %></li>
-  <li><%= link_to "コラムと企画", "#" %>
-    <ul>
-      <li><%= link_to "最新コラム１", "#" %></li>
-      <li><%= link_to "最新コラム２", "#" %></li>
-      <li><%= link_to "最新コラム３", "#" %></li>
-      <li><%= link_to "最新コラム４", "#" %></li>
-    </ul>
-  </li>
-  <li><%= link_to "スポーツ", "#" %></li>
-  <li><%= link_to "イベントガイド", "#" %></li>
-  <li><%= link_to "釣り情報", :fishinginfos %></li>
-  <li><%= link_to "ツイッター", :microposts %></li>
-  <li><% if user_signed_in? %></li>
-    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+<div class="navbar">
+  <ul id="dropmenu">
+    <li><%= link_to "トップ", :root %></li>
+    <li><%= link_to "過去の記事", :articles %></li>
+    <li><%= link_to "コラムと企画", "#" %>
+      <ul>
+        <li><%= link_to "最新コラム１", "#" %></li>
+        <li><%= link_to "最新コラム２", "#" %></li>
+        <li><%= link_to "最新コラム３", "#" %></li>
+        <li><%= link_to "最新コラム４", "#" %></li>
+      </ul>
+    </li>
+    <li><%= link_to "スポーツ", "#" %></li>
+    <li><%= link_to "イベントガイド", "#" %></li>
+    <li><%= link_to "釣り情報", :fishinginfos %></li>
+    <li><%= link_to "ツイッター", :microposts %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       <% else %>
-    <li><%= link_to "ログイン", new_user_session_path %></li>
+      <li><%= link_to "ログイン", new_user_session_path %></li>
     <% end %>
-    </ul>
+  </ul>
+</div>
 
 <div align="right">
   <% if user_signed_in? %>

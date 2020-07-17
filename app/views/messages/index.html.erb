@@ -1,5 +1,7 @@
-<% @page_title = "掲示板" %>
-<h1><%= @page_title %></h1>
+<div class="message_title">
+  <% @page_title = "掲示板" %>
+  <h1><%= @page_title %></h1>
+</div>
 
 <div class="current_user_toolbar">
   <% if current_user && loyalty(@message, :messages).index? %>

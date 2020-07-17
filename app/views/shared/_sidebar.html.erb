@@ -1,12 +1,12 @@
 
 <div class="advertisement_1">
 <h2>広告スペース</h2>
-  <div class="">
+  <div class="ad_space">
     <p>ここに広告掲載</p>
   </div>
 </div>
 
-<div class="notice_boad">
+<div class="notice_board">
   <ul>
     <h3><%= menu_link_to "【掲示板】", :messages %></h3>
   </ul>
@@ -15,5 +15,11 @@
 <div class="twitter">
   <ul>
     <h3><%= menu_link_to "【Twitter】", :microposts %></h3>
+  </ul>
+  <% @microposts = Micropost.order(created_at: :desc).limit(10) %>
+  <ul>
+    <% @microposts.each do |micropost| %>
+    <li><%= link_to micropost.content.truncate(80), micropost %></li>
+    <% end %>
   </ul>
 </div>

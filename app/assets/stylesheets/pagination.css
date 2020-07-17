@@ -9,3 +9,7 @@ nav.pagination {
 nav.pagination span.current {
   font-weight: bold;
 }
+
+pagination .page-link {
+  color: red;
+}
