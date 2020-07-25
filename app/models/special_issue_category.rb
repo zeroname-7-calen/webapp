@@ -1,0 +1,2 @@
+class SpecialIssueCategory < ApplicationRecord
+end

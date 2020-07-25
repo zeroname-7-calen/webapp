@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   has_many :messages, dependent: :destroy
   has_many :fishinginfos, dependent: :destroy
+  # has_many :special_issues
 
   def votable_for?(micropost)
     micropost && micropost.author != self && !votes.exists?(micropost_id: micropost.id)
