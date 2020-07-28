@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_20_063717) do
+ActiveRecord::Schema.define(version: 2020_07_28_113657) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -83,6 +83,28 @@ ActiveRecord::Schema.define(version: 2020_05_20_063717) do
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
+  create_table "special_issue_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "category_name"
+    t.boolean "is_display"
+    t.integer "priority"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["created_at"], name: "index_special_issue_categories_on_created_at"
+  end
+
+  create_table "special_issues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "major_title"
+    t.string "minor_title"
+    t.text "content"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "special_issue_categories_id"
+    t.index ["special_issue_categories_id"], name: "index_special_issues_on_special_issue_categories_id"
+    t.index ["user_id", "created_at"], name: "index_special_issues_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_special_issues_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -113,4 +135,6 @@ ActiveRecord::Schema.define(version: 2020_05_20_063717) do
   add_foreign_key "fishinginfos", "users"
   add_foreign_key "messages", "users"
   add_foreign_key "microposts", "users"
+  add_foreign_key "special_issues", "special_issue_categories", column: "special_issue_categories_id"
+  add_foreign_key "special_issues", "users"
 end

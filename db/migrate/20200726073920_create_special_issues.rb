@@ -4,6 +4,7 @@ class CreateSpecialIssues < ActiveRecord::Migration[6.0]
       t.string :major_title
       t.string :minor_title
       t.text :content
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

@@ -31,9 +31,14 @@ h2 {
   font-size: 1em;
 }
 
+h5 {
+  text-align: center;
+}
+
 p {
 margin: 0 0 1em;
 font-size: 1em;
+line-height: 1.5em;
 }
 
 .toppage_picture {
@@ -50,6 +55,16 @@ font-size: 1em;
   float: right;
 }
 
+.company_brochure h5 {
+  margin: 1em 0 0.5em 2em;
+  text-align: center;
+  width: 50%;
+  background: palegreen;
+}
+
+.company_brochure td {
+  padding-right: 5em;
+}
 // **メディアクエリ**
 @media screen and (max-width: 959px) {
   .toppage_picture img {

@@ -7,6 +7,6 @@ class CreateSpecialIssueCategories < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
-    add_index :special_issue_categories, [:special_issue_id, :created_at]
+    add_index :special_issue_categories, :created_at
   end
 end
