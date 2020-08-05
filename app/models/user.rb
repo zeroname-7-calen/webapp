@@ -8,10 +8,12 @@ class User < ApplicationRecord
   # articleモデルとのリレーション
   has_many :articles, dependent: :destroy
 
+  # micropostモデルとのリレーション
   has_many :microposts, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_many :voted_microposts, through: :votes, source: :micropost
 
+  # message(掲示板)モデルとのリレーション
   has_many :messages, dependent: :destroy
   has_many :fishinginfos, dependent: :destroy
   has_many :special_issues

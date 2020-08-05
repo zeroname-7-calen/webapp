@@ -1,0 +1,9 @@
+<% @page_title = "コラム・企画の編集" %>
+<h5><%= @page_title %></h5>
+
+<div class="toolbar"><%= link_to "コラム・企画記事の表示に戻る", @special_issue %></div>
+
+<%= form_for @special_issue do |form| %>
+  <%= render "form", form: form %>
+  <div><%= form.submit %></div>
+<% end %>

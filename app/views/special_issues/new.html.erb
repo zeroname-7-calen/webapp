@@ -1,0 +1,7 @@
+<% @page_title = "コラム・企画新規作成" %>
+  <h5><%= @page_title %></h5>
+
+  <%= form_for @special_issue do |form| %>
+  <%= render "form", form: form %>
+  <div><%= form.submit %></div>
+<% end %>

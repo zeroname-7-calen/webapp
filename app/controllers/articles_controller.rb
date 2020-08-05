@@ -4,7 +4,8 @@ class ArticlesController < ApplicationController
     puts "111111111111111"
     puts params[:id]
     puts "333333333333333"
-    @articles = Article.order(released_at: :desc).page(params[:page]).per(10)
+    # @articles = Article.order(released_at: :desc).page(params[:page]).per(10)
+    @articles = Article.with_rich_text_content.order(released_at: :desc).page(params[:page]).per(10)
   end
 
   def show
