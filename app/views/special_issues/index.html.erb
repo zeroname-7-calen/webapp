@@ -1,0 +1,21 @@
+<% @page_title = "コラムと企画" %>
+<h5><%= @page_title %></h5>
+
+<% if current_user %>
+  <div class="toolbar"><%= link_to "コラム・企画記事を作成する", new_special_issue_path %></div>
+<% end %>
+
+<% if current_user %>
+  <div class="toolbar"><%= link_to "コラムカテゴリーを作成する", new_special_issue_category_path %></div>
+<% end %>
+
+<% if @special_issues.present? %>
+  <% @special_issues.each do |special_issue| %>
+    <h6><%= link_to special_issue.major_title, special_issue %></h6>
+    <p><%= link_to special_issue.minor_title, special_issue %></p>
+    <%= render "footer", special_issue: special_issue %>
+  <% end %>
+  <%= paginate @special_issues %>
+<% else%>
+  <p>コラム・企画記事はありません</p>
+<% end %>

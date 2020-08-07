@@ -30,4 +30,8 @@ Rails.application.routes.draw do
 
   resources :fishinginfos
 
+  resources :special_issues
+
+  resources :special_issue_categories
+
 end

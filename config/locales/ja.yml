@@ -12,7 +12,10 @@ ja:
       article: ニュース記事
       micropost: ツイート
       message: 掲示板記事
-    atrributes:
+      fishinginfo: 釣り情報
+      special_issue: コラムと企画
+      special_issue_category: コラムカテゴリー
+    attributes:
       article:
         title: タイトル
         content: 本文
@@ -22,9 +25,15 @@ ja:
       message:
         title: タイトル
         content: 本文
-      Fishinginfo:
+      fishinginfo:
         title: タイトル
-        content:  本文
+        content: 本文
+      special_issue:
+        major_title: 主タイトル
+        minor_title: サブタイトル
+        content: 本文
+      special_issue_category:
+        category_name: コラムカテゴリー
     errors:
       messages:
         carrierwave_processing_error: 処理できませんでした

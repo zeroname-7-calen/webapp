@@ -1,0 +1,8 @@
+<% if @special_issue_categories.present? %>
+  <% @special_issue_categories.each do |special_issue_category| %>
+    <h6><%= link_to special_issue_category.category_name, special_issue_category %></h6>
+  <% end %>
+  <%= paginate @special_issue_categories %>
+<% else%>
+  <p>コラムカテゴリーは設定されていません</p>
+<% end %>
