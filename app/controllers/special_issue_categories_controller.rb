@@ -24,10 +24,6 @@ class SpecialIssueCategoriesController < ApplicationController
 
   def create
     @special_issue_category = SpecialIssueCategory.new(special_issue_category_params)
-    @special_issue_categories.author = current_user
-    # @special_issue_category.special_issue_author = current_user
-    # @special_issue_category.special_issue_id = special_issue.id
-    # @special_issue_category = current_user
     @special_issue_category.created_at = Time.now
     if @special_issue_category.save
       redirect_to @special_issue_category, notice: "カテゴリーネームを作成しました"
