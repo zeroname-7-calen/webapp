@@ -1,0 +1,6 @@
+<ul class="special_issue_categories-footer">
+  <% if current_user %>
+    <%= link_to "編集", [:edit, special_issue_category] %>
+    <%= link_to "削除", special_issue_category, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  <% end %>
+</ul>
