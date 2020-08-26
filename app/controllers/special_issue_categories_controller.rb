@@ -3,7 +3,7 @@ class SpecialIssueCategoriesController < ApplicationController
   def index
     if params[:user_id]
       @user = User.find(params[:user_id])
-      @special_issue_categories = @user.special_issue_categories.order(created_at: :desc).gape(params[:page]).per(20)
+      @special_issue_categories = @user.special_issue_categories.order(created_at: :desc).page(params[:page]).per(20)
     else
       @special_issue_categories = SpecialIssueCategory.order(created_at: :desc).page(params[:page]).per(20)
     end

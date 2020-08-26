@@ -1,12 +1,17 @@
 <%= render "shared/errors", obj: @special_issue %>
 
 <table class="attr">
+  <%= form.label "コラムカテゴリー"%>
+  <%= form.select :special_issue_category_id,
+   [ @special_issue_category, @special_issue_category_id ],
+   { include_blank: "選択してください" }, class:"special_issue_category" %>
+
   <tr>
     <th><%= form.label :major_title %></th>
     <td><%= form.text_field :major_title, size: 50 %></td>
   </tr>
   <tr>
-    <th><%= form.label :minor_title %></th>
+    <th><%= form.label "サブタイトル" %></th>
     <td><%= form.text_field :minor_title, size: 50 %></td>
   </tr>
   <tr>

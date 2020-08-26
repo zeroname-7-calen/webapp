@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_113657) do
+ActiveRecord::Schema.define(version: 2020_08_24_082338) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -99,8 +99,8 @@ ActiveRecord::Schema.define(version: 2020_07_28_113657) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "special_issue_categories_id"
-    t.index ["special_issue_categories_id"], name: "index_special_issues_on_special_issue_categories_id"
+    t.bigint "special_issue_category_id"
+    t.index ["special_issue_category_id"], name: "index_special_issues_on_special_issue_category_id"
     t.index ["user_id", "created_at"], name: "index_special_issues_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_special_issues_on_user_id"
   end
@@ -135,6 +135,6 @@ ActiveRecord::Schema.define(version: 2020_07_28_113657) do
   add_foreign_key "fishinginfos", "users"
   add_foreign_key "messages", "users"
   add_foreign_key "microposts", "users"
-  add_foreign_key "special_issues", "special_issue_categories", column: "special_issue_categories_id"
+  add_foreign_key "special_issues", "special_issue_categories"
   add_foreign_key "special_issues", "users"
 end
