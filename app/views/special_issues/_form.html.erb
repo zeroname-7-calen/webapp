@@ -2,10 +2,8 @@
 
 <table class="attr">
   <%= form.label "コラムカテゴリー"%>
-  <%= form.select :special_issue_category_id,
-   [ @special_issue_category, @special_issue_category_id ],
-   { include_blank: "選択してください" }, class:"special_issue_category" %>
-
+  <%= form.collection_select :special_issue_category_id,
+  SpecialIssueCategory.all, :id, :category_name, include_blank: "選択してください" %>
   <tr>
     <th><%= form.label :major_title %></th>
     <td><%= form.text_field :major_title, size: 50 %></td>

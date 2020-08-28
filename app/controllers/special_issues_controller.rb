@@ -14,9 +14,8 @@ class SpecialIssuesController < ApplicationController
   end
 
   def new
-    puts "SPnew"
     @special_issue = SpecialIssue.new
-    @special_issue_category = SpecialIssueCategory.new
+    @special_issue_categories = SpecialIssueCategory.all
   end
 
   def edit
@@ -25,10 +24,9 @@ class SpecialIssuesController < ApplicationController
 
   def create
     @special_issue = SpecialIssue.new(special_issue_params)
-    @special_issue_category = @special_issue_categories_id
+    @special_issue_category = @special_issue_category_id
     @special_issue.author = current_user
     @special_issue.created_at = Time.now
-    # @special_issue_category_id
     if @special_issue.save
       redirect_to @special_issue, notice: "コラムを作成しました"
     else
