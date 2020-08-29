@@ -15,7 +15,6 @@ class SpecialIssueCategoriesController < ApplicationController
 
   def new
     @special_issue_category = SpecialIssueCategory.new
-    # @special_issue_category = SpecialIssueCategory.new
   end
 
   def edit
@@ -33,7 +32,6 @@ class SpecialIssueCategoriesController < ApplicationController
   end
 
   def update
-    # @special_issue_category = current_user.special_issue_categories.find(params[:id])
     @special_issue_category = SpecialIssueCategory.find(params[:id])
     @special_issue_category.assign_attributes(special_issue_category_params)
     if @special_issue_category.save

@@ -24,7 +24,6 @@ class SpecialIssuesController < ApplicationController
 
   def create
     @special_issue = SpecialIssue.new(special_issue_params)
-    @special_issue_category = @special_issue_category_id
     @special_issue.author = current_user
     @special_issue.created_at = Time.now
     if @special_issue.save
