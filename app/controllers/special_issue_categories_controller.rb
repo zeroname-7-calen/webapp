@@ -3,7 +3,7 @@ class SpecialIssueCategoriesController < ApplicationController
   def index
     if params[:user_id]
       @user = User.find(params[:user_id])
-      @special_issue_categories = @user.special_issue_categories.order(created_at: :desc).gape(params[:page]).per(20)
+      @special_issue_categories = @user.special_issue_categories.order(created_at: :desc).page(params[:page]).per(20)
     else
       @special_issue_categories = SpecialIssueCategory.order(created_at: :desc).page(params[:page]).per(20)
     end
@@ -15,7 +15,6 @@ class SpecialIssueCategoriesController < ApplicationController
 
   def new
     @special_issue_category = SpecialIssueCategory.new
-    # @special_issue_category = SpecialIssueCategory.new
   end
 
   def edit
@@ -33,7 +32,7 @@ class SpecialIssueCategoriesController < ApplicationController
   end
 
   def update
-    @special_issue_category = current_user.special_issue_categories.find(params[:id])
+    @special_issue_category = SpecialIssueCategory.find(params[:id])
     @special_issue_category.assign_attributes(special_issue_category_params)
     if @special_issue_category.save
       redirect_to @special_issue_category, notice: "カテゴリーネームを更新しました"

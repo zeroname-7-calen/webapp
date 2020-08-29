@@ -15,6 +15,7 @@ class SpecialIssuesController < ApplicationController
 
   def new
     @special_issue = SpecialIssue.new
+    @special_issue_categories = SpecialIssueCategory.all
   end
 
   def edit
@@ -54,7 +55,8 @@ class SpecialIssuesController < ApplicationController
       params.require(:special_issue).permit(
         :major_title,
         :minor_title,
-        :content
+        :content,
+        :special_issue_category_id
       )
     end
 
