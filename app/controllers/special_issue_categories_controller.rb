@@ -56,5 +56,4 @@ class SpecialIssueCategoriesController < ApplicationController
         :priority
       )
     end
-
 end

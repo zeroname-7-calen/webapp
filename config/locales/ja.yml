@@ -33,7 +33,7 @@ ja:
         minor_title: サブタイトル
         content: 本文
       special_issue_category:
-        category_name: コラムカテゴリー
+        category_name: カテゴリー
     errors:
       messages:
         carrierwave_processing_error: 処理できませんでした
