@@ -5,3 +5,10 @@
   <th><%= form.label :category_name %></th>
   <td><%= form.text_field :category_name, size: 50 %></td>
 </tr>
+<br>
+<tr>
+  <td>
+    <%= form.check_box :is_display %>
+    <%= form.label :is_display, "コラムカテゴリーを掲載しない" %>
+  </td>
+</tr>

@@ -1,6 +1,6 @@
 <% @page_title = "コラム・企画新規作成" %>
   <h5><%= @page_title %></h5>
-
+  
   <h2>コラムカテゴリー分類</h2>
   <% @special_issue_categories = SpecialIssueCategory.order(created_at: :desc).limit(10) %>
   <ul>

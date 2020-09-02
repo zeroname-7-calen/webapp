@@ -1,19 +1,28 @@
 <%= render "shared/errors", obj: @special_issue %>
 
 <table class="attr">
-  <%= form.label "コラムカテゴリー"%>
-  <%= form.collection_select :special_issue_category_id,
-  SpecialIssueCategory.all, :id, :category_name, include_blank: "選択してください" %>
-  <tr>
-    <th><%= form.label :major_title %></th>
-    <td><%= form.text_field :major_title, size: 50 %></td>
-  </tr>
-  <tr>
-    <th><%= form.label "サブタイトル" %></th>
-    <td><%= form.text_field :minor_title, size: 50 %></td>
-  </tr>
-  <tr>
-    <th><%= form.label :content %></th>
-    <td><%= form.rich_text_area :content, rows: 50, cols: 45 %></td>
-  </tr>
+<tr>
+  <th><%= form.label :category_name %></th>
+  <td><%= form.collection_select :special_issue_category_id,
+    SpecialIssueCategory.order(created_at: :desc), :id, :category_name, include_blank: "選択してください" %></td>
+</tr>
+
+<tr>
+  <th><%= form.label :major_title %></th>
+  <td><%= form.text_field :major_title, size: 50 %></td>
+</tr>
+<tr>
+  <th><%= form.label :minor_title %></th>
+  <td><%= form.text_field :minor_title, size: 50 %></td>
+</tr>
+<tr>
+  <th><%= form.label :content %></th>
+  <td><%= form.rich_text_area :content, rows: 100, cols: 45 %></td>
+</tr>
 </table>
+<tr>
+  <td>
+    <%= form.check_box :is_display %>
+    <%= form.label :is_display, "コラムを掲載しない" %>
+  </td>
+</tr>

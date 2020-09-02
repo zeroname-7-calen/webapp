@@ -1,5 +1,9 @@
 <% @page_title = "コラム・企画" %>
+<% unless @special_issue.is_display %>
 <h3><%= @special_issue.major_title %></h3>
 <h5><%= @special_issue.minor_title %></h5>
 <%= @special_issue.content %>
+<% else %>
+<p>コラムの掲載を中止しています</p>
+<% end %>
 <%= render "footer", special_issue: @special_issue %>
