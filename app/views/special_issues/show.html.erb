@@ -1,8 +1,17 @@
 <% @page_title = "コラム・企画" %>
+
 <% unless @special_issue.is_display %>
 <h3><%= @special_issue.major_title %></h3>
 <h5><%= @special_issue.minor_title %></h5>
 <%= @special_issue.content %>
+
+<div class="special_issue_strftime">
+  <tr>
+    <th>掲載日時</th>
+    <td><%= @special_issue.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+  </tr>
+</div>
+
 <% else %>
 <p>コラムの掲載を中止しています</p>
 <% end %>
