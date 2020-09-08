@@ -1,7 +1,10 @@
 <% @page_title = "カテゴリーネーム" %>
 <% unless @special_issue_category.is_display %>
-<h5><%= @special_issue_category.category_name %></h5>
-<% else%>
+  <h5><%= @special_issue_category.category_name %></h5>
+  <ul><% @special_issue_category.special_issues.each do |special_issue| %></ul>
+    <li><%= link_to special_issue.major_title, special_issue %></li>
+    <% end %>
+　<% else%>
 <p>掲載を中止しています</p>
 <% end %>
 <%= render "footer", special_issue_category: @special_issue_category %>

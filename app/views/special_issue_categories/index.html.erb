@@ -1,3 +1,18 @@
+<% if current_user %>
+  <div class="toolbar">
+    <%= link_to "コラムカテゴリーを作成する", new_special_issue_category_path %>
+  </div>
+  <div class="toolbar">
+    <%= link_to "コラムカテゴリーの一覧へ", special_issue_categories_path %>
+  </div>
+  <div class="toolbar">
+    <%= link_to "コラム・企画記事を作成する", new_special_issue_path %>
+  </div>
+  <div class="toolbar">
+    <%= link_to "コラム一覧へ", special_issues_path %>
+  </div>
+<% end %>
+
 <% if @special_issue_categories.present? %>
   <% @special_issue_categories.each do |special_issue_category| %>
     <h6><%= link_to special_issue_category.category_name, special_issue_category %></h6>
