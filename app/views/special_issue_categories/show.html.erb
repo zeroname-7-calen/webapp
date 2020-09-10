@@ -10,8 +10,8 @@
     </div>
   </div>
 
-  <% @special_issues = SpecialIssue.order(created_at: :desc).page(params[:page]).per(5) %>
-  <ul><% @special_issue_category.special_issues.each do |special_issue| %></ul>
+  <% @special_issues = @special_issue_category.special_issues.order(created_at: :asc).page(params[:page]).per(5) %>
+  <ul><% @special_issues.each do |special_issue| %></ul>
   <tr>
     <td><li><%= link_to special_issue.major_title, special_issue %></li></td>
     <td class="strftime"><%= special_issue.created_at.strftime("%Y/%m/%d %H:%M") %></td>

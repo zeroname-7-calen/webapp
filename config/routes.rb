@@ -17,11 +17,11 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-      resources :messages, only: [:index]
-      resources :microposts, only: [:index] do
-        patch :like, :unlike
-        get :voted
-      end
+    resources :messages, only: [:index]
+    resources :microposts, only: [:index] do
+    patch :like, :unlike
+    get :voted
+    end
   end
 
   resources :microposts
