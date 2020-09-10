@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-      resources :messages, only: [:index]
-      resources :microposts, only: [:index] do
+    resources :messages, only: [:index]
+    resources :microposts, only: [:index] do
       patch :like, :unlike
       get :voted
     end
@@ -30,8 +30,11 @@ Rails.application.routes.draw do
 
   resources :fishinginfos
 
-  resources :special_issues
+  resources :special_issue_categories do
+    # resources :special_issues, params: :special_issue_category_id
+    resources :special_issues, params: :id
+  end
 
-  resources :special_issue_categories
+  resources :special_issues
 
 end

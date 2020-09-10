@@ -1,12 +1,7 @@
 class SpecialIssuesController < ApplicationController
 
   def index
-    if params[:user_id]
-      @user = User.find(params[:user_id])
-      @special_issues = @user.special_issues.order(created_at: :desc).page(params[:page]).per(20)
-    else
-      @special_issues = SpecialIssue.order(created_at: :desc).page(params[:page]).per(20)
-    end
+    @special_issues = SpecialIssue.order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def show
