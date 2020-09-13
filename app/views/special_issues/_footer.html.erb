@@ -1,7 +1,7 @@
 <ul class="special_issues-footer">
-  <% if current_user %>
-      <%= link_to "編集", [:edit, special_issue] %>
+  <% if current_user && loyalty(@special_issue, :special_issues).index? %>
+      <%= link_to "編集", [:edit, special_issue], class: "btn btn-outline-primary btn-sm" %>
       <%= link_to "削除", special_issue, method: :delete,
-            data: { confirm: "本当に削除しますか？" } %>
+            data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-primary btn-sm" %>
   <% end %>
 </ul>

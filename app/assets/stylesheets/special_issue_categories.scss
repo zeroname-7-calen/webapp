@@ -1,3 +1,50 @@
 // Place all the styles related to the SpecialIssueCategories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// 【カテゴリーindexページ】
+// indexのボタン類 文字色黒に　文字サイズも縮小
+.category_create_button a {
+  font-size: 0.5em;
+  color: black;
+}
+
+// special_issue_category indexのボタン類中央に配置
+.category_create_button {
+  display: flex;
+  justify-content: center;
+}
+
+// 【カテゴリーshowページ】
+//リストの黒点を消す
+li {
+  list-style: none;
+}
+//showページボタン類　サイズ縮小　文字色黒に
+.toolbar a {
+  font-size: 0.8em;
+  color: black;
+}
+
+// 【カテゴリー footerページ】
+// special_issue_category footerボタン右側に配置↓
+.footer_edit_button {
+  display:flex;
+  justify-content: flex-end;
+}
+
+.footer_edit_button a {
+  font-size: 0.8em;
+  color: black;
+}
+
+.footer_delete_button {
+  display:flex;
+  justify-content: flex-end;
+}
+
+.footer_delete_button a {
+  font-size: 0.8em;
+  color: black;
+}
+// ↑↑↑↑↑↑footerのボタン類ここまで↑↑↑↑↑↑↑

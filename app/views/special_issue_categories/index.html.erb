@@ -1,15 +1,11 @@
-<% if current_user %>
-  <div class="toolbar">
-    <%= link_to "コラムカテゴリーを作成する", new_special_issue_category_path %>
-  </div>
-  <div class="toolbar">
-    <%= link_to "コラムカテゴリーの一覧へ", special_issue_categories_path %>
-  </div>
-  <div class="toolbar">
-    <%= link_to "コラム・企画記事を作成する", new_special_issue_path %>
-  </div>
-  <div class="toolbar">
-    <%= link_to "コラム一覧へ", special_issues_path %>
+<% if current_user && loyalty(@special_issue_category, :special_issue_categories).index? %>
+  <div class="category_create_button">
+    <ul class="special_issue_toolbar">
+      <%= link_to "コラムカテゴリーを作成する", :new_special_issue_category, class: "btn btn-outline-primary btn-sm" %>
+      <%= link_to "コラムカテゴリーの一覧へ", special_issue_categories_path(@special_issue_categories), class: "btn btn-outline-primary btn-sm" %>
+      <%= link_to "コラム・企画記事を作成する", :new_special_issue, class: "btn btn-outline-primary btn-sm" %>
+      <%= link_to "コラム一覧へ", special_issues_path(@special_issues), class: "btn btn-outline-primary btn-sm" %>
+    </ul>
   </div>
 <% end %>
 

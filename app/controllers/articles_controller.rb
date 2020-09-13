@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
     puts "111111111111111"
     puts params[:id]
     puts "333333333333333"
-    # @articles = Article.order(released_at: :desc).page(params[:page]).per(10)
     @articles = Article.with_rich_text_content.order(released_at: :desc).page(params[:page]).per(10)
   end
 
@@ -30,7 +29,6 @@ class ArticlesController < ApplicationController
     puts "111111111111111"
     puts params[:id]
     puts "333333333333333"
-    # @article = current_user.articles.find(params[:id])
     @article = Article.find(params[:id])
     authorize! @article
   end
@@ -66,13 +64,12 @@ class ArticlesController < ApplicationController
     redirect_to :articles
   end
 
-
   private
 
-  def article_params
-    params.require(:article).permit(
-      :title,
-      :content
-    )
-  end
+    def article_params
+      params.require(:article).permit(
+        :title,
+        :content
+      )
+    end
 end

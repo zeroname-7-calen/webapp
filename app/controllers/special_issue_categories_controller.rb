@@ -15,13 +15,16 @@ class SpecialIssueCategoriesController < ApplicationController
 
   def new
     @special_issue_category = SpecialIssueCategory.new
+    authorize! @special_issue_category
   end
 
   def edit
     @special_issue_category = SpecialIssueCategory.find(params[:id])
+    authorize! @special_issue_category
   end
 
   def create
+    authorize! @special_issue_category
     @special_issue_category = SpecialIssueCategory.new(special_issue_category_params)
     @special_issue_category.created_at = Time.now
     if @special_issue_category.save
@@ -34,6 +37,7 @@ class SpecialIssueCategoriesController < ApplicationController
   def update
     @special_issue_category = SpecialIssueCategory.find(params[:id])
     @special_issue_category.assign_attributes(special_issue_category_params)
+    authorize! @special_issue_category
     if @special_issue_category.save
       redirect_to @special_issue_category, notice: "カテゴリーネームを更新しました"
     else
@@ -43,6 +47,7 @@ class SpecialIssueCategoriesController < ApplicationController
 
   def destroy
     @special_issue_category = SpecialIssueCategory.find(params[:id])
+    authorize! @special_issue_category
     @special_issue_category.destroy
     redirect_to :special_issue_categories, notice: "削除しました"
   end
