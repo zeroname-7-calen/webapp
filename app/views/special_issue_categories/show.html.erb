@@ -5,18 +5,23 @@
   <div class="special_issue_regist">
     <div class="special_issue_button">
       <% if current_user %>
-        <div class="toolbar"><%= link_to "コラム・企画記事を作成する", new_special_issue_path %></div>
+        <div class="toolbar"><%= link_to "コラム・企画記事を作成する", :new_special_issue, class: "btn btn-outline-primary btn-sm" %></div>
       <% end %>
     </div>
   </div>
 
-  <% @special_issues = @special_issue_category.special_issues.order(created_at: :asc).page(params[:page]).per(5) %>
-  <ul><% @special_issues.each do |special_issue| %></ul>
-  <tr>
-    <td><li><%= link_to special_issue.major_title, special_issue %></li></td>
-    <td class="strftime"><%= special_issue.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+<table class="table table-md table-condenced table-hover">
+  <% @special_issues = @special_issue_category.special_issues.order(created_at: :desc).page(params[:page]).per(10) %>
+    <ul><% @special_issues.each do |special_issue| %></ul>
+    <tr>
+      <td><li><%= link_to special_issue.major_title, special_issue %></li></td>
+      <td class="strftime"><%= special_issue.created_at.strftime("%Y/%m/%d") %></td>
     <% end %>
-  </tr>
+    </tr>
+  </table>
+  <div class="paginate">
+    <%= paginate @special_issues %>
+  </div>
 　<% else%>
 <p>掲載を中止しています</p>
 <% end %>

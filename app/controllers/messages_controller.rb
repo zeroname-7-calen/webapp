@@ -1,5 +1,4 @@
 class MessagesController < ApplicationController
-  # before_action :login_required, except: [:index, :show]
 
   def index
     if params[:user_id]
@@ -38,7 +37,6 @@ class MessagesController < ApplicationController
   end
 
   def update
-    # @message = current_user.messages.find(params[:id])
     @message = Message.find(params[:id])
     authorize! @message
     @message.assign_attributes(message_params)

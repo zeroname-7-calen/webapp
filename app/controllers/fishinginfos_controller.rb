@@ -1,13 +1,6 @@
 class FishinginfosController < ApplicationController
-   # before_action :login_required, except: [:index, :show]
 
   def index
-    # if params[:user_id]
-    #   @user = User.find(params[:user_id])
-    #   @fishinginfos = @user.fishinginfos.order(created_at: :desc)
-    # else
-    #   @fishinginfos = Fishinginfo.order(created_at: :desc)
-    # end
     @fishinginfos = Fishinginfo.order(created_at: :desc)
   end
 
@@ -39,7 +32,6 @@ class FishinginfosController < ApplicationController
   end
 
   def update
-    # @fishinginfo = current_user.fishinginfos.find(params[:id])
     @fishinginfo = Fishinginfo.find(params[:id])
     authorize! @fishinginfo
     @fishinginfo.assign_attributes(fishinginfo_params)
