@@ -37,7 +37,8 @@ class MicropostsController < ApplicationController
   end
 
   def update
-    @micropost = Micropost.find(params[:id])
+    @micropost = current_user.microposts.find(params[:id])
+    # @micropost = Micropost.find(params[:id])
     authorize! @micropost
     @micropost.assign_attributes(micropost_params)
     if @micropost.save

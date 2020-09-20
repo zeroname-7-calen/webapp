@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   root "top#index"
   get "about", to: "top#about", as: "about"
+  get "bad_request" => "top#bad_request"
+  get "forbidden" => "top#forbidden"
+  get "internal_server_error" => "top#internal_server_error"
 
   devise_for :users, controllers: {
   registrations: 'users/registrations',
