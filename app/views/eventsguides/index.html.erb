@@ -1,0 +1,26 @@
+<% @page_title = "イベントガイド" %>
+<h1><%= @page_title %></h1>
+<div class="eventsguide_logo">
+  <%= image_tag "/assets/ibe1.gif", alt: "イベントガイド" %>
+</div>
+
+<% if current_user %>
+  <div class="eventsguide_toolbar">
+    <div class="eventsguide_button">
+      <%= link_to "イベントガイド情報を作成する", :new_eventsguide, class: "btn btn-outline-primary btn-sm" %>
+    </div>
+  </div>
+  <div class="toolbar_explanation">
+    （過去の情報はその都度削除することを推奨します)
+  </div>
+<% end %>
+
+<% if @eventsguides.present? %>
+  <% @eventsguides.each do |eventsguide| %>
+    <h2><%= eventsguide.title %></h2>
+    <p><%= eventsguide.content %></p>
+    <%= render "footer", eventsguide: eventsguide %>
+  <% end %>
+  <% else %>
+  <p>イベント情報はありません</p>
+<% end %>
