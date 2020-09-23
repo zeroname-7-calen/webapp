@@ -16,7 +16,12 @@ class User < ApplicationRecord
   # message(掲示板)モデルとのリレーション
   has_many :messages, dependent: :destroy
   has_many :fishinginfos, dependent: :destroy
+
+  # special_issues（コラム）モデルとのリレーション
   has_many :special_issues
+
+  # eventsguides(イベントガイド)モデルとのリレーション
+  has_many :eventsguides
 
   def votable_for?(micropost)
     micropost && micropost.author != self && !votes.exists?(micropost_id: micropost.id)

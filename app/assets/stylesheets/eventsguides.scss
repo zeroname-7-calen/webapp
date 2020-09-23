@@ -1,0 +1,33 @@
+// Place all the styles related to the eventsguides controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+//イベントガイドのロゴサイズ
+.eventsguide_logo img {
+  width: 400px;
+  height: 100px;
+  margin-top: 1em;
+  padding-bottom: 2em;
+}
+
+// 「イベントガイド情報を作成する」ボタンを右側に配置
+.eventsguide_toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1em;
+}
+
+// 「イベントガイド情報を作成する」の文字色を黒に
+.eventsguide_button a {
+  color: black;
+}
+
+// (過去の情報はその都度削除することを推奨します)を右側に配置
+.toolbar_explanation {
+  display: flex;
+  justify-content: flex-end;
+}

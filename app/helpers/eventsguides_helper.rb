@@ -1,0 +1,2 @@
+module EventsguidesHelper
+end
