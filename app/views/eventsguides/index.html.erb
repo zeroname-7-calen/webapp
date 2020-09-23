@@ -1,9 +1,4 @@
-<% @page_title = "イベントガイド" %>
-<h1><%= @page_title %></h1>
-<div class="eventsguide_logo">
-  <%= image_tag "/assets/ibe1.gif", alt: "イベントガイド" %>
-</div>
-
+<%= render "header" %>
 <% if current_user %>
   <div class="eventsguide_toolbar">
     <div class="eventsguide_button">
@@ -14,13 +9,13 @@
     （過去の情報はその都度削除することを推奨します)
   </div>
 <% end %>
-
-<% if @eventsguides.present? %>
-  <% @eventsguides.each do |eventsguide| %>
-    <h2><%= eventsguide.title %></h2>
+<% if @eventsguides.each do |eventsguide| %>
+  <% unless eventsguide.is_display? %>
+    <h3><%= eventsguide.title %></h3>
     <p><%= eventsguide.content %></p>
-    <%= render "footer", eventsguide: eventsguide %>
   <% end %>
-  <% else %>
+  <%= render "footer", eventsguide: eventsguide %>
+<% end %>
+<% else %>
   <p>イベント情報はありません</p>
 <% end %>

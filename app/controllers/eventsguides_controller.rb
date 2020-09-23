@@ -20,8 +20,8 @@ class EventsguidesController < ApplicationController
     @eventsguide = Eventsguide.new(eventsguide_params)
     @eventsguide.author = current_user
     @eventsguide.created_at = Time.now
-    if @eventsguide.save!
-      redirect_to @eventsguide, notice: "イベントガイド情報をアップしました"
+    if @eventsguide.save
+      redirect_to :eventsguides, notice: "イベントガイド情報をアップしました"
     else
      render "new"
     end
@@ -31,7 +31,7 @@ class EventsguidesController < ApplicationController
     @eventsguide = Eventsguide.find(params[:id])
     @eventsguide.assign_attributes(eventsguide_params)
     if @eventsguide.save
-      redirect_to @eventsguide, notice: "イベントガイド情報を更新しました"
+      redirect_to :eventsguides, notice: "イベントガイド情報を更新しました"
     else
       render "edit"
     end
