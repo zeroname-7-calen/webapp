@@ -21,7 +21,7 @@ class User < ApplicationRecord
   has_many :special_issues
 
   # eventsguides(イベントガイド)モデルとのリレーション
-  has_many :eventsguides
+  has_many :eventguides
 
   def votable_for?(micropost)
     micropost && micropost.author != self && !votes.exists?(micropost_id: micropost.id)

@@ -36,5 +36,5 @@ Rails.application.routes.draw do
     resources :special_issues, params: :id
   end
   resources :special_issues
-  resources :eventsguides
+  resources :eventguides
 end

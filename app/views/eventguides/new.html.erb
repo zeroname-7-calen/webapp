@@ -1,8 +1,8 @@
 <%= render "header" %>
 <% @page_title = "イベントガイド新規作成" %>
-<h5><%= @page_title %></h5>
+<h1><%= @page_title %></h1>
 
-<%= form_for @eventsguide do |form| %>
+<%= form_for @eventguide do |form| %>
   <%= render "form", form: form %>
   <div><%= form.submit %></div>
 <% end %>

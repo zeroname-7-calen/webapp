@@ -1,7 +1,0 @@
-<ul class="eventsguide-footer">
-  <% if current_user %>
-    <%= link_to "編集", [:edit, eventsguide] %>
-    <%= link_to "削除", eventsguide, method: :delete,
-            data: { confirm: "削除してもよろしいですか？" } %>
-  <% end %>
-</ul>
