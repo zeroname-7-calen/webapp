@@ -1,0 +1,9 @@
+<% @page_title = "イベントガイドの編集" %>
+<h1><%= @page_title %></h1>
+<%= render "header" %>
+<div class="toolbar"><%= link_to "イベントガイドに戻る", @eventguide %></div>
+
+<%= form_for @eventguide do |form| %>
+  <%= render "form", form: form %>
+  <div><%= form.submit %></div>
+<% end %>

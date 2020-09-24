@@ -21,11 +21,11 @@
       <ul>
         <li><%= link_to "各種コラムシリーズ", :special_issue_categories %></li>
 
-        <li><%= link_to "複眼鏡", "/special_issue_categories/15" %></li>
+        <li><%= link_to "複眼鏡", "/special_issue_categories/1" %></li>
       </ul>
     </li>
     <li><%= link_to "スポーツ", "#" %></li>
-    <li><%= link_to "イベントガイド", "#" %></li>
+    <li><%= link_to "イベントガイド", :eventguides %></li>
     <li><%= link_to "釣り情報", :fishinginfos %></li>
     <li><%= link_to "ツイッター", :microposts %></li>
     <% if user_signed_in? %>

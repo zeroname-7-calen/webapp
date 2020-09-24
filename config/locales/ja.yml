@@ -15,6 +15,7 @@ ja:
       fishinginfo: 釣り情報
       special_issue: コラムと企画
       special_issue_category: コラムカテゴリー
+      eventguide: イベントガイド
     attributes:
       article:
         title: タイトル
@@ -29,11 +30,15 @@ ja:
         title: タイトル
         content: 本文
       special_issue:
+        category_name: カテゴリー
         major_title: 主タイトル
         minor_title: サブタイトル
         content: 本文
       special_issue_category:
         category_name: カテゴリー
+      eventguide:
+        title: タイトル
+        content: 本文
     errors:
       messages:
         carrierwave_processing_error: 処理できませんでした

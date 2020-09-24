@@ -1,0 +1,25 @@
+<%= render "header" %>
+<% if current_user %>
+  <div class="eventguide_toolbar">
+    <% if current_user && loyalty(@eventguide, :eventguides).index? %>
+      <div class="eventguide_button">
+        <%= link_to "イベントガイド情報を作成する", :new_eventguide, class: "btn btn-outline-primary btn-sm" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="toolbar_explanation">
+    （過去の情報はその都度削除することを推奨します)
+  </div>
+<% end %>
+<% if @eventguides.each do |eventguide| %>
+  <% unless eventguide.is_display? %>
+    <h4><%= eventguide.title %></h4>
+    <p><%= eventguide.content %></p>
+  <% end %>
+    <% if current_user && loyalty(@eventguide, :eventguides).index? %>
+      <%= render "footer", eventguide: eventguide %>
+    <% end %>
+  <% end %>
+<% else %>
+  <p>イベント情報はありません</p>
+<% end %>
