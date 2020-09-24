@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   root "top#index"
   get "about", to: "top#about", as: "about"
-  get "login_required" => "top#login_required"
   get "bad_request" => "top#bad_request"
+  # get "login_required" => "top#login_required"
   get "forbidden" => "top#forbidden"
   get "internal_server_error" => "top#internal_server_error"
 
@@ -29,16 +29,12 @@ Rails.application.routes.draw do
   end
 
   resources :microposts
-
   resources :messages
-
   resources :fishinginfos
-
   resources :special_issue_categories do
     # resources :special_issues, params: :special_issue_category_id
     resources :special_issues, params: :id
   end
-
   resources :special_issues
-
+  resources :eventguides
 end

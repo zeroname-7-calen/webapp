@@ -1,0 +1,9 @@
+<% @page_title = "イベントガイド" %>
+<% unless @eventguide.is_display? %>
+  <h2><%= @eventguide.title %></h2>
+  <%= @eventguide.content %>
+<% else %>
+ <p>掲載はありません</p>
+<% end %>
+
+<%= render "footer", eventguide: @eventguide %>
