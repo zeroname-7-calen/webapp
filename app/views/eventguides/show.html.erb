@@ -1,3 +1,4 @@
+<% if current_user && loyalty(@eventguide, :eventguides).index? %>
 <% @page_title = "イベントガイド" %>
 <% unless @eventguide.is_display? %>
   <h2><%= @eventguide.title %></h2>
@@ -7,3 +8,4 @@
 <% end %>
 
 <%= render "footer", eventguide: @eventguide %>
+<% end %>
