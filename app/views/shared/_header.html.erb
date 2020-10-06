@@ -25,7 +25,12 @@
       </ul>
     </li>
     <li><%= link_to "スポーツ", "#" %></li>
-    <li><%= link_to "イベントガイド", :eventguides %></li>
+    <li><%= "イベント・映画情報"%>
+      <ul>
+        <li><%= link_to "イベントガイド", "/special_issues/4" %></li>
+        <li><%= link_to "映画情報", "/special_issues/3" %></li>
+      </ul>
+    </li>
     <li><%= link_to "釣り情報", :fishinginfos %></li>
     <li><%= link_to "ツイッター", :microposts %></li>
     <% if user_signed_in? %>

@@ -5,7 +5,7 @@ class SpecialIssueCategoriesController < ApplicationController
       @user = User.find(params[:user_id])
       @special_issue_categories = @user.special_issue_categories.order(created_at: :desc).page(params[:page]).per(20)
     else
-      @special_issue_categories = SpecialIssueCategory.order(created_at: :desc).page(params[:page]).per(20)
+      @special_issue_categories = SpecialIssueCategory.where.not(id: "1".."4").order(created_at: :desc).page(params[:page]).per(20)
     end
   end
 
