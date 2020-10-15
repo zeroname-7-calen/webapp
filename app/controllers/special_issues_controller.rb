@@ -1,7 +1,7 @@
 class SpecialIssuesController < ApplicationController
 
   def index
-    @special_issues = SpecialIssue.order(created_at: :desc).page(params[:page]).per(20)
+    @special_issues = SpecialIssue.with_rich_text_content.order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def show
@@ -57,7 +57,8 @@ class SpecialIssuesController < ApplicationController
         :minor_title,
         :content,
         :special_issue_category_id,
-        :is_display
+        :is_display,
+        :image_name
       )
     end
 

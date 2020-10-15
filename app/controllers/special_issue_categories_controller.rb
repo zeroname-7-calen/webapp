@@ -5,8 +5,15 @@ class SpecialIssueCategoriesController < ApplicationController
       @user = User.find(params[:user_id])
       @special_issue_categories = @user.special_issue_categories.order(created_at: :desc).page(params[:page]).per(20)
     else
-      @special_issue_categories = SpecialIssueCategory.where.not(id: "1".."4").order(created_at: :desc).page(params[:page]).per(20)
+      @special_issue_categories = SpecialIssueCategory.where.not(category_name: [
+        SpecialIssueCategory::CATEGORY_NAME_1, SpecialIssueCategory::CATEGORY_NAME_2,
+        SpecialIssueCategory::CATEGORY_NAME_3
+        ])
+        .order(created_at: :desc).page(params[:page]).per(20)
     end
+        # CATEGORY_NAME_1 = 複眼鏡
+        # CATEGORY_NAME_2 = イベントガイド
+        # CATEGORY_NAME_3 = 映画情報
   end
 
   def show
@@ -58,7 +65,8 @@ class SpecialIssueCategoriesController < ApplicationController
       params.require(:special_issue_category).permit(
         :category_name,
         :is_display,
-        :priority
+        :priority,
+        :image_name
       )
     end
 end

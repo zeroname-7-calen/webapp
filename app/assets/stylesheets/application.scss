@@ -64,12 +64,6 @@ footer {
   justify-content: start;
 }
 
-// 会社ロゴが入るボックス application.htmlでサイズを規定しているので不要？
-// .header-logo {
-//   width: 300px;
-//   height: 70px;
-// }
-
 // ロゴの子要素が入るボックス
 .heading-menu .header-logo .logo {
   flex: auto;
@@ -82,7 +76,6 @@ footer {
   flex: auto;
   align-items: center;
 }
-
 
 // グローバルナビ
 // ナビが入るコンテナーボックス
@@ -101,7 +94,7 @@ footer {
   width: 20%;
   float: left;
   margin: 0;
-  padding-left: 3px;
+  padding-left: 0.3em;
   text-align: center;
   // border: 1px solid; ここでborderを設定すると「コラムと企画」のアイコンがうまく表示できない
 }
@@ -156,7 +149,6 @@ footer {
   width: 300px;
   height: 70px;
 }
-
 
 // 【サイドバーの設定】
 //※以下↓↓↓↓↓↓ここから将来的に不要
