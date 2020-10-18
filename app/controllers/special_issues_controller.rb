@@ -57,8 +57,7 @@ class SpecialIssuesController < ApplicationController
         :minor_title,
         :content,
         :special_issue_category_id,
-        :is_display,
-        :image_name
+        :is_display
       )
     end
 

@@ -1,10 +1,8 @@
 <% @page_title = "コラム・企画" %>
 
 <div class="image_name">
-  <% if @special_issue_category.image_name == "eventguide" %>
+  <% if @special_issue_category.image_name.present? %>
   <%= image_tag "/assets/pantoscopic_spectacles.gif", size: "150x52", alt: "複眼鏡" %>
-  <% elsif @special_issue/2 %>
-  <%= image_tag "/assets/eventguide.gif", size: "150x52", alt: "イベントガイド" %>
   <% end %>
 </div>
 
