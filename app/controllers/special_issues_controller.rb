@@ -6,6 +6,8 @@ class SpecialIssuesController < ApplicationController
 
   def show
     @special_issue = SpecialIssue.find(params[:id])
+    @special_issue_category = @special_issue.special_issue_category
+
   end
 
   def new

@@ -1,9 +1,13 @@
 <% @page_title = "コラム・企画" %>
 
 <div class="image_name">
-  <% if @special_issue_category.image_name.present? %>
-  <%= image_tag "/assets/pantoscopic_spectacles.gif", size: "150x52", alt: "複眼鏡" %>
-  <% end %>
+   <% if @special_issue_category.image_name == "pantoscopic_spectacles.gif" %>
+     <%= image_tag "/assets/pantoscopic_spectacles.gif", size: "150x52", alt: "複眼鏡" %>
+     <% elsif @special_issue_category.image_name == "eventguide.gif" %>
+     <%= image_tag "/assets/eventguide.gif", size: "150x52", alt: "イベントガイド" %>
+     <% elsif @special_issue_category.image_name == "movieguide.gif" %>
+     <%= image_tag "/assets/movieguide.gif", size: "150x52", alt: "映画情報" %>
+   <% end %>
 </div>
 
 <% unless @special_issue.is_display %>
