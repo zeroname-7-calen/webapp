@@ -1,15 +1,17 @@
 <% @page_title = "コラム・企画" %>
 
 <div class="image_name">
-  <% if @special_issue_category.image_name %>
+  <% if @special_issue_category.image_name.empty? %>
+    <%= image_tag " " %>
+  <% else @special_issue_category.image_name %>
     <%= image_tag @special_issue_category.image_name, size: "150x52", alt: @special_issue_category.category_name %>
   <% end %>
 </div>
 
 <div class="special_issue_content">
   <% unless @special_issue.is_display %>
-  <h4><%= @special_issue.major_title %></h4>
-  <h5><%= @special_issue.minor_title %></h5>
+  <h3><%= @special_issue.major_title %></h3>
+  <h2><%= @special_issue.minor_title %></h2>
   <%= @special_issue.content %>
 </div>
 

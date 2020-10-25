@@ -11,8 +11,6 @@
     SpecialIssueCategory::CATEGORY_NAME_MOVIEGUIDE,
     ])
     .order(created_at: :desc), :id, :category_name, include_blank: "選択してください" %>
-
-     <%# <%= form.collection_select :special_issue_category_id,SpecialIssueCategory.order(created_at: :desc), :id, :category_name, include_blank: "選択してください" %>
   </td>
 </tr>
 

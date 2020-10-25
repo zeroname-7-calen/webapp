@@ -52,8 +52,12 @@ height: 100px;
   padding: 1.5em 0 1em 1em;
 }
 
-.special_issue_content h4 {
+.special_issue_content h3 {
   display: flex;
   justify-content: center;
-  padding-bottom: 1em;
+  overflow-wrap: break-word;
+  // overflow-wrap: normal;
+  // padding-bottom: 1em;
+  // color: red;
+
 }
