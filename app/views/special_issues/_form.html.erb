@@ -6,7 +6,6 @@
   <td>
     <%= form.collection_select :special_issue_category_id,
     SpecialIssueCategory.where.not(category_name: [
-    SpecialIssueCategory::CATEGORY_NAME_PANTOSCOPIC_SPECTACLES,
     SpecialIssueCategory::CATEGORY_NAME_EVENTGUIDE,
     SpecialIssueCategory::CATEGORY_NAME_MOVIEGUIDE,
     ])
