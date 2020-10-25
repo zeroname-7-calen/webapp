@@ -3,13 +3,17 @@
 <table class="attr">
 <tr>
   <th><%= form.label :category_name %></th>
-  <td><%= form.collection_select :special_issue_category_id,
+  <td>
+    <%= form.collection_select :special_issue_category_id,
     SpecialIssueCategory.where.not(category_name: [
     SpecialIssueCategory::CATEGORY_NAME_PANTOSCOPIC_SPECTACLES,
     SpecialIssueCategory::CATEGORY_NAME_EVENTGUIDE,
     SpecialIssueCategory::CATEGORY_NAME_MOVIEGUIDE,
     ])
-    .order(created_at: :desc), :id, :category_name, include_blank: "選択してください" %></td>
+    .order(created_at: :desc), :id, :category_name, include_blank: "選択してください" %>
+
+     <%# <%= form.collection_select :special_issue_category_id,SpecialIssueCategory.order(created_at: :desc), :id, :category_name, include_blank: "選択してください" %>
+  </td>
 </tr>
 
 <tr>
@@ -28,6 +32,6 @@
 <tr>
   <td>
     <%= form.check_box :is_display %>
-    <%= form.label :is_display, "コラムを掲載しない" %>
+    <%= form.label :is_display, "コラム・ガイド情報を掲載しない" %>
   </td>
 </tr>

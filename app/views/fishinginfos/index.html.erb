@@ -1,6 +1,6 @@
 <% @page_title = "釣り情報" %>
-<div class="logo">
-  <%= image_tag "/assets/turi1.gif", size: "150x52", alt: "釣り情報" %>
+<div class="fishinginfo_logo">
+  <%= image_tag "fishinginfo.gif", alt: "釣り情報" %>
 </div>
 
 <% if current_user && loyalty(@fishinginfo, :fishinginfos).index? %>
@@ -10,7 +10,7 @@
 <div class="fishinginfo">
   <% if @fishinginfos.present? %>
     <% @fishinginfos.each do |fishinginfo| %>
-    <h2><%= fishinginfo.title %></h2>
+    <h3><%= fishinginfo.title %></h3>
       <p><%= fishinginfo.content %></p>
       <%= render "footer", fishinginfo: fishinginfo %>
     <% end %>

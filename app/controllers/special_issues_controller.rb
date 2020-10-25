@@ -27,7 +27,7 @@ class SpecialIssuesController < ApplicationController
     @special_issue.author = current_user
     @special_issue.created_at = Time.now
     if @special_issue.save
-      redirect_to @special_issue, notice: "コラムを作成しました"
+      redirect_to @special_issue, notice: "コラム・ガイド情報を作成しました"
     else
       render "new"
     end
@@ -38,7 +38,7 @@ class SpecialIssuesController < ApplicationController
     authorize! @special_issue
     @special_issue.assign_attributes(special_issue_params)
     if @special_issue.save
-      redirect_to @special_issue, notice: "コラムを更新しました"
+      redirect_to @special_issue, notice: "コラム・ガイド情報を更新しました"
     else
       render "edit"
     end
