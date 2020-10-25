@@ -7,12 +7,11 @@ class SpecialIssuesController < ApplicationController
   def show
     @special_issue = SpecialIssue.find(params[:id])
     @special_issue_category = @special_issue.special_issue_category
-
   end
 
   def new
     @special_issue = SpecialIssue.new
-    @special_issue_categories = SpecialIssueCategory.all #新規コラム作成ページでselectボックスのに選択肢を表示させるため
+    @special_issue_categories = SpecialIssueCategory.all #新規コラム作成ページでselectボックスに選択肢を表示させるため
     authorize! @special_issue
   end
 

@@ -6,7 +6,8 @@ class SpecialIssueCategoriesController < ApplicationController
       @special_issue_categories = @user.special_issue_categories.order(created_at: :desc).page(params[:page]).per(20)
     else
       @special_issue_categories = SpecialIssueCategory.where.not(category_name: [
-        SpecialIssueCategory::CATEGORY_NAME_PANTOSCOPIC_SPECTACLES, SpecialIssueCategory::CATEGORY_NAME_EVENTGUIDE,
+        SpecialIssueCategory::CATEGORY_NAME_PANTOSCOPIC_SPECTACLES,
+        SpecialIssueCategory::CATEGORY_NAME_EVENTGUIDE,
         SpecialIssueCategory::CATEGORY_NAME_MOVIEGUIDE
         ])
         .order(created_at: :desc).page(params[:page]).per(20)
