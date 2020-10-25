@@ -1,11 +1,13 @@
 class SpecialIssuesController < ApplicationController
 
   def index
-    @special_issues = SpecialIssue.order(created_at: :desc).page(params[:page]).per(20)
+    @special_issues = SpecialIssue.with_rich_text_content.order(created_at: :desc).page(params[:page]).per(20)
   end
 
   def show
     @special_issue = SpecialIssue.find(params[:id])
+    @special_issue_category = @special_issue.special_issue_category
+
   end
 
   def new
@@ -25,7 +27,7 @@ class SpecialIssuesController < ApplicationController
     @special_issue.author = current_user
     @special_issue.created_at = Time.now
     if @special_issue.save
-      redirect_to @special_issue, notice: "コラムを作成しました"
+      redirect_to @special_issue, notice: "コラム・ガイド情報を作成しました"
     else
       render "new"
     end
@@ -36,7 +38,7 @@ class SpecialIssuesController < ApplicationController
     authorize! @special_issue
     @special_issue.assign_attributes(special_issue_params)
     if @special_issue.save
-      redirect_to @special_issue, notice: "コラムを更新しました"
+      redirect_to @special_issue, notice: "コラム・ガイド情報を更新しました"
     else
       render "edit"
     end

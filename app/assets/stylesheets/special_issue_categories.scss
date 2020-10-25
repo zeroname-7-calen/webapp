@@ -15,11 +15,20 @@
   justify-content: center;
 }
 
+// special_issue_category index コラムタイトル文字色を黒に 位置を中央に配置
+.special_issue_category_index a {
+  display: flex;
+  justify-content: center;
+  // border-bottom: 1px dotted;
+  color: black;
+}
+
 // 【カテゴリーshowページ】
 //リストの黒点を消す
 li {
   list-style: none;
 }
+
 //showページボタン類　サイズ縮小　文字色黒に
 .toolbar a {
   font-size: 0.8em;

@@ -1,19 +1,25 @@
+<% @page_title = "【コラム一覧】" %>
+<h5><%= @page_title %></h5>
+
 <% if current_user && loyalty(@special_issue_category, :special_issue_categories).index? %>
   <div class="category_create_button">
     <ul class="special_issue_toolbar">
-      <%= link_to "コラムカテゴリーを作成する", :new_special_issue_category, class: "btn btn-outline-primary btn-sm" %>
-      <%= link_to "コラムカテゴリーの一覧へ", special_issue_categories_path(@special_issue_categories), class: "btn btn-outline-primary btn-sm" %>
       <%= link_to "コラム・企画記事を作成する", :new_special_issue, class: "btn btn-outline-primary btn-sm" %>
       <%= link_to "コラム一覧へ", special_issues_path(@special_issues), class: "btn btn-outline-primary btn-sm" %>
+      <%= link_to "コラムカテゴリーを作成する", :new_special_issue_category, class: "btn btn-outline-primary btn-sm" %>
+      <%= link_to "コラムカテゴリーの一覧へ", special_issue_categories_path(@special_issue_categories), class: "btn btn-outline-primary btn-sm" %>
     </ul>
   </div>
 <% end %>
 
-<% if @special_issue_categories.present? %>
-  <% @special_issue_categories.each do |special_issue_category| %>
+
+<div class="special_issue_category_index">
+  <% if @special_issue_categories.present? %>
+    <% @special_issue_categories.each do |special_issue_category| %>
     <h6><%= link_to special_issue_category.category_name, special_issue_category %></h6>
   <% end %>
   <%= paginate @special_issue_categories %>
+</div>
 <% else%>
   <p>コラムカテゴリーは設定されていません</p>
 <% end %>
