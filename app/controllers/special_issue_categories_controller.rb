@@ -11,9 +11,6 @@ class SpecialIssueCategoriesController < ApplicationController
         ])
         .order(created_at: :desc).page(params[:page]).per(20)
     end
-        # CATEGORY_NAME_1 = 複眼鏡
-        # CATEGORY_NAME_2 = イベントガイド
-        # CATEGORY_NAME_3 = 映画情報
   end
 
   def show

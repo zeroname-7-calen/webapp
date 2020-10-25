@@ -6,8 +6,4 @@ class SpecialIssueCategory < ApplicationRecord
   CATEGORY_NAME_PANTOSCOPIC_SPECTACLES = "複眼鏡"
   CATEGORY_NAME_EVENTGUIDE = "イベントガイド"
   CATEGORY_NAME_MOVIEGUIDE = "映画情報"
-
-  # PANTOSCOPIC_SPECTACLES = "複眼鏡アイキャッチ"
-  # EVENTGUIDE = "イベントガイドアイキャッチ"
-  # MOVIEGUIDE = "映画情報アイキャッチ"
 end
