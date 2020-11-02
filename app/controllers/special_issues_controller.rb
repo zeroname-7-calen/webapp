@@ -61,5 +61,4 @@ class SpecialIssuesController < ApplicationController
         :is_display
       )
     end
-
 end
