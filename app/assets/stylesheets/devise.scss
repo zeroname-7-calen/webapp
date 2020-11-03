@@ -39,6 +39,12 @@ h4 {
   white-space: nowrap;
 }
 
+// ユーザーネーム入力欄整形
+.field dd input {
+  width: 80%;
+  height: 2.5em;
+}
+
 // メールアドレス,パスワード入力フォーム
 dd input {
   width: 80%;

@@ -28,7 +28,7 @@
     <li><%= link_to "イベント・映画情報" %>
       <ul>
         <li><%= link_to "イベントガイド", "/special_issues/2" %></li>
-        <li><%= link_to "映画情報", "/special_issues/4" %></li>
+        <li><%= link_to "映画情報", "/special_issues/3" %></li>
       </ul>
     </li>
     <li><%= link_to "釣り情報", :fishinginfos %></li>
@@ -43,6 +43,6 @@
 
 <div align="right">
   <% if user_signed_in? %>
-    <%= "ログイン中:" + current_user.email + "さん" %>
+    <%= "ログイン中: " + current_user.name + "さん" %>
   <% end %>
 </div>
