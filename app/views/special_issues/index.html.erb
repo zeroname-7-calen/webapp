@@ -27,7 +27,6 @@
   <% @special_issues.each do |special_issue| %>
     <h6><%= link_to special_issue.major_title, special_issue %></h6>
     <p><%= link_to special_issue.minor_title, special_issue %></p>
-    <%= render "footer", special_issue: special_issue %>
   <% end %>
   <%= paginate @special_issues %>
 <% else%>
