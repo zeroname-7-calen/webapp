@@ -1,5 +1,5 @@
-<% @page_title = @micropost.author.email + "さんのツイート" %>
-<h5><%= @micropost.author.email %>さんのツイート</h5>
+<% @page_title = @micropost.author.name + "さんのツイート" %>
+<h5><%= @micropost.author.name %>さんのツイート</h5>
 <div class="micropostarea">
   <%= @micropost.content %>
     <% if @micropost.picture? %>
