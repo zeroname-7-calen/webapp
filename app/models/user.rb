@@ -29,6 +29,8 @@ class User < ApplicationRecord
 
   enum role: {
     visitor: 1,
+    advertise: 11,
+    candidate: 13,
     admin: 99
   }
 end

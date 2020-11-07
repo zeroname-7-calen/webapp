@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :questionnaires, only: [:index]
   resources :fileuploads, only: [:index, :create, :new]
 
   root "top#index"
@@ -32,9 +33,7 @@ Rails.application.routes.draw do
   resources :messages
   resources :fishinginfos
   resources :special_issue_categories do
-    # resources :special_issues, params: :special_issue_category_id
     resources :special_issues, params: :id
   end
   resources :special_issues
-  # resources :eventguides
 end
