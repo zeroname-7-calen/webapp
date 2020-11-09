@@ -1,0 +1,11 @@
+<% if current_user %>
+  <h3>2020アメリカ大統領選挙アンケート</h3>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMHhnwJTDM_S-45cm6sxaZZQ6rn1qSONUa1oCo4Tm17VdwUw/viewform?embedded=true" width="100%" height="1181" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+
+<% elsif current_user.candidate_type == 1 %>
+  <h3>2020アメリカ大統領選挙アンケート</h3>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMHhnwJTDM_S-45cm6sxaZZQ6rn1qSONUa1oCo4Tm17VdwUw/viewform?embedded=true" width="100%" height="1181" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+
+<% else %>
+<p>大統領選アンケートの掲載はありません</p>
+<% end %>

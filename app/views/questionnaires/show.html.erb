@@ -1,0 +1,11 @@
+<% if current_user && loyalty(@questionnaire, :questionnaires).show %>
+  <% if current_user.candidate_type == 1 %>
+    <%= render "president" %>
+  <% elsif current_user.candidate_type == 2 %>
+    <%= render "representative" %>
+  <% elsif current_user.candidate_type == 3 %>
+    <%= render "councilor" %>
+  <% elsif current_user.candidate_type == 4 %>
+    <%= render "governor" %>
+  <% end %>
+<% end %>

@@ -1,6 +1,17 @@
 <% if current_user && loyalty(@questionnaire, :questionnaires).index %>
-  <h3>アンケートページ</h3>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdMHhnwJTDM_S-45cm6sxaZZQ6rn1qSONUa1oCo4Tm17VdwUw/viewform?embedded=true" width="100%" height="1181" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-<% else %>
- <p>掲載はありません</p>
+  <% if current_user.candidate_type == 1 %>
+    <h5><%= link_to "2020アメリカ大統領選挙アンケートはこちら", "/questionnaires/show" %></h5>
+  <% elsif current_user.candidate_type == 2 %>
+    <h5><%= link_to "衆院選アンケートはこちら", "/questionnaires/show/" %></h5>
+  <% elsif current_user.candidate_type == 3 %>
+    <h5><%= link_to "参院選アンケートはこちら", "/questionnaires/show"  %></h5>
+  <% elsif current_user.candidate_type == 4 %>
+    <h5><%= link_to "知事選アンケートはこちら", "/questionnaires/show"  %></h5>
+  <% elsif current_user %>
+    <h5><%= link_to "2020アメリカ大統領選挙アンケートはこちら", "/questionnaires/show"  %></h5>
+    <h5><%= link_to "衆院選アンケートはこちら", "/questionnaires/show" %></h5>
+    <h5><%= link_to "参院選アンケートはこちら", "/questionnaires/show" %></h5>
+
+    <h5><%= link_to "知事選アンケートはこちら", "/questionnaires/show"  %></h5>
+  <% end %>
 <% end %>

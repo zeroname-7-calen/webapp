@@ -1,0 +1,9 @@
+<% if current_user %>
+  <h3>2021衆院選アンケート</h3>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfCRa_Qg3jZtJRwhgOBPk29ecv_9Mo-K_zfHb2TfJatAtj_Pw/viewform?embedded=true" width="100%" height="1323" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<% elsif current_user.candidate_type == 2 %>
+  <h3>2021衆院選アンケート</h3>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfCRa_Qg3jZtJRwhgOBPk29ecv_9Mo-K_zfHb2TfJatAtj_Pw/viewform?embedded=true" width="100%" height="1323" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<% else %>
+  <p>衆院選アンケートの掲載はありません</p>
+<% end %>

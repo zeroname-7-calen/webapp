@@ -33,4 +33,17 @@ class User < ApplicationRecord
     candidate: 13,
     admin: 99
   }
+
+  # enum candidate_type: {
+  #   president: 1,
+  #   representative: 2,
+  #   councilor: 3,
+  #   governor: 4
+  # }
+
+  CANDIDATE_TYPE_1 = "PRESIDENT"
+  CANDIDATE_TYPE_2 = "REPRESENTATIVE"
+  CANDIDATE_TYPE_3 = "COUNCILOR"
+  CANDIDATE_TYPE_4 = "GOVERNOR"
+
 end
