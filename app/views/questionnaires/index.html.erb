@@ -1,17 +1,29 @@
 <% if current_user && loyalty(@questionnaire, :questionnaires).index %>
   <% if current_user.candidate_type == 1 %>
-    <h5><%= link_to "2020アメリカ大統領選挙アンケートはこちら", "/questionnaires/show" %></h5>
+    <h5><%= link_to "衆院選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
   <% elsif current_user.candidate_type == 2 %>
-    <h5><%= link_to "衆院選アンケートはこちら", "/questionnaires/show/" %></h5>
+    <h5><%= link_to "参院選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
   <% elsif current_user.candidate_type == 3 %>
-    <h5><%= link_to "参院選アンケートはこちら", "/questionnaires/show"  %></h5>
+    <h5><%= link_to "知事選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}"  %></h5>
   <% elsif current_user.candidate_type == 4 %>
-    <h5><%= link_to "知事選アンケートはこちら", "/questionnaires/show"  %></h5>
+    <h5><%= link_to "県議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+  <% elsif current_user.candidate_type == 5 %>
+    <h5><%= link_to "能代市長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+  <% elsif current_user.candidate_type == 6 %>
+    <h5><%= link_to "能代市議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+  <% elsif current_user.candidate_type == 7 %>
+    <h5><%= link_to "三種町長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+  <% elsif current_user.candidate_type == 8 %>
+    <h5><%= link_to "三種町議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+  <% elsif current_user.candidate_type == 9 %>
+    <h5><%= link_to "八峰町長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+  <% elsif current_user.candidate_type == 10 %>
+    <h5><%= link_to "八峰町議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+  <% elsif current_user.candidate_type == 11 %>
+    <h5><%= link_to "藤里町長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+  <% elsif current_user.candidate_type == 12 %>
+    <h5><%= link_to "藤里町議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
   <% elsif current_user %>
-    <h5><%= link_to "2020アメリカ大統領選挙アンケートはこちら", "/questionnaires/show"  %></h5>
-    <h5><%= link_to "衆院選アンケートはこちら", "/questionnaires/show" %></h5>
-    <h5><%= link_to "参院選アンケートはこちら", "/questionnaires/show" %></h5>
-
-    <h5><%= link_to "知事選アンケートはこちら", "/questionnaires/show"  %></h5>
+    <h5><%= link_to "アンケート設問を確認する", "/questionnaires/show" %></h5>
   <% end %>
 <% end %>

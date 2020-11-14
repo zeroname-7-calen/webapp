@@ -34,12 +34,20 @@ class User < ApplicationRecord
     admin: 99
   }
 
-  # enum candidate_type: {
-  #   president: 1,
-  #   representative: 2,
-  #   councilor: 3,
-  #   governor: 4
-  # }
+  enum candidate_type: {
+    representative: 1,
+    councilor: 2,
+    governor: 3,
+    prefectural_assembly: 4,
+    mayor: 5,
+    city_council: 6,
+    mitane_mayor: 7,
+    mitane_council: 8,
+    happou_mayor: 9,
+    happou_council: 10,
+    fujisato_mayor: 11,
+    fujisato_council: 12
+  }
 
   CANDIDATE_TYPE_1 = "PRESIDENT"
   CANDIDATE_TYPE_2 = "REPRESENTATIVE"

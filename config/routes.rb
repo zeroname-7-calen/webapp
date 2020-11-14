@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :questionnaires, only: [:index, :show]
+  get "questionnaires/index" => "questionnaires/index"
+  get "questionnaires/:candidate_type" => "questionnaires#show"
+
   resources :fileuploads, only: [:index, :create, :new]
 
   root "top#index"

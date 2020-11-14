@@ -4,6 +4,5 @@ class QuestionnairesController < ApplicationController
   end
 
   def show
-    # authorize! @questionnaire
   end
 end
