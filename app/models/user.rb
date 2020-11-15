@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+  validates :name, uniqueness: true
+  validates :email, uniqueness: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -48,10 +51,4 @@ class User < ApplicationRecord
     fujisato_mayor: 11,
     fujisato_council: 12
   }
-
-  CANDIDATE_TYPE_1 = "PRESIDENT"
-  CANDIDATE_TYPE_2 = "REPRESENTATIVE"
-  CANDIDATE_TYPE_3 = "COUNCILOR"
-  CANDIDATE_TYPE_4 = "GOVERNOR"
-
 end
