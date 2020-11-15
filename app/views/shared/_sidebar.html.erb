@@ -1,6 +1,12 @@
-
+<% if current_user && loyalty(@top, :top).index %>
+  <div class="questionnaire">
+    <ul>
+      <%= link_to "選挙アンケート", questionnaires_index_path, class: "btn btn-outline-secondary btn-sm" %>
+    </ul>
+  </div>
+<% end %>
 <div class="advertisement_1">
-<h2>広告スペース</h2>
+  <h2>広告スペース</h2>
   <div class="ad_space">
     <p>ここに広告掲載</p>
   </div>
@@ -11,22 +17,17 @@
   </ul>
 </div>
 
-
 <div class="twitter">
   <ul>
-    <h3><%= menu_link_to "【Twitter】", :microposts %></h3>
+    <li><h3><%= menu_link_to "【Twitter】", :microposts %></h3></li>
   </ul>
   <% @microposts = Micropost.order(created_at: :desc).limit(10) %>
 
-<table class="table table-bordered">
-
-  <ul>
-    <% @microposts.each do |micropost| %>
-    <li><%= link_to micropost.content.truncate(80), micropost %></li>
-    <% end %>
-  </ul>
-
-</table>
-
-
+  <table class="table table-bordered">
+    <ul>
+      <% @microposts.each do |micropost| %>
+      <li><%= link_to micropost.content.truncate(80), micropost %></li>
+      <% end %>
+    </ul>
+  </table>
 </div>

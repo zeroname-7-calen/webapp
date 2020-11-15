@@ -1,0 +1,40 @@
+<% if current_user && loyalty(@questionnaire, :questionnaires).show %>
+  <% if current_user.candidate_type == "representative" %>
+    <%= render "representative" %>
+  <% elsif current_user.candidate_type == "councilor" %>
+    <%= render "councilor" %>
+  <% elsif current_user.candidate_type == "governor" %>
+    <%= render "governor" %>
+  <% elsif current_user.candidate_type == "prefectural_assembly" %>
+    <%= render "prefectural_assembly" %>
+  <% elsif current_user.candidate_type == "mayor" %>
+    <%= render "mayor" %>
+  <% elsif current_user.candidate_type == "city_council" %>
+    <%= render "city_council" %>
+  <% elsif current_user.candidate_type == "mitane_mayor" %>
+    <%= render "mitane_mayor" %>
+  <% elsif current_user.candidate_type == "mitane_council" %>
+    <%= render "mitane_council" %>
+  <% elsif current_user.candidate_type == "happou_mayor" %>
+    <%= render "happou_mayor" %>
+  <% elsif current_user.candidate_type == "happou_council" %>
+    <%= render "happou_council" %>
+  <% elsif current_user.candidate_type == "fujisato_mayor" %>
+    <%= render "fujisato_mayor" %>
+  <% elsif current_user.candidate_type == "fujisato_council" %>
+    <%= render "fujisato_council" %>
+  <% elsif current_user %>
+    <%= render "representative" %>
+    <%= render "councilor" %>
+    <%= render "governor" %>
+    <%= render "prefectural_assembly" %>
+    <%= render "mayor" %>
+    <%= render "city_council" %>
+    <%= render "mitane_mayor" %>
+    <%= render "mitane_council" %>
+    <%= render "happou_mayor" %>
+    <%= render "happou_council" %>
+    <%= render "fujisato_mayor" %>
+    <%= render "fujisato_council" %>
+  <% end %>
+<% end %>

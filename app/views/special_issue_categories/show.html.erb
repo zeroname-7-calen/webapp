@@ -2,6 +2,7 @@
 <% unless @special_issue_category.is_display %>
   <h5><%= @special_issue_category.category_name %></h5>
 
+<% if current_user && loyalty(@special_issue_category, :special_issue_categories).show? %>
   <div class="special_issue_regist">
     <div class="special_issue_button">
       <% if current_user %>
@@ -9,6 +10,7 @@
       <% end %>
     </div>
   </div>
+<% end %>
 
 <table class="table table-md table-condenced table-hover">
   <% @special_issues = @special_issue_category.special_issues.order(created_at: :desc).page(params[:page]).per(10) %>

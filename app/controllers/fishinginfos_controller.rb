@@ -2,6 +2,7 @@ class FishinginfosController < ApplicationController
 
   def index
     @fishinginfos = Fishinginfo.order(created_at: :desc)
+    # authorize! @fishinginfo
   end
 
   def show
