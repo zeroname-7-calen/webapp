@@ -1,27 +1,27 @@
 <% if current_user && loyalty(@questionnaire, :questionnaires).show %>
-  <% if current_user.candidate_type == 1 %>
+  <% if current_user.candidate_type == "representative" %>
     <%= render "representative" %>
-  <% elsif current_user.candidate_type == 2 %>
+  <% elsif current_user.candidate_type == "councilor" %>
     <%= render "councilor" %>
-  <% elsif current_user.candidate_type == 3 %>
+  <% elsif current_user.candidate_type == "governor" %>
     <%= render "governor" %>
-  <% elsif current_user.candidate_type == 4 %>
+  <% elsif current_user.candidate_type == "prefectural_assembly" %>
     <%= render "prefectural_assembly" %>
-  <% elsif current_user.candidate_type == 5 %>
+  <% elsif current_user.candidate_type == "mayor" %>
     <%= render "mayor" %>
-  <% elsif current_user.candidate_type == 6 %>
+  <% elsif current_user.candidate_type == "city_council" %>
     <%= render "city_council" %>
-  <% elsif current_user.candidate_type == 7 %>
+  <% elsif current_user.candidate_type == "mitane_mayor" %>
     <%= render "mitane_mayor" %>
-  <% elsif current_user.candidate_type == 8 %>
+  <% elsif current_user.candidate_type == "mitane_council" %>
     <%= render "mitane_council" %>
-  <% elsif current_user.candidate_type == 9 %>
+  <% elsif current_user.candidate_type == "happou_mayor" %>
     <%= render "happou_mayor" %>
-  <% elsif current_user.candidate_type == 10 %>
+  <% elsif current_user.candidate_type == "happou_council" %>
     <%= render "happou_council" %>
-  <% elsif current_user.candidate_type == 11 %>
+  <% elsif current_user.candidate_type == "fujisato_mayor" %>
     <%= render "fujisato_mayor" %>
-  <% elsif current_user.candidate_type == 12 %>
+  <% elsif current_user.candidate_type == "fujisato_council" %>
     <%= render "fujisato_council" %>
   <% elsif current_user %>
     <%= render "representative" %>
@@ -35,6 +35,6 @@
     <%= render "happou_mayor" %>
     <%= render "happou_council" %>
     <%= render "fujisato_mayor" %>
-    <%= render "fujisato_council" %>  
+    <%= render "fujisato_council" %>
   <% end %>
 <% end %>

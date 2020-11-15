@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  get "questionnaires/index" => "questionnaires/index"
-  get "questionnaires/:candidate_type" => "questionnaires#show"
+  # get "questionnaires/index" => "questionnaires/index"
+  get "questionnaires/index", to: "questionnaires#index"
+  # get "questionnaires/:candidate_type" => "questionnaires#show"
+  get "questionnaires/:candidate_type", to: "questionnaires#show"
 
   resources :fileuploads, only: [:index, :create, :new]
 
