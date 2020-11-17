@@ -5,14 +5,10 @@
     </ul>
   </div>
 <% end %>
-<div class="advertisement_1">
-  <h2>広告スペース</h2>
-  <div class="ad_space">
-    <p>ここに広告掲載</p>
-  </div>
-</div>
+
 <div class="notice_board">
   <ul>
+
     <h3><%= menu_link_to "【掲示板】", :messages %></h3>
   </ul>
 </div>
@@ -22,7 +18,6 @@
     <li><h3><%= menu_link_to "【Twitter】", :microposts %></h3></li>
   </ul>
   <% @microposts = Micropost.order(created_at: :desc).limit(10) %>
-
   <table class="table table-bordered">
     <ul>
       <% @microposts.each do |micropost| %>

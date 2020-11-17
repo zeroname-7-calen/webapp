@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  # get "questionnaires/index" => "questionnaires/index"
-  get "questionnaires/index", to: "questionnaires#index"
-  # get "questionnaires/:candidate_type" => "questionnaires#show"
-  get "questionnaires/:candidate_type", to: "questionnaires#show"
-
   resources :fileuploads, only: [:index, :create, :new]
 
   root "top#index"
@@ -40,4 +35,19 @@ Rails.application.routes.draw do
     resources :special_issues, params: :id
   end
   resources :special_issues
+
+  # get "questionnaires/index" => "questionnaires/index"
+  get "questionnaires/index", to: "questionnaires#index"
+  # get "questionnaires/:candidate_type" => "questionnaires#show"
+  get "questionnaires/:candidate_type", to: "questionnaires#show"
+
+  # get 'advertisements/index', to: "advertisements#index"
+  # get 'advertisements/show', to: "advertisements#show"
+  # get 'advertisements/new', to: "advertisements#new"
+  # post "advertisements/create", to: "advertisements#create"
+  # get 'advertisements/:id/edit', to: "advertisements#edit"
+  # post "advertisements/:id/update", to: "advertisements#update"
+  # post "advertisements/:id/destory", to: "advertisements#destory"
+
+  resources :advertisements
 end
