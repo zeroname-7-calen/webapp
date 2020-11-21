@@ -1,3 +1,36 @@
 // Place all the styles related to the advertisements controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+// app/views/advertisements/indexページでの規定
+.adver_tool {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.index_advertisement {
+  img {
+    padding-bottom: 1em;
+    max-width: 40%;
+  }
+}
+
+
+// //  【960px未満をタブレットと想定】
+@media screen and (max-width: 959px) {
+  .index_advertisement {
+    img {
+      max-width: 60%;
+    }
+  }
+}
+
+// 560px以下をスマートフォンと想定
+@media screen and (max-width: 559px) {
+  .index_advertisement {
+    img {
+      max-width: 100%;
+    }
+  }
+}

@@ -151,10 +151,24 @@ footer {
 }
 
 // 【サイドバーの設定】
-//※以下↓↓↓↓↓↓ここから将来的に不要
-.advertisement_1 h2 {
-  font-size: 1em;
+
+// サイドバー広告関連・ここから
+// 広告が入るボックスサイズ
+.advertisement {
+  margin: 0.4em 0.2em;
 }
+
+// 広告表示サイズ
+.advertisement img {
+  width: 100%;
+  padding: 0.2em;
+}
+
+.ad_tool {
+  padding: 1em 0em;
+}
+
+// サイドバー広告関連規定・ここまで
 
 .notice_board {
   padding: 3px;

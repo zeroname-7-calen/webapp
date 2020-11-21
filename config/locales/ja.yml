@@ -42,7 +42,7 @@ ja:
         content: 本文
       advertisement:
         title: 広告タイトル
-        picture: ファイル名
+        picture: ファイル
     errors:
       messages:
         carrierwave_processing_error: 処理できませんでした

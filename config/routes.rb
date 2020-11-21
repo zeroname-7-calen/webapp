@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :fileuploads, only: [:index, :create, :new]
 
   root "top#index"
+  get "top/test" => "top#test"
   get "about", to: "top#about", as: "about"
   get "bad_request" => "top#bad_request"
   # get "login_required" => "top#login_required"

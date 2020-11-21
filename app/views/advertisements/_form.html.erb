@@ -1,0 +1,11 @@
+<table class="attr">
+  <tr>
+    <th width="80"><%= form.label :title %></th>
+    <td><%= form.text_field :title, size: 50 %></td>
+  </tr>
+</table>
+<div>
+  <span class="picture">
+    <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png, video' %>
+  </span>
+</div>

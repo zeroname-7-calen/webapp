@@ -1,0 +1,26 @@
+<h2>テストページとして用意</h2>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="1000">
+  <div class="carousel-inner">
+    <% @advertisements = Advertisement.order(created_at: :desc) %>
+      <% if @advertisements.present? %>
+    <div class="carousel-item active">
+      <% @advertisements.first(1).each do |advertisement| %>
+        <li><%= image_tag advertisement.picture.url if advertisement.picture? %></li>
+      <% end %>
+    </div>
+    <div class="carousel-item">
+      <% @advertisements.drop(1).each do |advertisement| %>
+        <li><%= image_tag advertisement.picture.url if advertisement.picture? %></li>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
