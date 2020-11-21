@@ -1,7 +1,6 @@
 class AdvertisementsController < ApplicationController
   def index
     @advertisements = Advertisement.order(created_at: :desc)
-    # @advertisements = Advertisement.all
   end
 
   def show

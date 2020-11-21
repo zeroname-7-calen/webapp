@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get "top/test" => "top#test"
   get "about", to: "top#about", as: "about"
   get "bad_request" => "top#bad_request"
-  # get "login_required" => "top#login_required"
   get "forbidden" => "top#forbidden"
   get "internal_server_error" => "top#internal_server_error"
 
@@ -37,18 +36,8 @@ Rails.application.routes.draw do
   end
   resources :special_issues
 
-  # get "questionnaires/index" => "questionnaires/index"
   get "questionnaires/index", to: "questionnaires#index"
-  # get "questionnaires/:candidate_type" => "questionnaires#show"
   get "questionnaires/:candidate_type", to: "questionnaires#show"
-
-  # get 'advertisements/index', to: "advertisements#index"
-  # get 'advertisements/show', to: "advertisements#show"
-  # get 'advertisements/new', to: "advertisements#new"
-  # post "advertisements/create", to: "advertisements#create"
-  # get 'advertisements/:id/edit', to: "advertisements#edit"
-  # post "advertisements/:id/update", to: "advertisements#update"
-  # post "advertisements/:id/destory", to: "advertisements#destory"
-
+  
   resources :advertisements
 end
