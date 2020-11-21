@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.author = current_user
     @message.created_at = Time.now
-    if @message.save!
+    if @message.save
       redirect_to @message, notice: "掲示板に掲載しました"
     else
       render "new"

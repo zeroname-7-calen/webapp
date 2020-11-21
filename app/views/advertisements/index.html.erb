@@ -1,0 +1,28 @@
+<!-- 広告一覧ボタン -->
+<%# <% if current_user %>
+<div class="adver_tool">
+  <h5><%= link_to "広告新規作成ボタン", new_advertisement_path %></h5>
+</div>
+<%# <% end %>
+
+
+<table class="index_advertisement">
+  <tbody>
+  <% @advertisements = Advertisement.order(created_at: :desc) %>
+    <% if @advertisements.present? %>
+    <% @advertisements.each do |advertisement| %>
+      <tr>
+        <td class="ad_picture">
+          <li><%= image_tag advertisement.picture.url if advertisement.picture? %></li>
+        </td>
+        <td class="ad_edit_delete">
+          <%= link_to "差替え", [:edit, advertisement ] %> |
+                <%= link_to "削除", advertisement, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
+        </td>
+      <% end %>
+      </tr>
+  </tbody>
+</table>
+<% else %>
+  <p>広告掲載はありません</p>
+<% end %>
