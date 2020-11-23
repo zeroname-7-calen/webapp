@@ -154,18 +154,23 @@ footer {
 
 // サイドバー広告関連・ここから
 // 広告が入るボックスサイズ
-.advertisement {
-  margin: 0.4em 0.2em;
-}
-
-// 広告表示サイズ
-.advertisement img {
+#advertisement_box {
   width: 100%;
   padding: 0.2em;
 }
 
+// 広告表示サイズ
+#advertisement_box img {
+  width: 100%;
+  padding: 0.2em;
+}
+
+.ad_tool_container {
+  text-align: center;
+}
+
 .ad_tool {
-  padding: 1em 0em;
+  padding: 0.5 0em;
 }
 
 // サイドバー広告関連規定・ここまで

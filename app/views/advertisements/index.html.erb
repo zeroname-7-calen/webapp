@@ -15,11 +15,12 @@
         <td class="ad_picture">
           <li><%= image_tag advertisement.picture.url if advertisement.picture? %></li>
         </td>
+        <td class="ad_title"><%= advertisement.title %></td>
         <td class="ad_edit_delete">
           <%= link_to "差替え", [:edit, advertisement ] %> |
                 <%= link_to "削除", advertisement, method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
         </td>
-      <% end %>
+        <% end %>
       </tr>
   </tbody>
 </table>

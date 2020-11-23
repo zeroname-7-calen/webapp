@@ -4,21 +4,43 @@
 
 
 // app/views/advertisements/indexページでの規定
+// 【960px以上フルサイズ】
+// 広告データが入るボックス
+.ad_picture {
+  width:50%;
+}
+
 .adver_tool {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-.index_advertisement {
-  img {
-    padding-bottom: 1em;
-    max-width: 40%;
-  }
+// 広告サイズ
+.index_advertisement img {
+  padding: 0em 0em 1em 2em;
+  max-width: 70%;
 }
 
+.ad_title {
+  white-space: nowrap;//広告タイトルを１行で表示
+}
+
+.ad_edit_delete {
+  white-space: nowrap;//広告「差替え」「削除」ボタンを１行で表示
+}
+
+.picture_button {
+  // padding-top: 1em;
+}
+
+// 「登録する」ボタンの位置
+.form_button {
+  padding-top: 1em;
+}
 
 // //  【960px未満をタブレットと想定】
 @media screen and (max-width: 959px) {
+  // スマートフォンでindexページを見た際のサイズ
   .index_advertisement {
     img {
       max-width: 60%;
@@ -28,6 +50,7 @@
 
 // 560px以下をスマートフォンと想定
 @media screen and (max-width: 559px) {
+  // スマートフォンでindexページを見た際のサイズ
   .index_advertisement {
     img {
       max-width: 100%;
