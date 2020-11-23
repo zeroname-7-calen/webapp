@@ -1,3 +1,4 @@
+<%= link_to "広告テストページ", top_test_path %>
 <div class="ad_tool_container">
   <%# <% if current_user %>
     <div class="ad_tool">
@@ -6,18 +7,18 @@
   <%# <% end %>
 </div>
 
-<div id="advertisement_box" class="carousel slide" data-ride="carousel" data-interval="1000">
+<div id="advertisement_box" class="carousel slide" data-ride="carousel" data-interval="5000">
   <div class="carousel-inner">
     <% @advertisements = Advertisement.order(created_at: :desc) %>
       <% if @advertisements.present? %>
         <div class="carousel-item active">
           <% @advertisements.first(1).each do |advertisement| %>
-            <li><%= image_tag advertisement.picture.url if advertisement.picture? %></li>
+            <li><%= link_to image_tag(advertisement.picture.url), advertisement.image_url if advertisement.picture? %></li>
           <% end %>
         </div>
         <% @advertisements.drop(1).each do |advertisement| %>
           <div class="carousel-item">
-            <li><%= image_tag advertisement.picture.url if advertisement.picture? %></li>
+            <li><%= link_to image_tag(advertisement.picture.url), advertisement.image_url if advertisement.picture? %></li>
           </div>
         <% end %>
       <% end %>

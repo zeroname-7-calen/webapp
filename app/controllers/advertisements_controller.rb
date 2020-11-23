@@ -46,7 +46,8 @@ class AdvertisementsController < ApplicationController
     def advertisement_params
       params.require(:advertisement).permit(
         :title,
-        :picture
+        :picture,
+        :image_url
       )
     end
 end
