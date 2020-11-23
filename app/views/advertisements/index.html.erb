@@ -13,7 +13,7 @@
     <% @advertisements.each do |advertisement| %>
       <tr>
         <td class="ad_picture">
-          <li><%= image_tag advertisement.picture.url if advertisement.picture? %></li>
+          <li><%= link_to image_tag(advertisement.picture.url), advertisement.image_url if advertisement.picture? %></li>
         </td>
         <td class="ad_title"><%= advertisement.title %></td>
         <td class="ad_edit_delete">

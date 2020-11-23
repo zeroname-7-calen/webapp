@@ -43,6 +43,7 @@ ja:
       advertisement:
         title: 広告タイトル
         picture: ファイル
+        image_url: 広告URL
     errors:
       messages:
         carrierwave_processing_error: 処理できませんでした
