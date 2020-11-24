@@ -1,26 +1,26 @@
 class AdvertisementsLoyalty < ApplicationLoyalty
 
   def index?
-    user.advertise?
+    user && user.advertise?
   end
 
   def new?
-    user.advertise?
+    user && user.advertise?
   end
 
   def create?
-    user.advertise?
+    user && user.advertise?
   end
 
   def edit?
-    user.advertise?
+    user && user.advertise?
   end
 
   def update?
-    user.advertise?
+    user && user.advertise?
   end
 
   def destroy?
-    user.advertise?
+    user && user.advertise?
   end
 end
