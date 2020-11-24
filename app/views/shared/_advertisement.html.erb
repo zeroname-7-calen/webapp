@@ -1,9 +1,9 @@
 <div class="ad_tool_container">
-  <%# <% if current_user %>
+  <% if current_user && loyalty(@advertisement, :advertisements).index? %>
     <div class="ad_tool">
       <h6><%= link_to "広告一覧確認", advertisements_path %></h6>
     </div>
-  <%# <% end %>
+  <% end %>
 </div>
 
 <div id="advertisement_box" class="carousel slide" data-ride="carousel" data-interval="5000">
@@ -12,12 +12,12 @@
       <% if @advertisements.present? %>
         <div class="carousel-item active">
           <% @advertisements.first(1).each do |advertisement| %>
-            <li><%= link_to image_tag(advertisement.picture.url), advertisement.image_url if advertisement.picture? %></li>
+            <li><%= link_to image_tag(advertisement.picture.url), advertisement.image_url, target: :_blank, rel: "noopener noreferrer" if advertisement.picture? %></li>
           <% end %>
         </div>
         <% @advertisements.drop(1).each do |advertisement| %>
           <div class="carousel-item">
-            <li><%= link_to image_tag(advertisement.picture.url), advertisement.image_url if advertisement.picture? %></li>
+            <li><%= link_to image_tag(advertisement.picture.url), advertisement.image_url, target: :_blank, rel: "noopener noreferrer" if advertisement.picture? %></li>
           </div>
         <% end %>
       <% end %>

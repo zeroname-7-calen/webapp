@@ -42,8 +42,8 @@
 
 // サイドバー
 #aside {
-  margin-top: 20px;
-  padding-top: 10px;
+  margin-top: 0.3em;
+  padding-top: 0.3em;
   border: solid 1px;
 }
 
@@ -152,6 +152,14 @@ footer {
 
 // 【サイドバーの設定】
 
+.questionnaire {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 1.5em;
+}
+
 // サイドバー広告関連・ここから
 // 広告が入るボックスサイズ
 #advertisement_box {
@@ -162,7 +170,7 @@ footer {
 // 広告表示サイズ
 #advertisement_box img {
   width: 100%;
-  padding: 0.2em;
+  // padding: 0.2em;
 }
 
 .ad_tool_container {
@@ -188,14 +196,32 @@ footer {
   font-size: 2em;
 }
 
+// 【ツイッターコーナー】
+// 文章右寄りを修正
+.twitter {
+  padding-right: 1em;
+}
+
+.twitter_title h3 {
+  line-height: 0;
+  font-size: 0.7em;
+  white-space: nowrap;
+}
+
 // サイドバーのツイッター文字色を黒
 .twitter a {
+  display: flex;
+  justify-content: flex-start;
   color: black;
 }
 
 // サイドバーのツイッター・上下間隔を空ける
 .twitter li {
   padding-top: 0.5em;
+}
+
+.twitter ul h3 {
+  padding-bottom: 0;
 }
 // ↑↑↑↑↑↑↑将来的にここまで不要
 
