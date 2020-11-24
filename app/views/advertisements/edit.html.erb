@@ -1,17 +1,19 @@
-<%= render "shared/errors", obj: @advertisement %>
+<% if current_user && loyalty(@advertisement, :advertisements).index? %>
+  <%= render "shared/errors", obj: @advertisement %>
 
-<% @page_title = "広告データ入れ替え" %>
-<h5><%= @page_title %></h5>
-<%= form_for @advertisement do |form| %>
-<%= render "form", form: form %>
-<div><%= form.submit %></div>
+  <% @page_title = "広告データ入れ替え" %>
+  <h5><%= @page_title %></h5>
+  <%= form_for @advertisement do |form| %>
+  <%= render "form", form: form %>
+  <div><%= form.submit %></div>
+  <% end %>
+
+  <script type="text/javascript">
+    $('#advertisement_picture').bind('change', function() {
+      var size_in_megabytes = this.files[0].size/1024/1024;
+      if (size_in_megabytes > 3) {
+        alert('ファイルの最大サイズは3MBです。3MB未満のファイル容量にしてください');
+      }
+    });
+  </script>
 <% end %>
-
-<script type="text/javascript">
-  $('#advertisement_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 3) {
-      alert('ファイルの最大サイズは3MBです。3MB未満のファイル容量にしてください');
-    }
-  });
-</script>

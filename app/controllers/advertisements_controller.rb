@@ -1,21 +1,21 @@
 class AdvertisementsController < ApplicationController
   def index
     @advertisements = Advertisement.order(created_at: :desc)
-  end
-
-  def show
-    @advertisement = Advertisement.find(params[:id])
+    authorize!
   end
 
   def new
     @advertisement = Advertisement.new
+    authorize!
   end
 
   def edit
     @advertisement = Advertisement.find(params[:id])
+    authorize!
   end
 
   def create
+    authorize!
     @advertisement = Advertisement.new(advertisement_params)
     @advertisement.created_at = Time.now
     if @advertisement.save
@@ -27,6 +27,7 @@ class AdvertisementsController < ApplicationController
 
   def update
     @advertisement = Advertisement.find(params[:id])
+    authorize!
     @advertisement.assign_attributes(advertisement_params)
     if @advertisement.save
       redirect_to root_path, notice: "広告データを更新しました"
@@ -37,6 +38,7 @@ class AdvertisementsController < ApplicationController
 
   def destroy
     @advertisement = Advertisement.find(params[:id])
+    authorize!
     @advertisement.destroy
     redirect_to root_path, notice: "削除しました"
   end
