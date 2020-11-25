@@ -1,13 +1,11 @@
-<% if loyalty(@article, :articles).index? %>
-  <%= render "shared/errors", obj: @article %>
-  <table class="attr">
-    <tr>
-      <th><%= form.label :title %></th>
-      <td><%= form.text_field :title %></td>
-    </tr>
-    <tr>
-      <th><%= form.label :content %></th>
-      <td><%= form.rich_text_area :content %></td>
-    </tr>
-  </table>
-<% end %>
+<%= render "shared/errors", obj: @article %>
+<table class="attr">
+  <tr>
+    <th><%= form.label :title %></th>
+    <td><%= form.text_field :title %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :content %></th>
+    <td><%= form.rich_text_area :content %></td>
+  </tr>
+</table>
