@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    authorize! @article
+    authorize!
   end
 
   def edit
@@ -30,12 +30,11 @@ class ArticlesController < ApplicationController
     puts params[:id]
     puts "333333333333333"
     @article = Article.find(params[:id])
-    authorize! @article
+    authorize!
   end
 
   def create
-    authorize! @article
-
+    authorize!
     @article = Article.new(article_params)
     @article.user_id = current_user.id
     @article.released_at = Time.now
@@ -48,7 +47,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    authorize! @article
+    authorize!
     @article.assign_attributes(article_params)
     if @article.save!
       redirect_to @article, notice: "投稿を更新しました"
@@ -59,7 +58,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    authorize! @article
+    authorize!
     @article.destroy
     redirect_to :articles
   end
