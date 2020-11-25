@@ -1,26 +1,26 @@
 class MessagesLoyalty < ApplicationLoyalty
 
   def index?
-    user.admin?
+    user && user.admin?
   end
 
   def new?
-    user.admin?
+    user && user.admin?
   end
 
   def create?
-    user.admin?
+    user && user.admin?
   end
 
   def edit?
-    user.admin? || user.id == record.user_id
+    user && user.admin?
   end
 
   def update?
-    user.admin?
+    user && user.admin?
   end
 
   def destroy?
-    user.admin? || user.id == record.user_id
+    user && user.admin?
   end
 end
