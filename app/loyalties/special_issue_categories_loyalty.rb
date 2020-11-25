@@ -1,5 +1,5 @@
 class SpecialIssueCategoriesLoyalty < ApplicationLoyalty
-  
+
   def index?
     user.admin?
   end
