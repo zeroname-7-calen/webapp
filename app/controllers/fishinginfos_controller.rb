@@ -2,7 +2,6 @@ class FishinginfosController < ApplicationController
 
   def index
     @fishinginfos = Fishinginfo.order(created_at: :desc)
-    # authorize! @fishinginfo
   end
 
   def show
@@ -11,17 +10,16 @@ class FishinginfosController < ApplicationController
 
   def new
     @fishinginfo = Fishinginfo.new
-    authorize! @fishinginfo
+    authorize!
   end
 
   def edit
     @fishinginfo = Fishinginfo.find(params[:id])
-    authorize! @fishinginfo
+    authorize!
   end
 
   def create
-    authorize! @fishinginfo
-
+    authorize!
     @fishinginfo = Fishinginfo.new(fishinginfo_params)
     @fishinginfo.author = current_user
     @fishinginfo.created_at = Time.now
@@ -34,7 +32,7 @@ class FishinginfosController < ApplicationController
 
   def update
     @fishinginfo = Fishinginfo.find(params[:id])
-    authorize! @fishinginfo
+    authorize!
     @fishinginfo.assign_attributes(fishinginfo_params)
     if @fishinginfo.save
       redirect_to @fishinginfo, notice: "釣り情報を更新しました"
@@ -45,7 +43,7 @@ class FishinginfosController < ApplicationController
 
   def destroy
     @fishinginfo = Fishinginfo.find(params[:id])
-    authorize! @fishinginfo
+    authorize!
     @fishinginfo.destroy
     redirect_to :fishinginfos, notice: "削除しました"
   end
