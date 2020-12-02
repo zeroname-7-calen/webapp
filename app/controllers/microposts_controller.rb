@@ -15,17 +15,19 @@ class MicropostsController < ApplicationController
 
   def new
     @micropost = Micropost.new
-    authorize! @micropost
+    authorize!
   end
 
   def edit
-    @micropost = current_user.microposts.find(params[:id])
-    # @micropost = Micropost.find(params[:id])
-    authorize! @micropost
+    authorize!
+    # @micropost = current_user.microposts.find(params[:id])
+    @micropost = Micropost.find(params[:id])
+    # @micropost = @user.micropost.find(params[:id])
+    # authorize!
   end
 
   def create
-    authorize! @micropost
+    authorize!
     @micropost = Micropost.new(micropost_params)
     @micropost.author = current_user
     @micropost.created_at = Time.now
@@ -37,9 +39,9 @@ class MicropostsController < ApplicationController
   end
 
   def update
-    @micropost = current_user.microposts.find(params[:id])
-    # @micropost = Micropost.find(params[:id])
-    authorize! @micropost
+    # @micropost = current_user.microposts.find(params[:id])
+    @micropost = Micropost.find(params[:id])
+    authorize!
     @micropost.assign_attributes(micropost_params)
     if @micropost.save
       redirect_to @micropost, notice: "ツイートを更新しました"
@@ -51,7 +53,7 @@ class MicropostsController < ApplicationController
   def destroy
     # @micropost = current_user.microposts.find(params[:id]) ←これでは不可
     @micropost = Micropost.find(params[:id])
-    authorize! @micropost
+    authorize!
     @micropost.destroy
     redirect_to :microposts, notice: "ツイートを削除しました"
   end
