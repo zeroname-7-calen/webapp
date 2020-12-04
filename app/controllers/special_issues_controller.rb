@@ -12,16 +12,16 @@ class SpecialIssuesController < ApplicationController
   def new
     @special_issue = SpecialIssue.new
     @special_issue_categories = SpecialIssueCategory.all #新規コラム作成ページでselectボックスに選択肢を表示させるため
-    authorize! @special_issue
+    authorize!
   end
 
   def edit
     @special_issue = SpecialIssue.find(params[:id])
-    authorize! @special_issue
+    authorize!
   end
 
   def create
-    authorize! @special_issue
+    authorize!
     @special_issue = SpecialIssue.new(special_issue_params)
     @special_issue.author = current_user
     @special_issue.created_at = Time.now
@@ -34,7 +34,7 @@ class SpecialIssuesController < ApplicationController
 
   def update
     @special_issue = current_user.special_issues.find(params[:id])
-    authorize! @special_issue
+    authorize!
     @special_issue.assign_attributes(special_issue_params)
     if @special_issue.save
       redirect_to @special_issue, notice: "コラム・ガイド情報を更新しました"
@@ -45,7 +45,7 @@ class SpecialIssuesController < ApplicationController
 
   def destroy
     @special_issue = SpecialIssue.find(params[:id])
-    authorize! @special_issue
+    authorize!
     @special_issue.destroy
     redirect_to :special_issues, notice: "削除しました"
   end
