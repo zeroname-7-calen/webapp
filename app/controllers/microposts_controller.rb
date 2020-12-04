@@ -19,11 +19,8 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-    authorize!
-    # @micropost = current_user.microposts.find(params[:id])
     @micropost = Micropost.find(params[:id])
-    # @micropost = @user.micropost.find(params[:id])
-    # authorize!
+    authorize!(@micropost)
   end
 
   def create
@@ -39,9 +36,8 @@ class MicropostsController < ApplicationController
   end
 
   def update
-    # @micropost = current_user.microposts.find(params[:id])
     @micropost = Micropost.find(params[:id])
-    authorize!
+    authorize!(@micropost)
     @micropost.assign_attributes(micropost_params)
     if @micropost.save
       redirect_to @micropost, notice: "ツイートを更新しました"

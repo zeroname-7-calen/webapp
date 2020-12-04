@@ -12,12 +12,11 @@ class MicropostsLoyalty < ApplicationLoyalty
   end
 
   def edit?
-    user && user.advertise? || user.id == record.user_id
-
+    user && user.admin? || user && user.visitor? || user && user.candidate? || user && user.advertise? if user.id == record.user_id
   end
 
   def update?
-    user && user.admin? || user && user.visitor? || user && user.candidate? || user && user.advertise?
+    user && user.admin? || user && user.visitor? || user && user.candidate? || user && user.advertise? if user.id == record.user_id
 
   end
 
