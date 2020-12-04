@@ -37,6 +37,7 @@ ja:
         content: 本文
       special_issue_category:
         category_name: カテゴリー
+        image_name: アイキャッチ
       eventguide:
         title: タイトル
         content: 本文
