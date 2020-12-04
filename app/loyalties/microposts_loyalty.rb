@@ -4,22 +4,23 @@ class MicropostsLoyalty < ApplicationLoyalty
   end
 
   def new?
-    user.admin? || user.visitor?
+    user && user.admin? || user && user.visitor? || user && user.candidate? || user && user.advertise?
   end
 
   def create?
-    user.admin? || user.visitor?
+    user && user.admin? || user && user.visitor? || user && user.candidate? || user && user.advertise?
   end
 
   def edit?
-    user.admin? || user.visitor?
+    user && user.admin? || user && user.visitor? || user && user.candidate? || user && user.advertise? if user.id == record.user_id
   end
 
   def update?
-    user.admin? || user.visitor?
+    user && user.admin? || user && user.visitor? || user && user.candidate? || user && user.advertise? if user.id == record.user_id
+
   end
 
   def destroy?
-    user.admin? || user.visitor?
+    user && user.admin? || user && user.visitor? || user && user.candidate? || user && user.advertise?
   end
 end
