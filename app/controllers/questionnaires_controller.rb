@@ -1,8 +1,9 @@
 class QuestionnairesController < ApplicationController
   def index
-    # authorize! @questionnaire
+    # authorize!
   end
 
   def show
+    # authorize!
   end
 end
