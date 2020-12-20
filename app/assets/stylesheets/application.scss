@@ -79,6 +79,129 @@ footer {
 
 // グローバルナビ
 // ナビが入るコンテナーボックス
+// 【ここにサンプルをいれていく】
+
+  // ワイド画面　アイコン全体のコンテナボックス
+  .header-item {
+  // margin-left: 65px;
+  margin-left: 25px; //追加
+  display: block; //追加
+}
+  /* header hamburger */
+  #ham-menu,
+  label#menu-icon {
+      display: none;/*768px以上のWindow幅の場合は表示しないようにする*/
+  }
+  #ham-menu {
+      background-color: #fff; /*メニュー背景色*/
+      box-sizing: border-box;
+      height: 100%;
+      padding: 10px 40px; /*メニュー内左右上下余白*/
+      position: fixed;
+      right: -100%; /*メニュー横幅 width と合わせる*/
+      top: 0;
+      transition: transform 0.3s linear 0s; /*0.3s はアニメーションにかかる時間*/
+      width: 100%; /*メニュー横幅*/
+      z-index: 1000;
+      text-align: center;
+  }
+  #menu-icon {
+      background-color: rgb(30,40,54); /*アイコン部分 ハンバーガー中央色*/
+      border-radius: 10px; /*角丸*/
+      color: #333; /*アイコン（フォント）色*/
+      cursor: pointer;
+      display: block;
+      font-size: 50px; /*アイコン（フォント）サイズ*/
+      height: 5px; /*アイコン縦高さ*/
+      line-height: 50px; /*縦位置中央化*/
+      position: fixed;
+      // right: 10px;
+      right: 20px;
+      text-align: center;
+      // top: 20px;
+      top: 30px;
+      width: 30px; /*アイコン横幅*/
+      transition: all 0.3s linear 0s; /*0.3s はアニメーションにかかる時間*/
+      z-index: 1001;
+      transition: 1s;
+  }
+  #menu-icon::before {
+      content: '';
+      background-color: rgb(30,40,54); /*アイコン部分 ハンバーガー中央色*/
+      border-radius: 10px; /*角丸*/
+      display: block;
+      height: 5px;
+      width: 30px;
+      position: absolute;
+      top: -10px;
+      transition: 1s;
+  }
+  #menu-icon::after {
+      content: '';
+      background-color: rgb(30,40,54); /*アイコン部分 ハンバーガー中央色*/
+      border-radius: 10px; /*角丸*/
+      display: block;
+      height: 5px;
+      width: 30px;
+      position: absolute;
+      top: 10px;
+      transition: 1s;
+  }
+  #menu-cb {
+      display: none; /*チェックボックス本体は見えないようにしている*/
+  }
+  #menu-cb:checked ~ #ham-menu {
+      transform: translate(-100%); /*メニュー本体横幅 width と合わせる*/
+      text-align: center;
+  }
+  #menu-cb:checked ~ #menu-icon,
+  #menu-cb:checked ~ #menu-icon::before,
+  #menu-cb:checked ~ #menu-icon::after {
+      background-color: rgb(30,40,54); /*開示の際に、バーの色を黒色に変化させる*/
+  }
+  #menu-cb:checked ~ #menu-icon {
+      background-color: #fff;  /*中央バーを白色にして不可視に*/
+  }
+  #menu-cb:checked ~ #menu-icon::before {
+      transform: rotate(135deg);
+      transition: 1s;               /*上方バーを黒色にして傾ける*/
+      top: 0px;
+  }
+  #menu-cb:checked ~ #menu-icon::after {
+      transform: rotate(-135deg);
+      transition: 1s;              /*下方バーを黒色にして傾ける*/
+      top: 0px;
+  }
+
+  @media screen and (max-width: 768px) {
+
+      /* header hamburger */
+      #ham-menu,
+      label#menu-icon {
+          display: block;
+      }
+
+      /* firstview */
+      .firstview {
+          height: 100vh;
+      }
+      .firstview-imagearea {
+          width: 55%;
+          background: red;
+          height: 300px;
+          position: absolute;
+          top: 100px;
+          left: 50px;
+      }
+      .firstview-infoarea {
+          position: absolute;
+          top: 230px;
+          right: 40px;
+          width: 46%;
+      }
+  }
+// 【サンプルエリアここまで】
+
 #dropmenu {
   display: flex;
   flex-wrap: nowrap;
@@ -86,6 +209,7 @@ footer {
   width: 100%;
   margin: 0 auto;
   padding: 0;
+
 }
 
 #dropmenu li {
@@ -106,10 +230,11 @@ footer {
   color: black;
   font-size: 0.8em;
   font-weight: bold;
-  line-height: 1;
+  // border-right-style: 1px solid;
+  // border-right: 1px solid;
   border: 1px solid;
   border-radius: 4px;
-  background: #ffedab;
+  // background: #ffedab;
 }
 
 #dropmenu li ul {
@@ -135,6 +260,7 @@ footer {
   text-align: left;
   font-size: 12px;
   font-weight: normal;
+  // white-space: nowrap;
 }
 
 #dropmenu > li:hover a { background: #f5f5f5; }
@@ -143,6 +269,7 @@ footer {
   overflow: visible;
   height: 40px;
 }
+// とりあえずのコメントアウトここまで
 
 // 会社ロゴのサイズ指定。本来はtop.scssに記述する？
 .logo img {
@@ -151,7 +278,6 @@ footer {
 }
 
 // 【サイドバーの設定】
-
 .questionnaire {
   display: flex;
   justify-content: center;
@@ -237,6 +363,12 @@ footer {
     font-size: 0.6em;
     width: 100%;
     border: 1px solid;
+    // margin: 0px;
+    // padding: 0px;
+  }
+
+  .navbar{
+    display: none;  //959px以下だとナビバーを非表示
   }
 
   #main {
@@ -250,9 +382,58 @@ footer {
     height: auto;
   }
 
+  // 会社ロゴが入るコンテナー
+  .header-logo {
+    width: 70%;
+    padding-left: 20px;
+  }
+
   .logo img {
+    // width: 100%;
     width: 100%;
     height: 70px;
+  }
+
+  // スマホ画面用全体アイコン収納コンテナ
+  .header-items-sp {
+    padding-top: 2em;
+    height: 100vh;
+    background-color: black;
+    // flex-direction: column;
+    align-items: start;
+  }
+
+  .header-item-sp {
+    padding-top: 1.5em;
+    // justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .header-item-sp a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    font-family: sans-serif;
+  }
+
+  .header-item-sp a::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    // background: #333;
+    background: white;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+  }
+
+  .header-item-sp a:hover::after {
+    transform: scale(1, 1);
   }
 }
 
