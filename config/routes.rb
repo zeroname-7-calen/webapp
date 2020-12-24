@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :fileuploads, only: [:index, :create, :new]
-
   root "top#index"
   get "about", to: "top#about", as: "about"
   get "bad_request" => "top#bad_request"
@@ -39,4 +37,5 @@ Rails.application.routes.draw do
   get "questionnaires/:candidate_type", to: "questionnaires#show"
 
   resources :advertisements
+  resources :top_contents
 end

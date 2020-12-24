@@ -12,9 +12,4 @@
         <%= link_to "もっと読む", article %>
     <% end %>
   </div>
-  <% if current_user && loyalty(@article, :articles).index? %>
-    <div class="toolbar">
-      <%= link_to "写真の送信", :new_fileupload, class: "btn btn-outline-dark btn-sm" %>
-    </div>
-  <% end %>
 </div>

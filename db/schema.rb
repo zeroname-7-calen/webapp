@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_054838) do
+ActiveRecord::Schema.define(version: 2020_12_24_004047) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -114,6 +114,18 @@ ActiveRecord::Schema.define(version: 2020_11_23_054838) do
     t.index ["special_issue_category_id"], name: "index_special_issues_on_special_issue_category_id"
     t.index ["user_id", "created_at"], name: "index_special_issues_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_special_issues_on_user_id"
+  end
+
+  create_table "top_contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.string "medium_type"
+    t.string "url"
+    t.text "caption"
+    t.datetime "start_date"
+    t.datetime "finish_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["created_at"], name: "index_top_contents_on_created_at"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|

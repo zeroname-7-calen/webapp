@@ -17,6 +17,7 @@ ja:
       special_issue_category: コラムカテゴリー
       eventguide: イベントガイド
       advertisement: 広告
+      top_content: トップ写真・動画
     attributes:
       article:
         title: タイトル
@@ -45,6 +46,13 @@ ja:
         title: 広告タイトル
         picture: ファイル
         image_url: 広告URL
+      top_content:
+        title: タイトル
+        medium_type: 写真／動画
+        url: データアドレス
+        caption: キャプション
+        start_date: 掲載開始日時
+        finish_date: 掲載終了日時
     errors:
       messages:
         carrierwave_processing_error: 処理できませんでした
