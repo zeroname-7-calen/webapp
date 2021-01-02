@@ -1,0 +1,23 @@
+<%= render "shared/errors", obj: @top_content %>
+  <table class="attr">
+    <tr>
+      <th width="80"><%= form.label :title %></th>
+      <td><%= form.text_field :title, size: 50 %></td>
+    </tr>
+    <tr>
+      <th><%= form.label :content_type %></th>
+      <td><%= form.select :content_type, [["写真", "写真"], ["動画", "動画"]], include_blank: "選択してください" %></td>
+    </tr>
+    <tr>
+      <th><%= form.label :caption %></th>
+      <td><%= form.text_field :caption, rows: 10, cols: 45 %></td>
+    </tr>
+    <tr>
+      <th><%= form.label :start_date %></th>
+      <td><%= form.datetime_select :start_date %></td>
+    </tr>
+    <tr>
+      <th><%= form.label :finish_date %></th>
+      <td><%= form.datetime_select :finish_date %></td>
+    </tr>
+  </table>

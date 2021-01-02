@@ -1,0 +1,7 @@
+<ul class="top_content-footer">
+  <% if current_user %>
+    <%= link_to "編集", [:edit, top_content] %>
+    <%= link_to "削除", top_content, method: :delete,
+        data: { confirm: "本当に削除しますか？" } %>
+  <% end %>
+</ul>

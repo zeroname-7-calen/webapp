@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_24_004047) do
+ActiveRecord::Schema.define(version: 2020_12_25_073359) do
 
   create_table "action_text_rich_texts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 2020_12_24_004047) do
 
   create_table "top_contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title"
-    t.string "medium_type"
+    t.string "content_type"
     t.string "url"
     t.text "caption"
     t.datetime "start_date"

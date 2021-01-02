@@ -48,7 +48,7 @@ ja:
         image_url: 広告URL
       top_content:
         title: タイトル
-        medium_type: 写真／動画
+        content_type: 写真／動画
         url: データアドレス
         caption: キャプション
         start_date: 掲載開始日時

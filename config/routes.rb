@@ -37,5 +37,6 @@ Rails.application.routes.draw do
   get "questionnaires/:candidate_type", to: "questionnaires#show"
 
   resources :advertisements
+  # resources :top_contents, only: [:show]
   resources :top_contents
 end

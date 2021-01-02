@@ -1,2 +1,21 @@
-<h1>TopContents#new</h1>
-<p>Find me in app/views/top_contents/new.html.erb</p>
+<% @page_title = "トップページ写真／動画新規登録" %>
+<h5><%= @page_title %></h5>
+
+<%= form_for @top_content do |form| %>
+  <%= render "form", form: form %>
+  <div>
+    <span class="picture_button">
+      <%= form.file_field :url, accept: 'image/jpeg,image/gif,image/png, video' %>
+    </span>
+  </div>
+  <div><%= form.submit class: "btn btn-outline-dark btn-xs" %></div>
+<% end %>
+
+<script type="text/javascript">
+  $('#top_content_url').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 10) {
+      alert('ファイルの最大サイズは10MBです。10MB以下のファイル容量にしてください');
+    }
+  });
+</script>
