@@ -5,10 +5,6 @@
       <td><%= form.text_field :title, size: 50 %></td>
     </tr>
     <tr>
-      <th><%= form.label :content_type %></th>
-      <td><%= form.select :content_type, [["写真", "写真"], ["動画", "動画"]], include_blank: "選択してください" %></td>
-    </tr>
-    <tr>
       <th><%= form.label :caption %></th>
       <td><%= form.text_field :caption, rows: 10, cols: 45 %></td>
     </tr>

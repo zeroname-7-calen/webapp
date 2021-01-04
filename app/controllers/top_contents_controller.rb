@@ -1,9 +1,5 @@
 class TopContentsController < ApplicationController
 
-  def show
-    @top_content = TopContent.find(params[:id])
-  end
-
   def new
     @top_content = TopContent.new
   end
@@ -39,7 +35,6 @@ class TopContentsController < ApplicationController
     def top_content_params
       params.require(:top_content).permit(
         :title,
-        :content_type,
         :url,
         :caption,
         :start_date,
