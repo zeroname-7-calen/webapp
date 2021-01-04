@@ -1,5 +1,4 @@
 class TopContent < ApplicationRecord
-  # validates :content_type, presence: true
   validates :url, presence: true
   mount_uploader :url, PictureUploader
   # validate  :picture_size

@@ -3,14 +3,14 @@
     <h2>最新ニュース</h2>
   </div>
   <div class="top_content_media">
-    <% @top_content = TopContent.order(created_at: :desc).limit(1) %>
+    <% TopContent.order(created_at: :desc).limit(1) %>
       <% @top_contents.each do |top_content| %>
-      <h5><%= top_content.title %></h5>
-      <%= image_tag top_content.url.url if top_content.url? %>
-      <%= top_content.caption %>
-      <div class="tool_section">
-        <%= render "top_contents/tool", top_content: top_content %>
-      </div>
+        <h5><%= top_content.title %></h5>
+        <%= image_tag top_content.url.url if top_content.url? %>
+        <%= top_content.caption %>
+        <div class="tool_section">
+          <%= render "top_contents/tool", top_content: top_content %>
+        </div>
     <% end %>
   </div>
   <% if current_user %>
