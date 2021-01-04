@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  medium_type: MyString
+  url: MyString
+  caption: MyText
+  start_date: 2020-12-24 09:40:47
+  finish_date: 2020-12-24 09:40:47
+
+two:
+  title: MyString
+  medium_type: MyString
+  url: MyString
+  caption: MyText
+  start_date: 2020-12-24 09:40:47
+  finish_date: 2020-12-24 09:40:47
