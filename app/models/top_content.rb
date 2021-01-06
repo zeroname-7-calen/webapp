@@ -4,6 +4,22 @@ class TopContent < ApplicationRecord
   # validate  :picture_size
   validate :url_size
 
+  def no_start_date
+    start_date.nil?
+  end
+
+  def no_start_date=(val)
+    @no_start_date = val.in?([true, "1"])
+  end
+
+  def no_finish_date
+    finish_date.nil?
+  end
+
+  def no_finish_date=(val)
+    @no_finish_date = val.in?([true, "1"])
+  end
+
   #アップロード画像のサイズを制限
     # def picture_size
     #   if picture_size.size > 10.megabytes
