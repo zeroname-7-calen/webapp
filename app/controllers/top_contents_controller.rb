@@ -37,8 +37,8 @@ class TopContentsController < ApplicationController
         :title,
         :url,
         :caption,
-        :start_date,
-        :finish_date
+        :no_start_date,
+        :no_finish_date
       )
     end
 end
