@@ -15,6 +15,7 @@
     <tr>
       <th><%= form.label :start_date %></th>
       <td><%= form.datetime_select :start_date %></td>
+      <!-- <td><%= date_field_tag "top_content[start_date]", nil %></td> -->
     </tr>
     <tr>
       <th><%= form.check_box :no_finish_date? %></th>
@@ -23,5 +24,6 @@
     <tr>
       <th><%= form.label :finish_date %></th>
       <td><%= form.datetime_select :finish_date %></td>
+      <!-- <td><%= date_field_tag "top_content[finish_date]", nil %></td> -->
     </tr>
   </table>
