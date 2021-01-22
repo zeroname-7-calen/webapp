@@ -9,10 +9,6 @@ class TopContent < ApplicationRecord
     start_date.nil?
   end
 
-  # def no_start_date=(val)
-  #   @no_start_date = val.in?([true, "1"])
-  # end
-
   def no_start_date=(val)
     val.in?([true, "1"])
   end
@@ -20,10 +16,6 @@ class TopContent < ApplicationRecord
   def no_finish_date?
     finish_date.nil?
   end
-
-  # def no_finish_date=(val)
-  #   @no_finish_date = val.in?([true, "1"])
-  # end
 
   def no_finish_date=(val)
     val.in?([true, "1"])
