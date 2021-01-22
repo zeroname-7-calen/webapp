@@ -1,9 +1,9 @@
 class TopController < ApplicationController
   def index
     @articles = Article.order(released_at: :desc).limit(5)
-    @top_contents = TopContent.all
-    # top_content_ids = TopContent.where.not(start_date: nil).pluck(:id)
-    # @top_contents = TopContent.where("start_date <= ?", Time.now).where("finish_date >= ?", Time.now)
+    @top_contents = TopContent.where("start_date <= ?", Time.now).where("finish_date >= ?", Time.now).or(TopContent.where(start_date: nil))
+
+    # @top_contents = TopContent.all
   end
 
   def about
@@ -20,4 +20,5 @@ class TopController < ApplicationController
   def internal_server_error
     raise
   end
+
 end

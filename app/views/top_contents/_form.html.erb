@@ -9,11 +9,21 @@
       <td><%= form.text_field :caption, rows: 10, cols: 45 %></td>
     </tr>
     <tr>
+      <th><%= form.check_box :no_start_date? %></th>
+      <td><%= form.label :no_start_date %></td>
+    </tr>
+    <tr>
       <th><%= form.label :start_date %></th>
       <td><%= form.datetime_select :start_date %></td>
+      <!-- <td><%= date_field_tag "top_content[start_date]", nil %></td> -->
+    </tr>
+    <tr>
+      <th><%= form.check_box :no_finish_date? %></th>
+      <td><%= form.label :no_finish_date %></td>
     </tr>
     <tr>
       <th><%= form.label :finish_date %></th>
       <td><%= form.datetime_select :finish_date %></td>
+      <!-- <td><%= date_field_tag "top_content[finish_date]", nil %></td> -->
     </tr>
   </table>
