@@ -11,21 +11,21 @@ class TopContentsController < ApplicationController
   def create
     @top_content_start_date = top_content_params[:no_start_date]
     @top_content_finish_date = top_content_params[:no_finish_date]
-    if @top_content_start_date == "1" && @top_content_finish_date =="1"
-      @top_content = TopContent.new(top_content_params)
-      @top_content.start_date = nil
-      @top_content.finish_date = nil
-      @top_content.created_at = Time.now
-        if @top_content.save
-          redirect_to root_path, notice: "日付指定なしでトップ写真／動画をアップしました"
-        end
-    elsif @top_content_start_date == "0" && @top_content_finish_date =="0"
-      @top_content = TopContent.new(top_content_params)
-      @top_content.created_at = Time.now
-        if @top_content.save
-          redirect_to root_path, notice: "日時を指定してトップ写真／動画をアップしました"
-        end
-    end
+      if @top_content_start_date == "1"# && @top_content_finish_date =="1"
+        @top_content = TopContent.new(top_content_params)
+        @top_content.start_date = nil
+        @top_content.finish_date = nil
+        @top_content.created_at = Time.now
+          if @top_content.save
+            redirect_to root_path, notice: "日付指定なしでトップ写真／動画をアップしました"
+          end
+      elsif @top_content_start_date == "0"# && @top_content_finish_date =="0"
+        @top_content = TopContent.new(top_content_params)
+        @top_content.created_at = Time.now
+          if @top_content.save
+            redirect_to root_path, notice: "日時を指定してトップ写真／動画をアップしました"
+          end
+      end
   end
 
   def update
