@@ -1,0 +1,19 @@
+<div class="top_contents">
+  <% if @top_contents.present? %>
+    <% @top_contents.each do |top_content| %>
+    <h6><%= top_content.title %></h6>
+    <div class="pics_date">
+    <% if top_content.start_date? %>
+      掲載指定日時=<%= top_content.start_date.strftime("%Y-%m-%d-%H:%M") %>
+    <% end %>
+    </div>
+      <%= image_tag top_content.url.url if top_content.url? %>
+      <%= top_content.caption %>
+      <div class="tool_section">
+        <%= render "top_contents/tool", top_content: top_content %>
+      </div>
+    <% end %>
+  <% else %>
+  <p>掲載されている写真／動画はありません</p>
+  <% end %>
+</div>

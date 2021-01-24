@@ -1,29 +1,51 @@
 <%= render "shared/errors", obj: @top_content %>
-  <table class="attr">
-    <tr>
-      <th width="80"><%= form.label :title %></th>
-      <td><%= form.text_field :title, size: 50 %></td>
-    </tr>
-    <tr>
-      <th><%= form.label :caption %></th>
-      <td><%= form.text_field :caption, rows: 10, cols: 45 %></td>
-    </tr>
-    <tr>
-      <th><%= form.check_box :no_start_date? %></th>
-      <td><%= form.label :no_start_date %></td>
-    </tr>
-    <tr>
-      <th><%= form.label :start_date %></th>
-      <td><%= form.datetime_select :start_date %></td>
-      <!-- <td><%= date_field_tag "top_content[start_date]", nil %></td> -->
-    </tr>
-    <tr>
-      <th><%= form.check_box :no_finish_date? %></th>
-      <td><%= form.label :no_finish_date %></td>
-    </tr>
-    <tr>
-      <th><%= form.label :finish_date %></th>
-      <td><%= form.datetime_select :finish_date %></td>
-      <!-- <td><%= date_field_tag "top_content[finish_date]", nil %></td> -->
-    </tr>
-  </table>
+<table class="attr">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="field">
+              <tr>
+                <th><%= form.label :title %></th>
+                <td><%= form.text_field :title %></td>
+              </tr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="field">
+              <tr>
+                <th><%= form.label :caption %></th>
+                <td><%= form.text_field :caption %></td>
+              </tr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <tr>
+    <th><%= form.check_box :no_start_date?, checked: false %></th>
+    <td><%= form.label :no_start_date %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :start_date %></th>
+    <td><%= form.datetime_select :start_date %></td>
+  </tr>
+  <tr>
+    <th><%= form.check_box :no_finish_date?, checked: false %></th>
+    <td><%= form.label :no_finish_date %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :finish_date %></th>
+    <td><%= form.datetime_select :finish_date %></td>
+  </tr>
+</table>
