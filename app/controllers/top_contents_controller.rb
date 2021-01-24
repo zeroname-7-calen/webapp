@@ -1,5 +1,9 @@
 class TopContentsController < ApplicationController
 
+  def index
+    @top_contents = TopContent.order(created_at: :desc)
+  end
+
   def new
     @top_content = TopContent.new
   end
@@ -12,7 +16,7 @@ class TopContentsController < ApplicationController
     @top_content_start_date = top_content_params[:no_start_date]
     @top_content_finish_date = top_content_params[:no_finish_date]
     @top_content = TopContent.new(top_content_params)
-    if @top_content_start_date == "1"
+    if @top_content_start_date == "0"
       @top_content.start_date = nil
       @top_content.finish_date = nil
         if @top_content.save
@@ -30,7 +34,7 @@ class TopContentsController < ApplicationController
     @top_content_start_date = top_content_params[:no_start_date]
     @top_content_finish_date = top_content_params[:no_finish_date]
     @top_content.assign_attributes(top_content_params)
-    if @top_content_start_date == "1"
+    if @top_content_start_date == "0"
       @top_content.start_date = nil
       @top_content.finish_date = nil
       if @top_content.save

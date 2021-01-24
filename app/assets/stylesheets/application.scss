@@ -175,7 +175,7 @@ footer {
   transition: 1s;            /*下方バーを黒色にして傾ける*/
   top: 0px;}
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 959px) {
 
 // 会社ロゴが入るコンテナー
   .header-logo {
@@ -436,7 +436,7 @@ footer {
 }
 
 // 560px以下をスマートフォンと想定
-@media screen and (max-width: 559px) {
+@media screen and (max-width: 414px) {
   .container {
     font-family: Meiryo, sans-serif;
     font-size: 0.6em;
