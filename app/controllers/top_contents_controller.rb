@@ -1,18 +1,26 @@
 class TopContentsController < ApplicationController
 
   def index
+    authorize!
     @top_contents = TopContent.order(created_at: :desc)
+  end
+
+  def show
+    authorize!
   end
 
   def new
     @top_content = TopContent.new
+    authorize!
   end
 
   def edit
     @top_content = TopContent.find(params[:id])
+    authorize!
   end
 
   def create
+    authorize!
     @top_content_start_date = top_content_params[:no_start_date]
     @top_content_finish_date = top_content_params[:no_finish_date]
     @top_content = TopContent.new(top_content_params)
@@ -33,6 +41,7 @@ class TopContentsController < ApplicationController
     @top_content = TopContent.find(params[:id])
     @top_content_start_date = top_content_params[:no_start_date]
     @top_content_finish_date = top_content_params[:no_finish_date]
+    authorize!
     @top_content.assign_attributes(top_content_params)
     if @top_content_start_date == "0"
       @top_content.start_date = nil
@@ -49,6 +58,7 @@ class TopContentsController < ApplicationController
 
   def destroy
     @top_content = TopContent.find(params[:id])
+    authorize!
     @top_content.destroy
     redirect_to root_path, notice: "削除しました"
   end
