@@ -4,8 +4,8 @@
 <%= form_for @top_content do |form| %>
   <%= render "form", form: form %>
   <div>
-    <span class="picture_button">
-      <%= form.file_field :url, accept: 'image/jpeg,image/gif,image/png, video' %>
+    <span class="top_content_url">
+      <%= form.file_field :url, accept: "image/jpeg,image/gif,image/png, video/*" %>
     </span>
   </div>
   <div><%= form.submit class: "btn btn-outline-dark btn-xs" %></div>
