@@ -11,8 +11,8 @@ class Message < ApplicationRecord
 
     #アップロード画像のサイズを制限する
     def picture_size
-      if picture.size > 10.megabytes
-        errors.add(:picture, "10MB以下のサイズにしてください")
+      if picture.size > 3.megabytes
+        errors.add(:picture, "は3MB以下のサイズにしてください")
       end
     end
 end

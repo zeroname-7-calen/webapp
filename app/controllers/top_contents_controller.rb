@@ -29,12 +29,15 @@ class TopContentsController < ApplicationController
       @top_content.finish_date = nil
         if @top_content.save
           redirect_to root_path, notice: "日付指定なしでトップ写真／動画をアップしました"
+        # end
+        elsif
+        @top_content.save
+           redirect_to root_path, notice: "日時を指定してトップ写真／動画をアップしました"
         end
-      else
-          if @top_content.save
-            redirect_to root_path, notice: "日時を指定してトップ写真／動画をアップしました"
-          end
-      end
+      # end
+    else
+      render "new"
+    end
   end
 
   def update
@@ -48,11 +51,13 @@ class TopContentsController < ApplicationController
       @top_content.finish_date = nil
       if @top_content.save
         redirect_to root_path, notice: "日時を指定せずにトップ写真／動画を更新しました"
+      # end
+      elsif @top_content.save
+        redirect_to root_path, notice: "日時を指定してトップ写真／動画を更新しました"
+      # end
       end
     else
-      if @top_content.save
-        redirect_to root_path, notice: "日時を指定してトップ写真／動画を更新しました"
-      end
+      render "edit"
     end
   end
 

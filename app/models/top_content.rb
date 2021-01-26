@@ -23,8 +23,8 @@ class TopContent < ApplicationRecord
   #アップロード画像のサイズを制限
     private
       def url_size
-        if url.size > 10.megabytes
-          errors.add(:url, "10MB以下のサイズにしてください")
+        if url.size > 3.megabytes
+          errors.add(:url, "は3MB以下のサイズにしてください")
         end
       end
 end
