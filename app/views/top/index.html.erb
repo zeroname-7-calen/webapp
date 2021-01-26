@@ -5,15 +5,28 @@
   <div class="top_content_media">
     <% TopContent.order(created_at: :desc).limit(1) %>
       <% @top_contents.each do |top_content| %>
-        <h5><%= top_content.title %></h5>
-        <%= image_tag top_content.url.url if top_content.url? %>
-        <%= top_content.caption %>
-        <% if current_user && loyalty(@top_content, :top_contents).index? %>
-          <div class="tool_section">
-            <%= render "top_contents/tool", top_content: top_content %>
-          </div>
-         <% end %>
-      <% end %>
+      <table>
+        <tbody>
+          <h5><%= top_content.title %></h5>
+            <tr>
+              <% if top_content.url? %>
+                <% if top_content.url.file.content_type.include?("image/")%>
+                <td><%= image_tag top_content.url.url(:thumb) if top_content.url? %></td>
+                <% else %>
+                  <td><%= video_tag top_content.url.url, width: "100%", height: "auto", controls: true, autobuffer: true %>
+                <% end %></td>
+              <% end %>
+            </tr>
+            <tr><td><%= top_content.caption %></td></tr>
+          <% if current_user && loyalty(@top_content, :top_contents).index? %>
+            <tr>
+              <td><div class="tool_section">
+                <%= render "top_contents/tool", top_content: top_content %></div></td>
+            </tr>
+          <% end %>
+        <% end %>
+        </tbody>
+      </table>
   </div>
   <% if current_user && loyalty(@top_content, :top_contents).index? %>
     <div class="top_toolbar">

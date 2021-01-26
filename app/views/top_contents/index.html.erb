@@ -1,18 +1,38 @@
 <div class="top_contents">
   <% if @top_contents.present? %>
     <% @top_contents.each do |top_content| %>
-    <h6><%= top_content.title %></h6>
-    <div class="pics_date">
-    <% if top_content.start_date? %>
-      掲載指定日時=<%= top_content.start_date.strftime("%Y-%m-%d-%H:%M") %>
-    <% end %>
-    </div>
-      <%= image_tag top_content.url.url if top_content.url? %>
-      <%= top_content.caption %>
-      <div class="tool_section">
-        <%= render "top_contents/tool", top_content: top_content %>
-      </div>
-    <% end %>
+    <table>
+      <tbody>
+        <h6><%= top_content.title %></h6>
+          <tr>
+            <td>
+              <div class="pics_date">
+                <% if top_content.start_date? %>
+                  掲載指定日時=<%= top_content.start_date.strftime("%Y-%m-%d-%H:%M") %>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <% if top_content.url? %>
+              <% if top_content.url.file.content_type.include?("image/")%>
+                <td><%= image_tag top_content.url.url(:thumb) if top_content.url? %></td>
+              <% else %>
+                <td><%= video_tag top_content.url.url, width: "100%", height: "auto", controls: true, autobuffer: true %></td>
+              <% end %>
+            <% end %>
+          </tr>
+          <tr>
+            <td><%= top_content.caption %></td>
+          </tr>
+          <tr>
+            <td><div class="tool_section">
+              <%= render "top_contents/tool", top_content: top_content %>
+            </div></td>
+          </tr>
+      </tbody>
+    </table>
+  <% end %>
   <% else %>
   <p>掲載されている写真／動画はありません</p>
   <% end %>

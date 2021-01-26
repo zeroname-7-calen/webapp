@@ -4,7 +4,6 @@ class TopContent < ApplicationRecord
   # validate  :picture_size
   validate :url_size
 
-
   def no_start_date?
     start_date.nil?
   end
@@ -22,14 +21,10 @@ class TopContent < ApplicationRecord
   end
 
   #アップロード画像のサイズを制限
-    # def picture_size
-    #   if picture_size.size > 10.megabytes
-    #     errors.add(:url, "10MB以下のサイズにしてください")
-    #   end
-    # end
-    def url_size
-      if url.size > 10.megabytes
-        errors.add(:picture, "10MB以下のサイズにしてください")
+    private
+      def url_size
+        if url.size > 10.megabytes
+          errors.add(:url, "10MB以下のサイズにしてください")
+        end
       end
-    end
 end
