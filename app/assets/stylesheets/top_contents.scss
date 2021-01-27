@@ -4,8 +4,21 @@
 
 @charset "UTF-8";
 
+// ここから対象はtop_content_indexファイル
+// content_indexの写真一覧を収納するボックス
+.contents_index {
+  padding-top: 1rem;
+  background: whitesmoke;/*背景色*/
+}
+
+// 各写真を納めるボックス
+.url_box {
+  background: #ffebe9;
+  border-top: solid 10px #ff7d6e;
+}
+
 @media screen and (max-width: 414px) {
-  .container-fruid {
+  .container-fluid {
     width: 95%;
   }
 

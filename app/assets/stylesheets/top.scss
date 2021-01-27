@@ -4,33 +4,81 @@
 
 @charset "UTF-8";
 
+// トップ画面タイトル（最新ニュース）
 .top_title {
   width: 95%;
   text-align: center;
-  margin-top: 2em;
-  background-color: pink;
 }
 
 .top_title h2 {
-  padding-top: 15px;
-  background-color: pink;
+  padding-top: 0.3em
 }
 
+.top_content_title {
+  margin-top: 1.2em;
+}
+
+.top_content_title h5 {
+  font-family: sans-serif;
+}
+
+.top_content_media {
+  display: flex;
+  justify-content: center; /*子要素を中央揃え？*/
+  flex-direction: column; /*子要素を縦に配置する？*/
+  margin-top: 1em;
+  flex-direction: column;
+  background: #f8f8ff; /*背景色*/
+  border-top: solid 2px #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);/*影*/
+}
+
+// 画像／動画が入るボックス
+.top_content_url {
+  margin-top: 1rem;
+
+  // トップindexに表示される画像サイズ
+  img {
+  width: 55vw;
+  }
+
+  // トップindexに表示される動画サイズ
+  video {
+    width: 55vw;
+    height: auto;
+  }
+}
+
+// トップページキャプション
+.top_caption {
+  padding-top: 0.2em;
+  padding-bottom: 1em;
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+// 「編集／削除」ボタンが入るボックス
+.tool_section {
+  display: flex;
+}
+
+// 「写真／動画をアップする」ボタンが入るボックス
 .top_toolbar {
   display: flex;
+  justify-content: flex-end;
   flex-wrap: wrap;
+  padding-top: 0.5rem;
 }
 
 .top_toolbar a {
   font-size: 0.5rem;
 }
 
+// 「写真／動画をアップする」ボタン
 .top_pics_upload_button {
   padding-right: 1rem;
 }
-// .top_pics_tool_button {
-//   padding-left: 1rem;
-// }
 
 .articles {
   font-size: 1.2em;
@@ -55,19 +103,6 @@ p {
 margin: 0 0 1em;
 font-size: 1em;
 line-height: 1.5em;
-}
-
-.toppage_picture {
-  padding: 20px;
-}
-
-// トップページ写真のサイズ
-.toppage_picture img {
-  max-width: 500px;
-  max-height: 700px;
-  margin: 1px;
-  padding: 1px;
-  float: right;
 }
 
 .company_brochure h5 {
