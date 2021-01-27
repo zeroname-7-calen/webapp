@@ -218,7 +218,6 @@ footer {
   width: 100%;
   margin: 0 auto;
   padding: 0;
-
 }
 
 #dropmenu li {
@@ -276,7 +275,8 @@ footer {
 #dropmenu > li:hover li:hover > a { background: #6e7c0c }
 #dropmenu > li:hover > ul > li {
   overflow: visible;
-  height: 40px;
+  // height: 40px;  /*40pxでは下方展開するメニューが重なってしまう*/
+  height: 50px;
 }
 
 // 会社ロゴのサイズ指定。本来はtop.scssに記述する？

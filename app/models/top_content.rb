@@ -24,7 +24,7 @@ class TopContent < ApplicationRecord
     private
       def url_size
         if url.size > 10.megabytes
-          errors.add(:url, "10MB以下のサイズにしてください")
+          errors.add(:url, "は10MB以下のサイズにしてください")
         end
       end
 end

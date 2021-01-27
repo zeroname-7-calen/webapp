@@ -3,38 +3,37 @@
     <h2>最新ニュース</h2>
   </div>
   <div class="top_content_media">
-    <% TopContent.order(created_at: :desc).limit(1) %>
+    <% TopContent.order(created_at: :desc) %>
       <% @top_contents.each do |top_content| %>
-      <table>
-        <tbody>
+        <div class="top_content_title">
           <h5><%= top_content.title %></h5>
-            <tr>
-              <% if top_content.url? %>
-                <% if top_content.url.file.content_type.include?("image/")%>
-                <td><%= image_tag top_content.url.url(:thumb) if top_content.url? %></td>
-                <% else %>
-                  <td><%= video_tag top_content.url.url, width: "100%", height: "auto", controls: true, autobuffer: true %>
-                <% end %></td>
-              <% end %>
-            </tr>
-            <tr><td><%= top_content.caption %></td></tr>
-          <% if current_user && loyalty(@top_content, :top_contents).index? %>
-            <tr>
-              <td><div class="tool_section">
-                <%= render "top_contents/tool", top_content: top_content %></div></td>
-            </tr>
+        </div>
+        <div class="top_content_url">
+          <% if top_content.url? %>
+            <% if top_content.url.file.content_type.include?("image/")%>
+              <%= image_tag top_content.url.url(:thumb) if top_content.url? %>
+            <% else %>
+              <%= video_tag top_content.url.url, width: "100%", height: "auto", controls: true, autobuffer: true %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="top_caption">
+          <%= top_content.caption %>
+        </div>
+        <% if current_user && loyalty(@top_content, :top_contents).index? %>
+          <div class="tool_section">
+            <%= render "top_contents/tool", top_content: top_content %>
+          </div>
           <% end %>
         <% end %>
-        </tbody>
-      </table>
   </div>
   <% if current_user && loyalty(@top_content, :top_contents).index? %>
     <div class="top_toolbar">
       <div class="top_pics_upload_button">
         <%= link_to "写真／動画をアップする", :new_top_content, class: "btn btn-outline-dark btn-sm" %>
       </div>
-    <div class="top_pics_tool_button">
-      <%= menu_link_to "トップページ写真／動画を確認", :top_contents, class: "btn btn-info btn-sm" %>
+      <div class="top_pics_tool_button">
+        <%= menu_link_to "トップページ写真／動画を確認", :top_contents, class: "btn btn-info btn-sm" %>
       </div>
     </div>
   <% end %>
