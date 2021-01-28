@@ -3,12 +3,12 @@
 
 <%= form_for @top_content do |form| %>
   <%= render "form", form: form %>
-  <div>
+  <div class="picture_button">
     <span class="picture_button">
       <%= form.file_field :url, accept: 'image/jpeg,image/gif,image/png, video' %>
     </span>
   </div>
-  <div><%= form.submit class: "btn btn-outline-dark btn-xs" %></div>
+  <div class="top_editpage_submit"><%= form.submit class: "btn btn-outline-dark btn-xs" %></div>
 <% end %>
 
 <!-- <script type="text/javascript">
