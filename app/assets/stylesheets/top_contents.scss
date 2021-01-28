@@ -11,10 +11,54 @@
   background: whitesmoke;/*背景色*/
 }
 
-// 各写真を納めるボックス
+// 各写真／動画タイトル
+.content_index_title {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem; 
+  border-top: outset 0.2rem #ff7d6e;
+}
+
+.pics_date {
+  display: flex;
+  justify-content: flex-start;
+}
+
+// 写真／動画を収納するボックス
 .url_box {
+  display: flex;
+  justify-content: flex-start;
   background: #ffebe9;
-  border-top: solid 10px #ff7d6e;
+}
+
+.top_content_caption {
+  display: flex;
+}
+// 対象はtop_content_newページ　
+.top_content_url {
+  margin-top: 0.3rem;
+}
+
+// 「登録するボタン」
+.top_newpage_submit {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+  padding-top: 0.3rem;
+}
+
+// 対象はtop_content_editページ
+.picture_button {
+  margin-top: 0.3rem;
+}
+
+// 「登録するボタン」
+.top_editpage_submit {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+  padding-top: 0.3rem;
+
 }
 
 @media screen and (max-width: 414px) {

@@ -17,9 +17,9 @@
 .article_index_title h4 {
   font-style: oblique;
   font-family: sans-serif;
-  background-color: skyblue;
-  height: 3em;
-  padding: 1em 0em 1em 3em;
+  height: 2em;
+  // background-color: skyblue;
+  padding: 0.1em 0em 0.3em 3em;
 }
 
 .articles {
@@ -102,6 +102,11 @@ tbody tr {
   display: block;
   word-wrap: break-word;//見出しが長い場合は折り返す
 }
+
+.indextitle a {
+  color: black;
+}
+
 
 // 「編集｜削除」を１行で表示
 td.article_edit_delete {
