@@ -25,9 +25,22 @@
   padding: 28px 0px 0px 0px;
 }
 
-.header-logo.logo image_tag {
-  width: 300px;
-  height: 70px;
+.background-image {
+  background-image: url("shirakami_2021cp.jpg");
+  height: 270px;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+.header_nav_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.header_nav_container img {
+  padding-top: 0.2rem;
+  width: 10rem;
+  height: 3rem;
 }
 
 /* 左の枠（コンテンツを入れる） */
@@ -209,32 +222,35 @@ footer {
     width: 46%;
    }
 }
-// 【サンプルエリアここまで】
 
 #dropmenu {
   display: flex;
   flex-wrap: nowrap;
   list-style-type: none;
-  width: 100%;
+  max-width: 80%;
   margin: 0 auto;
-  padding: 0;
+  // padding: 0;
+  // position: relative;
+  // padding-left: 0;
 }
 
 #dropmenu li {
   flex: auto;
   position: relative;
-  width: 20%;
+  left: 0;
+  width: 50%;
   float: left;
   margin: 0;
   padding-left: 0.3em;
   text-align: center;
   // border: 1px solid; ここでborderを設定すると「コラムと企画」のアイコンがうまく表示できない
+  white-space: nowrap;// メニュー文字を１行で表示
 }
 
 #dropmenu li a {
   display: block;
   margin: 0;
-  padding: 11px 4px 4px 0px;
+  padding: 10px 10px 4px 0px;
   color: black;
   font-size: 0.8em;
   font-weight: bold;
@@ -278,6 +294,7 @@ footer {
   overflow: visible;
   // height: 40px;  /*40pxでは下方展開するメニューが重なってしまう*/
   height: 50px;
+  width: 130px;
 }
 
 // 会社ロゴのサイズ指定。本来はtop.scssに記述する？
