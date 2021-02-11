@@ -51,21 +51,15 @@
 /* 左の枠（コンテンツを入れる） */
 #main {
   min-height: 100vh;
-  // margin: 20px 0px 10px 10px;
-  // padding: 10px;
-  width:100;  //100%にしないと画像サイズで画面幅が変わってしまう
+  width:100%;  //100%にしないと画像サイズで画面幅が変わってしまう
   font-size: 1.1em;
   line-height: 1.5;
-  // background-color: #a0522d;
 }
 
 // サイドバー
 #aside {
-  // margin-top: 0.3em;
-  // padding-top: 0.3em;
   border: solid 1px;
-  width: 29%; //これだと細くなりすぎる
-  background-color: green;
+  width: 29%;
 }
 
 .notice_board {
@@ -76,7 +70,6 @@
 footer {
   font: 0.7em Verdana;
   color: #888;
-  margin: 0 0 0 10px;
   padding: 2em 1.5em;
   text-align: center;
   background-color: yellow;
@@ -237,55 +230,110 @@ footer {
 .top_content_2nd_row {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+// 2nd_row内のボタン配置
+.top_toolbar {
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 // カバーストーリーの下部、記事一覧とコラムを一括収納するボックス
 .top_content_3rd_row {
   display: flex;
-  // flex-wrap: wrap;
-}
-
-.top_toolbar {
-  // display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  background-color: gold;
-}
-
-.top_pics_upload_button {
-  // display: flex;
-  // justify-content: flex-end;
+  justify-content: space-around;
 }
 
 // カバーストーリーの下部、記事一覧を納めるボックス
 .top_page_articles_index {
   margin: 0;
-  width: 44%;
+  padding-left: 0.5rem;
+  width: 42%;
   border: solid 1px;
-  background-color: skyblue;
+  border-radius: 10px;
 }
 
-.top_page_articles_index {
-  // padding-top: 1rem;
-}
-
-.top_articles_tool_button {
-  display:flex;
+// 「最新ニュース」タイトル
+.articles_index_title {
+  display: flex;
   justify-content: center;
 }
 
+.articles_index_title h6 {
+  margin-bottom: 1.4rem;
+  position: relative;
+  color: #d2691e;
+  line-height: 1.4;
+  -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0, 0, 0, 0.6));
+}
+  // 最新ニュース配下・記事タイトル
+.top_page_articles_index a {
+  font-size: 0.7rem;
+  padding: 0.05em 0.5em;/*上下 左右の余白*/
+  color: black;
+  background: transparent;/*背景透明に*/
+  border-left: solid 5px #7db4e6;/*左線*/
+}
+
+// 「ニュース一覧へ」リンクの位置右側に
+.top_articles_tool_button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// 「ニュース一覧へ」ボタン
 .top_articles_tool_button a {
-  margin-top: 0.5rem;
-  width: 100%;
+  margin-right: 0.8rem;
+  color: #00bfff;  //「ニュース一覧へ」文字色が青
+  border-left: none;
 }
 
 // カバーストーリーエリア下部、コラム一覧を収納するボックス
-.top_page_columns {
-  margin: 0 0 0 1rem;
-  width: 44%;
+.top_page_columns_index {
+  margin-right: 0.4rem;
+  margin-left: 1rem;
+  padding-left: 0.5rem;
+  width: 42%;
   border: solid 1px;
-  background-color: skyblue;
+   border-radius: 10px;
 }
+
+// 「最新コラム」タイトルの位置を中央に
+.column_index_title {
+  display: flex;
+  justify-content: center;
+}
+
+.column_index_title h6 {
+  margin-bottom: 1.4rem;
+  position: relative;
+  color: #d2691e;
+  line-height: 1.4;
+  -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0, 0, 0, 0.6));
+}
+
+.top_page_columns_index a {
+  font-size: 0.7rem;
+  padding: 0.05em 0.5em;/*上下 左右の余白*/
+  color: black;
+  background: transparent;/*背景透明に*/
+  border-left: solid 5px #7db4e6;/*左線*/
+}
+
+// 「コラムシリーズ」ボタン
+.top_columns_tool_button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// 「コラム一覧へ」リンクボタン
+.top_columns_tool_button a {
+  margin-right: 0.8rem;
+  color: #00bfff;
+  border-left: none;
+}
+
 
   @media screen and (max-width: 959px) {
 
