@@ -51,7 +51,7 @@
 /* 左の枠（コンテンツを入れる） */
 #main {
   min-height: 100vh;
-  width:100;  //100%にしないと画像サイズで画面幅が変わってしまう
+  width:100%;  //100%にしないと画像サイズで画面幅が変わってしまう
   font-size: 1.1em;
   line-height: 1.5;
 }
@@ -251,7 +251,7 @@ footer {
   padding-left: 0.5rem;
   width: 42%;
   border: solid 1px;
-   border-radius: 10px;
+  border-radius: 10px;
 }
 
 // 「最新ニュース」タイトル
