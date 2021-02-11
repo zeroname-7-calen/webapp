@@ -48,22 +48,28 @@
 
   <div class="top_content_3rd_row">
     <div class="top_page_articles_index">
-      <div class="top_articles_tool_button">
-        <%= menu_link_to "最新ニュース", :articles, class: "btn btn-info btn-sm" %>
+      <div class="articles_index_title">
+        <h6>最新ニュース</h6>
       </div>
       <% @articles.each do |article| %>
         <h6><%= link_to article.title, article %></h6>
       <% end %>
+      <div class="top_articles_tool_button">
+        <%= menu_link_to "ニュース一覧へ", :articles %>
+      </div>
     </div>
 
-    <div class="top_page_columns">
-      <div class="top_columns_tool_button">
-        <%= menu_link_to "各種コラムシリーズ", :special_issue_categories, class: "btn btn-info btn-sm" %>
+    <div class="top_page_columns_index">
+      <div class="column_index_title">
+        <h6>最新コラム</h6>
       </div>
       <% @special_issues = SpecialIssue.order(created_at: :desc) %>
         <% @special_issues.each do |special_issue| %>
         <h6><%= link_to special_issue.major_title, special_issue %></h6>
       <% end %>
+      <div class="top_columns_tool_button">
+        <%= menu_link_to "コラムシリーズ一覧へ", special_issues_path(@special_issues) %>
+      </div>
     </div>
     <div id="aside">
       <%= render "shared/questionnaire" %>
