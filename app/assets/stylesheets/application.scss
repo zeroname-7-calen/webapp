@@ -43,21 +43,34 @@
   height: 3rem;
 }
 
+// mainとasideを一括収納するボックス
+#main_wrapper {
+  display: flex;
+}
+
 /* 左の枠（コンテンツを入れる） */
 #main {
   min-height: 100vh;
   border: solid 1px;
-  margin: 20px 0px 10px 10px;
-  padding: 10px;
+  // margin: 20px 0px 10px 10px;
+  // padding: 10px;
+  // width:100;
   font-size: 1.1em;
   line-height: 1.5;
+  // background-color: #a0522d;
 }
 
 // サイドバー
 #aside {
-  margin-top: 0.3em;
-  padding-top: 0.3em;
+  // margin-top: 0.3em;
+  // padding-top: 0.3em;
   border: solid 1px;
+  width: 29%; //これだと細くなりすぎる
+  background-color: green;
+}
+
+.notice_board {
+  background-color: pink;
 }
 
 // /* フッター */
@@ -187,6 +200,91 @@ footer {
   transform: rotate(-135deg);
   transition: 1s;            /*下方バーを黒色にして傾ける*/
   top: 0px;}
+
+// 【Topindexのページ】
+
+.top_page_wrapper {
+  flex-wrap: wrap;
+  background-color: red;
+  width: 100%;
+}
+
+// カバーストーリーとトップ写真を収納するボックス
+.top_content_1st_row {
+  display: flex; //カバーストーリーとトップ写真が横並び
+  width: 100%;
+  background-color: darkcyan;
+}
+
+// カバーストーリーを収納するボックス
+.cover_stroy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  width: 50%;
+  height: 10rem;
+  background-color: pink;
+}
+
+// トップ写真を収納するボックス
+.top_content_media {
+  width: 40%;
+  background-color: silver;
+}
+
+.top_content_2nd_row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// カバーストーリーの下部、記事一覧とコラムを一括収納するボックス
+.top_content_3rd_row {
+  display: flex;
+  // flex-wrap: wrap;
+}
+
+.top_toolbar {
+  // display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: gold;
+}
+
+.top_pics_upload_button {
+  // display: flex;
+  // justify-content: flex-end;
+}
+
+// カバーストーリーの下部、記事一覧を納めるボックス
+.top_page_articles_index {
+  margin: 0;
+  width: 44%;
+  border: solid 1px;
+  background-color: skyblue;
+}
+
+.top_page_articles_index {
+  // padding-top: 1rem;
+}
+
+.top_articles_tool_button {
+  display:flex;
+  justify-content: center;
+}
+
+.top_articles_tool_button a {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+// カバーストーリーエリア下部、コラム一覧を収納するボックス
+.top_page_columns {
+  margin: 0 0 0 1rem;
+  width: 44%;
+  border: solid 1px;
+  background-color: skyblue;
+}
 
   @media screen and (max-width: 959px) {
 
