@@ -1,48 +1,74 @@
-<div class="top_page">
-  <div class="top_title">
-    <h2>最新ニュース</h2>
-  </div>
-  <div class="top_content_media">
-    <% TopContent.order(created_at: :desc) %>
-      <% @top_contents.each do |top_content| %>
-        <div class="top_content_title">
-          <h5><%= top_content.title %></h5>
-        </div>
-        <div class="top_content_url">
-          <% if top_content.url? %>
-            <% if top_content.url.file.content_type.include?("image/")%>
-              <%= image_tag top_content.url.url(:thumb) if top_content.url? %>
-            <% else %>
-              <%= video_tag top_content.url.url, width: "100%", height: "auto", controls: true, autobuffer: true %>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="top_caption">
-          <%= top_content.caption %>
-        </div>
-        <% if current_user && loyalty(@top_content, :top_contents).index? %>
-          <div class="tool_section">
-            <%= render "top_contents/tool", top_content: top_content %>
+<div id="top_page_wrapper">
+  <div class="top_content_1st_row">
+    <div class="cover_stroy">
+      <p>カバーストーリー掲載エリア<p>
+　  </div>
+
+    <div class="top_content_media">
+      <p>トップ写真掲載エリア</p>
+      <% TopContent.order(created_at: :desc) %>
+        <% @top_contents.each do |top_content| %>
+          <div class="top_content_title">
+            <h5><%= top_content.title %></h5>
           </div>
+          <div class="top_content_url">
+            <% if top_content.url? %>
+              <% if top_content.url.file.content_type.include?("image/")%>
+                <%= image_tag top_content.url.url(:thumb) if top_content.url? %>
+              <% else %>
+                <%= video_tag top_content.url.url, width: "100%", height: "auto", controls: true, autobuffer: true %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="top_caption">
+            <%= top_content.caption %>
+          </div>
+
+         <% if current_user && loyalty(@top_content, :top_contents).index? %>
+           <div class="tool_section">
+             <%= render "top_contents/tool", top_content: top_content %>
+           </div>
           <% end %>
         <% end %>
+      </div>
   </div>
-  <% if current_user && loyalty(@top_content, :top_contents).index? %>
-    <div class="top_toolbar">
-      <div class="top_pics_upload_button">
-        <%= link_to "写真／動画をアップする", :new_top_content, class: "btn btn-outline-dark btn-sm" %>
-      </div>
-      <div class="top_pics_tool_button">
-        <%= menu_link_to "トップページ写真／動画を確認", :top_contents, class: "btn btn-info btn-sm" %>
-      </div>
-    </div>
-  <% end %>
 
-  <div class="articles">
-    <% @articles.each do |article| %>
-      <h6><%= link_to article.title, article %></h6>
-        <%= strip_tags(article.content.to_s).truncate(200) %>
-        <%= link_to "もっと読む", article %>
+  <div class="top_content_2nd_row">
+    <% if current_user && loyalty(@top_content, :top_contents).index? %>
+      <div class="top_toolbar">
+        <div class="float-right top_pics_upload_button">
+          <%= link_to "写真／動画をアップする", :new_top_content, class: "btn btn-outline-dark btn-sm" %>
+        </div>
+        <div class="top_pics_tool_button">
+          <%= menu_link_to "トップページ写真／動画を確認", :top_contents, class: "btn btn-info btn-sm" %>
+        </div>
+      </div>
     <% end %>
+  </div>
+
+  <div class="top_content_3rd_row">
+    <div class="top_page_articles_index">
+      <div class="top_articles_tool_button">
+        <%= menu_link_to "最新ニュース", :articles, class: "btn btn-info btn-sm" %>
+      </div>
+      <% @articles.each do |article| %>
+        <h6><%= link_to article.title, article %></h6>
+      <% end %>
+    </div>
+
+    <div class="top_page_columns">
+      <div class="top_columns_tool_button">
+        <%= menu_link_to "各種コラムシリーズ", :special_issue_categories, class: "btn btn-info btn-sm" %>
+      </div>
+      <% @special_issues = SpecialIssue.order(created_at: :desc) %>
+        <% @special_issues.each do |special_issue| %>
+        <h6><%= link_to special_issue.major_title, special_issue %></h6>
+      <% end %>
+    </div>
+    <div id="aside">
+      <%= render "shared/questionnaire" %>
+      <%= render "shared/advertisement" %>
+      <%= render "shared/sidebar" %>
+    </div>
   </div>
 </div>

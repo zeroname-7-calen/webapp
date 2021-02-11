@@ -7,7 +7,7 @@
 // ここから対象はtop_content_indexファイル
 // content_indexの写真一覧を収納するボックス
 .contents_index {
-  padding-top: 1rem;
+  // padding-top: 1rem;
   background: whitesmoke;/*背景色*/
 }
 
@@ -15,7 +15,7 @@
 .content_index_title {
   display: flex;
   justify-content: center;
-  padding-top: 0.5rem; 
+  padding-top: 0.5rem;
   border-top: outset 0.2rem #ff7d6e;
 }
 
@@ -39,6 +39,9 @@
   margin-top: 0.3rem;
 }
 
+.top_content_url img {
+  width: 100%;
+}
 // 「登録するボタン」
 .top_newpage_submit {
   display: flex;
