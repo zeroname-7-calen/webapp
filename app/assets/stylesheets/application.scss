@@ -18,11 +18,11 @@
 
 // ページ全体
 .container {
+  padding: 0;
   font-family: Meiryo, sans-serif;
   font-size: 0.6em;
   width: 100%;
   height: 100%;
-  padding: 28px 0px 0px 0px;
 }
 
 .background-image {
@@ -54,7 +54,7 @@
   border: solid 1px;
   // margin: 20px 0px 10px 10px;
   // padding: 10px;
-  // width:100;
+  width:100;  //100%にしないと画像サイズで画面幅が変わってしまう
   font-size: 1.1em;
   line-height: 1.5;
   // background-color: #a0522d;
