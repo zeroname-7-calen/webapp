@@ -51,7 +51,6 @@
 /* 左の枠（コンテンツを入れる） */
 #main {
   min-height: 100vh;
-  border: solid 1px;
   // margin: 20px 0px 10px 10px;
   // padding: 10px;
   width:100;  //100%にしないと画像サイズで画面幅が変わってしまう
@@ -212,8 +211,10 @@ footer {
 // カバーストーリーとトップ写真を収納するボックス
 .top_content_1st_row {
   display: flex; //カバーストーリーとトップ写真が横並び
+  justify-content: space-between;
+  margin-bottom: 20px;
   width: 100%;
-  background-color: darkcyan;
+  // background-color: darkcyan;
 }
 
 // カバーストーリーを収納するボックス
@@ -221,15 +222,15 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
-  width: 50%;
-  height: 10rem;
+  width: 58%;
+  height: 15rem;
   background-color: pink;
 }
 
 // トップ写真を収納するボックス
 .top_content_media {
   width: 40%;
+  margin-top: 0;
   background-color: silver;
 }
 
