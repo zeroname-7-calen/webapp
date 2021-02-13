@@ -18,7 +18,7 @@
       <h5><%= link_to message.title, message %></h5>
     </div>
     <div class="index_message_content">
-      <p><%= message.content %></p>
+      <p><%= simple_format(message.content) %></p>
     </div>
     <div class="index_message_media">
       <% if message.picture? %>
