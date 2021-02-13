@@ -9,6 +9,184 @@
   justify-content: center;
 }
 
-.message_content h1 {
-  font-size: 2em;
+// 【messageインデックスページ】
+// 最上部「掲示板」タイトル装飾
+.message_title h4 {
+  padding: 0.8rem 2rem;
+  border-top: 4px solid #d8dcdc;
+  border-right: 4px solid #666;
+  border-bottom: 4px solid #333;
+  border-left: 4px solid #868888;
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
+  background-image: linear-gradient(-45deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
+}
+
+// messageインデックスページ上部「新規掲載」ボタン位置調整
+.current_user_toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1.2rem 2rem 0 0;
+}
+
+.current_user_toolbar {
+  .toolbar a {
+    font-size: 1rem;
+    color: white;
+  }
+}
+
+// メッセージtitle位置調整
+.index_message_title {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 1rem 0 1rem;
+}
+
+// 掲示板記事のタイトル
+.index_message_title a {
+  color: black;
+}
+
+.index_message_title h5 {
+  margin: 0 1rem;
+  padding: 0.5rem 2rem;
+  color: #fff;
+  background: #fff8dc;
+  -webkit-box-shadow: 5px 5px 0 #eee8aa;
+  box-shadow: 5px 5px 0 #eee8aa;
+}
+
+// メッセージ本文
+.index_message_content {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 3rem 0 1.5rem;
+}
+
+.index_message_content p {
+  // font-size: 1rem;
+  line-height: 1.3rem;
+}
+
+// インデックスページ　写真／動画位置調整
+.index_message_media {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+}
+
+.index_message_media img {
+  max-width: 80%;
+  height: auto;
+}
+
+.index_message_media video {
+  max-width: 80%;
+  height: auto;
+}
+
+// 【message showページ関連】
+// 最上部「掲示板」タイトル位置調整
+.message_show_title  {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 0.5rem 0;
+}
+// 最上部「掲示板」タイトル装飾　メタリック調
+.message_show_title h4 {
+  padding: 0.8rem 2rem;
+  border-top: 4px solid #d8dcdc;
+  border-right: 4px solid #666;
+  border-bottom: 4px solid #333;
+  border-left: 4px solid #868888;
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
+  background-image: linear-gradient(-45deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
+}
+
+// 掲示板記事title
+.message_show_content_title {
+  margin: 0 0 1rem 0;
+}
+
+// 記事title装飾
+.message_show_content_title h5 {
+  margin: 0 1.5rem;
+  padding: 0.5rem 2rem;
+  color: #000000;
+  background: #fff8dc;
+  -webkit-box-shadow: 5px 5px 0 #eee8aa;
+  box-shadow: 5px 5px 0 #eee8aa;
+}
+
+// 記事本文
+.message_show_content_body {
+  margin: 1rem 2rem;
+}
+
+.message_show_content_body p {
+  line-height: 2;  //行間高指定は単位指定なし
+}
+
+// 記事と一緒の写真／動画
+.message_show_media {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+// 写真サイズ調整
+.message_show_media img {
+   max-width: 80%;
+   height: auto;
+ }
+
+// 動画サイズ調整
+.message_show_media video {
+  width: 80%;
+  height: auto;
+}
+
+// 最下部　ツールボタン位置調整
+.message_show_toolbar {
+  display: flex;
+  // justify-content: flex-end;
+  margin: 1rem 0 1rem 1.5rem;
+}
+
+// 【newページ】
+// 「ファイルを選択」ボタン位置調整
+.message_new_picture_button {
+  margin: 0.5rem 0;
+}
+
+.message_new_upload_button {
+  display: flex;
+  justify-content: center;
+}
+
+// 【editページ】
+// 「掲示板記事編集」位置調整
+.message_edit_title {
+  display: flex;
+  justify-content: center;
+}
+
+// 「掲示板一覧表示」ボタン位置調整
+.message_edit_toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 2rem 1rem 0;
+}
+
+// 「フィアルを選択する」ボタン位置調整
+.message_edit_picture_button {
+  margin: 1rem 0;
+}
+
+.message_edit_submit {
+  display: flex;
+  justify-content: center;
+  margin: 0.7rem 0 1rem 1rem;
 }

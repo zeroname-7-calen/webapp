@@ -74,37 +74,43 @@
         </div>
       </div>
          <!-- お知らせ版掲載領域 -->
-      <div class="top_page_message">
-        <div class="top_page_message_title_area">
-          <h4>掲示板</h4>
-        </div>
-        <% @messages = Message.order(created_at: :desc).limit(1) %>
-          <% @messages.each do |message| %>
-            <div class="top_message_title">
-              <h5><%= link_to message.title, message %></h5>
+  <div class="top_page_message">
+    <div class="top_page_message_title_area">
+      <h4>掲示板</h4>
+    </div>
+    <% @messages = Message.order(created_at: :desc).limit(1) %>
+      <% if @messages.present? %>
+        <% @messages.each do |message| %>
+          <div class="top_message_title">
+            <h5><%= link_to message.title, message %></h5>
+          </div>
+          <div class="top_whole_message_content_area">
+            <div class="top_message_content">
+              <%= simple_format(message.content) %>
             </div>
-            <div class="top_whole_message_content_area">
-              <div class="top_message_content">
-                <%= message.content %>
-              </div>
-              <div class="top_message_media">
-                <% if message.picture? %>
-                  <% if message.picture.file.content_type.include?('image/') %>
-                    <%= image_tag message.picture.url(:thumb) %>
-                  <% else %>
-                    <%= video_tag message.picture.url, width: "30%", height: "30%", controls: true, autobuffer: true %>
-                  <% end %>
+            <div class="top_message_media">
+              <% if message.picture? %>
+                <% if message.picture.file.content_type.include?('image/') %>
+                  <%= image_tag message.picture.url(:thumb) %>
+                <% else %>
+                  <%= video_tag message.picture.url, width: "30%", height: "30%", controls: true, autobuffer: true %>
                 <% end %>
-              </div>
+              <% end %>
             </div>
-          <% end %>
-          <% if current_user && loyalty(@top_content, :top_contents).index? %>
-            <div class="top_message_tool">
-              <%= menu_link_to "掲示板操作パネルへ", :messages %>
-            </div>
-          <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="page_voide_notice">
+          <p>現在掲載はありません</p>
         </div>
-      </div>
+      <% end %>
+      <% if current_user && loyalty(@top_content, :top_contents).index? %>
+        <div class="top_message_tool">
+          <%= menu_link_to "掲示板操作パネルへ", :messages %>
+        </div>
+      <% end %>
+    </div>
+  </div>
       <!-- 3rd_row左側ここまで -->
       <!-- ３ｒｄ_row右側ここから(サイドバーが入るボックス) -->
       <div class="top_content_3rd_row_right">

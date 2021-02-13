@@ -1,9 +1,20 @@
-<% @page_title = "お知らせ記事の編集" %>
-<h1><%= @page_title %></h1>
+<div class="message_edit_title">
+  <% @page_title = "掲示板記事編集" %>
+  <h4><%= @page_title %></h4>
+</div>
 
-<div class="toolbar"><%= link_to "お知らせ記事の表示に戻る", @message %></div>
+<div class="message_edit_toolbar">
+  <%= link_to "掲示板一覧表示に戻る", :messages, class: "btn btn-secondary btn-sm" %>
+</div>
 
 <%= form_for @message do |form| %>
   <%= render "form", form: form %>
-  <div><%= form.submit %></div>
+  <div class="message_edit_picture_button">
+  <span>
+    <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png, video/*' %>
+  </span>
+</div>
+  <div class="message_edit_submit">
+    <%= form.submit "更新する", class: "btn btn-secondary btn-sm" %>
+  </div>
 <% end %>
