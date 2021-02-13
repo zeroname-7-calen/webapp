@@ -1,15 +1,17 @@
-<% @page_title = "掲示板新規作成" %>
-<h5><%= @page_title %></h5>
+<div class=message_new_title>
+  <% @page_title = "掲示板新規作成" %>
+  <h5><%= @page_title %></h5>
+</div>
 
 <%= form_for @message do |form| %>
   <%= render "form", form: form %>
-  <div class="form">
-    <%= form.submit "登録する", class: "btn btn-primary" %>
-  </div>
-  <div>
-    <span class="picture">
+  <div class="message_new_picture_button">
+    <span>
       <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png, video/*' %>
     </span>
+  </div>
+  <div class="message_new_upload_button">
+    <%= form.submit "登録する", class: "btn btn-primary btn-sm" %>
   </div>
 <% end %>
 <!-- <script type="text/javascript">

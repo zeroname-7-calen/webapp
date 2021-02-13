@@ -1,7 +1,7 @@
 <ul class="message-footer">
   <% if current_user && loyalty(@message, :messages).index? %>
-      <%= link_to "編集", [:edit, message] %>
+      <%= link_to "編集", [:edit, message], class: "btn btn-info" %>
       <%= link_to "削除", message, method: :delete,
-            data: { confirm: "本当に削除しますか？" } %>
+            data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger" %>
   <% end %>
 </ul>

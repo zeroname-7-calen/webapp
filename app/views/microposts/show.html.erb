@@ -1,7 +1,7 @@
 <% @page_title = @micropost.author.name + "さんのツイート" %>
 <h5><%= @micropost.author.name %>さんのツイート</h5>
 <div class="micropostarea">
-  <%= @micropost.content %>
+  <%= simple_format(@micropost.content) %>
     <% if @micropost.picture? %>
     <% if @micropost.picture.file.content_type.include?('image/') %>
       <%= image_tag @micropost.picture.url(:thumb) %>

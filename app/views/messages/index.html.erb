@@ -1,27 +1,35 @@
 <div class="message_title">
-  <% @page_title = "掲示板" %>
-  <h1><%= @page_title %></h1>
+  <% @page_title = "掲示板一覧" %>
+  <h4><%= @page_title %></h4>
 </div>
 
 <div class="current_user_toolbar">
   <% if current_user && loyalty(@message, :messages).index? %>
-    <div class="toolbar"><%= link_to "掲示板に掲載する", new_message_path %></div>
+    <div class="toolbar">
+      <%= link_to "掲示板記事新規作成", new_message_path, class: "btn btn-info btn-sm active" %>
+    </div>
   <% end %>
 </div>
 
-<div class="message_content">
+<div class="message_content_area">
 <% if @messages.present? %>
   <% @messages.each do |message| %>
-    <h1><%= link_to message.title, message %></h1>
-    <p><%= message.content %></p>
-    <% if message.picture? %>
-      <% if message.picture.file.content_type.include?('image/') %>
-        <%= image_tag message.picture.url(:thumb) %>
-      <% else %>
-        <%= video_tag message.picture.url, width: "100%", height: "auto",
-                        controls: true, autobuffer: true %>
+    <div class="index_message_title">
+      <h5><%= link_to message.title, message %></h5>
+    </div>
+    <div class="index_message_content">
+      <p><%= simple_format(message.content) %></p>
+    </div>
+    <div class="index_message_media">
+      <% if message.picture? %>
+        <% if message.picture.file.content_type.include?('image/') %>
+          <%= image_tag message.picture.url(:thumb) %>
+        <% else %>
+          <%= video_tag message.picture.url, width: "100%", height: "auto",
+                          controls: true, autobuffer: true %>
+        <% end %>
       <% end %>
-    <% end %>
+  </div>
   <% end %>
   <%= paginate @messages %>
 <% else %>

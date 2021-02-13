@@ -18,7 +18,7 @@
   <table>
     <tbody>
       <tr>
-        <td><%= micropost.content %></td>
+        <td><%= simple_format(micropost.content) %></td>
       </tr>
       <% if micropost.picture? %>
         <% if micropost.picture.file.content_type.include?('image/') %>
