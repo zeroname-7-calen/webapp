@@ -1,10 +1,7 @@
 <div class="vote">
-  <!-- 投票者のメールアドレスは不要
-  <% @micropost.voters.order("votes.created_at").each do |voter| %>
-    ♡<%= voter.email %>
-  <% end %>
-  -->
   <% if current_user && current_user.votable_for?(@micropost) %>
-    <%= link_to "♡いいね!", user_micropost_like_path(@micropost, user_id: current_user.id), method: :patch, class: "button" %>
+    <%= link_to user_micropost_like_path(@micropost, user_id: current_user.id), method: :patch do %>
+    <i class="far fa-thumbs-up fa-2x"></i>
+    <% end %>
   <% end %>
 </div>

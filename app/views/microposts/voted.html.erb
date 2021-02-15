@@ -1,16 +1,42 @@
-<% @page_title = "投票したツイート" %>
-<h3><%= @page_title %></h3>
+<div class="micropost_voted_header">
+  <div class="micropost_voted_icon">
+    <i class="fa fa-twitter fa-4x" aria-hidden="true" style="color: dodgerblue;"></i>
+  </div>
+  <div class="micropost_voted_title">
+    <h4><%= "twitter mini" %></h4>
+  </div>
+</div>
+<div class="micropost_voted_indicate">
+  <% @page_title = "お気に入りのtweets" %>
+  <h5><%= @page_title %></h5>
+</div>
 
+<div class="micropost_voted_area">
 <% if @microposts.present? %>
-  <ul>
-    <% @microposts.each do |micropost| %>
-    <li>
-      <%= micropost.content %>
-      - <%= link_to "いいね解除", user_micropost_unlike_path(micropost, user_id: current_user.id), method: :patch, data: { confirm: "削除しますか?" } %>
-    </li>
-    <% end %>
-  </ul>
-  <%= paginate @microposts %>
+  <% @microposts.each do |micropost| %>
+    <div class="micropost_voted_content">
+      <%= simple_format(micropost.content) %>
+    </div>
+    <div class="micropost_voted_media">
+      <% if micropost.picture? %>
+        <% if micropost.picture.file.content_type.include?('image/') %>
+          <%= image_tag micropost.picture.url(:thumb) %>
+        <% else %>
+          <%= video_tag micropost.picture.url, controls: true, autobuffer: true %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="micropost_voted_toolbar">
+      <div class="micropost_voted_like_unlike">
+        <%= link_to "お気に入り解除", user_micropost_unlike_path(micropost, user_id: current_user.id), method: :patch, data: { confirm: "お気に入りから外しますか?" } %>
+      </div>
+      <div class="micropost_voted_footer">
+        <%= render "footer", micropost: micropost %>
+      </div>
+    </div>
+  <% end %>
+<%= paginate @microposts %>
 <% else %>
-  <p>記事がありません。</p>
+  <p>お気に入りのtweetはありません。</p>
 <% end %>
+</div>

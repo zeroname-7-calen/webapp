@@ -14,7 +14,9 @@
 //  *= require_self
 //  */
 
- @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 
 // ページ全体
@@ -59,8 +61,8 @@
 
 // サイドバー
 #aside {
-  border: solid 1px;
-  width: 29%;
+  // border: solid 1px;
+  width: 32%;
 }
 
 .notice_board {
@@ -354,34 +356,6 @@ footer {
 
 .notice_board h3 {
   font-size: 2em;
-}
-
-// 【ツイッターコーナー】
-// 文章右寄りを修正
-.twitter {
-  padding-right: 1em;
-}
-
-.twitter_title h3 {
-  line-height: 0;
-  font-size: 0.7em;
-  white-space: nowrap;
-}
-
-// サイドバーのツイッター文字色を黒
-.twitter a {
-  display: flex;
-  justify-content: flex-start;
-  color: black;
-}
-
-// サイドバーのツイッター・上下間隔を空ける
-.twitter li {
-  padding-top: 0.5em;
-}
-
-.twitter ul h3 {
-  padding-bottom: 0;
 }
 
 // ボタン類基本記述

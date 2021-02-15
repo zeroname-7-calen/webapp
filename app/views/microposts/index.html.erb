@@ -1,43 +1,45 @@
-<div class="micropostpage_title">
-  <% @page_title = @user ? @user.name + "さんのツイート" : "ツイートコーナー" %>
-  <h4><%= @page_title %></h4>
+<div class="micropost_index_header">
+  <div class="micropost_index_icon">
+    <i class="fa fa-twitter fa-4x" aria-hidden="true" style="color: dodgerblue;"></i>
+  </div>
+  <div class="micropostpage_title">
+    <% @page_title = @user ? @user.name + "さんのtweets" : "twitter mini" %>
+    <h4><%= @page_title %></h4>
+  </div>
 </div>
 
 <div class="micropost_tool_link">
   <% if current_user %>
     <ul class="toolbar">
-      <%= link_to "ツイートの作成", :new_micropost, class: "btn btn-primary btn-sm" %>
-      <%= link_to "投票したツイート", user_micropost_voted_path(@microposts, user_id: current_user.id), class: "btn btn-outline-primary btn-sm" %>
+      <%= link_to "ツイートの作成", :new_micropost, class: "btn btn-danger btn-sm" %>
+      <%= link_to "投票したツイート", user_micropost_voted_path(@microposts, user_id: current_user.id), class: "btn btn-info btn-sm" %>
     </ul>
   <% end %>
 </div>
 
-<div class="micropost_content">
-<% if @microposts.present? %>
-  <% @microposts.each do |micropost| %>
-  <table>
-    <tbody>
-      <tr>
-        <td><%= simple_format(micropost.content) %></td>
-      </tr>
-      <% if micropost.picture? %>
-        <% if micropost.picture.file.content_type.include?('image/') %>
-          <%= image_tag micropost.picture.url(:thumb) %>
-        <% else %>
-          <%= video_tag micropost.picture.url, controls: true, autobuffer: true %>
+<div class="index_micropost_content_area">
+  <% if @microposts.present? %>
+    <% @microposts.each do |micropost| %>
+      <div class="index_twitter_content">
+        <%= simple_format(micropost.content) %>
+      </div>
+      <div class="index_twitter_media">
+        <% if micropost.picture? %>
+          <% if micropost.picture.file.content_type.include?('image/') %>
+            <%= image_tag micropost.picture.url(:thumb) %>
+          <% else %>
+            <%= video_tag micropost.picture.url, controls: true, autobuffer: true %>
+          <% end %>
         <% end %>
-      <% end %>
-      <tr>
-       <td><%= link_to "個別表示", micropost %></td>
-      </tr>
-      <tr>
-        <td><%= render "footer", micropost: micropost %></td>
-      </tr>
+      </div>
+      <div class="link_explain">
+        <%= link_to "個別に表示する", micropost %>
+      </div>
+      <div class="index_twitter_toolbar">
+        <%= render "footer", micropost: micropost %>
+      </div>
   <% end %>
-  </tbody>
-</table>
 </div>
-
 <%= paginate @microposts %>
 <% else %>
   <p>ツイートはありません</p>

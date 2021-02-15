@@ -173,14 +173,13 @@ line-height: 1.5em;
   display: flex;
   width: 68%;
   justify-content: space-between;
-  align-content: space-around;
+  align-content: flex-start;  //サイドバー上下に伸長時、左側ボックスも間延びする
   flex-wrap: wrap;
 }
 
 // カバーストーリーの下部、記事一覧を納めるボックス
 .top_page_articles_index {
-  align-self: baseline;
-  margin: 0;
+  margin: 0 0 1rem 0;
   padding-left: 0.5rem;
   width: 48%;
   border: solid 1px;
@@ -226,9 +225,7 @@ line-height: 1.5em;
 
 // カバーストーリーエリア下部、コラム一覧を収納するボックス
 .top_page_columns_index {
-  align-self: baseline;
-  margin-right: 0.4rem;
-  // margin-left: 1rem;
+  margin: 0 0.4rem 1rem 0;
   padding-left: 0.5rem;
   width: 48%;
   border: solid 1px;
@@ -276,7 +273,10 @@ line-height: 1.5em;
 // 【トップページ　メッセージボード】
 // 掲示板全体を包括するボックス
 .top_page_message {
+  // align-items: flex-end;
+  // align-items: flex-start;
   width: 100%;
+  margin-right: 0.4rem;
   border: 1px solid;
   border-radius: 10px;
 }
