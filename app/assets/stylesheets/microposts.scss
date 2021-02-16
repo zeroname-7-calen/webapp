@@ -74,16 +74,22 @@
   color: #1e90ff;
 }
 
+.twitter_media {
+  display: flex;
+  justify-content: center;
+}
 // サイドバーに表示される写真のサイズ、位置調整
 .twitter_media img {
   margin-bottom: 1rem;
-  width: 100%;
+  max-width: 100%;
+  max-height: 200px;
 }
 
 // サイドバーに表示される動画のサイズ、位置調整
 .twitter_media video {
   margin-bottom: 1rem;
-  width: 100%;
+  max-width: 100%;
+  max-height: 200px;
 }
 
 // サイドバー最下部　「投稿一覧へ」位置調整
