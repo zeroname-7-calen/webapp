@@ -2,34 +2,445 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// タイトル（「ツイートコーナー」）中央寄せ
-.micropostpage_title {
+// 【micropost/サイドバー】ページ
+// ツイッターアイコン、「twitte mimi」を収納するボックス
+.top_side_twitter_wrapper {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  border-top: solid 1px #808080;
+  box-shadow: 3px 4px 4px #696969;/*影*/
+  border-radius: 10px;
+}
+
+.top_twitter_header {
   display: flex;
   justify-content: center;
-  padding-bottom: 10px;
+  margin-top: 1rem;
 }
+
+// twitterアイコン位置調整
+.twitter_icon {
+  margin-top: -0.3rem;
+  margin-left: -1rem;
+}
+
+// twitterアイコン装飾
+.twitter_icon .fa {
+  border: 0.2px solid;
+  border-radius: 5px;
+  box-shadow: 3px 4px 4px #00008b;/*影*/
+}
+
+// 「twitter mimi」タイトル位置調整
+.twitter_title {
+  margin-left: -1.2rem;
+}
+
+// 「twitter mimi」タイトル 黒色
+.twitter_title a {
+  color: black;
+}
+
+// 「twitter mimi」タイトル装飾
+.twitter_title h6 {
+  border-bottom: double 5px #8b4513;
+}
+
+.top_twitter_content_area {
+  display: flex;
+  margin: 0 0 0 -1rem;
+  align-content: center;
+}
+
+.twitter_content {
+  // display: flex;
+  justify-content: center;
+}
+
+.twitter_content a {
+  color: black;
+}
+
+// by○○さん〜　位置調整
+.author_name {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.5rem;  //本文との上下間隔空きすぎを詰める
+  margin-bottom: 1rem;
+  border-bottom: dotted 1px;
+}
+
+.author_name a {
+  color: #1e90ff;
+}
+
+.twitter_media {
+  display: flex;
+  justify-content: center;
+}
+// サイドバーに表示される写真のサイズ、位置調整
+.twitter_media img {
+  margin-bottom: 1rem;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+// サイドバーに表示される動画のサイズ、位置調整
+.twitter_media video {
+  margin-bottom: 1rem;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+// サイドバー最下部　「投稿一覧へ」位置調整
+.twitter_guide {
+  display: flex;
+  justify-content: center;
+}
+
+.twitter_for_index {
+  margin-left: 0.5rem;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ここからmicropost/indexページ
+.micropost_index_header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.micropost_index_icon .fa {
+  border: solid 0.5px;
+  border-radius: 5px;
+  box-shadow: 3px 4px 4px #00008b;/*影*/
+}
+
+.micropostpage_title {
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+.micropostpage_title h4 {
+  border-bottom: 2px solid #000;
+}
+
 // 操作リンク「ツイートの作成」「投票したツイート」右寄せ
 .micropost_tool_link {
   display: flex;
   justify-content: flex-end;
+  margin-right: 2rem;
 }
 
-p {
-  margin: 0 0 1em;
+.micropost_tool_link .toolbar a {
+  color: white;
 }
 
-// マイクロポスト入力欄のサイズ
-.micropost_form textarea {
-  width: 100%; //100%とすることで画面を縮小しても入力欄がはみ出さない
-  height: 20em;
+// twitter掲載全体枠
+.index_micropost_content_area {
+  justify-content: center;
+  margin: 1rem;
 }
 
+// twitter本文表示位置調整
+.index_twitter_content {
+  display: flex;
+  justify-content: center;
+}
+
+// twitter投稿の写真/動画表示位置調整
+.index_twitter_media {
+  display: flex;
+  justify-content: center;
+}
+
+// 投稿された写真とビデオのサイズ
+.index_twitter_media {
+  img {
+    margin: 0 1rem 1rem 0.5rem;
+    max-width: 80%;
+  }
+
+  video {
+    margin: 0 1rem 0.5rem 0.5rem;
+    max-width: 80%;
+  }
+}
+
+// 「個別に表示する」リンク位置調整
+.link_explain {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 0 1rem;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ここから【micropost/showページ】
+// 「twitter mini」タイトルを収納するボックス
+.micropost_show_header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+// 「twitter mini」タイトル 左側アイコン
+.micropost_show_icon .fa {
+  border: solid 0.5px;
+  border-radius: 5px;
+  box-shadow: 3px 4px 4px #00008b;/*影*/
+}
+
+// 「twitter mini」タイトル位置調整
+.micropost_show_title {
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+// 「twitter mini」タイトル装飾
+.micropost_show_title h4 {
+  border-bottom: 2px solid #000;
+}
+
+// 「〜さんのtweet」位置調整
+.micropost_show_author_name {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+// 「〜さんのtweet」吹き出し風装飾その１
+.micropost_show_author_name h6 {
+  position: relative;
+  padding: 1rem 1.2rem;
+  border: 3px solid #d8d8d8;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+// 「〜さんのtweet」吹き出し風装飾その２
+.micropost_show_author_name h6:before {
+  position: absolute;
+  bottom: -14px;
+  left: 1em;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 14px 12px 0 12px;
+  border-style: solid;
+  border-color: #d8d8d8 transparent transparent transparent;
+}
+
+// 「〜さんのtweet」吹き出し風装飾その３
+.micropost_show_author_name h6:after {
+  position: absolute;
+  bottom: -10px;
+  left: 1em;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 14px 12px 0 12px;
+  border-style: solid;
+  border-color: #f9f9f9 transparent transparent transparent;
+}
+
+// 「〜さんのtweet」　文字サイズ拡大
+.micropost_show_author_name h6 span {
+  font-size: 1rem;
+}
+
+.show_micropost_area {
+  flex-direction: column;
+}
+
+.show_micropost_content {
+  display: flex;
+  justify-content: center;
+}
+
+.show_micropost_content p {
+  font-size: 0.8rem;
+}
+
+.show_micropost_media {
+  display: flex;
+  justify-content: center;
+}
+
+// 投稿された写真とビデオのサイズ
+.show_micropost_area {
+  img {
+    max-width: 80%;
+  }
+
+  video {
+    max-width: 80%;
+  }
+}
+
+.show_toolbar {
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
+.show_like {
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 【micropost/newページ】
+// 「twitter mini」タイトルを収納するボックス
+.micropost_new_header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+// 「twitter mini」タイトル 左側アイコン
+.micropost_new_icon .fa {
+  border: solid 0.5px;
+  border-radius: 5px;
+  box-shadow: 3px 4px 4px #00008b;/*影*/
+}
+
+// 「twitter mini」タイトル位置調整
+.micropost_new_title {
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+// 「twitter mini」タイトル装飾
+.micropost_new_title h4 {
+  border-bottom: 2px solid #000;
+}
+
+// 本文入力欄を中央配置
+.micropost_new_form {
+  display: flex;
+  justify-content: center;
+}
+
+.micropost_new_up_button {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.4rem 0 0.5rem 0.2rem;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 【micropost/edit】ページ
+.micropost_edit_header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+// 「twitter mini」タイトル 左側アイコン
+.micropost_edit_icon .fa {
+  border: solid 0.5px;
+  border-radius: 5px;
+  box-shadow: 3px 4px 4px #00008b;/*影*/
+}
+
+// 「twitter mini」タイトル位置調整
+.micropost_edit_title {
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+// 「twitter mini」タイトル装飾
+.micropost_edit_title h4 {
+  border-bottom: 2px solid #000;
+}
+
+.micropst_edit_toolbar {
+  display: flex;
+  justify-content:  center;
+  margin: 1rem 0 0.5rem 8rem;
+}
+
+// 本文入力欄を中央配置
+.micropost_edit_form {
+  display: flex;
+  justify-content: center;
+}
+
+.micropost_edit_up_button {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.4rem 0 0.5rem 0.2rem;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 【micropost/voted】ページ
+.micropost_voted_header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+// twitterアイコン
+.micropost_voted_icon .fa {
+  border: solid 0.5px;
+  border-radius: 5px;
+  box-shadow: 3px 4px 4px #00008b;/*影*/
+}
+
+// twitterアイコンとタイトルのヨコ間隔を空ける
+.micropost_voted_title {
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+// 「お気に入りのtweets」位置調整
+.micropost_voted_indicate {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.micropost_voted_content {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 2rem;
+}
+
+.micropost_voted_media {
+  display: flex;
+  justify-content: center;
+  margin: -1rem 2rem 0 2rem;
+}
+
+.micropost_voted_media {
+  img {
+    max-width: 80%;
+  }
+
+  video {
+    max-width: 80%;
+  }
+}
+
+// フッター表示位置調整
+.micropost_voted_toolbar {
+  justify-content: center;
+  padding: 0.5rem 3rem 0 2rem;
+}
+
+// 「お気に入り解除」位置調整
+.micropost_voted_like_unlike {
+  margin-left: 1rem;
+}
+
+// 「お気に入りのtweetはありません」位置調整
+.micropost_voted_area p {
+  display: flex;
+  justify-content: center;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 【micropost/footer】
 // フッター部分全体像 文字サイズ、配置バランスなど
 ul.micropost-footer {
   list-style-type: none;
   margin: 0;
-  padding-bottom: 3em;
-  border-top: 1px #ccf dashed;
+  border-bottom: 1px #ccf dashed;
   padding-top: 4px;
   margin-bottom: 15px;
   text-align: right;
@@ -44,53 +455,4 @@ ul.micropost-footer li:not(:last-child):after {
   color: #444;
   content: " | ";
   margin: 0 2px;
-}
-
-.micorpostarea {
-  height: auto;
-}
-
-// マイクロポストに投稿された写真とビデオの表示サイズ（※micropost.indexページ）
-.micropost_content {
-  img {
-    width: 100%;
-  }
-
-  video {
-    width: 100%;
-  }
-}
-
-// マイクロポストに投稿された写真とビデオの表示サイズ（※micropost.showページ）
-.micropostarea {
-  img {
-    width: 100%;
-  }
-
-  video {
-    width: 100%;
-  }
-}
-
-// マイクロポスト新規「登録」するボタン
-.micropost_registrator {
-  padding: 1.5em 0;
-}
-
-// 【サイドバー関連】
-.twitter ul {
-}
-.twitter ul h3 {
-  list-style: none;
-  padding: 0;
-  font-size: 2em;
-  color: black;
-}
-
-.twitter ul li {
-  padding-top: 1em;
-}
-
-.twitter a {
-  color: black;
 }

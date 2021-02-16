@@ -1,18 +1,40 @@
-
-<div class="twitter">
-  <div class="twitter_title">
-    <ul>
-      <li><h3><%= menu_link_to "【Twitter】", :microposts %></h3></li>
-    </ul>
+<div class="top_side_twitter_wrapper">
+  <div class="top_twitter_header">
+    <div class="twitter_icon">
+      <i class="fa fa-twitter fa-3x" aria-hidden="true" style="color: dodgerblue;"></i>
+    </div>
+    <div class="twitter_title">
+      <ul>
+        <li><h6><%= menu_link_to "twitter mini", :microposts %></h6></li>
+      </ul>
+    </div>
   </div>
-  <div class="twitter_body">
-    <% @microposts = Micropost.order(created_at: :desc).limit(10) %>
-    <table class="table table-bordered">
+  <div class="top_twitter_content_area">
+    <% @microposts = Micropost.order(created_at: :desc).limit(7) %>
       <ul>
         <% @microposts.each do |micropost| %>
-        <li><%= link_to micropost.content.truncate(80), micropost %></li>
+          <div class="twitter_content">
+            <%= link_to simple_format(micropost.content.truncate(80)), micropost %>
+          <div>
+          <div class="twitter_media">
+            <% if micropost.picture? %>
+              <% if micropost.picture.file.content_type.include?('image/') %>
+                <%= image_tag micropost.picture.url(:thumb) %>
+              <% else %>
+                <%= video_tag micropost.picture.url, width: "30%", height: "30%", controls: true, autobuffer: true %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="author_name">
+            by <%= link_to micropost.author.name + "さん", [micropost.author, :microposts] %>
+          </div>
         <% end %>
       </ul>
-    </table>
+  </div>
+  <div class="twitter_guide">
+    <i class="fa fa-hand-point-right" aria-hidden="true" style="color: dodgerblue;"></i>
+    <div class="twitter_for_index">
+      <%= menu_link_to "投稿一覧へ", :microposts %>
+    </div>
   </div>
 </div>

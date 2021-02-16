@@ -1,14 +1,30 @@
-
-<% @page_title = "ツイートの編集" %>
-<h3><%= @page_title %></h3>
-
-<div class="toolbar">
-  <div class="text-center">
-    <%= link_to "ツイートの表示に戻る", @micropost, class: "btn btn-outline-primary btn-sm" %>
+<div class="micropost_edit_header">
+  <div class="micropost_edit_icon">
+    <i class="fa fa-twitter fa-4x" aria-hidden="true" style="color: dodgerblue;"></i>
+  </div>
+  <div class="micropost_edit_title">
+    <h4><%= "twitter mini" %></h4>
   </div>
 </div>
+<div class="micropost_edit_indicate">
+  <% @page_title = "tweetを編集する" %>
+  <h5><%= @page_title %></h5>
+</div>
 
-<%= form_for @micropost do |form| %>
+<div class="micropst_edit_toolbar">
+  <%= link_to "ツイートの表示に戻る", @micropost, class: "btn btn-outline-secondary btn-sm" %>
+</div>
+
+<div class="micropost_edit_form">
+  <%= form_for @micropost do |form| %>
   <%= render "form", form: form %>
-  <div><%= form.submit %></div>
-<% end %>
+    <div>
+      <span class="micropost_edit_up_button">
+        <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png,image/pdf, video/*' %>
+      </span>
+    </div>
+    <div class="micropost_edit_registrator">
+      <%= form.submit class: "btn btn-danger btn-block" %>
+    </div>
+  <% end %>
+</div>

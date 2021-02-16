@@ -1,15 +1,29 @@
-<% @page_title = "ツイートの新規作成" %>
-<h3><%= @page_title %></h3>
-
-<%= form_for @micropost do |form| %>
-  <%= render "form", form: form %>
-  <div class="micropost_registrator"><%= form.submit class: "btn btn-outline-dark btn-xs" %></div>
-  <div>
-    <span class="picture">
-      <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png,image/pdf, video/*' %>
-    </span>
+<div class="micropost_new_header">
+  <div class="micropost_new_icon">
+    <i class="fa fa-twitter fa-4x" aria-hidden="true" style="color: dodgerblue;"></i>
   </div>
-<% end %>
+  <div class="micropost_new_title">
+    <h4><%= "twitter mini" %></h4>
+  </div>
+</div>
+<div class="micropost_new_indicate">
+  <% @page_title = "tweetを作成する" %>
+  <h5><%= @page_title %></h5>
+</div>
+
+<div class="micropost_new_form">
+  <%= form_for @micropost do |form| %>
+  <%= render "form", form: form %>
+    <div>
+      <span class="micropost_new_up_button">
+        <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png,image/pdf, video/*' %>
+      </span>
+    </div>
+    <div class="micropost_new_registrator">
+      <%= form.submit class: "btn btn-danger btn-block" %>
+    </div>
+  <% end %>
+</div>
 
 <!-- <script type="text/javascript">
   $('#micropost_picture').bind('change', function() {

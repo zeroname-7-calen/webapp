@@ -1,9 +1,7 @@
 <%= render "shared/errors", obj: @micropost %>
 
-<!-- <table class="attr"> -->
 <table class="micropost_form">
   <tr>
-    <th><%= form.label :content %></th>
-    <td><%= form.text_area :content, rows: 10, cols: 45 %></td>
+    <td><%= form.text_area :content, rows: 10, cols: 50, placeholder: "tweetを記載してください" %></td>
   </tr>
 </table>

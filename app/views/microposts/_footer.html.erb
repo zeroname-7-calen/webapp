@@ -9,13 +9,13 @@
           data: { confirm: "本当に削除しますか？" } %>
     <% end %>
   <% end %>
-<li>
-  by <%= link_to micropost.author.name, [micropost.author, :microposts] %>
-</li>
-<li>
-  <%= micropost.created_at.strftime("%Y/%m/%d %H:%M") %>
-</li>
+  <li>
+    by <%= link_to micropost.author.name, [micropost.author, :microposts] %>
+  </li>
+  <li>
+    <%= micropost.created_at.strftime("%Y/%m/%d %H:%M") %>
+  </li>
   <% if (count = micropost.votes.count) > 0 %>
-    <li><span class="vote">♡<%= count %></span></li>
+    <li><span class="vote"><i class="far fa-thumbs-up"></i> × <%= count %></span></li>
   <% end %>
 </ul>

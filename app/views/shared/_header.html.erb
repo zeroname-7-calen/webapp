@@ -12,16 +12,15 @@
   <label id="menu-icon" for="menu-cb"></label>
     <div id="ham-menu">
       <div class="header-icon-container">
-            <div class="heading-menu">
-              <div class="header-logo">
-                <a href="http://www.hokuu.jp" target="blank">
-                  <div class="logo">
-                    <%= image_tag "item1.gif", alt: "北羽新報" %>
-                  </div>
-                </a>
+        <div class="heading-menu">
+          <div class="header-logo">
+            <a href="http://www.hokuu.jp" target="blank">
+              <div class="logo">
+                <%= image_tag "item1.gif", alt: "北羽新報" %>
               </div>
-            </div>
-
+            </a>
+          </div>
+        </div>
       </div>
     <ul class="header-items-sp">
       <li class="header-item-sp"><%= link_to "トップ", :root %></li>
@@ -38,7 +37,6 @@
       <% end %>
     </ul>
   </div>
-
       <!-- ここからワイド画面用 -->
   <div class="navbar">
     <ul id="dropmenu">
@@ -58,7 +56,6 @@
       </ul>
       </li>
       <li><%= link_to "釣り情報", :fishinginfos %></li>
-      <li><%= link_to "ツイッター", :microposts %></li>
         <% if user_signed_in? %>
       <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       <% else %>
