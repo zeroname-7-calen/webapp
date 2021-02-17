@@ -1,20 +1,29 @@
-<% @page_title = "釣り情報" %>
 <div class="fishinginfo_logo">
   <%= image_tag "fishinginfo.gif", alt: "釣り情報" %>
 </div>
 
 <% if current_user && loyalty(@fishinginfo, :fishinginfos).index? %>
-  <div class="toolbar"><%= link_to "釣り情報の記事作成", new_fishinginfo_path %></div>
+  <div class="fishinginfo_index_toolbar"><%= link_to "釣り情報を作成する", new_fishinginfo_path, class: "btn btn-outline-primary btn-sm" %></div>
 <% end %>
 
-<div class="fishinginfo">
+<div class="fishinginfo_index_wrapper">
   <% if @fishinginfos.present? %>
     <% @fishinginfos.each do |fishinginfo| %>
-    <h3><%= fishinginfo.title %></h3>
-      <p><%= fishinginfo.content %></p>
-      <%= render "footer", fishinginfo: fishinginfo %>
+      <div class="fishinginfo_index_title">
+        <h4><%= fishinginfo.title %></h4>
+      </div>
+      <div class="fishinginfo_index_content_area">
+        <div class="fishing_index_content">
+         <%= fishinginfo.content %>
+        </div>
+      </div>
+      <div class="fishinginfo_index_toolbar">
+        <%= render "footer", fishinginfo: fishinginfo %>
+      </div>
     <% end %>
   <% else %>
-  <p>釣り情報は現在ありません</p>
-<% end %>
+    <div class="fishinginfo_index_info">
+      <p>釣り情報は現在ありません</p>
+    </div>
+  <% end %>
 </div>

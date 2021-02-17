@@ -1,6 +1,5 @@
 <ul class="fishinginfo-footer">
   <% if current_user && loyalty(@fishinginfo, :fishinginfos).index? %>
-    <%= link_to "個別表示", fishinginfo , class: "btn btn-outline-dark btn-sm" %>
     <%= link_to "編集", [:edit, fishinginfo], class: "btn btn-outline-warning btn-sm" %>
     <%= link_to "削除", fishinginfo, method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-outline-danger btn-sm" %>
   <% end %>

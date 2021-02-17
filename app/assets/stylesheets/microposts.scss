@@ -20,15 +20,20 @@
 
 // twitterアイコン位置調整
 .twitter_icon {
-  margin-top: -0.3rem;
   margin-left: -1rem;
 }
 
 // twitterアイコン装飾
 .twitter_icon .fa {
-  border: 0.2px solid;
-  border-radius: 5px;
-  box-shadow: 3px 4px 4px #00008b;/*影*/
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: dodgerblue;
+}
+
+.twitter_icon .fa-twitter {
+  padding-left: 0.2rem;
+  padding-top:  0.2rem;
 }
 
 // 「twitter mimi」タイトル位置調整
@@ -53,7 +58,6 @@
 }
 
 .twitter_content {
-  // display: flex;
   justify-content: center;
 }
 
@@ -111,13 +115,21 @@
 }
 
 .micropost_index_icon .fa {
-  border: solid 0.5px;
-  border-radius: 5px;
-  box-shadow: 3px 4px 4px #00008b;/*影*/
+  margin-top: 0.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: dodgerblue;
+}
+
+// マークが背景色の内部に収まるよう調整
+.micropost_index_icon .fa-twitter {
+  padding-top:  0.2rem;
+  padding-left: 0.2rem;
 }
 
 .micropostpage_title {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   padding-top: 0.5rem;
 }
 
@@ -185,14 +197,22 @@
 
 // 「twitter mini」タイトル 左側アイコン
 .micropost_show_icon .fa {
-  border: solid 0.5px;
-  border-radius: 5px;
-  box-shadow: 3px 4px 4px #00008b;/*影*/
+  margin-top: 0.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: dodgerblue;
+}
+
+// マークが背景色の内部に収まるよう調整
+.micropost_show_icon .fa-twitter {
+  padding-top:  0.2rem;
+  padding-left: 0.2rem;
 }
 
 // 「twitter mini」タイトル位置調整
 .micropost_show_title {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   padding-top: 0.5rem;
 }
 
@@ -295,14 +315,22 @@
 
 // 「twitter mini」タイトル 左側アイコン
 .micropost_new_icon .fa {
-  border: solid 0.5px;
-  border-radius: 5px;
-  box-shadow: 3px 4px 4px #00008b;/*影*/
+  margin-top: 0.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: dodgerblue;
+}
+
+// マークが背景色の内部に収まるよう調整
+.micropost_new_icon .fa-twitter {
+  padding-top:  0.2rem;
+  padding-left: 0.2rem;
 }
 
 // 「twitter mini」タイトル位置調整
 .micropost_new_title {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   padding-top: 0.5rem;
 }
 
@@ -333,14 +361,22 @@
 
 // 「twitter mini」タイトル 左側アイコン
 .micropost_edit_icon .fa {
-  border: solid 0.5px;
-  border-radius: 5px;
-  box-shadow: 3px 4px 4px #00008b;/*影*/
+  margin-top: 0.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: dodgerblue;
+}
+
+// マークが背景色の内部に収まるよう調整
+.micropost_edit_icon .fa-twitter {
+  padding-top:  0.2rem;
+  padding-left: 0.2rem;
 }
 
 // 「twitter mini」タイトル位置調整
 .micropost_edit_title {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   padding-top: 0.5rem;
 }
 
@@ -377,15 +413,27 @@
 
 // twitterアイコン
 .micropost_voted_icon .fa {
-  border: solid 0.5px;
-  border-radius: 5px;
-  box-shadow: 3px 4px 4px #00008b;/*影*/
+  margin-top: 0.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: dodgerblue;
+}
+
+// マークが背景色の内部に収まるよう調整
+.micropost_voted_icon .fa-twitter {
+  padding-top:  0.2rem;
+  padding-left: 0.2rem;
 }
 
 // twitterアイコンとタイトルのヨコ間隔を空ける
 .micropost_voted_title {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   padding-top: 0.5rem;
+}
+
+.micropost_voted_title h4 {
+  border-bottom: 2px solid #000;
 }
 
 // 「お気に入りのtweets」位置調整
