@@ -1,7 +1,22 @@
-<% @page_title = "釣り情報記事新規作成" %>
-<h1><%= @page_title %></h1>
+<div class="fishinginfo_new_header">
+  <div class="fishinginfo_logo">
+    <%= image_tag "fishinginfo.gif", alt: "釣り情報" %>
+  </div>
+  <div class="fishinginfo_new_title_area">
+    <% @page_title = "釣り情報新規作成" %>
+      <div class="fishinginfo_new_title">
+        <h4><%= @page_title %></h4>
+      </div>
+  </div>
+</div>
 
-<%= form_for @fishinginfo do |form| %>
-  <%= render "form", form: form %>
-  <div class="fishinginfo_button"><%= form.submit "釣り情報の登録", class: "btn btn-primary btn-sm" %></div>
-<% end %>
+<div class="fishinginfo_new_wrapper">
+  <div class="fishinginfo_new_form">
+  <%= form_for @fishinginfo do |form| %>
+    <%= render "form", form: form %>
+    <div class="fishinginfo_button">
+      <%= form.submit "釣り情報の登録", class: "btn btn-danger btn-block" %>
+    </div>
+  <% end %>
+  </div>
+</div>

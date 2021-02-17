@@ -1,12 +1,10 @@
 <%= render "shared/errors", obj: @fishinginfo %>
 
-<table class="attr">
-  <tr>
-    <th><%= form.label :title %></th>
-    <td><%= form.text_field :title, size: 50 %></td>
-  </tr>
-  <tr>
-    <th><%= form.label :content %></th>
-    <td><%= form.rich_text_area :content, rows: 10, cols: 45 %></td>
-  </tr>
-</table>
+<div class="fishinginfo_form_wrapper">
+  <div class="fishinginfo_form_title">
+    <%= form.text_field :title, placeholder: "タイトル入力欄" %>
+  </div>
+  <div class="fishinginfo_form_content">
+    <%= form.rich_text_area :content, placeholder: "本文入力欄（動画の添付はできません）" %>
+  </div>
+</div>

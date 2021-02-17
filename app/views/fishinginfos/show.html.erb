@@ -1,4 +1,17 @@
-<% @page_title = "釣り情報" %>
-<h1><%= @fishinginfo.title %></h1>
-<%= @fishinginfo.content %>
-<%= render "footer", fishinginfo: @fishinginfo %>
+<div class="fishinginfo_logo">
+  <%= image_tag "fishinginfo.gif", alt: "釣り情報" %>
+</div>
+
+<div class="fishinginfo_show_wrapper">
+  <div class="fishinginfo_show_title">
+    <h4><%= @fishinginfo.title %></h4>
+  </div>
+  <div class="fishinginfo_show_content_area">
+    <div class="fishing_show_content">
+      <%= @fishinginfo.content %>
+    </div>
+  </div>
+  <div class="fishinginfo_show_toolbar">
+    <%= render "footer_for_show", fishinginfo: @fishinginfo %>
+  </div>
+</div>
