@@ -1,5 +1,8 @@
 <% @page_title = "【コラム一覧】" %>
-<h5><%= @page_title %></h5>
+<div class="sp_issue_cat_index">
+  <h5><%= @page_title %></h5>
+</div>
+
 
 <% if current_user && loyalty(@special_issue_category, :special_issue_categories).index? %>
   <div class="category_create_button">

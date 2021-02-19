@@ -1,10 +1,12 @@
-<div class="fishinginfo_logo">
-  <%= image_tag "fishinginfo.gif", alt: "釣り情報" %>
-</div>
+<div class="fishinginfo_index_header">
+  <div class="fishinginfo_logo">
+    <%= image_tag "fishinginfo.gif", alt: "釣り情報" %>
+  </div>
 
-<% if current_user && loyalty(@fishinginfo, :fishinginfos).index? %>
-  <div class="fishinginfo_index_toolbar"><%= link_to "釣り情報を作成する", new_fishinginfo_path, class: "btn btn-outline-primary btn-sm" %></div>
-<% end %>
+  <% if current_user && loyalty(@fishinginfo, :fishinginfos).index? %>
+    <div class="fishinginfo_index_toolbar"><%= link_to "釣り情報を作成する", new_fishinginfo_path, class: "btn btn-outline-primary btn-sm" %></div>
+  <% end %>
+</div>
 
 <div class="fishinginfo_index_wrapper">
   <% if @fishinginfos.present? %>
