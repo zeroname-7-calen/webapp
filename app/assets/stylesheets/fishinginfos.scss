@@ -4,6 +4,8 @@
 
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【fishinginfos/index】ページ
+.fishinginfo_index_header {
+}
 // ロゴサイズ、位置調整
 .fishinginfo_logo img {
   width: 180px;
@@ -14,6 +16,8 @@
 .fishinginfo_index_wrapper {
   // display: flex;  //なくてもＯＫ？
   margin: 0 1rem;
+  margin: auto;
+  width: 100%;
 }
 
 // 記事タイトル位置調整
@@ -43,20 +47,27 @@
   backface-visibility: hidden;
 }
 
-// 記事を収納するボックス
+// 記事を収納するボックス全体枠
 .fishinginfo_index_content_area {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
+// 記事を収納するボックス
 .fishing_index_content {
   margin: 0.5rem 2rem 0.5rem 1rem;
-  width: 80%;
+  width: 100%;
 }
 
 //検証で確認するとtrix-contentボックスが確認できる
-.fishing_content .trix-content {  //.fishing_content指定はなくても可？
+.fishing_index_content .trix-content {
+  // width: 80%;  //formと同様にパーセント指定は効かない
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.6;  //行間高さを確保
+  word-wrap: break-word;
 }
 
 // 貼付写真位置調整
@@ -85,18 +96,20 @@
   flex-direction: column;
   justify-content: center;  //効いてない？
   margin: 1rem;
+  // background-color: blue;
 }
 
 // タイトル入力欄中央配置
 .fishinginfo_form_title {
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
 // タイトル入力欄サイズを拡大
 .fishinginfo_form_title input {
-  width: 100%;
-  // background-color: yellow;
+  display: flex;
+  justify-content: center;
+  width: 600px;  //.fishinginfo_form_content #fishinginfo_contentの横幅600pxに合わせた
+  // width: 100%;
 }
 // ツールボタンが入っているボックス
 .trix-button-group {
@@ -110,17 +123,23 @@
 // }
 
 // ツールボタンいちばん右側の２つが離れすぎているため修正
-// .fishinginfo_form_content span.trix-button-group.trix-button-group--history-tools {
-//   margin-right: 5rem;
-// }
+.fishinginfo_form_content span.trix-button-group.trix-button-group--history-tools {
+  margin-right: 5rem;
+}
 
 // 本文入力欄
-.fishinginfo_form_content trix-editor {
+.fishinginfo_form_content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  width: 80%;
+  // width: 600px;
+  // width: 100%;  //パーセント指定では効かない　半角英数字がフォーム横幅を突き抜ける
+}
+
+.fishinginfo_form_content #fishinginfo_content {
+  width: 600px;  // .fishinginfo_form_content側に記述すべきか？
+  // width: 80%;  //パーセントでの指定は効かない  半角英数字がフォーム横幅を突き抜ける　placeholderは正常に動作
   min-height: 10rem;
-  // background-color: blue;
 }
 
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
@@ -128,11 +147,6 @@
 .fishinginfo_new_header {
   display: flex;
   align-items: center;
-}
-
-.fishinginfo_new_wrapper {
-  display: flex;
-  justify-content: center;
 }
 
 .fishinginfo_new_title_area {
@@ -159,6 +173,11 @@
   background: #00cc5b;
 }
 
+.fishinginfo_new_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 // 使っていないけど、とりあえずコメントアウト
 // .fishinginfo_new_form {
   // display: flex;
@@ -168,13 +187,28 @@
 // 本文入力欄
 .fishinginfo_new_form trix-editor {
   width: 100%;
+}
+
+.fishinginfo_new_form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   // background-color: blue;
 }
+
+// formページ側で規定済みなので不要のはずだが、念のため記述を残す
+// .fishinginfo_new_form #fishinginfo_content {
+//   width: 600px;
+//   // width: 80%;  //パーセントでの指定は効かない  placeholderは正常に動作
+//   min-height: 10rem;
+//   background-color: pink;
+// }
 
 .fishinginfo_button {
   display: flex;
   justify-content: center;
-  width: 100%;
+  margin-left: 1rem;
+  width: 90%;
 }
 
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
@@ -225,6 +259,8 @@
 // 本文が入っているのはtrix-contentボックス
 .fishing_show_content .trix-content {
   line-height: 1.6;  //行間高さを確保
+  width: 600px;  //indexと同様にパーセント指定は効かない（全体バランスが崩れる）
+  word-wrap: break-word;  //半角英数字の連続を改行
 }
 
 // 貼付された写真位置調整
@@ -267,15 +303,16 @@
   background: #00cc5b;
 }
 
+// タイトル欄から本文欄まで包括
 .fishinginfo_edit_form {
   padding: 0 2rem;  //幅調整は％では指定できない。paddingで指定
+  width: 100%;
 }
 // 本文入力欄
-.fishinginfo_edit_form trix-editor {
-  display: flex;
-  justify-content: center;
-  padding: 0 2rem;
-  width: 100%;
+
+.fishinginfo_edit_form #fishinginfo_content {
+  width: 600px;
+  // width: 100%;  //パーセント指定は不可
 }
 
 .fishinginfo_edit_button {
