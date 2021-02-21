@@ -1,6 +1,6 @@
 <% if obj.errors.present? %>
   <div id="errors">
-    <h3>エラーがあります。</h3>
+    <h5>エラーがあります。</h5>
     <ul>
       <% obj.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>

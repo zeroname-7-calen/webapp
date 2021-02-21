@@ -1,37 +1,46 @@
-<% @page_title = "コラム・企画" %>
-
-<div class="image_name">
-  <% if @special_issue_category.image_name.present? %>
-    <%= image_tag @special_issue_category.image_name, size: "150x52", alt: @special_issue_category.category_name %>
-  <% end %>
-</div>
-
-<div class="special_issue_content">
-  <% unless @special_issue.is_display %>
-  <h3><%= @special_issue.major_title %></h3>
-  <h2><%= @special_issue.minor_title %></h2>
-  <%= @special_issue.content %>
-</div>
-
-<div class="special_issue_strftime">
-  <% unless @special_issue_category.category_name == "イベントガイド" || @special_issue_category.category_name == "映画情報"%>
-    <tr>
-      <th>掲載日時</th>
-      <td><%= @special_issue.created_at.strftime("%Y/%m/%d %H:%M") %></td>
-    </tr>
-  <% end %>
-</div>
-
-<% else %>
-<p>コラムの掲載を中止しています</p>
-<% end %>
-
-<ul class="special_issues-footer">
-  <% if current_user && loyalty(@special_issue, :special_issues).index? %>
-      <%= link_to "編集", edit_special_issue_path, class: "btn btn-outline-primary btn-sm" %>
-    <% unless @special_issue_category&.category_name == "イベントガイド" || @special_issue_category&.category_name == "映画情報" %>
-      <%= link_to "削除", special_issue_path, method: :delete,
-            data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-primary btn-sm" %>
+<div class="sp_issue_show_wrapper">
+  <!-- image_name = アイキャッチ -->
+  <div class="image_name">
+    <% if @special_issue_category.image_name.present? %>
+      <%= image_tag @special_issue_category.image_name, size: "150x52", alt: @special_issue_category.category_name %>
     <% end %>
+  </div>
+
+  <div class="sp_issue_show_content_area">
+    <% unless @special_issue.is_display %>
+      <div class=sp_issue_show_category_name>
+        <h3><%= @special_issue_category.category_name %></h3>
+      </div>
+      <div class="sp_issue_show_major_title">
+        <!-- <h4><%= @special_issue.major_title %></h4> -->
+        <!-- <h4>タグだと長いタイトルを折り返せない -->
+        <h5><%= @special_issue.major_title %></h5>
+      </div>
+      <div class="sp_issue_show_minor_title">
+        <h6><%= @special_issue.minor_title %></h6>
+      </div>
+      <div class="special_issue_content">
+        <%= @special_issue.content %>
+      </div>
+  </div>
+  <div class="special_issue_strftime">
+    <% unless @special_issue_category.category_name == "イベントガイド" || @special_issue_category.category_name == "映画情報"%>
+      <tr>
+        <th>掲載日時</th>
+          <td><%= @special_issue.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+        </tr>
+    <% end %>
+  </div>
+  <% else %>
+    <p>コラムの掲載を中止しています</p>
   <% end %>
-</ul>
+  <ul class="sp_issue_show_footer">
+    <% if current_user && loyalty(@special_issue, :special_issues).index? %>
+      <%= link_to "編集", edit_special_issue_path, class: "btn btn-outline-warning btn-sm" %>
+      <% unless @special_issue_category&.category_name == "イベントガイド" || @special_issue_category&.category_name == "映画情報" %>
+        <%= link_to "削除", special_issue_path, method: :delete,
+                data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-danger btn-sm" %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

@@ -1,7 +1,13 @@
-<% @page_title = "コラム・企画新規作成" %>
-  <h5><%= @page_title %></h5>
+<div class="sp_issue_new_wrapper">
+  <div class="sp_issue_new_title">
+    <% @page_title = "コラム・企画新規作成" %>
+    <h5><%= @page_title %></h5>
+  </div>
 
   <%= form_for @special_issue do |form| %>
   <%= render "form", form: form %>
-  <div><%= form.submit %></div>
-<% end %>
+    <div class="sp_issue_new_submit">
+      <%= form.submit class: "btn btn-danger btn-block"%>
+    </div>
+  <% end %>
+</div>

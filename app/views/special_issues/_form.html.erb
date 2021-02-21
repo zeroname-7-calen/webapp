@@ -1,33 +1,31 @@
 <%= render "shared/errors", obj: @special_issue %>
 
-<table class="attr">
-<tr>
-  <th><%= form.label :category_name %></th>
-  <td>
-    <%= form.collection_select :special_issue_category_id,
-    SpecialIssueCategory.where.not(category_name: [
-    SpecialIssueCategory::CATEGORY_NAME_EVENTGUIDE,
-    SpecialIssueCategory::CATEGORY_NAME_MOVIEGUIDE,
-    ])
-    .order(created_at: :desc), :id, :category_name, include_blank: "選択してください" %>
-  </td>
-</tr>
-<tr>
-  <th><%= form.label :major_title %></th>
-  <td><%= form.text_field :major_title, size: 50 %></td>
-</tr>
-<tr>
-  <th><%= form.label :minor_title %></th>
-  <td><%= form.text_field :minor_title, size: 50 %></td>
-</tr>
-<tr>
-  <th><%= form.label :content %></th>
-  <td><%= form.rich_text_area :content, rows: 100, cols: 45 %></td>
-</tr>
-</table>
-<tr>
-  <td>
-    <%= form.check_box :is_display %>
-    <%= form.label :is_display, "コラム・ガイド情報を掲載しない" %>
-  </td>
-</tr>
+<div class="sp_issue_form_wrapper">
+  <div class="sp_issue_form_attr">
+    <div class="sp_issue_cate_name_label">
+      <%= form.label :category_name %>
+    </div>
+    <div class="sp_issue_select">
+      <%= form.collection_select :special_issue_category_id,SpecialIssueCategory.order(created_at: :desc), :id, :category_name, include_blank: "選択してください" %>
+    </div>
+    <div class="major_title_label">
+      <%= form.label :major_title %>
+    </div>
+    <div class="major_title_text">
+      <%= form.text_field :major_title %>
+    </div>
+    <div class="minor_title_label">
+      <%= form.label :minor_title %>
+    </div>
+    <div class="minor_title_text">
+      <%= form.text_field :minor_title %>
+    </div>
+    <div class="sp_issue_form_content_text">
+      <%= form.rich_text_area :content, placeholder: "本文入力欄（動画添付はできません)" %>
+    </div>
+    <div class="sp_issue_form_checkbox">
+      <%= form.check_box :is_display %>
+      <%= form.label :is_display, "コラム・ガイド情報を掲載しない" %>
+    </div>
+  </div>
+</div>
