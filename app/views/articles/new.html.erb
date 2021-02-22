@@ -1,9 +1,13 @@
-<% @page_title = "ニュースの新規登録" %>
-<h3><%= @page_title %></h3>
-
-<%= form_for @article do |form| %>
-<%= render "form", form: form %>
-  <div class="new_article_submit">
-    <%= form.submit class: "btn btn-outline-dark btn-sm" %>
+<div class="article_new_wrapper">
+  <div class="article_new_title">
+    <% @page_title = "ニュース新規登録" %>
+    <h4><%= @page_title %></h4>
   </div>
-<% end %>
+
+  <%= form_for @article do |form| %>
+  <%= render "form", form: form %>
+    <div class="new_article_submit">
+      <%= form.submit class: "btn btn-danger btn-block" %>
+    </div>
+  <% end %>
+</div>

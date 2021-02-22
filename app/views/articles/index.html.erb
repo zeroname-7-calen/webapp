@@ -1,44 +1,48 @@
-<div class="article_index_title">
-  <% @page_title = "ニュース一覧" %>
-  <h4><%= @page_title %></h4>
-</div>
-
-
-<% if current_user %>
-  <% if loyalty(@article, :articles).index? %>
-    <div class="toolbar"><%= link_to "新規作成", :new_article, class: "btn btn-outline-dark btn-sm" %></div>
-  <% end %>
-<% end %>
-
-<%= form_tag :search_articles, method: :get,class: "search" do %>
-  <%= text_field_tag "q", params[:q], placeholder: " タイトル検索" %>
-  <%= submit_tag "検索" %>
-<% end %>
-<% if @articles.present? %>
-  <table class="table table-md table-condenced table-hover">
-    <tbody>
-      <% @articles.each do |article| %>
-        <tr>
-          <td class="strftime"><%= article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
-          <td class="indextitle"><%= link_to article.title, article %></td>
-
-          <% if current_user && loyalty(@article, :articles).index? %>
-          <div class="article_footer">
-            <td class="article_edit_delete">
-              <%= link_to "編集", [:edit, article ] %> |
-              <%= link_to "削除", article, method: :delete,
-                  data: { confirm: "本当に削除してもよろしいですか？" } %>
-            </td>
-          </div>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <div class="paginate">
-    <%= paginate @articles %>
+<div class="article_index_wrapper">
+  <div class="article_index_title">
+    <% @page_title = "ニュース一覧" %>
+    <h4><%= @page_title %></h4>
   </div>
-  <% else %>
-    <p>ニュースがありません</p>
-  <% end %>
+  <div class="article_index_regist_button">
+    <% if current_user %>
+      <% if loyalty(@article, :articles).index? %>
+        <div class="toolbar"><%= link_to "ニュース新規作成", :new_article, class: "btn btn-outline-danger btn-sm" %></div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="article_index_search_button">
+    <%= form_tag :search_articles, method: :get,class: "search" do %>
+      <%= text_field_tag "q", params[:q], placeholder: " タイトル検索" %>
+      <%= submit_tag "検索" %>
+    <% end %>
+  </div>
+  <div class="article_index_content_area">
+    <% if @articles.present? %>
+      <table class="table table-md table-condenced table-hover">
+        <tbody>
+          <% @articles.each do |article| %>
+            <tr>
+              <td class="strftime"><%= article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
+              <td class="indextitle"><%= link_to article.title, article %></td>
+              <% if current_user && loyalty(@article, :articles).index? %>
+                <div class="article_footer">
+                  <td class="article_edit_delete">
+                    <%= link_to "編集", [:edit, article ] %> |
+                    <%= link_to "削除", article, method: :delete,
+                        data: { confirm: "本当に削除してもよろしいですか？" } %>
+                  </td>
+                </div>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <div class="paginate">
+        <%= paginate @articles %>
+      </div>
+      <% else %>
+        <p>ニュースがありません</p>
+      <% end %>
+  </div>
+</div>

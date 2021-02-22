@@ -1,7 +1,13 @@
-<% @page_title = "ニュースの編集" %>
-<h1><%= @page_title %></h1>
-<p><%= link_to "記事の詳細に戻る", @article %></p>
-<%= form_for @article do |form| %>
-  <%= render "form", form: form %>
-  <div><%= form.submit %></div>
-<% end %>
+<div class="article_edit_wrapper">
+  <div class="article_edit_title">
+    <% @page_title = "ニュースの編集" %>
+    <h5><%= @page_title %></h5>
+  </div>
+  <p><%= link_to "記事の詳細に戻る", @article %></p>
+  <%= form_for @article do |form| %>
+    <%= render "form", form: form %>
+    <div class="article_edit_button">
+      <div><%= form.submit class: "btn btn-danger btn-block" %></div>
+    </div>
+  <% end %>
+</div>

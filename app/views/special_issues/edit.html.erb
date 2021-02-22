@@ -1,9 +1,17 @@
-<% @page_title = "コラム・ガイド情報の編集" %>
-<h5><%= @page_title %></h5>
+<div class="sp_issue_edit_wrapper">
+  <div class="sp_issue_edit_title">
+    <% @page_title = "コラム・ガイド情報の編集" %>
+    <h5><%= @page_title %></h5>
+  </div>
 
-<div class="toolbar"><%= link_to "コラム・企画記事の表示に戻る", @special_issue %></div>
+  <div class="sp_issue_edit_toolbar">
+    <%= link_to "コラム・企画記事の表示に戻る", @special_issue, class: "btn btn-outline-primary btn-sm" %>
+  </div>
 
-<%= form_for @special_issue do |form| %>
-  <%= render "form_custom", form: form %>
-  <div><%= form.submit %></div>
-<% end %>
+  <%= form_for @special_issue do |form| %>
+    <%= render "form", form: form %>
+    <div class="sp_issue_edit_submit">
+      <%= form.submit class: "btn btn-warning btn-block" %>
+    </div>
+  <% end %>
+</div>

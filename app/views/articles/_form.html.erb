@@ -1,11 +1,9 @@
 <%= render "shared/errors", obj: @article %>
-<table class="attr">
-  <tr>
-    <th><%= form.label :title %></th>
-    <td><%= form.text_field :title %></td>
-  </tr>
-  <tr>
-    <th><%= form.label :content %></th>
-    <td><%= form.rich_text_area :content %></td>
-  </tr>
-</table>
+<div class="article_form_wrapper">
+  <div class="article_form_title">
+    <%= form.text_field :title, placeholder: "タイトル入力欄" %>
+  </div>
+  <div class="article_form_content">
+    <%= form.rich_text_area :content, placeholder: "本文入力欄" %>
+  </div>
+</div>

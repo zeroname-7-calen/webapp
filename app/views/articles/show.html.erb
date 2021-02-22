@@ -1,21 +1,23 @@
-<% @page_title = @article.title %>
-<h5><%= @article.title %></h5>
-
-<div class="article">
-  <% if current_user %>
-    <% if loyalty(@article, :articles).edit? %>
-      <div class="toolbar"><%= link_to "編集", [:edit, :article] %></div>
+<div class="article_show_wrapper">
+  <div class="article_show_title">
+    <% @page_title = @article.title %>
+    <h5><%= @article.title %></h5>
+  </div>
+  <div class="article_show_content_area">
+    <% if current_user %>
+      <% if loyalty(@article, :articles).edit? %>
+        <div class="article_show_toolbar"><%= link_to "編集", [:edit, :article] %></div>
+      <% end %>
     <% end %>
-  <% end %>
+    <div class="article_strftime">
+      <tr>
+        <th>掲載日時</th>
+        <td><%= @article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
+      </tr>
+    </div>
 
-<div class="article_strftime">
-  <tr>
-    <th>掲載日時</th>
-    <td><%= @article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
-  </tr>
-</div>
-
-  <div class="content">
-    <%= @article.content %>
+    <div class="article_show_content">
+      <%= @article.content %>
+    </div>
   </div>
 </div>
