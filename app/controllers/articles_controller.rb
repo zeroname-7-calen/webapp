@@ -5,7 +5,6 @@ class ArticlesController < ApplicationController
     puts params[:id]
     puts "333333333333333"
     @articles = Article.with_rich_text_content.order(released_at: :desc).page(params[:page]).per(10)
-     @posts = Article.search(params["q"]).order(created_at: :desc)
   end
 
   def show
