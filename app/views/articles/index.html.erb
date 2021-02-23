@@ -12,7 +12,7 @@
   </div>
   <div class="article_index_search_button">
     <%= form_tag :search_articles, method: :get,class: "search" do %>
-      <%= text_field_tag "q", params[:q], placeholder: " タイトル検索" %>
+      <%= text_field_tag "q", params[:q] %>
       <%= submit_tag "検索" %>
     <% end %>
   </div>
