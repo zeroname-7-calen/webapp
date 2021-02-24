@@ -34,13 +34,13 @@ ja:
         title: タイトル
         content: 本文
       special_issue:
-        category_name: カテゴリー
+        category_name: コラムシリーズ名
         major_title: 主タイトル
         minor_title: サブタイトル
         content: 本文
       special_issue_category:
-        category_name: カテゴリー
-        image_name: アイキャッチ
+        category_name: コラムシリーズ名
+        image_name: アイキャッチファイル名
       eventguide:
         title: タイトル
         content: 本文

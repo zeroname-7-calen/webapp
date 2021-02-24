@@ -1,17 +1,19 @@
 <%= render "shared/errors", obj: @special_issue_category %>
-<tr>
-  <th><%= form.label :category_name %></th>
-  <td><%= form.text_field :category_name, size: 50 %></td>
-</tr>
-<br>
-<tr>
-  <th><%= form.label :image_name %></th>
-  <td><%= form.text_field :image_name, size: 50 %></td>
-</tr>
-<br>
-<tr>
-  <td>
+<div class="sp_iss_cate_form_wrapper">
+  <div class="sp_iss_cate_name_label">
+    <%= form.label :category_name %>
+  </div>
+  <div class="sp_iss_cate_name_area">
+    <%= form.text_field :category_name %>
+  </div>
+  <div class="sp_iss_cate_eyechatch_label">
+    <%= form.label :image_name %>
+  </div>
+  <div class="sp_iss_cate_eyechatch_area">
+    <%= form.text_field :image_name, placeholder: "例）example.gif（なくても可）" %>
+  </div>
+  <div class="sp_iss_cate_form_tool">
     <%= form.check_box :is_display %>
-    <%= form.label :is_display, "コラムカテゴリーを掲載しない" %>
-  </td>
-</tr>
+    <%= form.label :is_display, "コラムシリーズを掲載しない" %>
+  </div>
+</div>
