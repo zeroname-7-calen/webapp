@@ -1,21 +1,26 @@
 <ul class="micropost-footer">
-  <% if current_user %>
-    <% if current_user == micropost.author %>
-      <%= link_to "編集", [:edit, micropost] %>
-      <%= link_to "削除", micropost, method: :delete,
-              data: { confirm: "本当に削除しますか？" } %>
-    <% elsif current_user && loyalty(@micropost, :microposts). index? %>
-      <%= link_to "削除", micropost, method: :delete,
-          data: { confirm: "本当に削除しますか？" } %>
+  <div class="micropost_footer_like_partial">
+    <%= render "votes" %>
+  </div>
+  <div class="micropost_footer_tool">
+    <% if current_user %>
+      <% if current_user == micropost.author %>
+        <%= link_to "編集", [:edit, micropost] %>
+        <%= link_to "削除", micropost, method: :delete,
+                data: { confirm: "本当に削除しますか？" } %>
+      <% elsif current_user && loyalty(@micropost, :microposts). index? %>
+        <%= link_to "削除", micropost, method: :delete,
+            data: { confirm: "本当に削除しますか？" } %>
+      <% end %>
     <% end %>
-  <% end %>
-  <li>
-    by <%= link_to micropost.author.name, [micropost.author, :microposts] %>
-  </li>
-  <li>
-    <%= micropost.created_at.strftime("%Y/%m/%d %H:%M") %>
-  </li>
-  <% if (count = micropost.votes.count) > 0 %>
-    <li><span class="vote"><i class="far fa-thumbs-up"></i> × <%= count %></span></li>
-  <% end %>
+    <li>
+      by <%= link_to micropost.author.name, [micropost.author, :microposts] %>
+    </li>
+    <li>
+      <%= micropost.created_at.strftime("%Y/%m/%d %H:%M") %>
+    </li>
+    <% if (count = micropost.votes.count) > 0 %>
+      <li><span class="vote"><i class="far fa-heart"></i> <%= count %></span></li>
+    <% end %>
+  </div>
 </ul>

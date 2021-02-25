@@ -21,7 +21,7 @@
   <% if @microposts.present? %>
     <% @microposts.each do |micropost| %>
       <div class="index_twitter_content">
-        <%= simple_format(micropost.content) %>
+        <p><%= simple_format(micropost.content) %></p>
       </div>
       <div class="index_twitter_media">
         <% if micropost.picture? %>
