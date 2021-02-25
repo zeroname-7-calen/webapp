@@ -1,4 +1,8 @@
-<%= form_for @special_issue_category do |form| %>
-  <%= render "form", form: form %>
-  <div><%= form.submit %></div>
-<% end %>
+<div class="sp_iss_cate_new_wrapper">
+  <%= form_for @special_issue_category do |form| %>
+    <%= render "form", form: form %>
+    <div class="sp_iss_cate_create_button">
+      <%= form.submit class: "btn btn-primary btn-md"%>
+    </div>
+  <% end %>
+</div>

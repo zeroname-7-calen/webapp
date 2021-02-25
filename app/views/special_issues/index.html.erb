@@ -4,32 +4,13 @@
     <h5><%= @page_title %></h5>
     ※管理者向けページ
   </div>
-  <div class="sp_cate_toolbar">
-    <div class="special_category_button">
-      <% if current_user %>
-        <div class="toolbar"><%= link_to "コラムカテゴリーを作成する", new_special_issue_category_path, class: "btn btn-outline-primary btn-sm" %></div>
-      <% end %>
-    </div>
-    <div class="category_index">
-      <div class="special_category_index">
-        <% if current_user %>
-          <div class="toolbar"><%= link_to "コラムカテゴリーの一覧へ", special_issue_categories_path, class: "btn btn-outline-primary btn-sm" %></div>
-        <% end %>
-      </div>
-    </div>
-    <div class="special_issue_regist">
-      <div class="special_issue_button">
-        <% if current_user %>
-          <div class="toolbar"><%= link_to "コラム・企画記事を作成する", new_special_issue_path, class: "btn btn-outline-primary btn-sm" %></div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+
+<%= render "special_issue_categories/toolbar" %>
+
   <div class="sp_issue_index_content_area">
     <% if @special_issues.present? %>
     <table class="sp_issue_table table-md table-condenced">
       <% @special_issues.each do |special_issue| %>
-
         <tr>
           <td class="sp_issue_index_content_major_title">
             <h6><%= link_to special_issue.major_title, special_issue %></h6>
@@ -41,7 +22,6 @@
             <td class="sp_issue_index_content_minor_title">
               <p><%= special_issue.minor_title %></p>
             </td>
-
       <% end %>
     </table>
         <%= paginate @special_issues %>

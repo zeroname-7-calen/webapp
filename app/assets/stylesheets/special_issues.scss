@@ -128,6 +128,7 @@
   padding: 0.5rem .5rem;
 }
 
+// 「コラムと企画」タイトル装飾その2
 .sp_issue_index_title h5:after {
   position: absolute;
   bottom: 0;
@@ -173,41 +174,13 @@
 
 // カテゴリータイトルを収納するボックス
 .sp_issue_show_category_name {
-  margin-bottom: 1rem;
-  width: 100%;
+  margin: 2rem 0 1rem 1rem;
+  width: 90%;
 }
 
 // カテゴリータイトル装飾その１
 .sp_issue_show_category_name h3 {
-  display: flex;
-  justify-content: center;
-  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
-  position: relative;
-  padding: 1rem 1.5rem;
-  -webkit-box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
-  box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
-}
-
-// カテゴリータイトル装飾その２
-.sp_issue_show_category_name h3:before,
-.sp_issue_show_category_name h3:after {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  content: '';
-  background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
-  background-image: linear-gradient(135deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
-}
-
-// カテゴリータイトル装飾その3
-.sp_issue_show_category_name h3:before {
-  top: 0;
-}
-
-// カテゴリータイトル装飾その4
-.sp_issue_show_category_name h3:after {
-  bottom: 0;
+  border-bottom: 6px double #006400;
 }
 
 // コラム主タイトル位置調整

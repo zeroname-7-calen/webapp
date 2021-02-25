@@ -1,9 +1,13 @@
-<% @page_title = "コラムカテゴリーの編集" %>
-<h5><%= @page_title %></h5>
+<div class="sp_iss_cate_edit_wrapper">
+  <% @page_title = "コラムシリーズの編集" %>
+  <h5><%= @page_title %></h5>
 
-<div class="toolbar"><%= link_to "コラムカテゴリーの一覧表示に戻る", @special_issue_category %></div>
+  <div class="toolbar"><%= link_to "コラムシリーズの一覧表示に戻る", @special_issue_category %></div>
 
-<%= form_for @special_issue_category do |form| %>
-  <%= render "form", form: form %>
-  <div><%= form.submit %></div>
-<% end %>
+  <%= form_for @special_issue_category do |form| %>
+    <%= render "form", form: form %>
+    <div class="sp_iss_cate_edit_button">
+      <%= form.submit class: "btn btn-outline-success btn-md" %>
+    </div>
+  <% end %>
+</div>

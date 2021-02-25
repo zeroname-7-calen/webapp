@@ -1,28 +1,28 @@
-<% @page_title = "【コラム一覧】" %>
-<div class="sp_issue_cat_index">
-  <h5><%= @page_title %></h5>
-</div>
-
-
-<% if current_user && loyalty(@special_issue_category, :special_issue_categories).index? %>
-  <div class="category_create_button">
-    <ul class="special_issue_toolbar">
-      <%= link_to "コラム・企画記事を作成する", :new_special_issue, class: "btn btn-outline-primary btn-sm" %>
-      <%= link_to "コラム一覧へ", special_issues_path(@special_issues), class: "btn btn-outline-primary btn-sm" %>
-      <%= link_to "コラムカテゴリーを作成する", :new_special_issue_category, class: "btn btn-outline-primary btn-sm" %>
-      <%= link_to "コラムカテゴリーの一覧へ", special_issue_categories_path(@special_issue_categories), class: "btn btn-outline-primary btn-sm" %>
-    </ul>
+<div class="sp_iss_cate_index_wrapper">
+  <div class="sp_iss_cate_index_title">
+    <% @page_title = "コラムシリーズ一覧" %>
+      <h5><%= @page_title %></h5>
   </div>
-<% end %>
 
+<%= render "toolbar" %>
 
-<div class="special_issue_category_index">
-  <% if @special_issue_categories.present? %>
-    <% @special_issue_categories.each do |special_issue_category| %>
-    <h6><%= link_to special_issue_category.category_name, special_issue_category %></h6>
+  <div class="sp_iss_cate_content_area">
+    <table class="sp_iss_cate_table table-md table-condenced">
+      <% if @special_issue_categories.present? %>
+        <% @special_issue_categories.each do |special_issue_category| %>
+        <tr class="sp_category_title">
+          <td class="sp_cate_content_title">
+            <h6><%= link_to special_issue_category.category_name, special_issue_category %></h6>
+          </td>
+          <td class="sp_cate_content_starftime">
+            <p><%= special_issue_category.created_at.strftime("掲載日時  %Y/%m/%d %H:%M") %></p>
+          </td>
+       <% end %>
+      </tr>
+    </table>
+    <%= paginate @special_issue_categories %>
+  </div>
+  <% else%>
+    <p>コラムカテゴリーは設定されていません</p>
   <% end %>
-  <%= paginate @special_issue_categories %>
 </div>
-<% else%>
-  <p>コラムカテゴリーは設定されていません</p>
-<% end %>

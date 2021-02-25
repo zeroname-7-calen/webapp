@@ -3,58 +3,191 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 【form】ページ
+.sp_iss_cate_form_wrapper {
+  width: 100%;  //必要?
+  padding: 1rem;
+}
+
+// 「カテゴリー」ラベル位置調整
+.sp_iss_cate_name_label {
+  margin-bottom: -0.5rem;
+}
+
+// カテゴリー名入力欄位置調整  入力欄を指定しなくてもinput側で指定可能
+.sp_iss_cate_name_area {
+  // margin: 0.3rem 0 0.5rem 0;
+}
+
+// カテゴリー名入力欄サイズ整形
+.sp_iss_cate_name_area input {
+  width: 70%;
+  height: 1.5rem;
+  margin: 0.3rem 0 0.5rem 0;
+}
+
+// 「アイキャッチ」ラベル位置調整
+.sp_iss_cate_eyechatch_label {
+  margin: 0.5rem 0 -0.3rem 0;
+}
+
+// アイキャッチファイル名入力欄位置調整
+.sp_iss_cate_eyechatch_area {
+}
+
+// アイキャッチファイル名入力欄サイズ整形
+.sp_iss_cate_eyechatch_area input {
+  width: 70%;
+  height: 1.5rem;
+}
+
+// 「コラムカテゴリーを掲載しない」チェックボックス位置調整
+.sp_iss_cate_form_tool {
+  margin-top: 1rem;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【カテゴリーindexページ】
-// indexのボタン類 文字色黒に　文字サイズも縮小
-.category_create_button a {
+// インデックスページ全体
+.sp_iss_cate_index_wrapper {
+  padding: 1rem 1.5rem 1rem 1rem;
+}
+
+// 「コラムシリーズ一覧」装飾その１
+.sp_iss_cate_index_title h5 {
+  position: relative;
+  margin: 0 1rem 1rem 1rem;
+  padding: 0.5rem 2rem;
+  border-bottom: 3px solid #deb887;
+}
+
+// indexの操作ボタン類配置
+.special_issue_toolbar {
+  display: flex;
+  justify-content: space-around;
+}
+
+// indexの操作ボタン類 文字色黒に　文字サイズも縮小
+.special_issue_toolbar a {
   font-size: 0.5em;
   color: black;
 }
 
-// special_issue_category indexのボタン類中央に配置
-.category_create_button {
-  display: flex;
+// コラムタイトル＋掲載日時を収納するボックス
+.sp_iss_cate_content_area {
   justify-content: center;
+  align-items: center;
+  transition: all  0.3s ease;
 }
 
-// special_issue_category index コラムタイトル文字色を黒に 位置を中央に配置
-.special_issue_category_index a {
-  display: flex;
-  justify-content: center;
-  // border-bottom: 1px dotted;
-  color: black;
+// コラムタイトル表示効果（マウスオーバー時ににゅ〜っと動く)その１
+.sp_cate_content_title {
+  padding: 10px;
+  font-size: 1rem;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
 }
 
+// コラムタイトル表示効果（マウスオーバー時ににゅ〜っと動く)その2
+.sp_cate_content_title:hover {
+  background-color: #f5fffa;
+  padding: 0.5rem 0 1rem 0;
+  font-size: 1rem;
+}
+
+// コラムタイトル位置調整
+.sp_cate_content_title h6 {
+  align-items: center;
+  padding-top: 1rem;  //ボックス中央（上下間隔)調整
+}
+
+// 「掲載日時」１行で表示
+.sp_cate_content_starftime p {
+  margin-left: 4rem;
+  white-space: nowrap;
+  padding-top: 1rem;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【カテゴリーshowページ】
+.sp_iss_cate_show_wrapper {
+  // padding: 1rem;
+  margin: 0 2rem;
+}
+
+// コラムシリーズタイトル位置調整
+.sp_iss_cate_show_title {
+  margin: 1rem 0;
+}
+
+// コラムシリーズタイトル装飾
+.sp_iss_cate_show_title h5:first-letter {
+  font-size: 1.5rem;
+  color: #800000;
+}
 //リストの黒点を消す
 li {
   list-style: none;
 }
 
-//showページボタン類　サイズ縮小　文字色黒に
-.toolbar a {
-  font-size: 0.8em;
+// タイトルと掲載日時が(1行で)入るボックス
+.sp_iss_cate_show_content .table {
+}
+
+// カテゴリータイトルが入るボックス
+.sp_iss_cat_title {
+  margin-left: 0px;
+  width: 60%;
+  white-space: normal;
+}
+
+ // 掲載日時が入るボックス
+.sp_iss_cat_title a {
   color: black;
 }
 
-// 【カテゴリー footerページ】
-// special_issue_category footerボタン右側に配置↓
-.footer_edit_button {
-  display:flex;
+// 「掲載日時」
+.sp_iss_cat_strftime {
+  margin-left: 3rem;
+  white-space: nowrap;
+}
+
+// 「掲載を中止しています」
+.suspend_notice {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.sp_iss_cate_footer {
+  display: flex;
   justify-content: flex-end;
+  margin-top: 1rem;
 }
 
-.footer_edit_button a {
-  font-size: 0.8em;
-  color: black;
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 【special_category_new】ページ
+.sp_iss_cate_create_button {
+  display: flex;
+  margin-left: 1rem;
 }
 
-.footer_delete_button {
-  display:flex;
-  justify-content: flex-end;
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 【special_category_edit】ページ
+.sp_iss_cate_edit_button {
+  display: flex;
+  margin-left: 1rem;
 }
 
-.footer_delete_button a {
-  font-size: 0.8em;
-  color: black;
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 【footerページ】
+.special_issue_categories-footer {
+  display: flex;
+  justify-content: space-around;
 }
-// ↑↑↑↑↑↑footerのボタン類ここまで↑↑↑↑↑↑↑
+
+.special_issue_categories-footer a {
+  font-size: 0.5rem;
+}
