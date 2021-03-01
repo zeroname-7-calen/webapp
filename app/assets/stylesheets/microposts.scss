@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【micropost/サイドバー】ページ
 // ツイッターアイコン、「twitte mimi」を収納するボックス
 .top_side_twitter_wrapper {
@@ -106,7 +107,7 @@
   margin-left: 0.5rem;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // ここからmicropost/indexページ
 .micropost_index_header {
   display: flex;
@@ -207,7 +208,22 @@
   margin: 0 0 0 1rem;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ハートマーク（いいねボタン）と「削除by○○」リンクを１行に収納する
+.under_page_tool_box {
+  display: flex;
+  // display: inline-block;
+  justify-content: space-between;
+}
+
+// ハートマーク（いいねボタン）サイズ、色、位置調整
+.index_twitter_like_button .far {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+  color: black;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // ここから【micropost/showページ】
 // 「twitter mini」タイトルを収納するボックス
 .micropost_show_header {
@@ -294,6 +310,8 @@
   flex-direction: column;
   margin: 0 2rem;
   padding: 1rem 1rem;
+  box-shadow: 3px 4px 4px #696969;/*影*/
+  border-radius: 3px;
 }
 
 // 掲載エリアにマウスオーバーで背景色表示
@@ -337,7 +355,7 @@
 .show_like {
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【micropost/newページ】
 // 「twitter mini」タイトルを収納するボックス
 .micropost_new_header {
@@ -384,7 +402,7 @@
   margin: 0.4rem 0 0.5rem 0.2rem;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【micropost/edit】ページ
 .micropost_edit_header {
   display: flex;
@@ -436,7 +454,7 @@
   margin: 0.4rem 0 0.5rem 0.2rem;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【micropost/voted】ページ
 .micropost_voted_header {
   display: flex;
@@ -515,7 +533,7 @@
   justify-content: center;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【micropost/footer】
 // 投票のためのハートマークと、操作ツールを横１列に配置
 .micropost-footer {
@@ -547,4 +565,11 @@ ul.micropost-footer li:not(:last-child):after {
   color: #444;
   content: " | ";
   margin: 0 2px;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 【microposts/votes】ページ
+// ハートマーク（「いいね」ボタン）サイズ
+.votes_vote .far {
+  font-size: 1.2rem;
 }
