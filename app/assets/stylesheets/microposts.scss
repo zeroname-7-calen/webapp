@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【micropost/サイドバー】ページ
 // ツイッターアイコン、「twitte mimi」を収納するボックス
 .top_side_twitter_wrapper {
@@ -106,7 +107,7 @@
   margin-left: 0.5rem;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // ここからmicropost/indexページ
 .micropost_index_header {
   display: flex;
@@ -152,18 +153,39 @@
 .index_micropost_content_area {
   justify-content: center;
   margin: 1rem;
+  padding: 1.5rem;
+  box-shadow: 2px 2px 4px -2px gray inset;
 }
 
 // twitter本文表示位置調整
 .index_twitter_content {
   display: flex;
   justify-content: center;
+  // line-height: 4;
+}
+
+.index_twitter_content p {
+  font-size: 1.2em;
+  line-height: 1.8;
+}
+
+// 本文表示エリアにマウスが乗ったら背景色を変更する
+.index_twitter_content:hover {
+  // padding-top: 0.2rem;
+  border-radius: 5px;
+  background-color: #f5f5f5;
 }
 
 // twitter投稿の写真/動画表示位置調整
 .index_twitter_media {
   display: flex;
   justify-content: center;
+}
+
+.index_twitter_media:hover {
+  // padding-top: 0.2rem;
+  border-radius: 5px;
+  background-color: #f5f5f5;
 }
 
 // 投稿された写真とビデオのサイズ
@@ -186,7 +208,22 @@
   margin: 0 0 0 1rem;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ハートマーク（いいねボタン）と「削除by○○」リンクを１行に収納する
+.under_page_tool_box {
+  display: flex;
+  // display: inline-block;
+  justify-content: space-between;
+}
+
+// ハートマーク（いいねボタン）サイズ、色、位置調整
+.index_twitter_like_button .far {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+  color: black;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // ここから【micropost/showページ】
 // 「twitter mini」タイトルを収納するボックス
 .micropost_show_header {
@@ -268,17 +305,30 @@
   font-size: 1rem;
 }
 
+// twitter投稿を収納する全体ボックス
 .show_micropost_area {
   flex-direction: column;
+  margin: 0 2rem;
+  padding: 1rem 1rem;
+  box-shadow: 3px 4px 4px #696969;/*影*/
+  border-radius: 3px;
 }
 
+// 掲載エリアにマウスオーバーで背景色表示
+.show_micropost_area:hover {
+  background-color: #dcdcdc;
+}
+
+// 投稿（本文）を収納するボックス
 .show_micropost_content {
   display: flex;
   justify-content: center;
 }
 
+// 本文文字サイズ、行間
 .show_micropost_content p {
   font-size: 0.8rem;
+  line-height: 1.8;
 }
 
 .show_micropost_media {
@@ -298,13 +348,14 @@
 }
 
 .show_toolbar {
-  margin: 0.5rem 1rem 0.5rem 0;
+  margin: 0 2rem;
+  padding: 0 1rem;
 }
 
 .show_like {
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【micropost/newページ】
 // 「twitter mini」タイトルを収納するボックス
 .micropost_new_header {
@@ -351,7 +402,7 @@
   margin: 0.4rem 0 0.5rem 0.2rem;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【micropost/edit】ページ
 .micropost_edit_header {
   display: flex;
@@ -403,7 +454,7 @@
   margin: 0.4rem 0 0.5rem 0.2rem;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【micropost/voted】ページ
 .micropost_voted_header {
   display: flex;
@@ -482,15 +533,26 @@
   justify-content: center;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【micropost/footer】
+// 投票のためのハートマークと、操作ツールを横１列に配置
+.micropost-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.micropost_footer_like_partial a {
+  color: black;
+  font-size: 0.5em;
+}
+
 // フッター部分全体像 文字サイズ、配置バランスなど
 ul.micropost-footer {
   list-style-type: none;
   margin: 0;
   border-bottom: 1px #ccf dashed;
-  padding-top: 4px;
-  margin-bottom: 15px;
+  padding-top: 1rem;
+  margin-bottom: 3rem;
   text-align: right;
   font-size: 1.2em;
 }
@@ -503,4 +565,11 @@ ul.micropost-footer li:not(:last-child):after {
   color: #444;
   content: " | ";
   margin: 0 2px;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 【microposts/votes】ページ
+// ハートマーク（「いいね」ボタン）サイズ
+.votes_vote .far {
+  font-size: 1.2rem;
 }

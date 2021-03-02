@@ -1,7 +1,7 @@
-<div class="vote">
+<div class="votes_vote">
   <% if current_user && current_user.votable_for?(@micropost) %>
     <%= link_to user_micropost_like_path(@micropost, user_id: current_user.id), method: :patch do %>
-    <i class="far fa-thumbs-up fa-2x"></i>
+    <i class="far fa-heart fa-2x"></i>
     <% end %>
   <% end %>
 </div>
