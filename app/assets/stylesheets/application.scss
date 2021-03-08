@@ -18,33 +18,14 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // ページ全体
 .container {
   padding: 0;
   font-family: Meiryo, sans-serif;
   font-size: 0.6em;
-  width: 100%;
+  width: 100vw;
   height: 100%;
-}
-
-.background-image {
-  background-image: url("shirakami_2021cp.jpg");
-  height: 270px;
-  background-size: cover;
-  opacity: 0.7;
-}
-
-// スマホ画面用のナビコンテナー
-.header_nav_container {
-  display: flex;
-  flex-direction: row;
-}
-
-.header_nav_container img {
-  padding-top: 0.2rem;
-  width: 10rem;
-  height: 3rem;
 }
 
 // mainとasideを一括収納するボックス
@@ -60,16 +41,19 @@
   line-height: 1.5;
 }
 
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ヘッダー（トップページ以外）
+#header {
+  margin-top: 2rem;  //ナビバー位置を少し下げる
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // サイドバー
 #aside {
-  // border: solid 1px;
   width: 32%;
 }
 
-.notice_board {
-  background-color: pink;
-}
-
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // /* フッター */
 footer {
   font: 0.7em Verdana;
@@ -80,41 +64,94 @@ footer {
   border: 1px solid;
 }
 
-// // ヘッダー部分
-.heading-menu {
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// 【ナビゲーション】
+// ヘッダーロゴとナビメニューを１列に配置
+.header_nav_container {
   display: flex;
-  justify-content: start;
 }
 
-// ロゴの子要素が入るボックス
-.heading-menu .header-logo .logo {
-  flex: auto;
-  margin: 3px;
+// ロゴのサイズ設定
+.header_nav_container img {
+  margin: 0 0 0 0.5rem;
+  width: 7rem;
+  height: 4rem;  //.nav_for_positionの高さ指定4remに合わせる
+}
+
+// ワイド画面用ナビコンテナーに#dromenuが入っている
+#dropmenu {
+  display: flex;  //メニューアイコン横並び
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+}
+
+// メニューアイコン
+#dropmenu li {
+  justify-content: space-around;
+  margin-left: 0.5rem; //アイコン同士の間隔を開ける
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+// メニューアイコン　リンク
+#dropmenu li a {
+  color: black;  //文字色を黒
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#dropmenu li ul {
+  list-style: none;
+  position:absolute;
+  z-index: 100;
+  top: 70%;  //ドロップするアイコンの上下間隔を調整
+  width: 100%;
+  margin: 0;
   padding: 0;
 }
 
-// 会社ロゴ自体
-.header-logo a {
-  flex: auto;
-  align-items: center;
+#dropmenu li ul li {
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.2s;
 }
 
-// グローバルナビ
-// ナビが入るコンテナーボックス
-// 【ここにサンプルをいれていく】
-  // ワイド画面　アイコン全体のコンテナボックス
-.header-item {
-  // margin-left: 65px;
-  margin-left: 25px; //追加
-  display: block; //追加
+#dropmenu li ul li a {
+  padding: 15px 20px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: normal;
 }
+
+#dropmenu > li:hover a {
+   background: #f5f5f5;
+}
+
+#dropmenu > li:hover li:hover > a {
+   background: #6e7c0c;
+   border-radius: 5px;
+}
+
+#dropmenu > li:hover > ul > li {
+  overflow: visible;
+  // height: 40px;  /*40pxでは下方展開するメニューが重なってしまう*/
+  height: 50px;
+  width: 130px;
+}
+
+// スマホ画面にした時
   /* header hamburger */
 #ham-menu,
   label#menu-icon {
     display: none;/*768px以上のWindow幅の場合は表示しないようにする*/
   }
+
+// スマホ画面にした時
 #ham-menu {
-  background-color: #fff; /*メニュー背景色*/
+  // background-color: #fff; /*メニュー背景色*/
   box-sizing: border-box;
   height: 100%;
   // padding: 10px 40px; /*メニュー内左右上下余白*/
@@ -127,8 +164,10 @@ footer {
   text-align: center;
 }
 
+// ハンバーガーバー・中央線
 #menu-icon {
   background-color: rgb(30,40,54); /*アイコン部分 ハンバーガー中央色*/
+  margin-right: 1rem;  //ハンバーガーバーを左寄せ
   border-radius: 10px; /*角丸*/
   color: #333; /*アイコン（フォント）色*/
   cursor: pointer;
@@ -146,6 +185,7 @@ footer {
   transition: 1s;
 }
 
+// ハンバーガーバー・最上部線
 #menu-icon::before {
   content: '';
   background-color: rgb(30,40,54); /*アイコン部分 ハンバーガー中央色*/
@@ -184,7 +224,8 @@ footer {
   background-color: rgb(30,40,54); /*開示の際に、バーの色を黒色に変化させる*/
 }
 #menu-cb:checked ~ #menu-icon {
-  background-color: #fff;  /*中央バーを白色にして不可視に*/
+  // background-color: #fff;  /*中央バーを白色にして不可視に*/
+  background-color: #93c9ff  /*中央バーを水色にして不可視に*/
 }
 #menu-cb:checked ~ #menu-icon::before {
   transform: rotate(135deg);
@@ -197,7 +238,8 @@ footer {
   transition: 1s;            /*下方バーを黒色にして傾ける*/
   top: 0px;}
 
-  @media screen and (max-width: 959px) {
+
+@media screen and (max-width: 959px) {
 
 // 会社ロゴが入るコンテナー
   .header-logo {
@@ -232,80 +274,6 @@ footer {
     right: 40px;
     width: 46%;
    }
-}
-
-#dropmenu {
-  display: flex;
-  flex-wrap: nowrap;
-  list-style-type: none;
-  max-width: 80%;
-  margin: 0 auto;
-  // padding: 0;
-  // position: relative;
-  // padding-left: 0;
-}
-
-#dropmenu li {
-  flex: auto;
-  position: relative;
-  left: 0;
-  width: 50%;
-  float: left;
-  margin: 0;
-  padding-left: 0.3em;
-  text-align: center;
-  // border: 1px solid; ここでborderを設定すると「コラムと企画」のアイコンがうまく表示できない
-  white-space: nowrap;// メニュー文字を１行で表示
-}
-
-#dropmenu li a {
-  display: block;
-  margin: 0;
-  padding: 10px 10px 4px 0px;
-  color: black;
-  font-size: 0.8em;
-  font-weight: bold;
-  // border-right-style: 1px solid;
-  border-right: 1px solid;
-  // border: 1px solid;
-  // border-radius: 4px;
-  // background: #ffedab;
-}
-
-#dropmenu li ul {
-  list-style: none;
-  position:absolute;
-  z-index: 100;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#dropmenu li ul li {
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  transition: 0.2s;
-}
-
-#dropmenu li ul li a {
-  padding: 13px 15px;
-  text-align: left;
-  font-size: 12px;
-  font-weight: normal;
-  // white-space: nowrap;
-  // border-right: none;
-}
-
-#dropmenu > li:hover a { background: #f5f5f5; }
-#dropmenu > li:hover li:hover > a { background: #6e7c0c }
-#dropmenu > li:hover > ul > li {
-  overflow: visible;
-  // height: 40px;  /*40pxでは下方展開するメニューが重なってしまう*/
-  height: 50px;
-  width: 130px;
 }
 
 // 会社ロゴのサイズ指定。本来はtop.scssに記述する？
@@ -406,6 +374,7 @@ footer {
     padding-top: 2em;
     height: 100vh;
     background-color: black;
+    // opacity: 0.8;
     align-items: start;
   }
 
