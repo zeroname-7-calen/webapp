@@ -4,6 +4,33 @@
 
 @charset "UTF-8";
 
+// トップページ背景画像
+.top_index_background_image {
+  background-image: url("shirakami_2021cp.jpg");
+  height: 400px;
+  background-size: cover;
+}
+
+// 背景画像の中にナビバーを重ねる際の親要素
+.header_background_image_and_navbar {
+  position: relative;  //背景画像にナビを重ねるため、親要素にrelative指定
+}
+
+.top_index_background_image {
+}
+
+// 背景画像を重ねる際の子要素（ナビバー）
+.top_index_header {
+  position: absolute;  //背景画像にナビを重ねるため、子要素にabsolute指定
+  width: 100%;
+  box-sizing: border-box;
+  height: 4rem;  //ナビバーの高さ指定
+  bottom: 5px;  //背景画像に重ねる際の位置調整
+  background-color: white;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
 // トップ画面タイトル（最新ニュース）
 .top_title {
   width: 95%;
