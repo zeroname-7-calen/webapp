@@ -1,77 +1,61 @@
 <div class="header_nav_container">
-  <!-- <div class="nav_for_position"> -->
-    <div class="header_nav_container_image">
-      <div class="header-logo">
-        <a href="http://www.hokuu.jp" target="blank">
-          <%= image_tag "hokuu_header2.png", alt: "北羽新報" %>
-        </a>
-      </div>
-    </div>
-    <!-- ここからワイド画面用 -->
-    <div class="navbar">
-      <ul id="dropmenu">
-        <li><%= link_to "トップ", :root %></li>
-        <li><%= link_to "過去の記事", :articles %></li>
-        <li><%= link_to "コラムと企画" %>
-          <ul>
-            <li><%= link_to "各種コラムシリーズ", :special_issue_categories %></li>
-            <li><%= link_to "複眼鏡", "/special_issue_categories/1" %></li>
-          </ul>
+  <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+    <a class="navbar-brand" href="http://www.hokuu.jp" target="blank">
+      <%= image_tag "hokuu_header2.png", alt: "北羽新報" %>
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-navi" aria-controls="bs-navi" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="bs-navi">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <div class="nav-link"><%= link_to "ホーム", :root %></div>
         </li>
-        <li><%= link_to "イベント・映画情報" %>
-          <ul>
-            <li><%= link_to "イベントガイド", "/special_issues/4" %></li>
-            <li><%= link_to "映画情報", "/special_issues/3" %></li>
-          </ul>
+        <li class="nav-item">
+          <div class="nav-link"><%= link_to "過去の記事", :articles %></div>
         </li>
-        <li><%= link_to "釣り情報", :fishinginfos %></li>
-          <% if user_signed_in? %>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "ログイン", new_user_session_path %></li>
-        <% end %>
-      </ul>
-    </div>
-  <!-- </div> -->
-  <!-- </div> -->
-
-      <!-- ここからスマホ用ナビゲーション -->
-  <div class="mobile_media_nav">
-    <input id="menu-cb" type="checkbox" value="off">
-    <label id="menu-icon" for="menu-cb"></label>
-      <div id="ham-menu">
-        <div class="header-icon-container">
-          <div class="heading-menu">
-            <div class="header-logo">
-              <a href="http://www.hokuu.jp" target="blank">
-                <div class="logo">
-                  <%= image_tag "hokuu_header2.png", alt: "北羽新報" %>
-                </div>
-              </a>
+        <li class="nav-item dropdown">
+          <div class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= link_to "コラムと企画" %>
+          </div>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-item">
+              <%= link_to "各種コラムシリーズ", :special_issue_categories %>
+            </div>
+            <div class="dropdown-item">
+              <%= link_to "複眼鏡", "/special_issue_categories/1" %>
             </div>
           </div>
-        </div>
-      <ul class="header-items-sp">
-        <li class="header-item-sp"><%= link_to "スマホトップ", :root %></li>
-        <li class="header-item-sp"><%= link_to "過去の記事", :articles %></li>
-        <li class="header-item-sp"><%= link_to "コラムと企画" %></li>
-        <li class="header-item-sp"><%= link_to "スポーツ", "#" %></li>
-        <li class="header-item-sp"><%= link_to "イベント・映画情報" %></li>
-        <li class="header-item-sp"><%= link_to "釣り情報", :fishinginfos %></li>
-        <li class="header-item-sp"><%= link_to "ツイッター", :microposts %></li>
+        </li>
+        <li class="nav-item dropdown">
+          <div class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= link_to "観光・映画" %>
+          </div>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-item">
+              <%= link_to "イベントガイド", "/special_issues/4" %>
+            </div>
+            <div class="dropdown-item">
+              <%= link_to "映画情報", "/special_issues/3" %>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link"><%= link_to "釣り情報", :fishinginfos %></div>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link"><%= link_to "Twitter", :microposts %></div>
+        </li>
         <% if user_signed_in? %>
-          <li class="header-item-sp"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          <li class="nav-item">
+            <div class="nav-link"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
+          </li>
         <% else %>
-          <li class="header-item-sp"><%= link_to "ログイン", new_user_session_path %></li>
+          <li class="nav-item">
+            <div class="nav-link"><%= link_to "ログイン", new_user_session_path %></div>
+          </li>
         <% end %>
       </ul>
     </div>
-  </div>
-      <!-- スマホ用ナビゲーションここまで -->
-</div>
-<!-- </header> -->
-<div align="right">
-  <% if user_signed_in? %>
-    <%= "ログイン中: " + current_user.name + "さん" %>
-  <% end %>
+  </nav>
 </div>
