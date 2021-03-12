@@ -9,7 +9,7 @@ class User < ApplicationRecord
          :timeoutable
 
   # articleモデルとのリレーション
-  has_many :articles, dependent: :destroy
+  has_many :articles
 
   # micropostモデルとのリレーション
   has_many :microposts, dependent: :destroy
@@ -17,14 +17,17 @@ class User < ApplicationRecord
   has_many :voted_microposts, through: :votes, source: :micropost
 
   # message(掲示板)モデルとのリレーション
-  has_many :messages, dependent: :destroy
-  has_many :fishinginfos, dependent: :destroy
+  has_many :messages
+  has_many :fishinginfos
 
   # special_issues（コラム）モデルとのリレーション
   has_many :special_issues
 
   # eventsguides(イベントガイド)モデルとのリレーション
   has_many :eventguides
+
+  # cover_storiesモデルとのリレーション
+  has_many :cover_stories
 
   def votable_for?(micropost)
     micropost && micropost.author != self && !votes.exists?(micropost_id: micropost.id)

@@ -1,0 +1,13 @@
+<div class="cover_story_show_wrapper">
+  <div class="cover_story_show_title">
+    <h4><%= @cover_story.title %></h4>
+  </div>
+  <div class="cover_story_show_content_area">
+    <div clacover_story_show_content">
+      <%= @cover_story.content %>
+    </div>
+  </div>
+  <div class="cover_story_show_toolbar">
+    <%= render "tool_for_cover_show", cover_story: @cover_story %>
+  </div>
+</div>

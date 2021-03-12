@@ -1,0 +1,10 @@
+<div class="cover_story_new_wrapper">
+  <div class="cover_story_new_form">
+  <%= form_for @cover_story do |form| %>
+    <%= render "form", form: form %>
+    <div class="cover_story_button">
+      <%= form.submit "カバーストーリーの登録", class: "btn btn-danger btn-block" %>
+    </div>
+  <% end %>
+  </div>
+</div>

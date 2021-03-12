@@ -35,6 +35,16 @@
 
   <div class="top_content_2nd_row">
     <% if current_user && loyalty(@top_content, :top_contents).index? %>
+      <!-- カバーストーリー用ボタン -->
+      <div class="tool_for_cover_story">
+        <div class="covers_up_button">
+          <%= link_to "カバーストーリーを掲載する", :new_cover_story, class: "btn btn-outline-dark btn-sm" %>
+        </div>
+        <div class="covers_index_button">
+          <%= menu_link_to "カバーストーリーを確認", :cover_stories, class: "btn btn-outline-dark btn-sm" %>
+        </div>
+      </div>
+      <!-- ここまでカバーストーリー用ボタン -->
       <div class="top_toolbar">
         <div class="float-right top_pics_upload_button">
           <%= link_to "写真／動画をアップする", :new_top_content, class: "btn btn-outline-dark btn-sm" %>

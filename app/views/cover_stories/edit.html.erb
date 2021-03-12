@@ -1,0 +1,19 @@
+<div class="cover_story_edit_header">
+  <div class="cover_story_edit_title">
+    <% @page_title = "カバーストーリーの編集" %>
+    <h4><%= @page_title %></h4>
+  </div>
+</div>
+<div class="toolbar">
+  <%= link_to "カバーストーリーに戻る", @cover_story, class: "btn btn-outline-primary btn-sm" %>
+</div>
+<div class="cover_story_edit_wrapper">
+  <div class="cover_story_edit_form">
+    <%= form_for @cover_story do |form| %>
+      <%= render "form", form: form %>
+      <div class="cover_story_edit_button">
+        <%= form.submit class: "btn btn-danger btn-block" %>
+      </div>
+    <% end %>
+  </div>
+</div>

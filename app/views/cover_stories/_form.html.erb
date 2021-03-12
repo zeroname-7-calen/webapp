@@ -1,0 +1,10 @@
+<%= render "shared/errors", obj: @cover_story %>
+
+<div class="cover_story_form_wrapper">
+  <div class="cover_story_form_title">
+    <%= form.text_field :title, placeholder: "タイトル入力欄" %>
+  </div>
+  <div class="cover_story_form_content">
+    <%= form.rich_text_area :content, placeholder: "本文入力" %>
+  </div>
+</div>

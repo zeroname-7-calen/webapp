@@ -18,6 +18,7 @@ ja:
       eventguide: イベントガイド
       advertisement: 広告
       top_content: トップ写真・動画
+      cover_story: カバーストーリー
     attributes:
       article:
         title: タイトル
@@ -56,6 +57,9 @@ ja:
         start_date: 掲載開始日時
         no_finish_date: 掲載終了日時を指定する
         finish_date: 掲載終了日時
+      cover_story:
+        title: タイトル
+        content: 本文
     errors:
       messages:
         carrierwave_processing_error: 処理できませんでした

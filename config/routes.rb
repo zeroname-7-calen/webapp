@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root "top#index"
   get "about", to: "top#about", as: "about"
   get "bad_request" => "top#bad_request"
@@ -39,4 +38,5 @@ Rails.application.routes.draw do
   resources :advertisements
   # resources :top_contents, only: [:show]
   resources :top_contents
+  resources :cover_stories
 end
