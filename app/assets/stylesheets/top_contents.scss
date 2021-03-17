@@ -4,6 +4,37 @@
 
 @charset "UTF-8";
 
+// ★★★★★★★★★★★★  formページ  ★★★★★★★★★★★★★★★★★★★
+
+// タイトル入力欄サイズ調整
+input#top_content_title {
+  width: 70%;
+  height: 1.5rem;
+}
+
+.top_content_form_caption_label {
+  margin-top: 1rem;
+}
+
+// チェックボックスと「掲載開始日時を指定する」を１列に
+.start_date_box_row {
+  display: flex;
+}
+
+// キャプション入力欄サイズ調整
+input#top_content_caption {
+  width: 70%;
+  height: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+// チェックボックスと「掲載終了日時を指定する」を１列に
+.finish_date_box_row {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+// ★★★★★★★  top_content_index（トップページではない)  ★★★★★★★★★
 // ここから対象はtop_content_indexファイル
 // content_indexの写真一覧を収納するボックス
 .contents_index {
@@ -34,28 +65,36 @@
 .top_content_caption {
   display: flex;
 }
-// 対象はtop_content_newページ　
-.top_content_url {
-  margin-top: 0.3rem;
-}
+
 
 .top_content_url img {
   width: 100%;
 }
+
+// ★★★★★★★★★★★★  top_content_newページ  ★★★★★★★★★★★★★★★★★
+.top_content_new_title {
+  margin-top: 1rem;
+}
+
+.top_content_new_url {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+}
 // 「登録するボタン」
-.top_newpage_submit {
+.top_content_new_submit {
   display: flex;
   justify-content: flex-end;
   margin-right: 2rem;
   padding-top: 0.3rem;
 }
 
-// 対象はtop_content_editページ
+
+// ★★★★★★★★★★★★  top_content_editページ  ★★★★★★★★★★★★★★★★★
 .picture_button {
   margin-top: 0.3rem;
 }
 
-// 「登録するボタン」
+// 「更新するボタン」
 .top_editpage_submit {
   display: flex;
   justify-content: flex-end;

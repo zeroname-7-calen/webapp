@@ -1,53 +1,47 @@
 
 <%= render "shared/errors", obj: @top_content %>
 
-<table class="attr">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="field">
-              <tr>
-                <th><%= form.label :title %></th>
-                <td><%= form.text_field :title %></td>
-              </tr>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="top_content_form_wrapper">
+  <div class="top_content_form_title_label">
+    <%= form.label :title %>
+  </div>
+  <div class="top_content_form_title_field">
+    <%= form.text_field :title %>
+  </div>
+  <div class="top_content_form_caption_label">
+    <%= form.label :caption %>
+  </div>
+  <div class="top_content_form_caption_field">
+    <%= form.text_field :caption %>
+  </div>
+  <div class="start_date_box_row">
+    <div class="top_content_form_no_start_date_ck_box">
+      <%= form.check_box :no_start_date?, checked: false %>
+    </div>
+    <div class="top_content_form_no_start_date_label">
+      <%= form.label :no_start_date %>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="field">
-              <tr>
-                <th><%= form.label :caption %></th>
-                <td><%= form.text_field :caption %></td>
-              </tr>
-            </div>
-          </div>
-        </div>
-      </div>
+
+  <div class="top_content_form_start_date_label">
+    <%= form.label :start_date %>
+  </div>
+  <div class="top_content_form_date_select">
+    <%= form.datetime_select :start_date %>
+  </div>
+    (※掲載開始日時を指定した際には、掲載終了日の指定も必要になります)
+  <div class="finish_date_box_row">
+    <div class="top_content_form_no_finish_date_ck_box">
+      <%= form.check_box :no_finish_date?, checked: false %>
+    </div>
+    <div class="top_content_form_no_finish_date_label">
+      <%= form.label :no_finish_date %>
     </div>
   </div>
-  <tr>
-    <th><%= form.check_box :no_start_date?, checked: false %></th>
-    <td><%= form.label :no_start_date %></td>
-  </tr>
-  <tr>
-    <th><%= form.label :start_date %></th>
-    <td><%= form.datetime_select :start_date %></td>
-  </tr>
-  <tr>
-    <th><%= form.check_box :no_finish_date?, checked: false %></th>
-    <td><%= form.label :no_finish_date %></td>
-  </tr>
-  <tr>
-    <th><%= form.label :finish_date %></th>
-    <td><%= form.datetime_select :finish_date %></td>
-  </tr>
-</table>
+  <div class="top_content_form_finish_date">
+    <%= form.label :finish_date %>
+  </div>
+  <div class="top_content_form_date_select">
+    <%= form.datetime_select :finish_date %>
+  </div>
+</div>

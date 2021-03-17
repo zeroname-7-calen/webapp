@@ -1,14 +1,10 @@
-<div class="cover_story_index_header">
-  <%# <% if current_user && loyalty(@fishinginfo, :fishinginfos).index? %>
-    <div class="cover_story_index_toolbar"><%= link_to "カバーストーリーを作成する", new_cover_story_path, class: "btn btn-outline-primary btn-sm" %></div>
-  <%# <% end %>
-</div>
-
-<div class="cover_stroy_index_wrapper">
+<div class="cover_story_index_wrapper">
   <% if @cover_stories.present? %>
     <% @cover_stories.each do |cover_story| %>
-      <div class="cover_story_index_title">
-        <h4><%= cover_story.title %></h4>
+      <div class="cover_story_index_title_area">
+        <div class="cover_story_index_title">
+          <h4><%= cover_story.title %></h4>
+        </div>
       </div>
       <div class="cover_story_index_content_area">
         <div class="cover_story_index_content">
