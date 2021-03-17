@@ -323,6 +323,8 @@
 .show_micropost_content {
   display: flex;
   justify-content: center;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 // 本文文字サイズ、行間

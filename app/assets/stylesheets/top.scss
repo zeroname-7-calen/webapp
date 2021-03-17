@@ -41,13 +41,11 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  // height: 3rem;
   box-sizing: border-box;
 }
 
 // トップページ ロゴサイズ
 .navbar.navbar-expand-lg.navbar-light.bg-light img {
-  // height: 3.5rem;
   height: 3rem;
   width: 6rem;
   margin-left: -0.3rem;
@@ -62,7 +60,6 @@
 // アイコンとハンバーガーボタンが入るボックス（ワイド、スマホ共通）
 .navbar.navbar-expand-lg.navbar-light.bg-light {
   width: 100%;  //１００%にしないと横画面全体に広がらない
-  // height: 3rem;
 }
 
 // ドロップダウンメニュー
@@ -99,6 +96,8 @@
   flex-direction: column;
   padding: 1.5rem;
   font-size: 0.8rem;
+  // max-width: 600px;  //半角英数連続文字列突き抜け防止
+  // max-width: 25rem;  //半角英数連続文字列突き抜け防止
   // background-color: skyblue;
 }
 
@@ -106,12 +105,16 @@
 .cover_story_title {
   display: flex;
   justify-content: center;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 // カバーストーリー本文
 .cover_story_content {
   margin-top: 0.5rem;
   line-height: 1.8;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 // ★★★★★  トップコンテント右側の写真関連  ★★★★★★★★★★★

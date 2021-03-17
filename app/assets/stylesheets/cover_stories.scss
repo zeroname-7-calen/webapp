@@ -11,15 +11,16 @@
 
 // タイトル入力欄サイズ調整
 .cover_story_form_title {
-  width: 80%;
+  width: 100%;
+  margin-right: 1rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 // タイトル入力欄サイズを拡大
 .cover_story_form_title input {
-  // display: flex;
-  // justify-content: center;
-  width: 600px;  //.cover_story_form_contentも横幅600pxに合わせる
-  word-wrap: break-word;
+  width: 90%;
+  height: 1.5rem;
 }
 
 // 本文入力欄
@@ -31,39 +32,59 @@
 
 .cover_story_form_content #cover_story_content {
   min-height: 10rem;
-  width: 600px;  //.cover_story_form_contentも横幅600pxに合わせる
-  word-wrap: break-word;
+  width: 100%;  //600pxでなくてもＯＫみたい
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 // ★★★★★★★★★  cover_story_indexページ  ★★★★★★★★
 // 全体枠調整
 .cover_story_index_wrapper {
-  // display: flex;
+  width: 100%;
   justify-content: center;
   padding: 0 1rem;
   // background-color: skyblue;
 }
+
+// タイトル欄が入るボックス
 .cover_story_index_title_area {
-  // display: flex;
-  // justify-content: center;
-  // width: 600px;
-  // word-wrap: break-word;
-  // background-color: red;
+  display: flex;
+  justify-content: center;
 }
 
+// タイトル
 .cover_story_index_title {
   display: flex;
   justify-content: center;
-  width: 600px;
-  word-wrap: break-word;
-  background-color: red;
+  margin-top: 1rem;
+  padding: 1rem 2rem 0 2rem;
+  font-size: 1.1rem;
+  // padding: 1rem 3rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
+// 本文、写真、キャプションを収納する全体ボックス
+.cover_story_index_content .trix-content {
+  justify-content: center;
+  // width: 600px;  //写真を枠内にきれいに掲載するには600px指定が必要
+  padding: 0 2rem;
+}
+
+// 本文が入るボックス
 .cover_story_index_content {
-  // background-color: red;
+  // padding: 0 1.5rem;
   font-size: 1rem;
   line-height: 1.6;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
+
+// 写真サイズ調整
+.cover_story_index_content img {
+  margin: 0.5rem 0;
+}
+
 // ★★★★★★★★★  cover_story_newページ  ★★★★★★★★
 .cover_stroy_index_wrapper {
   margin: 0 1rem;
@@ -71,37 +92,42 @@
   width: 100%;
 }
 
-
 // ★★★★★★★★★  cover_story_showページ  ★★★★★★★★★
 .cover_story_show_wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 // ページ最上部記事タイトル位置調整
 .cover_story_show_title {
   display: flex;
   justify-content: center;
-  width: 600px;
-  margin: 2rem 0;
-  word-wrap: break-word;
+  font-size: 1.1rem;
+  padding: 1rem 3rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
-// 写真とキャプション全体が入るボックス
+// 記事、写真、キャプション全体が入るボックス
 .cover_story_show_content .trix-content {
-  // padding: 1.5rem 3rem;
   justify-content: center;
+  width: 600px;  //写真を枠内にきれいに掲載するには600px指定が必要
   font-size: 1rem;
   line-height: 1.6;
-  word-wrap: break-word;  //半角英数字の連続を改行
 }
 
+// 記事が入るボックス
 .cover_story_show_content {
-  // margin: 0.5rem 0 0.5rem 1rem;
   justify-content: center;
   margin-left: 3rem;
-  width: 80%;
-  // background-color: skyblue;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  // word-break: break-all;   //半角英数連続文字列突き抜け防止
+}
+
+// 写真サイズ調整
+.cover_story_show_content img {
+  max-width: 90%;
 }
 
 // キャプションが入るボックス
@@ -111,6 +137,7 @@
   color: black;
 }
 
+// 「編集」「削除」ボタン
 .cover_story_show_toolbar {
   display: flex;
   justify-content: flex-end;
@@ -126,5 +153,4 @@
   display: flex;
   justify-content: center;
   margin: 1.5rem 0;
-
 }

@@ -1,6 +1,8 @@
 <div class="cover_story_show_wrapper">
   <div class="cover_story_show_title">
-    <h4><%= @cover_story.title %></h4>
+    <!-- <h4><%= @cover_story.title %></h4> -->
+    <%# h4タグでは長いタイトルを折り返せない %>
+    <%= @cover_story.title %>
   </div>
   <div class="cover_story_show_content_area">
     <div class="cover_story_show_content">
