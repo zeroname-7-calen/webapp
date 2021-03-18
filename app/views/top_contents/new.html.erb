@@ -1,15 +1,20 @@
-<% @page_title = "トップページ写真／動画新規登録" %>
-<h5><%= @page_title %></h5>
-
-<%= form_for @top_content do |form| %>
-  <%= render "form", form: form %>
-  <div class="top_content_url">
-    <span class="top_content_url">
-      <%= form.file_field :url, accept: "image/jpeg,image/gif,image/png, video/*" %>
-    </span>
+<div class="top_content_new_wrapper">
+  <div class="top_content_new_title">
+    <% @page_title = "トップページ写真／動画新規登録" %>
+    <h5><%= @page_title %></h5>
   </div>
-  <div class="top_newpage_submit"><%= form.submit class: "btn btn-outline-dark btn-xs" %></div>
-<% end %>
+
+  <%= form_for @top_content do |form| %>
+    <%= render "form", form: form %>
+    <div class="top_content_new_url">
+      <span class="top_content_new_url">
+        <%= form.file_field :url, accept: "image/jpeg,image/gif,image/png, video/*" %>
+      </span>
+    </div>
+    <div class="top_content_new_submit">
+      <%= form.submit class: "btn btn-outline-dark btn-xs" %>
+    </div>
+  <% end %>
 
 <!-- <script type="text/javascript">
   $('#top_content_url').bind('change', function() {
@@ -19,3 +24,4 @@
     }
   });
 </script> -->
+</div>

@@ -2,7 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// // サイドバー広告関連・ここから
+// 広告が入るボックスサイズ
+#advertisement_box {
+  width: 100%;
+  padding: 0.2em;
+}
+//
+// // 広告表示サイズ
+#advertisement_box img {
+  width: 100%;
+  // padding: 0.2em;
+}
 
+.ad_tool_container {
+  text-align: center;
+}
+
+.ad_tool {
+  padding: 0.5 0em;
+}
+// // サイドバー広告関連規定・ここまで
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // app/views/advertisements/indexページでの規定
 // 【960px以上フルサイズ】
 // 広告データが入るボックス

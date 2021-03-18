@@ -1,0 +1,7 @@
+<ul class="cover_story_tool">
+  <% if current_user %>
+      <%= link_to "編集", [:edit, cover_story] %>
+      <%= link_to "削除", cover_story, method: :delete,
+            data: { confirm: "削除しますか？" } %>
+  <% end %>
+</ul>

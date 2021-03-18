@@ -1,0 +1,6 @@
+<ul class="cover_show-tool">
+  <%# <% if current_user && loyalty(@cover_stroy, :cover_stries).index? %>
+    <%= link_to "編集", [:edit, cover_story], class: "btn btn-outline-warning btn-sm" %>
+    <%= link_to "削除", cover_story, method: :delete, data: { confirm: "削除しますか？" }, class: "btn btn-outline-danger btn-sm" %>
+  <%# <% end %>
+</ul>

@@ -31,6 +31,8 @@
 // mainとasideを一括収納するボックス
 #main_wrapper {
   display: flex;
+  // display: grid;
+  // grid-template-columns: 2.3fr 1fr;  //mainとasideの比率を2.3対１に
 }
 
 /* 左の枠（コンテンツを入れる） */
@@ -77,10 +79,6 @@ footer {
   width: 7rem;
   height: 4rem;  //.nav_for_positionの高さ指定4remに合わせる
 }
-
-
-
-
 
 // // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 //

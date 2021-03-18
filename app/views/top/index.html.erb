@@ -1,11 +1,21 @@
 <div id="top_page_wrapper">
   <div class="top_content_1st_row">
-    <div class="cover_stroy">
-      <p>カバーストーリー掲載エリア<p>
+    <div class="top_1st_row_wrapper grid">
+    <!-- カバーストーリー掲載エリア -->
+    <div class="top_cover_story">
+      <% @cover_stories = CoverStory.order(created_at: :desc).limit(1) %>
+        <% @cover_stories.each do |cover_story| %>
+        <div class="cover_story_title">
+          <h5><%= cover_story.title %></h5>
+        </div>
+        <div class="cover_story_content">
+          <%= strip_tags(cover_story.content.to_s).truncate(200) %>
+          <%= link_to "全文表示", cover_story %>
+        </div>
+      <% end %>
 　  </div>
-
+    <!-- カバーストーリー掲載エリアここまで -->
     <div class="top_content_media">
-      <p>トップ写真掲載エリア</p>
       <% TopContent.order(created_at: :desc) %>
         <% @top_contents.each do |top_content| %>
           <div class="top_content_title">
@@ -31,16 +41,27 @@
           <% end %>
         <% end %>
       </div>
+    </div>
   </div>
 
   <div class="top_content_2nd_row">
     <% if current_user && loyalty(@top_content, :top_contents).index? %>
+      <!-- カバーストーリー用ボタン -->
+      <div class="tool_for_cover_story">
+        <div class="covers_up_button">
+          <%= link_to "カバーストーリーを掲載する", :new_cover_story, class: "btn btn-info btn-sm" %>
+        </div>
+        <div class="covers_index_button">
+          <%= menu_link_to "カバーストーリーを確認", :cover_stories, class: "btn btn-outline-dark btn-sm" %>
+        </div>
+      </div>
+      <!-- ここまでカバーストーリー用ボタン -->
       <div class="top_toolbar">
         <div class="float-right top_pics_upload_button">
-          <%= link_to "写真／動画をアップする", :new_top_content, class: "btn btn-outline-dark btn-sm" %>
+          <%= link_to "写真／動画をアップする", :new_top_content, class: "btn btn-info btn-sm" %>
         </div>
         <div class="top_pics_tool_button">
-          <%= menu_link_to "トップページ写真／動画を確認", :top_contents, class: "btn btn-info btn-sm" %>
+          <%= menu_link_to "トップページ写真／動画を確認", :top_contents, class: "btn btn-outline-dark btn-sm" %>
         </div>
       </div>
     <% end %>

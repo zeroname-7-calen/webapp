@@ -10,13 +10,13 @@
 // ニュース新規登録時のタイトル欄
 #article_title {          //検証で確認すると#article_titleになっている
   height: 2rem;
-  // width: 100%;//やはりぺーセント指定は不可
+  // width: 100%;//やはりパーセント指定は不可
   width: 600px;
 }
 
 // ニュース新規登録本文入力欄
 #article_content {
-  // width: 70%;  //やはりぺーセント指定は不可
+  // width: 70%;  //やはりパーセント指定は不可
   width: 600px;
   min-height: 10rem;
 }
@@ -38,7 +38,6 @@ trix-toolbar {
 // 記事indexの「ニュース一覧」タイトル位置調整
 .article_index_title {
   display: flex;
-  justify-content: center;
   justify-content: center;
   align-items: center;
   // background-color: red;
@@ -204,12 +203,16 @@ td.article_edit_delete {
   margin: 0 2rem 0 1rem;
 }
 
-// 記事が表示される実際のボックス
+// 記事が表示される実際のボックス（記事も写真も一緒）
 .article_show_content .trix-content {
-  // width: 100%;
   width: 600px;
   font-size: 1rem;
   line-height: 1.8;
   word-wrap: break-word;  //半角英数字の連続を改行
-  // background-color: skyblue;
+}
+
+// キャプション
+.article_show_content .attachment__caption {
+  margin-top: 0.5rem;
+  // display: none;  //キャプションを表示しない
 }

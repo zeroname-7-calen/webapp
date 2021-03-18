@@ -1,0 +1,156 @@
+// Place all the styles related to the cover_stories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@charset "UTF-8";
+// ★★★★★★★★★  cover_story_formページ  ★★★★★★★★
+// フォーム全体枠調整
+.cover_story_form_wrapper {
+  margin: 1rem;
+}
+
+// タイトル入力欄サイズ調整
+.cover_story_form_title {
+  width: 100%;
+  margin-right: 1rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
+}
+
+// タイトル入力欄サイズを拡大
+.cover_story_form_title input {
+  width: 90%;
+  height: 1.5rem;
+}
+
+// 本文入力欄
+.cover_story_form_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cover_story_form_content #cover_story_content {
+  min-height: 10rem;
+  width: 100%;  //600pxでなくてもＯＫみたい
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
+}
+
+// ★★★★★★★★★  cover_story_indexページ  ★★★★★★★★
+// 全体枠調整
+.cover_story_index_wrapper {
+  width: 100%;
+  justify-content: center;
+  padding: 0 1rem;
+  // background-color: skyblue;
+}
+
+// タイトル欄が入るボックス
+.cover_story_index_title_area {
+  display: flex;
+  justify-content: center;
+}
+
+// タイトル
+.cover_story_index_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem 2rem 0 2rem;
+  font-size: 1.1rem;
+  // padding: 1rem 3rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
+}
+
+// 本文、写真、キャプションを収納する全体ボックス
+.cover_story_index_content .trix-content {
+  justify-content: center;
+  // width: 600px;  //写真を枠内にきれいに掲載するには600px指定が必要
+  padding: 0 2rem;
+}
+
+// 本文が入るボックス
+.cover_story_index_content {
+  // padding: 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
+}
+
+// 写真サイズ調整
+.cover_story_index_content img {
+  margin: 0.5rem 0;
+}
+
+// ★★★★★★★★★  cover_story_newページ  ★★★★★★★★
+.cover_stroy_index_wrapper {
+  margin: 0 1rem;
+  margin: auto;
+  width: 100%;
+}
+
+// ★★★★★★★★★  cover_story_showページ  ★★★★★★★★★
+.cover_story_show_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// ページ最上部記事タイトル位置調整
+.cover_story_show_title {
+  display: flex;
+  justify-content: center;
+  font-size: 1.1rem;
+  padding: 1rem 3rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
+}
+
+// 記事、写真、キャプション全体が入るボックス
+.cover_story_show_content .trix-content {
+  justify-content: center;
+  width: 600px;  //写真を枠内にきれいに掲載するには600px指定が必要
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+// 記事が入るボックス
+.cover_story_show_content {
+  justify-content: center;
+  margin-left: 3rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  // word-break: break-all;   //半角英数連続文字列突き抜け防止
+}
+
+// 写真サイズ調整
+.cover_story_show_content img {
+  max-width: 90%;
+}
+
+// キャプションが入るボックス
+.cover_story_show_content .trix-content .attachment__caption {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: black;
+}
+
+// 「編集」「削除」ボタン
+.cover_story_show_toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 3rem;
+}
+
+// ★★★★★★★★★  cover_story_indexページ  ★★★★★★★★★
+.cover_stroy_index_wrapper {
+  padding: 1rem 3rem;
+}
+// 記事タイトル位置調整
+.cover_story_index_title {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
