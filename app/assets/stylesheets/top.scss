@@ -34,6 +34,7 @@
 .header_nav_container {
   display: flex;
   width: 100%;
+  height: 4rem;
 }
 
 // ナビが入っているボックス
@@ -46,10 +47,19 @@
 
 // トップページ ロゴサイズ
 .navbar.navbar-expand-lg.navbar-light.bg-light img {
-  height: 3rem;
   width: 6rem;
+  height: 3rem;
   margin-left: -0.3rem;
 }
+
+// トップページロゴ（アニメ）
+.navbar.navbar-expand-lg.navbar-light.bg-light video {
+  display: flex;
+  align-items: baseline;
+  height: 3.5rem;
+  margin-left: -1rem;
+}
+
 
 // ナビバーのアイコン
 .navbar-nav a {

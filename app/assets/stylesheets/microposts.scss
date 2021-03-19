@@ -52,6 +52,7 @@
   border-bottom: double 5px #8b4513;
 }
 
+// twitter本文表示エリア
 .top_twitter_content_area {
   display: flex;
   margin: 0 0 0 -1rem;
@@ -60,6 +61,8 @@
 
 .twitter_content {
   justify-content: center;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 .twitter_content a {
