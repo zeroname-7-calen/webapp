@@ -8,14 +8,11 @@
 
   <div class="sp_issue_show_content_area">
     <% unless @special_issue.is_display %>
-      <div class=sp_issue_show_category_name>
-        <h3><%= @special_issue_category.category_name %></h3>
-      </div>
-      <div class="sp_issue_show_major_title">
-        <!-- <h4><%= @special_issue.major_title %></h4> -->
-        <!-- <h4>タグだと長いタイトルを折り返せない -->
-        <h5><%= @special_issue.major_title %></h5>
-      </div>
+    <div class="sp_issue_show_major_title">
+      <!-- <h4><%= @special_issue.major_title %></h4> -->
+      <!-- <h4>タグだと長いタイトルを折り返せない -->
+      <h5><%= @special_issue.major_title %></h5>
+    </div>
       <div class="sp_issue_show_minor_title">
         <h6><%= @special_issue.minor_title %></h6>
       </div>

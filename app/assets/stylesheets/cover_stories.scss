@@ -103,7 +103,7 @@
 .cover_story_show_title {
   display: flex;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   padding: 1rem 3rem;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
@@ -113,8 +113,8 @@
 .cover_story_show_content .trix-content {
   justify-content: center;
   width: 600px;  //写真を枠内にきれいに掲載するには600px指定が必要
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.8rem;
+  line-height: 1.7;
 }
 
 // 記事が入るボックス
@@ -133,7 +133,7 @@
 // キャプションが入るボックス
 .cover_story_show_content .trix-content .attachment__caption {
   margin-top: 0.8rem;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   color: black;
 }
 

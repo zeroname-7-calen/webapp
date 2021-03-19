@@ -39,14 +39,15 @@ input#top_content_caption {
 // content_indexの写真一覧を収納するボックス
 .contents_index {
   // padding-top: 1rem;
-  background: whitesmoke;/*背景色*/
+  // background: whitesmoke;/*背景色*/
+  margin-top: 1rem;
 }
 
 // 各写真／動画タイトル
 .content_index_title {
   display: flex;
   justify-content: center;
-  padding-top: 0.5rem;
+  padding: 0.5rem 1rem;
   border-top: outset 0.2rem #ff7d6e;
 }
 
@@ -58,18 +59,28 @@ input#top_content_caption {
 // 写真／動画を収納するボックス
 .url_box {
   display: flex;
-  justify-content: flex-start;
-  background: #ffebe9;
+  justify-content: center;
+}
+
+.url_box img {
+  max-width: 90%;
+  max-height: 70%
+}
+
+.url_box video {
+  max-width: 90%;
+  max-height: 70%
 }
 
 .top_content_caption {
   display: flex;
+  justify-content: center;
+  margin-top: 0.4rem;
 }
 
-
-.top_content_url img {
-  width: 100%;
-}
+// .top_content_url img {
+//   width: 100%;
+// }
 
 // ★★★★★★★★★★★★  top_content_newページ  ★★★★★★★★★★★★★★★★★
 .top_content_new_title {
