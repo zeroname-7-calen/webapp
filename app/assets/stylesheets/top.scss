@@ -555,7 +555,13 @@
   // 1st_row記事と写真を縦に配置
   .top_1st_row_wrapper {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    background-color: pink;
+  }
+
+  .top_content_1st_row {
+    // display: flex;
+    // flex-direction: column-reverse;
   }
 
   // カバーストーリー表示エリア
