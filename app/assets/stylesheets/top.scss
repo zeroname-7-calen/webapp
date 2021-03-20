@@ -60,11 +60,10 @@
   margin-left: -1rem;
 }
 
-
 // ナビバーのアイコン
 .navbar-nav a {
   color: black;  //アイコン文字色黒に
-  font-size: 0.6rem;
+  font-size: 0.7rem;
 }
 
 // アイコンとハンバーガーボタンが入るボックス（ワイド、スマホ共通）
@@ -72,11 +71,11 @@
   width: 100%;  //１００%にしないと横画面全体に広がらない
 }
 
-// ドロップダウンメニュー
-.nav-item .dropdown-item {
-  background-color: #f5f5f5;  //下方展開されるボックス背景色
-  opacity: 0.9;
-}
+// // ドロップダウンメニュー
+// .nav-item .dropdown-item {
+//   background-color: #f5f5f5;  //下方展開されるボックス背景色
+//   opacity: 0.7;
+// }
 
 // ドロップダウンメニュー
 .nav-item .dropdown-item a {
@@ -93,12 +92,10 @@
   border-radius: 5px;
 }
 
- // カバーストーリー本文と写真表示を２：１の割合
+ // カバーストーリー本文と写真表示を1.4：１の割合
 .grid {
   display: grid;
-  // align-items: center;
   grid-template-columns: 1.4fr 1fr;  //カバーストーリーと写真比率を1.4対１に
-  // background-color: pink;
 }
 
 // カバーストーリーが入るボックス
@@ -108,7 +105,6 @@
   padding: 1.5rem;
   // max-width: 600px;  //半角英数連続文字列突き抜け防止
   // max-width: 25rem;  //半角英数連続文字列突き抜け防止
-  // background-color: skyblue;
 }
 
 // カバーストーリーのタイトル
@@ -195,7 +191,6 @@
 .tool_for_cover_story {
   display: flex;
   justify-content: flex-start;
-  // background-color: red;
 }
 
 .tool_for_cover_story a {
@@ -301,7 +296,6 @@
 .column_index_title h6 {
   margin-bottom: 1.4rem;
   position: relative;
-  // color: #d2691e;
   color: #800000;
   line-height: 1.4;
   -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0, 0, 0, 0.6));
@@ -332,8 +326,6 @@
 // 【トップページ　メッセージボード】
 // 掲示板全体を包括するボックス
 .top_page_message {
-  // align-items: flex-end;
-  // align-items: flex-start;
   width: 100%;
   margin-right: 0.4rem;
   border: 1px solid;
@@ -348,7 +340,6 @@
 // 「掲示板」タイトルの装飾その１
 .top_page_message_title_area h4 {
   position: relative;
-  // color: #158b2b;
   color: #2f4f4f;
   font-size: 20px;
   padding: 10px 0;
@@ -387,7 +378,6 @@
 .top_message_title h5 {
   position: relative;
   padding: 0 25px;
-  // padding-left: 0px;
 }
 
 // 掲示板掲載記事タイトル装飾その２
@@ -423,11 +413,10 @@
 .top_message_content {
   display: flex;
   justify-content: center;
-  margin: 10px;
-  padding: 0 10px;
-  font-size: 18px;
-  line-height: 28px;
-  // width: 67%;
+  margin: 1rem 0;
+  padding: 0 0.8rem;
+  font-size: 0.8rem;
+  line-height: 1.7;
   width: 100%;
 }
 
@@ -469,17 +458,16 @@
   width: 32%;
 }
 
-// **メディアクエリ**
-@media screen and (max-width: 991px) {
 
+// ★★★★★★★★★★★★★★★  メディアクエリ  ★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★  max-991  ★★★★★★★★★★★★★★★★★
+@media screen and (max-width: 991px) {
   .navbar-nav {
     display: flex;
     justify-content: center;
-    // margin-left: 1rem;
     padding-left: 1rem;
     width: 80%;
     box-sizing: border-box;
-    // background-color: black;
     background-color: #b0c4de;
   }
 
@@ -497,17 +485,8 @@
   }
 }
 
-// @media screen and (max-width: 766px) {
-//   .navbar-nav {
-//   // background-color: skyblue;
-//   width: 100%;  //指定した上で#bs-naviで100vwにする
-//   background-color: red;
-//   opacity: 0.7;
-//   }
-// }
-
-// max-width320と同じでＯＫ？
-@media screen and (max-width: 414px) {
+// ★★★★★★★★★★★★★★★  max-480  ★★★★★★★★★★★★★★★★★
+@media screen and (max-width: 480px) {
   .top_index_background_image {
     display: none;  // トップ背景画像は表示しない
   }
@@ -533,20 +512,31 @@
     height: 1rem;
   }
 
-  // ロゴサイズを縮小
+  // ロゴサイズを縮小（画像）
   .navbar.navbar-expand-lg.navbar-light.bg-light img {
     height: 3rem;
     width: 5rem;
+  }
+
+  // ロゴサイズを縮小（アニメ）
+  .navbar.navbar-expand-lg.navbar-light.bg-light video {
+    width: 5rem;
+    margin-left: 0.2rem;
+    margin-top: -0.5rem;
   }
 
   // 下方展開されるメニュー一覧
   .navbar-nav {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 80%;
     box-sizing: border-box;
-    background-color: #f5f5f5;
+    background-color: black;
     opacity: 0.9;
+  }
+
+  .navbar-nav .nav-link a {
+    color: white;
   }
 
   // ドロップダウンメニュー
@@ -558,27 +548,190 @@
   // ドロップダウンメニュー
   .nav-item .dropdown-item a {
     font-size: 0.7rem;  //文字サイズ
+    text-decoration: none;
   }
 
-  .toppage_picture img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .top_toolbar {
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~  1st_row部分  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // 1st_row記事と写真を縦に配置
+  .top_1st_row_wrapper {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column-reverse;
   }
 
-  .top_toolbar a {
+  // カバーストーリー表示エリア
+  .top_cover_story {
+    margin: 0;
+    margin-bottom: -0.5rem;;
+    padding: 0 0.7rem;
+  }
+
+  // 記事タイトル,サイズ調整
+  .cover_story_title h5 {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 1.2rem 0.3rem 0 0.3rem;
+  }
+
+  // 記事本文,文字サイズ調整
+  .cover_story_content {
     font-size: 0.5rem;
   }
 
-  .top_pics_tool_button {
+// ~~~~~~~~~~~~  トップコンテントエリア  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  .top_content_media {
     display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  // トップコンテント写真
+  .top_content_url img {
+    max-width: 90%;
+  }
+
+  // トップコンテント動画
+  .top_content_url video {
+    max-width: 90%;
+  }
+
+  // キャプション位置調整
+  .top_caption {
+    padding: 0;
+    margin-bottom: -0.3rem;
+  }
+
+  // 写真・動画用操作ボタン
+  .tool_section {
+    display: flex;
+    justify-content: center;
+  }
+
+// ~~~~~~~~~~~~~~~~~~  2nd_rowエリア  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 「カバー掲載」「写真・動画アップ」ボタン類縦配置
+  .top_content_2nd_row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 「カバーストーリー掲載」ボタン（２つ）位置調整
+  .tool_for_cover_story {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .tool_for_cover_story a {
+    font-size: 0.3rem;
+  }
+
+  // 「写真／動画をアップ」ボタン（２つ）位置調整
+  .top_toolbar {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.3rem;
+  }
+
+  .top_toolbar a {
+    font-size: 0.3rem;
+  }
+
+  // ~~~~~~~~~~~~~~~~~  3rd_rowエリア  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+// ★★★★★★★★★★★★★  「最新ニュース」  ★★★★★★★★★★★★★★★★★★
+  .top_content_3rd_row_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  // ワイド画面では「最新ニュース」「コラム」を収納するボックス
+  .top_content_3rd_row_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0.3rem;
+    width: 100%;
+  }
+
+  // 最新ニュースを収納するボックス
+  .top_page_articles_index {
+    display: flex;
+    flex-direction: column;
+    width: 100%;  //.top_content_3rd_row_leftのwidth100%とセットで指定
+  }
+
+  // 記事タイトル、文字サイズ調整
+  .top_page_articles_index a {
+    line-height: 2;
+  }
+
+  // ★★★★★★★★★★★★★  「最新コラム」  ★★★★★★★★★★★★★★★★★★
+  // 最新コラムを収納するボックス
+  .top_page_columns_index {
+    display: flex;
+    flex-direction: column;
+    width: 100%;  //.top_content_3rd_row_leftのwidth100%とセットで指定
+  }
+
+  // コラムタイトル、文字サイズ調整
+  .top_page_columns_index a {
+    line-height: 2;
+  }
+
+  .top_content_3rd_row_right {
+    width: 100%;
+    padding: 1rem 0.3rem;
   }
 }
 
+// ★★★★★★★★★★★★★★★  480px × 896px  ★★★★★★★★★★★★★★★★★
+// スマホを横位置で使用したケースを想定
+@media screen and (max-width: 896px) {
+  .top_index_background_image {
+    display: none;  // トップ背景画像は表示しない
+  }
+
+  // ロゴサイズを縮小（画像）
+.navbar.navbar-expand-lg.navbar-light.bg-light img {
+  height: 3rem;
+  width: 7rem;
+  margin-top: -0.5rem;
+}
+
+// ロゴサイズを縮小（アニメ）
+.navbar.navbar-expand-lg.navbar-light.bg-light video {
+  display: flex;
+  align-items: center;
+  width: 7rem;
+  margin-top: -0.5rem;
+}
+
+  // カバーストーリー本文と写真表示を1.5：１の割合
+  .grid {
+   display: grid;
+   grid-template-columns: 1.5fr 1fr;  //カバーストーリーと写真比率を1.4対１に
+  }
+
+  .top_content_3rd_row_wrapper {
+    display: flex;
+    flex-direction: column;  //3rd_row_leftとサイドバー縦並び
+    margin: 0;
+    padding: 0;
+  }
+
+  .top_content_3rd_row_left {
+    display: flex;  //「最新ニュース」「最新コラム」横並び
+    width: 100%;
+  }
+
+  .top_content_3rd_row_right {
+    width: 100%;
+  }
+}
+
+
+// ★★★★★★★★★★★★★★★  320px  ★★★★★★★★★★★★★★★★★
 @media screen and (max-width: 320px) {
   .top_index_background_image {
     display: none;  // トップ背景画像は表示しない
