@@ -2,44 +2,44 @@
   <div class="top_content_1st_row">
     <div class="top_1st_row_wrapper grid">
     <!-- カバーストーリー掲載エリア -->
-    <div class="top_cover_story">
-      <% @cover_stories = CoverStory.order(created_at: :desc).limit(1) %>
-        <% @cover_stories.each do |cover_story| %>
-        <div class="cover_story_title">
-          <h5><%= cover_story.title %></h5>
-        </div>
-        <div class="cover_story_content">
-          <%= strip_tags(cover_story.content.to_s).truncate(200) %>
-          <%= link_to "全文表示", cover_story %>
-        </div>
-      <% end %>
-　  </div>
-    <!-- カバーストーリー掲載エリアここまで -->
-    <div class="top_content_media">
-      <% TopContent.order(created_at: :desc) %>
-        <% @top_contents.each do |top_content| %>
-          <div class="top_content_title">
-            <h5><%= top_content.title %></h5>
+      <div class="top_cover_story">
+        <% @cover_stories = CoverStory.order(created_at: :desc).limit(1) %>
+          <% @cover_stories.each do |cover_story| %>
+          <div class="cover_story_title">
+            <h5><%= cover_story.title %></h5>
           </div>
-          <div class="top_content_url">
-            <% if top_content.url? %>
-              <% if top_content.url.file.content_type.include?("image/")%>
-                <%= image_tag top_content.url.url(:thumb) if top_content.url? %>
-              <% else %>
-                <%= video_tag top_content.url.url, width: "100%", height: "auto", controls: true, autobuffer: true %>
-              <% end %>
-            <% end %>
+          <div class="cover_story_content">
+            <%= strip_tags(cover_story.content.to_s).truncate(200) %>
+            <%= link_to "全文表示", cover_story %>
           </div>
-          <div class="top_caption">
-            <%= top_content.caption %>
-          </div>
-
-         <% if current_user && loyalty(@top_content, :top_contents).index? %>
-           <div class="tool_section">
-             <%= render "top_contents/tool", top_content: top_content %>
-           </div>
-          <% end %>
         <% end %>
+  　  </div>
+      <!-- カバーストーリー掲載エリアここまで -->
+      <div class="top_content_media">
+        <% TopContent.order(created_at: :desc) %>
+          <% @top_contents.each do |top_content| %>
+            <div class="top_content_title">
+              <h5><%= top_content.title %></h5>
+            </div>
+            <div class="top_content_url">
+              <% if top_content.url? %>
+                <% if top_content.url.file.content_type.include?("image/")%>
+                  <%= image_tag top_content.url.url(:thumb) if top_content.url? %>
+                <% else %>
+                  <%= video_tag top_content.url.url, width: "100%", height: "auto", controls: true, autobuffer: true %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="top_caption">
+              <%= top_content.caption %>
+            </div>
+
+           <% if current_user && loyalty(@top_content, :top_contents).index? %>
+             <div class="tool_section">
+               <%= render "top_contents/tool", top_content: top_content %>
+             </div>
+            <% end %>
+          <% end %>
       </div>
     </div>
   </div>
