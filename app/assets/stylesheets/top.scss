@@ -483,10 +483,47 @@
     margin-left: 1rem;
     border-bottom: solid 1px;
   }
+
+    // ロゴサイズを縮小（画像）
+  .navbar.navbar-expand-lg.navbar-light.bg-light img {
+    height: 3rem;
+    width: 7rem;
+    margin-top: -0.5rem;
+  }
+
+  // ロゴサイズを縮小（アニメ）
+  .navbar.navbar-expand-lg.navbar-light.bg-light video {
+    display: flex;
+    align-items: center;
+    width: 7rem;
+    margin-top: -0.5rem;
+  }
+
+    // カバーストーリー本文と写真表示を1.5：１の割合
+    .grid {
+     display: grid;
+     grid-template-columns: 1.5fr 1fr;  //カバーストーリーと写真比率を1.4対１に
+    }
+
+    .top_content_3rd_row_wrapper {
+      display: flex;
+      flex-direction: column;  //3rd_row_leftとサイドバー縦並び
+      margin: 0;
+      padding: 0;
+    }
+
+    .top_content_3rd_row_left {
+      display: flex;  //「最新ニュース」「最新コラム」横並び
+      width: 100%;
+    }
+
+    .top_content_3rd_row_right {
+      width: 100%;
+    }
 }
 
-// ★★★★★★★★★★★★★★★  max-480  ★★★★★★★★★★★★★★★★★
-@media screen and (max-width: 480px) {
+// ★★★★★★★★★★★★★★★  max-480（max-767に変更） ★★★★★★★★★★★★★★★★★
+@media screen and (max-width: 767px) {
   .top_index_background_image {
     display: none;  // トップ背景画像は表示しない
   }
@@ -555,13 +592,10 @@
   // 1st_row記事と写真を縦に配置
   .top_1st_row_wrapper {
     display: flex;
-    flex-direction: column;
-    background-color: pink;
+    flex-direction: column-reverse;
   }
 
   .top_content_1st_row {
-    // display: flex;
-    // flex-direction: column-reverse;
   }
 
   // カバーストーリー表示エリア
@@ -690,52 +724,6 @@
     padding: 1rem 0.3rem;
   }
 }
-
-// ★★★★★★★★★★★★★★★  480px × 896px  ★★★★★★★★★★★★★★★★★
-// スマホを横位置で使用したケースを想定
-@media screen and (max-width: 896px) {
-  .top_index_background_image {
-    display: none;  // トップ背景画像は表示しない
-  }
-
-  // ロゴサイズを縮小（画像）
-.navbar.navbar-expand-lg.navbar-light.bg-light img {
-  height: 3rem;
-  width: 7rem;
-  margin-top: -0.5rem;
-}
-
-// ロゴサイズを縮小（アニメ）
-.navbar.navbar-expand-lg.navbar-light.bg-light video {
-  display: flex;
-  align-items: center;
-  width: 7rem;
-  margin-top: -0.5rem;
-}
-
-  // カバーストーリー本文と写真表示を1.5：１の割合
-  .grid {
-   display: grid;
-   grid-template-columns: 1.5fr 1fr;  //カバーストーリーと写真比率を1.4対１に
-  }
-
-  .top_content_3rd_row_wrapper {
-    display: flex;
-    flex-direction: column;  //3rd_row_leftとサイドバー縦並び
-    margin: 0;
-    padding: 0;
-  }
-
-  .top_content_3rd_row_left {
-    display: flex;  //「最新ニュース」「最新コラム」横並び
-    width: 100%;
-  }
-
-  .top_content_3rd_row_right {
-    width: 100%;
-  }
-}
-
 
 // ★★★★★★★★★★★★★★★  320px  ★★★★★★★★★★★★★★★★★
 @media screen and (max-width: 320px) {
