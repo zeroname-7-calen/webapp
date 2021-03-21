@@ -1,25 +1,27 @@
-<div class="cover_story_index_wrapper">
-  <% if @cover_stories.present? %>
-    <% @cover_stories.each do |cover_story| %>
-      <div class="cover_story_index_title_area">
-        <div class="cover_story_index_title">
-          <!-- <h4><%= cover_story.title %></h4> -->
-          <%# h4タグでは長いタイトルを折り返せない %>
-          <%= cover_story.title %>
+<% if current_user && loyalty(@cover_story, :cover_stories).index? %>
+  <div class="cover_story_index_wrapper">
+    <% if @cover_stories.present? %>
+      <% @cover_stories.each do |cover_story| %>
+        <div class="cover_story_index_title_area">
+          <div class="cover_story_index_title">
+            <!-- <h4><%= cover_story.title %></h4> -->
+            <%# h4タグでは長いタイトルを折り返せない %>
+            <%= cover_story.title %>
+          </div>
         </div>
-      </div>
-      <div class="cover_story_index_content_area">
-        <div class="cover_story_index_content">
-         <%= cover_story.content %>
+        <div class="cover_story_index_content_area">
+          <div class="cover_story_index_content">
+           <%= cover_story.content %>
+          </div>
         </div>
-      </div>
-      <div class="cover_story_index_toolbar">
-        <%= render "cover_story_tool", cover_story: cover_story %>
+        <div class="cover_story_index_toolbar">
+          <%= render "cover_story_tool", cover_story: cover_story %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="cover_story_index_info">
+        <p>掲載されているカバーストーリーはありません</p>
       </div>
     <% end %>
-  <% else %>
-    <div class="cover_story_index_info">
-      <p>掲載されているカバーストーリーはありません</p>
-    </div>
-  <% end %>
-</div>
+  </div>
+<% end %>

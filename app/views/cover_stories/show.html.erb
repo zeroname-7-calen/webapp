@@ -9,7 +9,9 @@
       <%= @cover_story.content %>
     </div>
   </div>
-  <div class="cover_story_show_toolbar">
-    <%= render "tool_for_cover_show", cover_story: @cover_story %>
-  </div>
+  <% if current_user && loyalty(@cover_story, :cover_stories).index? %>
+    <div class="cover_story_show_toolbar">
+      <%= render "tool_for_cover_show", cover_story: @cover_story %>
+    </div>
+  <% end %>
 </div>
