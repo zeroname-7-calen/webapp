@@ -119,6 +119,11 @@
               <% end %>
             </div>
           </div>
+          <% if current_user && loyalty(@top_content, :top_contents).index? %>
+            <div class="top_message_tool_for_edit_delete">
+              <%= render "messages/footer", message: message %>
+            </div>
+          <% end %>
         <% end %>
       <% else %>
         <div class="page_voide_notice">
@@ -127,7 +132,7 @@
       <% end %>
       <% if current_user && loyalty(@top_content, :top_contents).index? %>
         <div class="top_message_tool">
-          <%= menu_link_to "掲示板操作パネルへ", :messages %>
+          <%= menu_link_to "掲示板一覧／新規作成", :messages %>
         </div>
       <% end %>
     </div>

@@ -238,6 +238,8 @@
   width: 48%;
   border: solid 1px;
   border-radius: 10px;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 // 「最新ニュース」タイトル
@@ -284,6 +286,8 @@
   width: 48%;
   border: solid 1px;
   border-radius: 10px;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 // 「最新コラム」タイトルの位置を中央に
@@ -368,6 +372,8 @@
 .top_message_title {
   display: flex;
   justify-content: center;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 .top_message_title a {
@@ -407,17 +413,20 @@
 // 掲示板・記事＆写真レイアウト調整
 .top_whole_message_content_area {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
+
 }
 // 掲示板記事コンテント
 .top_message_content {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  margin-top: 1rem;
   padding: 0 0.8rem;
   font-size: 0.8rem;
-  line-height: 1.7;
+  line-height: 1.8;
   width: 100%;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 // 掲示板用写真・動画表示エリア
@@ -430,8 +439,9 @@
 // 掲示板用写真サイズ調整
 .top_message_media img {
   width: 100%;
-  // height: 100%;
+  // // height: 100%;
   height: auto;
+  padding: 0.5rem;
 }
 
 // 掲示板用動画サイズ調整
@@ -439,6 +449,7 @@
   width: 100%;
   // height: 100%;
   height: auto;
+  padding: 0.5rem;
 }
 
 // 「現在掲載はありません」位置調整
@@ -447,7 +458,13 @@
   justify-content: center;
 }
 
-// 掲示板操作ツール
+// 掲示板操作ツール（「編集」「削除」ボタン）
+.top_message_tool_for_edit_delete a {
+  font-size: 0.6rem;
+  margin-right: 1rem;
+}
+
+// 掲示板操作ツール(掲示板一覧／新規作成リンク)
 .top_message_tool {
   display: flex;
   justify-content: flex-end;

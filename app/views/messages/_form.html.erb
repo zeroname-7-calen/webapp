@@ -1,12 +1,17 @@
 <%= render "shared/errors", obj: @message %>
 
-<table class="attr">
-  <tr>
-    <th><%= form.label :title %></th>
-    <td><%= form.text_field :title %></td>
-  </tr>
-  <tr>
-    <th><%= form.label :content %></th>
-    <td><%= form.text_area :content, rows: 10, cols: 47 %></td>
-  </tr>
-</table>
+<div class="messages_form_wrapper">
+  <div class="messages_form_title_label">
+    <%= form.label :title %>
+  </div>
+  <div class="messages_form_title_field">
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="messages_form_content_label">
+    <%= form.label :content %>
+  </div>
+  <div class="messages_form_content_field">
+    <%= form.text_area :content %>
+  </div>
+</div>

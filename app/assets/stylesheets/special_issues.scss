@@ -115,6 +115,8 @@
 .sp_issue_index_wrapper {
   width: 100%;
   padding: 2rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 .sp_issue_index_content_area {
@@ -161,6 +163,8 @@
   // width: 100%;
   width: auto;
   padding: 1rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 .sp_issue_show_content_area {
