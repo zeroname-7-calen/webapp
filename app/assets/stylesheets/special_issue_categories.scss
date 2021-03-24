@@ -44,6 +44,7 @@
 // 「コラムカテゴリーを掲載しない」チェックボックス位置調整
 .sp_iss_cate_form_tool {
   margin-top: 1rem;
+
 }
 
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
@@ -51,6 +52,8 @@
 // インデックスページ全体
 .sp_iss_cate_index_wrapper {
   padding: 1rem 1.5rem 1rem 1rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 // 「コラムシリーズ一覧」装飾その１
@@ -115,6 +118,8 @@
 .sp_iss_cate_show_wrapper {
   // padding: 1rem;
   margin: 0 2rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 // コラムシリーズタイトル位置調整

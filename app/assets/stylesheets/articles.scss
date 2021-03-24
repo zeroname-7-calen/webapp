@@ -33,6 +33,8 @@ trix-toolbar {
 .article_index_wrapper {
   width: auto;
   margin: 1rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
 // 記事indexの「ニュース一覧」タイトル位置調整
@@ -166,6 +168,8 @@ td.article_edit_delete {
 .article_show_wrapper {
   width: auto;
   margin: 1rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 .article_show_title {
   display: flex;
