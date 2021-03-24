@@ -40,7 +40,7 @@ class MessagesController < ApplicationController
     authorize!
     @message.assign_attributes(message_params)
     if @message.save
-      redirect_to @message, notice: "掲示板を更新しました"
+      redirect_to :root, notice: "掲示板を更新しました"
     else
       render "edit"
     end

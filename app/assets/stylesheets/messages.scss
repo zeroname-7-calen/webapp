@@ -39,14 +39,13 @@ textarea#message_content {
 
 // 最上部「掲示板」タイトル装飾
 .message_title h4 {
-  padding: 0.8rem 2rem;
-  border-top: 4px solid #d8dcdc;
-  border-right: 4px solid #666;
-  border-bottom: 4px solid #333;
-  border-left: 4px solid #868888;
-  border-radius: 10px;
-  background-image: -webkit-linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
-  background-image: linear-gradient(-45deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
+  position: relative;
+  padding: 0.5em 1.2em;
+  border-radius:1.5em;
+  border: 1px solid #CCC;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,1);
+  background: linear-gradient(#EFEFEF 0%, #FFF 50%, #EEE 50%, #FFF 100%);
 }
 
 // messageインデックスページ上部「新規掲載」ボタン位置調整
@@ -130,21 +129,20 @@ textarea#message_content {
   margin: 1.5rem 0 0.5rem 0;
 }
 
-// 最上部「掲示板」タイトル装飾　メタリック調
+// 最上部「掲示板」タイトル装飾
 .message_show_title h4 {
-  padding: 0.8rem 2rem;
-  border-top: 4px solid #d8dcdc;
-  border-right: 4px solid #666;
-  border-bottom: 4px solid #333;
-  border-left: 4px solid #868888;
-  border-radius: 10px;
-  background-image: -webkit-linear-gradient(135deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
-  background-image: linear-gradient(-45deg, #ccc 0%, #868888 20%, #d8dcdc 34%, white 53%, #ccc 100%);
+  position: relative;
+  padding: 0.5em 1.2em;
+  border-radius:1.5em;
+  border: 1px solid #CCC;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,1);
+  background: linear-gradient(#EFEFEF 0%, #FFF 50%, #EEE 50%, #FFF 100%);
 }
 
 // 掲示板記事title
 .message_show_content_title {
-  margin: 0 0 1rem 0;
+  margin: 0 1.5rem 1rem 1.5rem;
 }
 
 // 記事title装飾
@@ -159,7 +157,7 @@ textarea#message_content {
 
 // 記事本文
 .message_show_content_body {
-  margin: 1rem 2rem;
+  margin: 1rem 2.5rem;
 }
 
 .message_show_content_body p {
@@ -195,7 +193,8 @@ textarea#message_content {
 // ★★★★★★★★★★★  message/new  ★★★★★★★★★★★★★
 // 「ファイルを選択」ボタン位置調整
 .message_new_picture_button {
-  margin: 0.5rem 0;
+  margin: 0.7rem 0;
+  font-size: 1rem;
 }
 
 .message_new_upload_button {
@@ -203,11 +202,29 @@ textarea#message_content {
   justify-content: center;
 }
 
-// 【editページ】
-// 「掲示板記事編集」位置調整
+// ★★★★★★★★★★★  message/edit  ★★★★★★★★★★★★★
+.message_edit_wrapper {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+}
+
+// 最上部「掲示板記事編集」タイトル位置調整
 .message_edit_title {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
+
+}
+  // 最上部「掲示板記事編集」タイトル装飾
+.message_edit_title h4 {
+  position: relative;
+  padding: 0.5em 1.2em;
+  border-radius:1.5em;
+  border: 1px solid #CCC;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,1);
+  background: linear-gradient(#EFEFEF 0%, #FFF 50%, #EEE 50%, #FFF 100%);
 }
 
 // 「掲示板一覧表示」ボタン位置調整
@@ -217,7 +234,23 @@ textarea#message_content {
   margin: 1rem 2rem 1rem 0;
 }
 
-// 「フィアルを選択する」ボタン位置調整
+// フォームを包括するボックス
+.message_edit_form_area {
+  display: flex;
+  justify-content: center;
+}
+
+// タイトル入力欄サイズ調整
+.message_edit_wrapper input#message_title {
+  width: 130%;
+}
+
+// 本文入力欄サイズ調整
+.message_edit_wrapper textarea#message_content {
+  width: 130%;
+}
+
+// 「ファイルを選択する」ボタン位置調整
 .message_edit_picture_button {
   margin: 1rem 0;
 }

@@ -86,7 +86,7 @@
         <div class="column_index_title">
           <h6>最新コラム</h6>
         </div>
-        <% @special_issues = SpecialIssue.order(created_at: :desc) %>
+        <% @special_issues = SpecialIssue.order(created_at: :desc).limit(5) %>
           <% @special_issues.each do |special_issue| %>
           <h6><%= link_to special_issue.major_title, special_issue %></h6>
         <% end %>
