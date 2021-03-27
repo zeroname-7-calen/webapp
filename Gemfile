@@ -44,6 +44,7 @@ gem 'mini_magick'
 gem 'banken'
 gem 'font-awesome-sass'
 gem 'rails_12factor', group: :production
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
