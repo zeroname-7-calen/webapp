@@ -20,6 +20,7 @@ module Webapp
     config.i18n.default_locale = :ja
     config.action_controller.permit_all_parameters = true
     # config.action_controller.permit_all_parameters = false
+    config.assets.initialize_on_precompile = false
 
      # i18nの複数ロケールファイルが読み込まれるようpathを通す
     # config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
