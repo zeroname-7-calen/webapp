@@ -45,4 +45,36 @@
         <p>ニュースがありません</p>
       <% end %>
   </div>
+      <!-- レスポンシブ画面用の規定 -->
+  <div class="article_index_content_area_for_responsive">
+    <% if @articles.present? %>
+      <div class="article_index_area_for_responsive">
+        <% @articles.each do |article| %>
+          <div class="article_index_strftime_for_responsive">
+            掲載日時 <%= article.released_at.strftime("%Y/%m/%d %H:%M") %>
+          </div>
+          <div class="article_indextitle_for_responsive">
+            <%= link_to article.title, article %>
+          </div>
+          <% if current_user && loyalty(@article, :articles).index? %>
+            <div class="article_footer_for_responsive">
+              <tr>
+                <td class="article_edit_delete_for_responsive">
+                  <%= link_to "編集", [:edit, article ] %> |
+                  <%= link_to "削除", article, method: :delete,
+                        data: { confirm: "本当に削除してもよろしいですか？" } %>
+                </td>
+              </tr>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="paginate">
+        <%= paginate @articles %>
+      </div>
+      <% else %>
+        <p>ニュースがありません</p>
+    <% end %>
+  </div>
+    <!-- レスポンシブ画面用の規定ここまで -->
 </div>

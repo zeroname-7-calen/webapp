@@ -3,7 +3,9 @@
     <% @page_title = "ニュースの編集" %>
     <h5><%= @page_title %></h5>
   </div>
-  <p><%= link_to "記事の詳細に戻る", @article %></p>
+  <div class="article_edit_tool">
+    <%= link_to "記事の詳細に戻る", @article %>
+  </div>
   <%= form_for @article do |form| %>
     <%= render "form", form: form %>
     <div class="article_edit_button">

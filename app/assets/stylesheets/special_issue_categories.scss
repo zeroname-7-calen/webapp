@@ -125,12 +125,14 @@
 // コラムシリーズタイトル位置調整
 .sp_iss_cate_show_title {
   margin: 1rem 0;
+  padding: 0.3rem 2.5rem;
 }
 
 // コラムシリーズタイトル装飾
-.sp_iss_cate_show_title h5:first-letter {
-  font-size: 1.5rem;
-  color: #800000;
+.sp_iss_cate_show_title h5 {
+  padding: 0.5em;
+  background: ghostwhite;
+  box-shadow: 0 0 4px rgb(176, 196, 222);
 }
 //リストの黒点を消す
 li {
@@ -195,4 +197,24 @@ li {
 
 .special_issue_categories-footer a {
   font-size: 0.5rem;
+}
+
+
+// ★★★★★★★★★★★★★★★  メディアクエリ  ★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★  max-991  ★★★★★★★★★★★★★★★★★
+@media screen and (max-width: 991px) {
+  // ★★★★★★★★★★★★★★★ form ★★★★★★★★★★★★★★★
+
+
+}
+
+
+
+
+
+
+
+// ★★★★★★★★★★★★★★★  max767 ★★★★★★★★★★★★★★★★★
+@media screen and (max-width: 767px) {
+
 }
