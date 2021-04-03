@@ -1,7 +1,7 @@
 <ul class="special_issue_categories-footer">
   <% if current_user && loyalty(@special_issue_category, :special_issue_categories).index? %>
     <div class="footer_edit_button">
-      <div><%= link_to "コラムシリーズーの編集", [:edit, special_issue_category], class: "btn btn-outline-primary btn-sm" %></div>
+      <div><%= link_to "コラムシリーズの編集", [:edit, special_issue_category], class: "btn btn-outline-primary btn-sm" %></div>
     </div>
     <div class="footer_delete_button">
       <div><%= link_to "コラムシリーズを削除する", special_issue_category, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-outline-primary btn-sm" %></div>

@@ -4,8 +4,8 @@
       <h5><%= @page_title %></h5>
   </div>
 
-<%= render "toolbar" %>
-
+  <%= render "toolbar" %>
+    <!-- ワイド画面用の規定 -->
   <div class="sp_iss_cate_content_area">
     <table class="sp_iss_cate_table table-md table-condenced">
       <% if @special_issue_categories.present? %>
@@ -25,4 +25,24 @@
   <% else%>
     <p>コラムカテゴリーは設定されていません</p>
   <% end %>
+  <!-- ワイド画面用の規定ここまで -->
+  <!-- レスポンシブ用規定 -->
+  <div class="sp_iss_cate_content_area_for_responsive">
+      <% if @special_issue_categories.present? %>
+      <div class="sp_category_title_for_responsive">
+        <% @special_issue_categories.each do |special_issue_category| %>
+          <div class="sp_cate_content_title_responsive">
+            <h6><%= link_to special_issue_category.category_name, special_issue_category %></h6>
+          </div>
+          <div class="sp_cate_content_starftime_responsive">
+            <%= special_issue_category.created_at.strftime("掲載日時  %Y/%m/%d %H:%M") %>
+          </div>
+       <% end %>
+      </div>
+    <%= paginate @special_issue_categories %>
+  <% else %>
+    <p>コラムカテゴリーは設定されていません</p>
+  <% end %>
+  </div>
+  <!-- レスポンシブ用規定ここまで -->
 </div>

@@ -92,7 +92,6 @@ footer {
 @media screen and (max-width: 991px) and (min-width: 768px) {
   .container {
     width: 100%;
-    // background-color: pink;
   }
 
   #main_wrapper {
@@ -110,7 +109,6 @@ footer {
   }
 
   #header {
-    // width: 100%;
   }
 
   #aside {
@@ -123,27 +121,17 @@ footer {
 
   html {
     width: 100%;
-    // padding: 1rem;
-    // word-wrap: break-word;
-    // word-break: break-all;
   }
 
   .container {
     width: 100%;
-    // margin: 0;
     padding: 0;
-    // word-wrap: break-word;
-    // word-break: break-all;
-    // background-color: pink;
   }
 
   #main_wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
-    // word-wrap: break-word;
-    // word-break: break-all;
-    // width: 100%;
   }
 
   #main {
@@ -153,7 +141,6 @@ footer {
   }
 
   #header {
-    // width: 100%;
   }
 
   #aside {

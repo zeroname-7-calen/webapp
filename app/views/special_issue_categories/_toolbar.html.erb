@@ -1,10 +1,18 @@
 <div class="sp_iss_cate_toolbar">
   <% if current_user && loyalty(@special_issue_category, :special_issue_categories).index? %>
     <ul class="special_issue_toolbar">
-      <%= link_to "コラム・企画記事を作成する", :new_special_issue, class: "btn btn-outline-primary btn-sm" %>
-      <%= link_to "コラム一覧へ", special_issues_path(@special_issues), class: "btn btn-outline-primary btn-sm" %>
-      <%= link_to "コラムシリーズの一覧へ", special_issue_categories_path(@special_issue_categories), class: "btn btn-outline-primary btn-sm" %>
-      <%= link_to "新規シリーズ作成", :new_special_issue_category, class: "btn btn-outline-primary btn-sm" %>
+      <div class="special_issue_for_create">
+        <%= link_to "コラム・企画記事を作成する", :new_special_issue, class: "btn btn-outline-primary btn-sm" %>
+      </div>
+      <div class="index_for_special_issues">
+        <%= link_to "コラム一覧へ", special_issues_path(@special_issues), class: "btn btn-outline-primary btn-sm" %>
+      </div>
+      <div class="index_for_special_issue_categories">
+        <%= link_to "コラムシリーズの一覧へ", special_issue_categories_path(@special_issue_categories), class: "btn btn-outline-primary btn-sm" %>
+      </div>
+      <div class="special_issue_category_for_create">
+        <%= link_to "新規シリーズ作成", :new_special_issue_category, class: "btn btn-outline-primary btn-sm" %>
+      </div>
     </ul>
   <% end %>
 </div>
