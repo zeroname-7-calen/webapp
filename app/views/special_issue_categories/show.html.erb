@@ -13,30 +13,50 @@
       </div>
     </div>
   <% end %>
-
-
 <div class="sp_iss_cate_show_wrapper">
+  <!-- ワイド画面用の規定ここから -->
   <div class="sp_iss_cate_show_content">
     <table class="table table-md table-condenced table-hover">
       <% @special_issues = @special_issue_category.special_issues.order(created_at: :desc).page(params[:page]).per(10) %>
         <ul><% @special_issues.each do |special_issue| %></ul>
-        <!-- <div class="sp_iss_cate_show_content"> -->
           <tr>
             <td class="sp_iss_cat_title"><li><%= link_to special_issue.major_title, special_issue %></li></td>
             <td class="sp_iss_cat_strftime"><%= special_issue.created_at.strftime("掲載日時　%Y/%m/%d %H:%M") %></td>
            <% end %>
           </tr>
     </table>
-  <div class="paginate">
-    <%= paginate @special_issues %>
+    <div class="paginate">
+      <%= paginate @special_issues %>
+    </div>
   </div>
-</div>
-<% else%>
-<div class="suspend_notice">
-  <p>掲載を中止しています</p>
-</div>
-<% end %>
-<div class="sp_iss_cate_footer">
-  <%= render "footer", special_issue_category: @special_issue_category %>
-</div>
+  <% else%>
+  <div class="suspend_notice">
+    <p>掲載を中止しています</p>
+  </div>
+  <% end %>
+  <div class="sp_iss_cate_footer">
+    <%= render "footer", special_issue_category: @special_issue_category %>
+  </div>
+    <!-- ワイド画面用の規定ここまで -->
+    <!-- レスポンシブ用規定ここから -->
+    <div class="sp_iss_cate_show_content_for_responsive">
+      <!-- <div class="sp_iss_cate_title_row"> -->
+        <% @special_issues = @special_issue_category.special_issues.order(created_at: :desc).page(params[:page]).per(10) %>
+        <% @special_issues.each do |special_issue| %>
+        <div class="sp_iss_cate_title_and_datetime">
+          <div class="sp_iss_cat_show_title">
+            <li><%= link_to special_issue.major_title, special_issue %></li>
+          </div>
+          <div class="sp_iss_cat_strftime">
+            <%= special_issue.created_at.strftime("掲載日時　%Y/%m/%d %H:%M") %>
+          </div>
+        </div>
+        <% end %>
+      <!-- </div> -->
+      <div class="paginate">
+      <%= paginate @special_issues %>
+    </div>
+    </div>
+
+    <!-- レスポンシブ用規定ここまで -->
 </div>
