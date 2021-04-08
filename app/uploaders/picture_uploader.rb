@@ -15,7 +15,7 @@ class PictureUploader < CarrierWave::Uploader::Base
       end
 
   # Choose what kind of storage to use for this uploader:
-  # storage :file  コメントアウト（２０２１．０４．０８）
+  storage :file
   # storage :fog
 
 # ======ここから追加=====
@@ -36,6 +36,7 @@ class PictureUploader < CarrierWave::Uploader::Base
       }
       config.fog_directory     =  ENV['S3_BUCKET']
     end
+  end
 
 # =====追加ここまで======
 
