@@ -15,15 +15,15 @@ class PictureUploader < CarrierWave::Uploader::Base
       end
 
   # Choose what kind of storage to use for this uploader:
-  # storage :file
+  storage :file
   # storage :fog
 
 # ======ここから追加=====
-  if Rails.env.production?
-    storage :fog
-  else
-    storage :file
-  end
+  # if Rails.env.production?
+  #   storage :fog
+  # else
+  #   storage :file
+  # end
   #
   # if Rails.env.production?
   #   CarrierWave.configure do |config|
