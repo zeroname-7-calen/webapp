@@ -39,3 +39,5 @@ yarn-debug.log*
 /vendor
 # アップロードされたテスト画像を無視する
 /public/uploads
+
+/config/credentials.yml.enc
