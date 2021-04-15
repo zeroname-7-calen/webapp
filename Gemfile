@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
@@ -48,7 +48,7 @@ gem 'font-awesome-sass'
 gem 'rails_12factor', group: :production
 gem 'aws-sdk'
 gem 'aws-sdk-s3'
-# gem 'fog-aws'
+gem 'fog-aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
