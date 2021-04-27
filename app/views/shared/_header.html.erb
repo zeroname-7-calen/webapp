@@ -1,9 +1,8 @@
 <div class="header_nav_container">
   <nav class="navbar navbar-expand-lg  navbar-light bg-light">
-    <a class="navbar-brand" href="https://hokuu-onlines.herokuapp.com/" target="blank">
-      <%= image_tag "hokuu_header5.png", alt: "北羽新報" %>
-      <%# <%= video_tag("/assets/animated_header_logo3.mp4", autoplay: :true, loop: :true, muted: :true, class: 'video-content') %>
-    <!-- </a> -->
+    <div class="header_link">
+      <%= link_to image_tag("hokuu_header5.png", alt: "北羽新報"), 'https://hokuu-onlines.herokuapp.com/' %>
+    </div>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-navi" aria-controls="bs-navi" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,10 +33,10 @@
           </div>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <div class="dropdown-item">
-              <%= link_to "イベントガイド", "/special_issue_categories/34" %>
+              <%= link_to "イベントガイド", "/special_issues/64" %>
             </div>
             <div class="dropdown-item">
-              <%= link_to "映画情報", "/special_issue_categories/44" %>
+              <%= link_to "映画情報", "/special_issues/54" %>
             </div>
           </div>
         </li>
