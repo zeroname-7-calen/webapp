@@ -34,6 +34,7 @@
 .header_nav_container {
   display: flex;
   width: 100%;
+  box-sizing: border-box;
   height: 4rem;
 }
 
@@ -54,10 +55,10 @@
 
 // トップページロゴ（アニメ）
 .navbar.navbar-expand-lg.navbar-light.bg-light video {
-  display: flex;
-  align-items: baseline;
-  height: 3.5rem;
-  margin-left: -1rem;
+  // display: flex;
+  // align-items: baseline;
+  // height: 3.5rem;
+  // margin-left: -1rem;
 }
 
 // ナビバーのアイコン
