@@ -274,7 +274,6 @@
   .cover_story_index_wrapper {
     display: flex;
     flex-direction: column;
-    // width: 100%;
     margin: 0;
     padding: 0;
     // background-color: palegreen;
@@ -282,10 +281,14 @@
 
   // indexのタイトル収納ボックス
   .cover_story_index_title_area {
-    // width: 100%;
     margin: 0;
     padding: 0;
     // background-color: pink;
+  }
+
+  .cover_story_index_title {
+    width: 100%;
+    font-size: 1.1rem;
   }
 
   // idex本文収納ボックス
@@ -293,7 +296,6 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    // background-color: green;
   }
 
   // content_areaの中に入るボックス(content_areaと同じ範囲)
@@ -313,8 +315,10 @@
   // formで規定しているので基本的にeditでは規定が不要みたい
   .cover_story_edit_wrapper {
     display: flex;
+    flex-direction: column;
+    width: 100%;
   }
-  
+
   .cover_story_edit_title {
     display: flex;
     width: 100%;
@@ -322,6 +326,9 @@
   }
 
   .cover_story_edit_form {
+  }
+
+  #cover_story_content.trix-content {
     display: flex;
     flex-direction: column;
   }
