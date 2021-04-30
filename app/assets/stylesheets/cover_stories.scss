@@ -128,6 +128,13 @@
 // 写真サイズ調整
 .cover_story_show_content img {
   max-width: 90%;
+  margin-top: 1rem;
+}
+
+// 動画サイズ調整
+.cover_story_show_content video {
+  max-width: 90%;
+  margin-top: 1rem;
 }
 
 // キャプションが入るボックス
@@ -153,4 +160,155 @@
   display: flex;
   justify-content: center;
   margin: 1.5rem 0;
+}
+
+@media screen and (max-width: 767px) {
+  // ★★★★★★★★★★★★★★★ new ★★★★★★★★★★★★★★★
+  // newページの中にformページが入っている
+  .cover_story_new_wrapper {
+    display: flex;
+    justify-content: center;
+    // background-color: pink;
+  }
+
+  // newページ全体枠。cover_story_new_wrapperと同じ範囲だが、必要みたい
+  .cover_story_new_form {
+    width: 100%;
+    // background-color: green;
+  }
+
+  // 「カバーストーリーの登録」ボタン
+  .cover_story_button {
+    display: flex;
+    justify-content: center;
+    -webkit-box-sizing: border-box;  /*webkit系*/
+    -moz-box-sizing: border-box;  /*Firefox*/
+    box-sizing: border-box;
+    margin: 0 1rem;
+  }
+
+  // ★★★★★★★★★★★★★★★ form ★★★★★★★★★★★★★★★
+  .cover_story_form_wrapper {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    // background-color: blue;
+  }
+
+  // タイトル整形
+  .cover_story_show_title {
+    width: 100%;
+    margin: 1rem 0 0 0;
+    font-size: 1rem;
+  }
+
+  // 「タイトル入力欄」整形　下記.cover_story_form_title inputとセットで
+  .cover_story_form_title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  // 「タイトル入力欄」整形　上記.cover_story_form_titleとセットで
+  .cover_story_form_title input {
+    width: 100%;
+    // margin-left: 1rem;  //1remにしないと左寄りになりすぎる
+  }
+
+  // 本文入力欄整(editページと共通)
+  .cover_story_form_content {
+    width: 100%;
+    // background-color: blue;
+  }
+
+  // フォーム（本文入力欄）を収納するボックス
+  .cover_story_form_content trix-editor {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    box-sizing: border-box;
+    // background-color: red;
+  }
+
+
+  // ★★★★★★★★★★★★★★★ show ★★★★★★★★★★★★★★★
+  // 記事表示エリア全体枠
+  .cover_story_show_wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 1px 2px 4px 1px #d3d3d3;  //全体枠を装飾
+    word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+    word-break: break-all;   //半角英数連続文字列突き抜け防止
+    // background-color: pink;
+  }
+
+  .cover_story_show_content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;  //これがないと全体が右寄りになる
+    padding: 0 1rem;
+  }
+
+  // 記事が入るボックスの中にある写真 trix-content imgでは
+  // なく、.cover_story_show_content imgと指定することで、「showページのimg」を限定したい
+  .cover_story_show_content img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 0.5rem;
+  }
+
+  // 記事が入るボックスの中にある動画
+  .cover_story_show_content video {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 0.5rem;
+  }
+
+// ★★★★★★★★★★★★★★★ index ★★★★★★★★★★★★★★★
+  // indexページ全体枠
+  .cover_story_index_wrapper {
+    display: flex;
+    flex-direction: column;
+    // width: 100%;
+    margin: 0;
+    padding: 0;
+    // background-color: palegreen;
+  }
+
+  // indexのタイトル収納ボックス
+  .cover_story_index_title_area {
+    // width: 100%;
+    margin: 0;
+    padding: 0;
+    // background-color: pink;
+  }
+
+  // idex本文収納ボックス
+  .cover_story_index_content_area {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    // background-color: green;
+  }
+
+  // content_areaの中に入るボックス(content_areaと同じ範囲)
+  .cover_story_index_content {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    // background-color: blue;
+  }
+
+  // 全てのページに及んでしまう
+  .trix-content {
+    // background-color: red;
+  }
+
+// ★★★★★★★★★★★★★★★ edit ★★★★★★★★★★★★★★★
+  // formで規定しているのでeditでは規定が不要みたい
 }

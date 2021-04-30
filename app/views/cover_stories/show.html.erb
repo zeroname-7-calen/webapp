@@ -4,10 +4,8 @@
     <%# h4タグでは長いタイトルを折り返せない %>
     <%= @cover_story.title %>
   </div>
-  <div class="cover_story_show_content_area">
-    <div class="cover_story_show_content">
-      <%= @cover_story.content %>
-    </div>
+  <div class="cover_story_show_content">
+    <%= @cover_story.content %>
   </div>
   <% if current_user && loyalty(@cover_story, :cover_stories).index? %>
     <div class="cover_story_show_toolbar">
