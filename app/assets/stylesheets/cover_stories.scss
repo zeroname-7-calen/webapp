@@ -310,5 +310,19 @@
   }
 
 // ★★★★★★★★★★★★★★★ edit ★★★★★★★★★★★★★★★
-  // formで規定しているのでeditでは規定が不要みたい
+  // formで規定しているので基本的にeditでは規定が不要みたい
+  .cover_story_edit_wrapper {
+    display: flex;
+  }
+  
+  .cover_story_edit_title {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .cover_story_edit_form {
+    display: flex;
+    flex-direction: column;
+  }
 }
