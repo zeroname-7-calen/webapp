@@ -2,11 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// 【コラムページ全体】
+// 【コラムページ全体 映画・イベントガイドを含む】
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【sp_issue/form】ページ
 .sp_issue_form_wrapper {
+  display: flex;
+  justify-content: center;
   width: 100%;  //必要?
+  // background-color: skyblue;
 }
 
 // フォームを収納するボックス
@@ -21,7 +24,7 @@
 
 // 「（カテゴリーを）選択してください」ボックスサイズ調整
 .sp_issue_select select {
-  width: 50%;
+  width: 80%;
 }
 
 // 主タイトル入力欄位置調整
@@ -75,7 +78,16 @@
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【sp_issue/new】ページ
 .sp_issue_new_wrapper {
+  display: flex;
+  flex-direction: column;
   width: 100%;  //不要？
+}
+
+// 「コラム・企画新規作成」タイトル位置調整
+.sp_issue_new_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 // formで規定している.sp_issue_form_attrを含めることでフォームサイズに合わせる？
@@ -85,12 +97,18 @@
 
 // 「登録する」ボタン位置調整
 .sp_issue_new_submit {
-  width: 80%;
+  width: 100%;
+  margin: 1rem 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
 }
 
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【sp_issue/edit】ページ
 .sp_issue_edit_wrapper {
+  display: flex;
+  flex-direction: column;
   width: 100%;  //不要？
 }
 
@@ -102,6 +120,14 @@
 // 「コラム・企画記事の表示に戻る」文字サイズ
 .sp_issue_edit_toolbar a {
   font-size: 0.5rem;
+}
+
+// 「コラム・ガイド情報の編集」位置調整
+.sp_issue_edit_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 0.7rem;
 }
 
 .sp_issue_edit_submit {
@@ -157,9 +183,11 @@
   text-indent: 1.5rem;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-// 【sp_issue/show】ページ
+// ★★★★★★★★★★★★★ show ★★★★★★★★★★★★★★★★★★★
+// 【sp_issue/show】ページ 「イベントガイド」「映画情報」はshowのみ
 .sp_issue_show_wrapper {
+  display: flex;
+  flex-direction: column;
   // width: 100%;
   width: auto;
   padding: 1rem;
@@ -167,6 +195,12 @@
   word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
+// メジャータイトル位置調整
+.sp_issue_show_major_title {
+  margin-top: 1rem;
+}
+
+// 本文を収納するボックス
 .sp_issue_show_content_area {
   display: flex;
   flex-direction: column;
@@ -212,13 +246,22 @@
   width: 100%;
 }
 
-// コラム本文が表示trix-content
+// コラム本文を表示するエリア（trix-content）
 .special_issue_content .trix-content {
-  width: 600px;
+  // width: 600px;  600pxでなければ突き抜けると思われたが、100％でも良さそう
+  width: 100%;
   font-size: 0.8rem;
   font-family: 'Tahoma';
   line-height: 1.8;
+  padding: 1rem 1.3rem;
   word-wrap: break-word;  //半角英数字の連続を改行
+  // background-color: pink;
+}
+
+// 写真サイズ整形
+.special_issue_content .trix-content img {
+  margin-top: 1rem;
+  width: 95%;
 }
 
 // 「掲載日時」右側に配置　上部間隔を確保
@@ -255,4 +298,187 @@
   display: flex;
   justify-content: center;
   overflow-wrap: break-word;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+@media screen and (max-width: 767px) {
+  // 【sp_issue/form】ページ
+  .sp_issue_form_wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  // 「（カテゴリーを）選択してください」ボックスサイズ調整
+  .sp_issue_select select {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  // 主タイトル入力欄
+  .major_title_text input {
+    width: 100%;
+    box-shadow: 1px 2px 4px 1px #d3d3d3;  //全体枠を装飾
+  }
+
+  // サブタイトル入力欄
+  .minor_title_text input {
+    width: 100%;
+    box-shadow: 1px 2px 4px 1px #d3d3d3;  //全体枠を装飾
+  }
+
+  // ツールバーサイズ整形
+  .trix-button-row {
+    font-size: 0.4rem;  //アイコンのサイズを縮小して１列に収納
+    width: 100%;
+  }
+
+  // 本文入力欄
+  .sp_issue_form_content_text trix-editor {
+    width: 100%;
+    box-shadow: 1px 2px 4px 1px #d3d3d3;  //全体枠を装飾
+  }
+
+  // ★★★★★★★★★★★★★★★ new ★★★★★★★★★★★★★★★
+  .sp_issue_new_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 「コラム・企画新規作成」タイトル位置調整
+  .sp_issue_new_title {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  // 「登録する」ボタン位置調整
+  .sp_issue_new_submit {
+    display: flex;
+    width: 100%;
+  }
+
+  // ★★★★★★★★★★★★★★★ show ★★★★★★★★★★★★★★★
+  .sp_issue_show_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 1px 2px 4px 1px #d3d3d3;  //全体枠を装飾
+  }
+
+  // メジャータイトル位置調整
+  .sp_issue_show_major_title {
+    width: 100%;
+    margin-top: -1rem; //タイトル上下感覚が開きすぎる
+    margin-bottom: -1rem; //タイトル上下感覚が開きすぎる
+  }
+
+  // 本文を収納するボックス
+  .sp_issue_show_content_area {
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+    word-break: break-all;   //半角英数連続文字列突き抜け防止
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  // sp_issue_show_content_areaの中に入るボックス
+  .special_issue_content {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  // 写真サイズ調整
+  .special_issue_content img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  // コラム主タイトル位置調整
+  .sp_issue_show_major_title {
+    display: flex;
+    justify-content: center;
+  }
+
+  // コラム主タイトル・フォント
+  .sp_issue_show_major_title h5 {
+    font-family: serif;
+  }
+
+  // コラムサブタイトル位置調整
+  .sp_issue_show_minor_title {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  // コラム本文表示ボックス
+  .special_issue_content {
+    width: 100%;
+  }
+
+  // 「掲載日時」右側に配置　上部間隔を確保
+  .special_issue_strftime {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    padding-top: 2em;
+  }
+
+  // 「編集」「削除」ボタンを右側に配置
+  .sp_issue_show_footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    padding-top: 2em;
+  }
+
+// 「編集」「削除」ボタン文字色を黒に
+  .sp_issue_show_footer a {
+    color: black;
+  }
+
+  // showページのアイキャッチ位置調整
+  .image_name {
+    // display: flex;
+    // justify-content: center;
+    // padding: 1.5em 0 1em 1em;
+    // margin-bottom: 1.5rem;
+  }
+
+  .special_issue_content h3 {
+    // display: flex;
+    // justify-content: center;
+    // overflow-wrap: break-word;
+  }
+
+  // ★★★★★★★★★★★★★★★ edit ★★★★★★★★★★★★★★★
+  .sp_issue_edit_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+// 「コラム・ガイド情報の編集」位置調整
+  .sp_issue_edit_title {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .sp_issue_edit_title h5 {
+    font-size: 1rem;
+  }
+
+  // 「更新する」ボタン位置調整
+  .sp_issue_edit_submit {
+    display: flex;
+    width: 100%;
+    padding: 0 1rem;
+  }
 }
