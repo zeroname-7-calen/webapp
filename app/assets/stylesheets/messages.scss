@@ -20,6 +20,28 @@ textarea#message_content {
   min-height: 10rem;
 }
 
+// ★★★★★★★★★★★  message/new  ★★★★★★★★★★★★★
+// 「掲示板新規作成」位置調整
+.message_new_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+// 「ファイルを選択」ボタン位置調整
+.message_new_picture_button {
+  margin: 0.7rem 0;
+  font-size: 1rem;
+}
+
+// 「登録する」ボタン位置調整
+.message_new_upload_button {
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+  // padding: 0 2rem;
+}
+
 // ★★★★★★★★★★★  message/index  ★★★★★★★★★★★★★
 .messages_index_wrapper {
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
@@ -190,18 +212,6 @@ textarea#message_content {
   margin: 1rem 0 1rem 1.5rem;
 }
 
-// ★★★★★★★★★★★  message/new  ★★★★★★★★★★★★★
-// 「ファイルを選択」ボタン位置調整
-.message_new_picture_button {
-  margin: 0.7rem 0;
-  font-size: 1rem;
-}
-
-.message_new_upload_button {
-  display: flex;
-  justify-content: center;
-}
-
 // ★★★★★★★★★★★  message/edit  ★★★★★★★★★★★★★
 .message_edit_wrapper {
   // display: flex;
@@ -259,4 +269,74 @@ textarea#message_content {
   display: flex;
   justify-content: center;
   margin: 0.7rem 0 1rem 1rem;
+}
+
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+@media screen and (max-width: 767px) {
+  // ★★★★★★★★★★★★ form ★★★★★★★★★★★★★★★★★
+  // フォーム全体枠
+  .messages_form_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  // 「タイトル」文字位置調整
+  .messages_form_title_label {
+    margin-left: 0.5rem;
+  }
+
+ // タイトル入力欄を収納するボックス
+  .messages_form_title_field {
+    display: flex;
+    justify-content: center;
+  }
+
+  // タイトル入力欄
+  input#message_title {
+    width: 95%;
+    box-shadow: 1px 2px 4px 1px #d3d3d3;  //ボックスを装飾
+  }
+
+  // 「本文」文字位置調整
+ .messages_form_content_label {
+   margin-left: 0.5rem;
+ }
+
+  // 本文入力欄を収納するボックス
+  .messages_form_content_field {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 1px 2px 4px 1px #d3d3d3;  //ボックスを装飾
+  }
+
+  // 本文入力欄
+  textarea#message_content {
+    display: flex;
+    width: 95%;
+    box-shadow: 1px 2px 4px 1px #d3d3d3;  //全体枠を装飾
+  }
+
+  // ★★★★★★★★★★★★ new ★★★★★★★★★★★★★★★★★
+  // 「掲示板新規作成」位置調整
+  .message_new_title {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .message_new_picture_button {
+    font-size: 0.8rem;
+    margin: 1rem 0 1rem 0.5rem;
+  }
+
+  // 「登録する」ボタン位置調整
+  .message_new_upload_button {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+
 }
