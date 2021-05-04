@@ -16,26 +16,114 @@
   // padding: 0.2em;
 }
 
+// サイドバー上部に置かれた「広告一覧確認」ボタンを収納するボックス
 .ad_tool_container {
   text-align: center;
 }
 
-.ad_tool {
-  padding: 0.5 0em;
+// サイドバー上部「広告一覧確認」ボタン位置調整
+.ad_tool_container .ad_tool {
+  margin: 1rem 0;
 }
 // // サイドバー広告関連規定・ここまで
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-// app/views/advertisements/indexページでの規定
-// 【960px以上フルサイズ】
+// ★★★★★★★★★★ app/views/advertisements ★★★★★★★★★★★★★
+
+// ★★★★★★★★★★★★ form ★★★★★★★★★★★★★★★★★★★★
+// フォーム全体枠
+.advertise_form_wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 100%;
+}
+
+// 広告タイトル入力欄
+input#advertisement_title {
+  width: 80%;
+  height: 1.4rem;
+}
+
+// 「広告URL」位置調整
+.advertise_form_content_label {
+  margin-top: 1rem;
+}
+
+// 広告URL入力欄
+input#advertisement_image_url {
+  width: 80%;
+  height: 1.4rem;
+}
+
+// 「ファイルを選択」ボタン位置調整
+.advertise_image_select_button {
+  margin-top: 1rem;
+}
+
+// ★★★★★★★★★★★★ new ★★★★★★★★★★★★★★★★★★★★
+.advertise_new_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+// 「広告データ新規登録」位置調整
+.advertise_new_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+// 「広告を登録」ボタン位置調整
+.advertise_new_button {
+  margin-left: 1rem;
+}
+
+// ★★★★★★★★★★★★ index ★★★★★★★★★★★★★★★★★★★★
+// indexページ全体枠
+.advertise_index_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// 「広告新規作成」ボタン位置調整
+.advertise_index_title {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+// advertise_index_listを収納するボックス
+.index_advertisement {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.6rem;
+}
+
+// 広告画像、タイトル、ツールを収納するボックス
+.advertise_index_list {
+  display: flex;   //広告画像、タイトル、ツールを１列横並び
+  margin-top: 1rem;
+  border-bottom: 0.5px dashed;
+}
+
 // 広告データが入るボックス
 .ad_picture {
   width:50%;
 }
 
-.adver_tool {
-  margin-top: 1em;
-  margin-bottom: 1em;
+// 広告タイトル
+.ad_title {
+  display: flex;
+  align-items: center; //上下中央に配置
+  margin-right: 1rem;
+}
+
+// 「差替え」「削除」ボタン
+.ad_edit_delete {
+  display: flex;
+  align-items: center; //上下中央に配置
+  margin-left: 1rem;
 }
 
 // 広告サイズ
@@ -52,14 +140,7 @@
   white-space: nowrap;//広告「差替え」「削除」ボタンを１行で表示
 }
 
-.picture_button {
-  // padding-top: 1em;
-}
 
-// 「登録する」ボタンの位置
-.form_button {
-  padding-top: 1em;
-}
 
 // //  【960px未満をタブレットと想定】
 @media screen and (max-width: 959px) {
@@ -71,12 +152,93 @@
   }
 }
 
-// 560px以下をスマートフォンと想定
-@media screen and (max-width: 559px) {
+// 767px以下をスマートフォンと想定
+@media screen and (max-width: 767px) {
   // スマートフォンでindexページを見た際のサイズ
-  .index_advertisement {
-    img {
-      max-width: 100%;
+  // .index_advertisement {
+  //   img {
+  //     max-width: 100%;
+  //   }
+
+    // ★★★★★★★★★★★★ form ★★★★★★★★★★★★★★★★★★★★
+    // フォーム全体枠
+    .advertise_form_wrapper {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem;
+      width: 100%;
     }
+
+    // 広告タイトル入力欄
+    input#advertisement_title {
+      width: 95%;
+      height: 1.4rem;
+    }
+
+    // 「広告URL」位置調整
+    .advertise_form_content_label {
+      margin-top: 1rem;
+    }
+
+    // 広告URL入力欄
+    input#advertisement_image_url {
+      width: 95%;
+      height: 1.4rem;
+    }
+
+    // 「ファイルを選択」ボタン位置調整
+    .advertise_image_select_button {
+      margin-top: 1rem;
+    }
+
+// ★★★★★★★★★★★★ index ★★★★★★★★★★★★★★★★★★★★
+  // advertise_index_listを収納するボックス
+  .index_advertisement {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    margin: 0 0.6rem;
+    width: 100%;
   }
+
+  // 広告画像、タイトル、ツールを収納するボックス
+  .advertise_index_list {
+    display: flex;
+    flex-direction: column; //広告画像、タイトル、ツールを縦並び
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+    border-bottom: 0.5px dashed;
+    // background-color: red;
+  }
+
+  // 広告データ (img)が入るボックス
+  .ad_picture {
+    // width: 100%;
+    width: 150%;  //なぜ100%ではなく150％？
+  }
+
+  // 広告データ（img）
+  .ad_picture img {
+    display: flex;
+    // justify-content: center;
+    width: 100%;
+  }
+
+  // 広告データタイトル位置調整
+  .ad_title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+  }
+
+  // 「差替え」「削除」リンクボタン位置調整
+  .ad_edit_delete {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.4rem;
+  }
+
+// ★★★★★★★★★★★★ index ★★★★★★★★★★★★★★★★★★★★
+
 }

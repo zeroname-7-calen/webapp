@@ -1,17 +1,21 @@
 <% if current_user && loyalty(@advertisement, :advertisements).index? %>
-  <table class="attr">
-    <tr>
-      <th width="80"><%= form.label :title %></th>
-      <td><%= form.text_field :title, size: 50 %></td>
-    </tr>
-    <tr>
-      <th width="80"><%= form.label :image_url %></th>
-      <td><%= form.text_field :image_url, size: 50 %></td>
-    </tr>
-  </table>
-  <div>
-    <span class="picture_button">
-      <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png, video' %>
-    </span>
+  <div class="advertise_form_wrapper">
+    <div class="advertise_form_title_label">
+      <%= form.label :title %>
+    </div>
+    <div class=advertise_form_title_field">
+    <%= form.text_field :title %>
+    </div>
+    <div class="advertise_form_content_label">
+      <%= form.label :image_url %>
+    </div>
+    <div class="advertise_form_content_field">
+      <%= form.text_field :image_url %>
+    </div>
+    <div class="advertise_image_select_button">
+      <span class="picture_button">
+        <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png, video' %>
+      </span>
+    </div>
   </div>
 <% end %>
