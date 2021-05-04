@@ -1,11 +1,10 @@
 <% if current_user && loyalty(@advertisement, :advertisements).index? %>
   <%= render "shared/errors", obj: @advertisement %>
-
   <% @page_title = "広告データ入れ替え" %>
   <h5><%= @page_title %></h5>
   <%= form_for @advertisement do |form| %>
-  <%= render "form", form: form %>
-  <div><%= form.submit %></div>
+    <%= render "form", form: form %>
+    <div><%= form.submit %></div>
   <% end %>
 
   <script type="text/javascript">
