@@ -1,5 +1,8 @@
-<% if current_user.candidate_type == "councilor" || current_user %>
-  <p>現在、参院選アンケートはありません</p>
-<% else %>
-  <p>参院選アンケートの掲載はありません</p>
-<% end %>
+<!-- 【参院選】 -->
+<div class="questionnaire_wrapper">
+  <% if current_user.candidate_type == "councilor" || current_user %>
+    <p>現在、参院選アンケートはありません</p>
+  <% else %>
+    <p>参院選アンケートの掲載はありません</p>
+  <% end %>
+</div>

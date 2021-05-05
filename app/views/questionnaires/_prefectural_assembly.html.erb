@@ -1,5 +1,8 @@
-<% if current_user.candidate_type == "prefectural_assembly" || current_user %>
-  <p>現在、県議選アンケートはありません</p>
-<% else %>
-  <p>県議選アンケートの掲載はありません</p>
-<% end %>
+<!-- 【県議選】 -->
+<div class="questionnaire_wrapper">
+  <% if current_user.candidate_type == "prefectural_assembly" || current_user %>
+    <p>現在、県議選アンケートはありません</p>
+  <% else %>
+    <p>県議選アンケートの掲載はありません</p>
+  <% end %>
+</div>
