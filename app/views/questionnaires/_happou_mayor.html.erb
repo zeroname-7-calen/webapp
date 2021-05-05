@@ -1,5 +1,8 @@
-<% if current_user.candidate_type == "happou_mayor" || current_user %>
-  <p>現在、八峰町長選アンケートはありません</p>
-<% else %>
-  <p>八峰町長選アンケートの掲載はありません</p>
-<% end %>
+<!-- 【八峰町長選】 -->
+<div class="questionnaire_wrapper">
+  <% if current_user.candidate_type == "happou_mayor" || current_user %>
+    <p>現在、八峰町長選アンケートはありません</p>
+  <% else %>
+    <p>八峰町長選アンケートの掲載はありません</p>
+  <% end %>
+</div>

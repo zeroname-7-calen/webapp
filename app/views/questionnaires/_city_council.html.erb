@@ -1,5 +1,8 @@
-<% if current_user.candidate_type == "mayor" || current_user %>
-  <p>現在、市長選アンケートはありません</p>
-<% else %>
-  <p>能代市議選アンケートの掲載はありません</p>
-<% end %>
+<!-- 【参院選】 -->
+<div class="questionnaire_wrapper">
+  <% if current_user.candidate_type == "mayor" || current_user %>
+    <p>現在、市長選アンケートはありません</p>
+  <% else %>
+    <p>能代市議選アンケートの掲載はありません</p>
+  <% end %>
+</div>

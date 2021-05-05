@@ -1,7 +1,7 @@
 <% if current_user && loyalty(@top, :top).index %>
-  <div class="questionnaire">
-    <ul>
+  <div class="questionnaire_partial_page">
+    <div class="questionnaire_partial_page_button">
       <%= link_to "選挙アンケート", questionnaires_index_path, class: "btn btn-outline-secondary btn-sm" %>
-    </ul>
+    </div>
   </div>
 <% end %>

@@ -1,3 +1,38 @@
 // Place all the styles related to the questionnaires controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// サイドバー上部に記載される「選挙アンケート」ボタンが入るボックス
+.questionnaire_partial_page {
+  display: flex;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+// サイドバー上部に記載される「選挙アンケート」ボタン
+.questionnaire_partial_page_button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+// ★★★★★★★★★★★★★★ 全ページ共通 ★★★★★★★★★★★★★★★★★★
+.questionnaire_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+// ★★★★★★★★★★★★★★ show ★★★★★★★★★★★★★★★★★★
+// 「現在、市長選アンケートはありません」等案内位置調整
+.questionnaire_wrapper p {
+  display: flex;
+  justify-content: center;
+}
+
+// ★★★★★★★★★★★★★★ index ★★★★★★★★★★★★★★★★★★
+// 「アンケート設問を確認する」位置調整
+.questionnaire_index_checking_content_link {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}

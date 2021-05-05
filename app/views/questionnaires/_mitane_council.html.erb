@@ -1,5 +1,8 @@
-<% if current_user.candidate_type == "mitane_council" || current_user %>
-  <p>現在、三種町議選アンケートはありません</p>
-<% else %>
-  <p>三種町議選アンケートの掲載はありません</p>
-<% end %>
+<!-- 【三種町議選】 -->
+<div class="questionnaire_wrapper">
+  <% if current_user.candidate_type == "mitane_council" || current_user %>
+    <p>現在、三種町議選アンケートはありません</p>
+  <% else %>
+    <p>三種町議選アンケートの掲載はありません</p>
+  <% end %>
+</div>
