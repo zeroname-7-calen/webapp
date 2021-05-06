@@ -30,6 +30,12 @@
 }
 
 // ★★★★★★★★★★★★★★ index ★★★★★★★★★★★★★★★★★★
+// 「衆院選アンケートはこちら」等位置調整
+.questionnaire_index_page_guide {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
 // 「アンケート設問を確認する」位置調整
 .questionnaire_index_checking_content_link {
   display: flex;

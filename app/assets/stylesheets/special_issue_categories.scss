@@ -51,9 +51,11 @@
 // 【カテゴリーindexページ】
 // インデックスページ全体
 .sp_iss_cate_index_wrapper {
+  margin: 1rem;
   padding: 1rem 1.5rem 1rem 1rem;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
+  box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
 }
 
 // 「コラムシリーズ一覧」装飾その１
@@ -74,6 +76,7 @@
 .special_issue_toolbar a {
   font-size: 0.5em;
   color: black;
+  box-shadow: 0 0 8px #d3d3d3;  //左右上下対称に全体枠を装飾
 }
 
 // コラムタイトル＋掲載日時を収納するボックス
@@ -126,10 +129,10 @@
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 // 【カテゴリーshowページ】
 .sp_iss_cate_show_wrapper {
-  // padding: 1rem;
   margin: 0 2rem;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
+  box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
 }
 
 // コラムシリーズタイトル位置調整

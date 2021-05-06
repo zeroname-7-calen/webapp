@@ -1,33 +1,35 @@
 <div class="questionnaire_wrapper">
-  <% if current_user && loyalty(@questionnaire, :questionnaires).index %>
-    <% if current_user.candidate_type == "representative" %>
-      <h5><%= link_to "衆院選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
-    <% elsif current_user.candidate_type == "councilor" %>
-      <h5><%= link_to "参院選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
-    <% elsif current_user.candidate_type == "governor" %>
-      <h5><%= link_to "知事選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}"  %></h5>
-    <% elsif current_user.candidate_type == "prefectural_assembly" %>
-      <h5><%= link_to "県議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
-    <% elsif current_user.candidate_type == "mayor" %>
-      <h5><%= link_to "能代市長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
-    <% elsif current_user.candidate_type == "city_council" %>
-      <h5><%= link_to "能代市議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
-    <% elsif current_user.candidate_type == "mitane_mayor" %>
-      <h5><%= link_to "三種町長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
-    <% elsif current_user.candidate_type == "mitane_council" %>
-      <h5><%= link_to "三種町議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
-    <% elsif current_user.candidate_type == "happou_mayor" %>
-      <h5><%= link_to "八峰町長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
-    <% elsif current_user.candidate_type == "happou_council" %>
-      <h5><%= link_to "八峰町議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
-    <% elsif current_user.candidate_type == "fujisato_mayor" %>
-      <h5><%= link_to "藤里町長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
-    <% elsif current_user.candidate_type == "fujisato_council" %>
-      <h5><%= link_to "藤里町議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
-    <% elsif current_user %>
-      <div class="questionnaire_index_checking_content_link">
-        <h5><%= link_to "アンケート設問を確認する", "/questionnaires/show" %></h5>
-      </div>
+  <div class="questionnaire_index_page_guide">
+    <% if current_user && loyalty(@questionnaire, :questionnaires).index %>
+      <% if current_user.candidate_type == "representative" %>
+        <h5><%= link_to "衆院選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+      <% elsif current_user.candidate_type == "councilor" %>
+        <h5><%= link_to "参院選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+      <% elsif current_user.candidate_type == "governor" %>
+        <h5><%= link_to "知事選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}"  %></h5>
+      <% elsif current_user.candidate_type == "prefectural_assembly" %>
+        <h5><%= link_to "県議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+      <% elsif current_user.candidate_type == "mayor" %>
+        <h5><%= link_to "能代市長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+      <% elsif current_user.candidate_type == "city_council" %>
+        <h5><%= link_to "能代市議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+      <% elsif current_user.candidate_type == "mitane_mayor" %>
+        <h5><%= link_to "三種町長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+      <% elsif current_user.candidate_type == "mitane_council" %>
+        <h5><%= link_to "三種町議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+      <% elsif current_user.candidate_type == "happou_mayor" %>
+        <h5><%= link_to "八峰町長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+      <% elsif current_user.candidate_type == "happou_council" %>
+        <h5><%= link_to "八峰町議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+      <% elsif current_user.candidate_type == "fujisato_mayor" %>
+        <h5><%= link_to "藤里町長選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+      <% elsif current_user.candidate_type == "fujisato_council" %>
+        <h5><%= link_to "藤里町議選アンケートはこちら", "/questionnaires/#{current_user.candidate_type}" %></h5>
+      <% elsif current_user %>
+        <div class="questionnaire_index_checking_content_link">
+          <h5><%= link_to "アンケート設問を確認する", "/questionnaires/show" %></h5>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

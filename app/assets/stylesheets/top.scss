@@ -12,23 +12,6 @@
   opacity: 0.9;
 }
 
-// // 背景画像の中にナビバーを重ねる際の親要素
-// .header_background_image_and_navbar {
-//   position: relative;  //背景画像にナビを重ねるため、親要素にrelative指定
-// }
-
-// // 背景画像を重ねる際の子要素（ナビバー）
-// .top_index_header {
-//   position: absolute;  //背景画像にナビを重ねるため、子要素にabsolute指定
-//   // width: 100%;
-//   // box-sizing: border-box;
-//   // height: 4rem;  //ナビバーの高さ指定
-//   bottom: 5px;  //背景画像に重ねる際の位置調整
-//   // background-color: white;
-//   // border-radius: 10px;
-//   // opacity: 0.9;
-// }
-
 // ★★★★★  ナビゲーション【top/indexページ】  ★★★★★★★★★★★★★
 // ロゴとナビが入る１列のボックス
 .header_nav_container {
@@ -72,12 +55,6 @@
   width: 100%;  //１００%にしないと横画面全体に広がらない
 }
 
-// // ドロップダウンメニュー
-// .nav-item .dropdown-item {
-//   background-color: #f5f5f5;  //下方展開されるボックス背景色
-//   opacity: 0.7;
-// }
-
 // ドロップダウンメニュー
 .nav-item .dropdown-item a {
   font-size: 0.6rem;  //文字サイズ
@@ -85,11 +62,11 @@
 
 // ★★★★★★★★★  top/indexページ  ★★★★★★★★★★★★★★★
 
-// ★★★★★  top/indexページ 1ｓｔ_rowのボックス  ★★★★★★★★★★★★
+// ★★★★★  top/indexページ 1st_rowのボックス  ★★★★★★★★★★★★
 // 【カバーストーリーと写真が入るボックス】
 .top_content_1st_row {
   margin-top: 5px;
-  box-shadow: 1px 2px 3px 1px #d3d3d3;  //全体枠を装飾
+  box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
   border-radius: 5px;
 }
 
@@ -241,6 +218,7 @@
   border-radius: 10px;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
+
 }
 
 // 「最新ニュース」タイトル
@@ -335,6 +313,7 @@
   margin-right: 0.4rem;
   border: 1px solid;
   border-radius: 10px;
+  box-shadow: 0 0 8px #d3d3d3;  //左右上下対称に全体枠を装飾
 }
 
 .top_page_message_title_area {

@@ -190,9 +190,10 @@
   flex-direction: column;
   // width: 100%;
   width: auto;
-  padding: 1rem;
+  margin: 1rem 1rem 1rem 0;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
+  box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
 }
 
 // メジャータイトル位置調整
