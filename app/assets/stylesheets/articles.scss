@@ -42,6 +42,7 @@ trix-toolbar {
   margin: 1rem;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
+  box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
 }
 
 // 記事indexの「ニュース一覧」タイトル位置調整
@@ -56,6 +57,7 @@ trix-toolbar {
   font-style: oblique;
   font-family: sans-serif;
   color: black;
+  margin-top: 1rem;
   padding: 0.2em 0;/*上下の余白*/
   border-top: solid 3px #364e96;/*上線*/
   border-bottom: solid 3px #364e96;/*下線*/
@@ -122,6 +124,7 @@ td.article_edit_delete {
 .new_article_submit {
   margin-top: 1rem;
   padding-right: 3rem;
+  width: 100%;
 }
 
 // ツールボタンいちばん右側の２つが離れすぎているため修正
@@ -188,27 +191,30 @@ td.article_edit_delete {
   margin: 1rem;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
+  box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
 }
 .article_show_title {
   display: flex;
   justify-content: center;
   // width: 100%;
   width: 600px;
-  // background-color: skyblue;
   margin: 0 1rem;
 }
 
 .article_show_title h5 {
+  margin-top: 1rem;
   padding: 0.4rem 0.5rem;/*文字の上下 左右の余白*/
   border-bottom: solid 3px #d7d7d7;/*下線*/
 }
 
+// 「編集」リンク位置調整
 .article_show_toolbar {
-  margin: 0 0 0.3rem 0;
+  margin: 0 0 0.3rem 1rem;
 }
 
 .article_show_content_area {
   width: 100%;
+  padding-bottom: 1rem;
 }
 
 // 日時表示位置調整
