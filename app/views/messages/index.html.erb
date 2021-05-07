@@ -23,11 +23,13 @@
         </div>
         <div class="index_message_media">
           <% if message.picture? %>
-            <% if message.picture.file.content_type.include?('image/') %>
-              <%= image_tag message.picture.url(:thumb) %>
-            <% else %>
-              <%= video_tag message.picture.url, width: "100%", height: "auto",
-                              controls: true, autobuffer: true %>
+            <%= link_to message.picture.url, 'data-lightbox': message.picture do %>
+              <% if message.picture.file.content_type.include?('image/') %>
+                <%= image_tag message.picture.url(:thumb) %>
+              <% else %>
+                <%= video_tag message.picture.url, width: "100%", height: "auto",
+                                  controls: true, autobuffer: true %>
+              <% end %>
             <% end %>
           <% end %>
         </div>

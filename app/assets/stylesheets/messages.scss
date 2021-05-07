@@ -53,6 +53,7 @@ textarea#message_content {
   flex-direction: column;
 }
 
+// 「掲示板一覧」位置調整
 .message_title  {
   display: flex;
   justify-content: center;
@@ -121,21 +122,27 @@ textarea#message_content {
 .index_message_media {
   display: flex;
   justify-content: center;
+  margin: 0 2rem 0 2rem;
   margin-top: 0;
 }
 
+// インデックス写真
 .index_message_media img {
-  max-width: 80%;
+  width: 100%;
   height: auto;
 }
 
+// インデックス動画
 .index_message_media video {
-  max-width: 80%;
+  width: 100%;
   height: auto;
 }
 
+// 「編集」「削除」ボタン
 .message_index_footer {
-  margin-top: 0.7rem;
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 2rem 0 0;
 }
 
 // ★★★★★★★★★★★  message/show  ★★★★★★★★★★★★★
@@ -195,13 +202,15 @@ textarea#message_content {
 
 // 写真サイズ調整
 .message_show_media img {
-   max-width: 80%;
-   height: auto;
+  width: 100%;
+  padding: 0 2rem 1rem 2rem;
+  height: auto;
  }
 
 // 動画サイズ調整
 .message_show_media video {
-  width: 80%;
+  width: 100%;
+  padding: 0 2rem 1rem 2rem;
   height: auto;
 }
 
@@ -338,5 +347,41 @@ textarea#message_content {
     width: 100%;
     padding: 0 0.5rem;
   }
+  // ★★★★★★★★★★★  message/show  ★★★★★★★★★★★★★
+  .messages_show_wrapper {
+    width: 100%;
+    word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+    word-break: break-all;   //半角英数連続文字列突き抜け防止
+  }
+
+  // 記事本文
+  .message_show_content_body {
+  }
+
+  .message_show_content_body p {
+    line-height: 1.8;  //行間高指定は単位指定なし
+  }
+
+  // 記事と一緒の写真／動画
+  .message_show_media {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  // 写真サイズ調整
+  .message_show_media img {
+    width: 100%;
+    padding: 0 1.3rem;
+    height: auto;
+   }
+
+  // 動画サイズ調整
+  .message_show_media video {
+    width: 100%;
+    padding: 0 2rem 1rem 2rem;
+    height: auto;
+  }
+
 
 }

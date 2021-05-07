@@ -110,6 +110,7 @@
   flex-direction: column; /*子要素を縦に配置する？*/
   padding: 0 0.5rem;
   margin-left: -1rem;
+  // background-color: red;
 }
 
 // 画像／動画が入るボックス
@@ -622,14 +623,22 @@
     padding: 0;
   }
 
+  // トップコンテント写真・動画を収納するボックス
+  .top_content_url {
+    display: flex;
+    justify-content: center;
+    // padding-left: 1.5rem; //下記imgを95％とした場合、これがないと左寄りになってしまう
+  }
   // トップコンテント写真
   .top_content_url img {
-    max-width: 90%;
+    max-width: 100%;
+    padding: 0.3rem;
   }
 
   // トップコンテント動画
   .top_content_url video {
-    max-width: 90%;
+    max-width: 100%;
+    padding: 0.3rem;
   }
 
   // キャプション位置調整

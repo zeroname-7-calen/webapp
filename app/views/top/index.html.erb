@@ -23,10 +23,12 @@
             </div>
             <div class="top_content_url">
               <% if top_content.url? %>
-                <% if top_content.url.file.content_type.include?("image/")%>
-                  <%= image_tag top_content.url.url(:thumb) if top_content.url? %>
-                <% else %>
-                  <%= video_tag top_content.url.url, width: "100%", height: "auto", controls: true, autobuffer: true %>
+                <%= link_to top_content.url.url, 'data-lightbox': top_content.url do %>
+                  <% if top_content.url.file.content_type.include?("image/")%>
+                    <%= image_tag top_content.url.url(:thumb) if top_content.url? %>
+                  <% else %>
+                    <%= video_tag top_content.url.url, width: "100%", height: "auto", controls: true, autobuffer: true %>
+                  <% end %>
                 <% end %>
               <% end %>
             </div>
@@ -112,9 +114,13 @@
             <div class="top_message_media">
               <% if message.picture? %>
                 <% if message.picture.file.content_type.include?('image/') %>
-                  <%= image_tag message.picture.url(:thumb) %>
+                  <%= link_to message.picture.url, 'data-lightbox': message.picture do %>
+                    <%= image_tag message.picture.url(:thumb) %>
+                  <% end %>
                 <% else %>
-                  <%= video_tag message.picture.url, width: "30%", height: "30%", controls: true, autobuffer: true %>
+                  <%= link_to message.picture.url, 'data-lightbox': message.picture do %>
+                    <%= video_tag message.picture.url, width: "30%", height: "30%", controls: true, autobuffer: true %>
+                  <% end %>
                 <% end %>
               <% end %>
             </div>
@@ -140,7 +146,7 @@
       <!-- 3rd_row左側ここまで -->
       <!-- ３ｒｄ_row右側ここから(サイドバーが入るボックス) -->
     <div class="top_content_3rd_row_right">
-      <%= render "shared/questionnaire" %>
+      <%# <%= render "shared/questionnaire" %>
       <%= render "shared/advertisement" %>
       <%= render "shared/sidebar" %>
     </div>
