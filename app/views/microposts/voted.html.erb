@@ -19,10 +19,12 @@
     </div>
     <div class="micropost_voted_media">
       <% if micropost.picture? %>
-        <% if micropost.picture.file.content_type.include?('image/') %>
-          <%= image_tag micropost.picture.url(:thumb) %>
-        <% else %>
-          <%= video_tag micropost.picture.url, controls: true, autobuffer: true %>
+        <%= link_to micropost.picture.url, 'data-lightbox': micropost.picture do %>
+          <% if micropost.picture.file.content_type.include?('image/') %>
+            <%= image_tag micropost.picture.url(:thumb) %>
+          <% else %>
+            <%= video_tag micropost.picture.url, controls: true, autobuffer: true %>
+          <% end %>
         <% end %>
       <% end %>
     </div>
