@@ -462,17 +462,22 @@
     padding-left: 1rem;
     width: 80%;
     box-sizing: border-box;
-    background-color: #b0c4de;
+    position: relative;
+    background-color: black;
+    opacity: 0.9;
+    z-index: 100;
   }
 
   // ドロップダウンメニューの背景色
   .dropdown-menu .dropdown-item {
-    background-color: #b0c4de;
+    background-color: black;
+    opacity: 0.9;
   }
 
   // アイコン
   .navbar-nav a {
-    color: black;
+    // color: black;
+    color: royalblue;
     margin-left: 1rem;
     border-bottom: solid 1px;
   }
@@ -559,8 +564,10 @@
     justify-content: center;
     width: 80%;
     box-sizing: border-box;
+    position: relative;
     background-color: black;
     opacity: 0.9;
+    z-index: 100;
   }
 
   .navbar-nav .nav-link a {
@@ -569,14 +576,15 @@
 
   // ドロップダウンメニュー
   .nav-item .dropdown-item {
-    background-color: #f5f5f5;
-    opacity: 0.9;
+    background-color: black;
+    opacity: 1;
   }
 
   // ドロップダウンメニュー
   .nav-item .dropdown-item a {
     font-size: 0.7rem;  //文字サイズ
     text-decoration: none;
+    color: white;
   }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~  1st_row部分  ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -763,18 +771,21 @@
     justify-content: center;
     width: 100%;
     box-sizing: border-box;
-    background-color: #f5f5f5;
+    position: relative;
+    background-color: black;
     opacity: 0.9;
+    z-index: 100;
   }
 
   // ドロップダウンメニュー
   .nav-item .dropdown-item {
-    background-color: #f5f5f5;
-    opacity: 0.9;
+    background-color: black;
+    opacity: 1;
   }
 
   // ドロップダウンメニュー
   .nav-item .dropdown-item a {
     font-size: 0.7rem;  //文字サイズ
+    color: white;
   }
 }
