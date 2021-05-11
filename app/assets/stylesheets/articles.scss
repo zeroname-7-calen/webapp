@@ -15,12 +15,6 @@
   width: 600px;
 }
 
-// ニュース新規登録本文入力欄
-#article_content {
-  // width: 70%;  //やはりパーセント指定は不可
-  width: 600px;
-  min-height: 10rem;
-}
 // アクションテキスト（記事入力フォーム）のツールバー
 trix-toolbar {
   // font-size: 1rem;//ツールバーボタンの大きさ
@@ -32,6 +26,33 @@ trix-toolbar {
 .trix-button-row {
   width: 100%;
   padding-right: 3rem;
+}
+
+// ニュース新規登録本文入力欄
+#article_content {
+  // width: 70%;  //やはりパーセント指定は不可
+  width: 600px;
+  min-height: 10rem;
+}
+
+// 「掲載終了日時を指定する」チェックボックス
+.article_start_date_box_row {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.article_form_no_start_date_ck_box {
+  margin-right: 0.5rem;
+}
+
+// 「掲載終了日時を指定する」チェックボックス
+.article_finish_date_box_row {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.article_form_no_finish_date_ck_box {
+  margin-right: 0.5rem;
 }
 
 // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
