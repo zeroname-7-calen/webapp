@@ -5,12 +5,8 @@ class ArticlesController < ApplicationController
     puts params[:id]
     puts "333333333333333"
     @articles = Article.with_rich_text_content.order(released_at: :desc).page(params[:page]).per(10)
-    @articles = Article.where("start_date <= ?", Time.now).where("finish_date >= ?", Time.now).or(Article.where(start_date: nil)).order(released_at: :desc).page(params[:page]).per(10)
 
-    # @articles = Article.where("start_date <= ?", Time.now).where("finish_date >= ?", Time.now).or(Article.where(finish_date: nil)).order(released_at: :desc).page(params[:page]).per(10)
-
-
-    # @articles = Article.where("start_date <= ?", Time.now).where("finish_date >= ?", Time.now).or(Article.where("start_date <= ?", Time.now)) and Article.where(finish_date: nil).order(released_at: :desc).page(params[:page]).per(10)
+    @articles = Article.where("start_date <= ?", Time.now).where("finish_date >= ?", Time.now).or(Article.where("start_date <= ?", Time.now).where(finish_date: nil)).or(Article.where(start_date: nil)).order(released_at: :desc).page(params[:page]).per(10)
   end
 
   def show
@@ -18,7 +14,8 @@ class ArticlesController < ApplicationController
     puts params[:id]
     puts "333333333333333"
     @article = Article.find(params[:id])
-    @article = Article.where("start_date <= ?", Time.now).where("finish_date >= ?", Time.now).or(Article.where(start_date: nil)).find(params[:id])
+
+    @article = Article.where("start_date <= ?", Time.now).where("finish_date >= ?", Time.now).or(Article.where("start_date <= ?", Time.now).where(finish_date: nil)).or(Article.where(start_date: nil)).find(params[:id])
   end
 
   # 検索
@@ -54,7 +51,6 @@ class ArticlesController < ApplicationController
       else
         render "new"
       end
-
     elsif @article_start_date == "0" && @article_finish_date == "0"#開始・終了ともに指定なし
       @article.start_date = nil
       @article.finish_date = nil
@@ -84,7 +80,7 @@ class ArticlesController < ApplicationController
       if @article.save
         redirect_to root_path, notice: "日時を指定せずに記事を更新しました"
       else
-         render "edit"
+        render "edit"
       end
     elsif @article_start_date == "1" && @article_finish_date == "0"
       @article.finish_date = nil
