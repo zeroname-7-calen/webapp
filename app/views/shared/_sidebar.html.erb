@@ -27,10 +27,17 @@
               <% end %>
             <% end %>
           </div>
+          <div class="twitter_sidebar_strftime">
+            <%= micropost.created_at.strftime("%Y/%m/%d %H:%M") %>
+          </div>
           <div class="author_name">
             by <%= link_to micropost.author.name + "さん", [micropost.author, :microposts] %>
           </div>
+
+
+
         <% end %>
+
       </ul>
   </div>
   <div class="twitter_guide">

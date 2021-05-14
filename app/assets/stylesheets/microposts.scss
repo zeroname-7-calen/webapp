@@ -69,6 +69,13 @@
   color: black;
 }
 
+// サイドバー・投稿時間
+.twitter_sidebar_strftime {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.7rem;
+}
+
 // by○○さん〜　位置調整
 .author_name {
   display: flex;

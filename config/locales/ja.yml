@@ -23,6 +23,10 @@ ja:
       article:
         title: タイトル
         content: 本文
+        no_start_at: 掲載開始日時を指定する
+        start_at: 掲載開始日時
+        no_finish_at: 掲載終了日時を指定する
+        finish_at: 掲載終了日時
       micropost:
         content: 本文
         created_at: 日時
