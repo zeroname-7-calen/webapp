@@ -1,32 +1,35 @@
-<div class="article_index_wrapper">
-  <div class="article_index_title">
-    <% @page_title = "ニュース一覧" %>
+<div class="article_management_wrapper">
+  <div class="article_management_title">
+    <% @page_title = "管理者用記事一覧表示" %>
     <h4><%= @page_title %></h4>
   </div>
-  <div class="article_index_regist_button">
+  <div class="article_management_regist_button">
     <% if current_user %>
       <% if loyalty(@article, :articles).index? %>
         <div class="toolbar"><%= link_to "ニュース新規作成", :new_article, class: "btn btn-outline-danger btn-sm" %></div>
       <% end %>
-      <% if loyalty(@article, :articles).index? %>
-        <div class="toolbar"><%= link_to "掲載日時指定も含めた記事一覧", :management_articles, class: "btn btn-outline-secondary btn-sm" %></div>
-      <% end %>
     <% end %>
   </div>
-  <div class="article_index_search_button">
-    <%= form_tag :search_articles, method: :get,class: "search" do %>
-      <%= text_field_tag "q", params[:q] %>
-      <%= submit_tag "検索" %>
-    <% end %>
-  </div>
-  <div class="article_index_content_area">
+  <div class="article_management_content_area">
     <% if @articles.present? %>
       <table class="table table-md table-condenced table-hover">
         <tbody>
           <% @articles.each do |article| %>
             <tr>
               <td class="strftime"><%= article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
-              <td class="indextitle"><%= link_to article.title, article %></td>
+              <td class="indextitle">
+                <div class="management_time_designation_presence_or_absence">
+                  <% if article.start_at? %>
+                    <%= "<掲載日時指定あり>" %>
+                    <%= "開始:"%><%= article.start_at.strftime("%Y/%m/%d %H:%M") %>
+                  <% end %>
+                  <% if article.finish_at? %>
+                    <%= "→掲載終了:" %>
+                    <%= article.finish_at.strftime("%Y/%m/%d %H:%M") %>
+                  <% end %>
+                </div>
+                <%= link_to article.title, article %>
+              </td>
               <% if current_user && loyalty(@article, :articles).index? %>
                 <div class="article_footer">
                   <td class="article_edit_delete">
@@ -49,14 +52,24 @@
       <% end %>
   </div>
       <!-- レスポンシブ画面用の規定 -->
-  <div class="article_index_content_area_for_responsive">
+  <div class="article_management_content_area_for_responsive">
     <% if @articles.present? %>
-      <div class="article_index_area_for_responsive">
+      <div class="article_management_area_for_responsive">
         <% @articles.each do |article| %>
-          <div class="article_index_strftime_for_responsive">
+          <div class="article_management_strftime_for_responsive">
             掲載日時 <%= article.released_at.strftime("%Y/%m/%d %H:%M") %>
           </div>
-          <div class="article_indextitle_for_responsive">
+          <div class="article_managementtitle_for_responsive">
+            <div class="management_time_designation_presence_or_absence">
+              <% if article.start_at? %>
+                <%= "<掲載日時指定あり>" %>
+                <%= "開始:"%><%= article.start_at.strftime("%Y/%m/%d %H:%M") %>
+              <% end %>
+              <% if article.finish_at? %>
+                <%= "→掲載終了:" %>
+                <%= article.finish_at.strftime("%Y/%m/%d %H:%M") %>
+              <% end %>
+            </div>
             <%= link_to article.title, article %>
           </div>
           <% if current_user && loyalty(@article, :articles).index? %>

@@ -265,6 +265,45 @@ td.article_edit_delete {
   display: none;
 }
 
+
+  // ★★★★★★★★★★★  【article/management】 ★★★★★★★★★★★★★★★★★★★★★
+  // 管理ページ全体
+  .article_management_wrapper {
+  width: auto;
+  margin: 1rem;
+  padding: 1rem;
+  word-wrap: break-word;   //半角英数連続文字列突き抜け防止
+  word-break: break-all;   //半角英数連続文字列突き抜け防止
+  box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
+  border: solid 5px;
+  border-color: #a52a2a;
+  box-shadow: 0px 0px 5px;
+}
+
+// 「管理者用記事表示ページ」タイトル位置調整
+.article_management_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 「ニュース新規作成」ボタン位置調整
+.article_management_regist_button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem 0 1rem 0;
+}
+
+// 「掲載日時指定あり」表示
+.management_time_designation_presence_or_absence {
+  font-size: 0.7rem;
+  color: #ff7f50;
+}
+
+.article_management_content_area_for_responsive {
+  display: none;
+}
+
 // ★★★★★★★★★★★★★★★  max-991  ★★★★★★★★★★★★★★★★★
 @media screen and (max-width: 991px) and (min-width: 768px) {
 // ★★★★★★★★★★★★★★★ form ★★★★★★★★★★★★★★★
@@ -302,7 +341,6 @@ td.article_edit_delete {
   .article_show_toolbar {
     margin-left: 1rem;
   }
-
 }
 
 // ★★★★★★★★★★★★★★★  メディアクエリ  ★★★★★★★★★★★★★★★★★
@@ -442,6 +480,46 @@ td.article_edit_delete {
   .article_form_content {
     width: 100%;
     padding: 0 1.5rem;
+  }
+
+  // ★★★★★★★★★★★  【article/management】 ★★★★★★★★★★★★★★★★★★★★★
+  // 「管理者用記事一覧」タイトル位置調整
+  .article_management_title {
+    display: flex;
+    justify-content: center;
+  }
+
+// 管理者用記事一覧」タイトルサイズ調整
+  .article_management_title h4 {
+    font-size: 1rem;
+  }
+
+  // 「ニュース新規作成」ボタン位置調整
+  .article_management_regist_button {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  .article_management_content_area {
+    display: none;  //ワイド画面の規定が干渉するのを防ぐ？
+  }
+
+// 記事の一覧が入るボックス
+  .article_management_content_area_for_responsive {
+    display: flex;
+    flex-direction: column;
+  }
+
+// 「掲載日時指定あり」表示
+  .management_time_designation_presence_or_absence {
+    margin-bottom: 0.3rem;
+    font-size: 0.7rem;
+    color: #ff7f50;
+  }
+
+  .article_managementtitle_for_responsive a {
+    color: black;
   }
 
 }

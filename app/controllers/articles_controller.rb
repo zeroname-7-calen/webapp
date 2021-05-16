@@ -7,11 +7,21 @@ class ArticlesController < ApplicationController
     @articles = Article.where("start_at <= ?", Time.now).where("finish_at >= ?", Time.now).or(Article.where("start_at <= ?", Time.now).where(finish_at: nil)).or(Article.where(start_at: nil)).order(released_at: :desc).page(params[:page]).per(10)
   end
 
+  # 管理者向け記事一覧表示
+  def management
+    @articles = Article.with_rich_text_content.order(released_at: :desc).page(params[:page]).per(10)
+    authorize!
+  end
+
   def show
     puts "111111111111111"
     puts params[:id]
     puts "333333333333333"
-    @article = Article.where("start_at <= ?", Time.now).where("finish_at >= ?", Time.now).or(Article.where("start_at <= ?", Time.now).where(finish_at: nil)).or(Article.where(start_at: nil)).find(params[:id])
+    if current_user && loyalty(@artcile, :articles).index?
+      @article = Article.with_rich_text_content.find(params[:id])
+    else
+      @article = Article.where("start_at <= ?", Time.now).where("finish_at >= ?", Time.now).or(Article.where("start_at <= ?", Time.now).where(finish_at: nil)).or(Article.where(start_at: nil)).find(params[:id])
+    end
   end
 
   # 検索
