@@ -4,6 +4,10 @@ class ArticlesLoyalty < ApplicationLoyalty
     user && user.admin?
   end
 
+  def management?
+    user && user.admin?
+  end
+
   def new?
     user && user.admin?
   end
