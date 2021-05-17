@@ -66,7 +66,8 @@
 // 【カバーストーリーと写真が入るボックス】
 .top_content_1st_row {
   margin-top: 0.5rem;
-  box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
+  // box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
+  box-shadow: 0 0 6px gray;  //左右上下対称に全体枠を装飾
   border-radius: 5px;
 }
 
