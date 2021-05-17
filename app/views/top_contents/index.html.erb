@@ -6,8 +6,8 @@
         <h6><%= top_content.title %></h6>
       </div>
       <div class="pics_date">
-        <% if top_content.start_date? %>
-          掲載指定日時=<%= top_content.start_date.strftime("%Y-%m-%d-%H:%M") %>
+        <% if top_content.start_at? %>
+          掲載指定日時=<%= top_content.start_at.strftime("%Y-%m-%d-%H:%M") %>
         <% end %>
       </div>
       <div class="url_box">

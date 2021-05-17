@@ -37,18 +37,66 @@
   word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
 
+// 開始チェックボックスと「掲載開始日時を指定する」
+.cover_story_start_at_box_row {
+  display: flex;
+  margin-top: 1rem;
+}
+
+// 開始チェックボックスと「掲載日時指定を指定する」間隔を空ける
+.cover_story_form_no_start_at_ck_box {
+  margin-right: 0.5rem;
+}
+
+// 「掲載開始日時」
+.cover_story_form_start_at_label {
+  margin-top: -0.2rem;
+}
+
+// 開始指定セレクトボックス位置調整
+.cover_story_form_at_select {
+  margin-top: -0.2rem;
+}
+
+// 終了チェックボックスと「掲載終了日時を指定する」
+.cover_story_finish_at_box_row {
+  display: flex;
+  margin-top: 1rem;
+}
+
+// 「掲載終了日時」
+.cover_story_form_finish_at {
+  margin-top: -0.2rem;
+}
+
+// 終了指定セレクトボックス位置調整
+.cover_story_form_date_select {
+  margin-top: -0.2rem;
+}
+
+// 終了チェックボックスと「掲載終了日時を指定する」間隔を空ける
+.cover_story_form_no_finish_date_ck_box {
+  margin-right: 0.5rem;
+}
 // ★★★★★★★★★  cover_story_indexページ  ★★★★★★★★
 // 全体枠調整
 .cover_story_index_wrapper {
   width: 100%;
   justify-content: center;
-  padding: 0 1rem;
-  // background-color: skyblue;
+  padding: 0 1rem 0 1rem;
 }
 
-// タイトル欄が入るボックス
+// <掲載を終えた記事は削除することを推奨します>位置調整
+.cover_story_index_notice {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+// タイトルが入るボックス
 .cover_story_index_title_area {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -56,10 +104,7 @@
 .cover_story_index_title {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  padding: 1rem 2rem 0 2rem;
   font-size: 1.1rem;
-  // padding: 1rem 3rem;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
@@ -69,13 +114,12 @@
   justify-content: center;
   // width: 600px;  //写真を枠内にきれいに掲載するには600px指定が必要
   padding: 0 2rem;
+  line-height: 1.7;
 }
 
 // 本文が入るボックス
 .cover_story_index_content {
-  // padding: 0 1.5rem;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.8rem;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
@@ -85,14 +129,40 @@
   margin: 0.5rem 0;
 }
 
-// ★★★★★★★★★  cover_story_newページ  ★★★★★★★★
+// 「編集」「削除」リンク
+.cover_story_index_toolbar {
+}
+
+// 掲載日時指定の有無および指定時間表示
+.cover_story_index_time_designnation_presence_or_absence {
+  display: flex;
+  border-bottom: 1px dashed;
+}
+
+// 掲載日時指定の有無および指定時間表示文字色
+.cover_story_index_time_designnation_presence_or_absence_letter {
+  color: #ff7f50;
+  margin-bottom: 1rem;
+}
+
+// 「掲載されているカバーストーリーはありません」位置調整
+.cover_story_index_info {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0 1rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+
+// ★★★★★★★★★  cover_story_newページ  ★★★★★★★★★★★★★★★★★★★★
 .cover_stroy_index_wrapper {
   margin: 0 1rem;
   margin: auto;
   width: 100%;
 }
 
-// ★★★★★★★★★  cover_story_showページ  ★★★★★★★★★
+// ★★★★★★★★★  cover_story_showページ  ★★★★★★★★★★★★★★★
 .cover_story_show_wrapper {
   display: flex;
   flex-direction: column;
@@ -103,8 +173,9 @@
 .cover_story_show_title {
   display: flex;
   justify-content: center;
-  font-size: 1.3rem;
+  margin-top: 1.3rem;
   padding: 1rem 3rem;
+  font-size: 1.3rem;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
@@ -113,8 +184,9 @@
 .cover_story_show_content .trix-content {
   justify-content: center;
   width: 600px;  //写真を枠内にきれいに掲載するには600px指定が必要
+  padding: 0 1rem;
   font-size: 0.8rem;
-  line-height: 1.7;
+  line-height: 1.9;
 }
 
 // 記事が入るボックス
@@ -148,7 +220,7 @@
 .cover_story_show_toolbar {
   display: flex;
   justify-content: flex-end;
-  margin-right: 3rem;
+  margin: 1rem 3rem 0 0;
 }
 
 // ★★★★★★★★★  cover_story_indexページ  ★★★★★★★★★

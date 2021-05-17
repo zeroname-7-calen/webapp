@@ -65,7 +65,7 @@
 // ★★★★★  top/indexページ 1st_rowのボックス  ★★★★★★★★★★★★
 // 【カバーストーリーと写真が入るボックス】
 .top_content_1st_row {
-  margin-top: 5px;
+  margin-top: 0.5rem;
   box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
   border-radius: 5px;
 }
@@ -215,8 +215,9 @@
   margin: 0 0 1rem 0;
   padding-left: 0.5rem;
   width: 48%;
-  border: solid 1px;
   border-radius: 10px;
+  // box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
+  box-shadow: 0 0 6px gray;  //左右上下対称に全体枠を装飾
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
 
@@ -264,8 +265,8 @@
   margin: 0 0.4rem 1rem 0;
   padding-left: 0.5rem;
   width: 48%;
-  border: solid 1px;
   border-radius: 10px;
+  box-shadow: 0 0 6px gray;  //左右上下対称に全体枠を装飾
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
@@ -312,9 +313,8 @@
 .top_page_message {
   width: 100%;
   margin-right: 0.4rem;
-  border: 1px solid;
   border-radius: 10px;
-  box-shadow: 0 0 8px #d3d3d3;  //左右上下対称に全体枠を装飾
+  box-shadow: 0 0 8px gray;  //左右上下対称に全体枠を装飾
 }
 
 .top_page_message_title_area {

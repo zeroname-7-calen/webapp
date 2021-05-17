@@ -7,4 +7,32 @@
   <div class="cover_story_form_content">
     <%= form.rich_text_area :content, placeholder: "本文入力" %>
   </div>
+  <div class="cover_story_start_at_box_row">
+    <div class="cover_story_form_no_start_at_ck_box">
+      <%= form.check_box :no_start_at?, checked: false %>
+    </div>
+    <div class="cover_story_form_no_start_at_label">
+      <%= form.label :no_start_at %>
+    </div>
+  </div>
+  <div class="cover_story_form_start_at_label">
+    <%= form.label :start_at %>
+  </div>
+  <div class="cover_story_form_at_select">
+    <%= form.datetime_select :start_at %>
+  </div>
+  <div class="cover_story_finish_at_box_row">
+    <div class="cover_story_form_no_finish_date_ck_box">
+      <%= form.check_box :no_finish_at?, checked: false %>
+    </div>
+    <div class="cover_story_form_no_finish_at_label">
+      <%= form.label :no_finish_at %>
+    </div>
+  </div>
+  <div class="cover_story_form_finish_at">
+    <%= form.label :finish_at %>
+  </div>
+  <div class="cover_story_form_date_select">
+    <%= form.datetime_select :finish_at %>
+  </div>
 </div>
