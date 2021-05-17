@@ -1,11 +1,12 @@
 <% if current_user && loyalty(@cover_story, :cover_stories).index? %>
+  <div class="cover_story_index_notice">
+  <p><掲載を終えた記事は削除することを推奨します></p>
+  </div>
   <div class="cover_story_index_wrapper">
     <% if @cover_stories.present? %>
       <% @cover_stories.each do |cover_story| %>
         <div class="cover_story_index_title_area">
           <div class="cover_story_index_title">
-            <!-- <h4><%= cover_story.title %></h4> -->
-            <%# h4タグでは長いタイトルを折り返せない %>
             <%= cover_story.title %>
           </div>
         </div>
@@ -16,6 +17,20 @@
         </div>
         <div class="cover_story_index_toolbar">
           <%= render "cover_story_tool", cover_story: cover_story %>
+        </div>
+        <div class="cover_story_index_time_designnation_presence_or_absence">
+          <% if cover_story.start_at? %>
+            <div class="cover_story_index_time_designnation_presence_or_absence_letter">
+              <%= "<掲載日時指定あり>" %>
+              <%= "掲載開始:"%><%= cover_story.start_at.strftime("%Y/%m/%d %H:%M") %>
+            </div>
+          <% end %>
+          <% if cover_story.finish_at? %>
+            <div class="cover_story_index_time_designnation_presence_or_absence_letter">
+              <%= "→掲載終了:" %>
+              <%= cover_story.finish_at.strftime("%Y/%m/%d %H:%M") %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     <% else %>

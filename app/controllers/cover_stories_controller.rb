@@ -24,7 +24,7 @@ class CoverStoriesController < ApplicationController
     @cover_story.author = current_user
     @cover_story.created_at = Time.now
      if @cover_story.save
-      redirect_to @cover_story, notice: "トップページに掲載しました"
+      redirect_to root_path, notice: "トップページに掲載しました"
     else
       render "new"
     end
@@ -35,7 +35,7 @@ class CoverStoriesController < ApplicationController
     authorize!
     @cover_story.assign_attributes(cover_story_params)
     if @cover_story.save
-      redirect_to @cover_story, notice: "カバーストーリーを更新しました"
+      redirect_to root_path, notice: "カバーストーリーを更新しました"
     else
       render "edit"
     end
@@ -53,7 +53,11 @@ class CoverStoriesController < ApplicationController
     def cover_story_params
     params.require(:cover_story).permit(
       :title,
-      :content
+      :content,
+      :start_at,
+      :no_start_at,
+      :finish_at,
+      :no_finish_at
     )
     end
 end

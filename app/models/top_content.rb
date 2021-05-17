@@ -4,19 +4,19 @@ class TopContent < ApplicationRecord
   # validate  :picture_size
   validate :url_size
 
-  def no_start_date?
+  def no_start_at?
     start_date.nil?
   end
 
-  def no_start_date=(val)
+  def no_start_at=(val)
     val.in?([true, "1"])
   end
 
-  def no_finish_date?
+  def no_finish_at?
     finish_date.nil?
   end
 
-  def no_finish_date=(val)
+  def no_finish_at=(val)
     val.in?([true, "1"])
   end
 

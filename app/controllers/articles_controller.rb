@@ -1,9 +1,6 @@
 class ArticlesController < ApplicationController
 
   def index
-    puts "111111111111111"
-    puts params[:id]
-    puts "333333333333333"
     @articles = Article.where("start_at <= ?", Time.now).where("finish_at >= ?", Time.now).or(Article.where("start_at <= ?", Time.now).where(finish_at: nil)).or(Article.where(start_at: nil)).order(released_at: :desc).page(params[:page]).per(10)
   end
 
@@ -14,9 +11,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    puts "111111111111111"
-    puts params[:id]
-    puts "333333333333333"
     if current_user && loyalty(@artcile, :articles).index?
       @article = Article.with_rich_text_content.find(params[:id])
     else
@@ -36,9 +30,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    puts "111111111111111"
-    puts params[:id]
-    puts "333333333333333"
     @article = Article.find(params[:id])
     authorize!
   end

@@ -57,13 +57,17 @@ ja:
         title: タイトル
         url: ファイル
         caption: キャプション
-        no_start_date: 掲載開始日時を指定する
-        start_date: 掲載開始日時
-        no_finish_date: 掲載終了日時を指定する
-        finish_date: 掲載終了日時
+        no_start_at: 掲載開始日時を指定する
+        start_at: 掲載開始日時
+        no_finish_at: 掲載終了日時を指定する
+        finish_at: 掲載終了日時
       cover_story:
         title: タイトル
         content: 本文
+        no_start_at: 掲載開始日時を指定する
+        start_at: 掲載開始日時
+        no_finish_at: 掲載終了日時を指定する
+        finish_at: 掲載終了日時
     errors:
       messages:
         carrierwave_processing_error: 処理できませんでした

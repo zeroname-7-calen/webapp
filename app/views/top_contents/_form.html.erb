@@ -16,32 +16,32 @@
   </div>
   <div class="start_date_box_row">
     <div class="top_content_form_no_start_date_ck_box">
-      <%= form.check_box :no_start_date?, checked: false %>
+      <%= form.check_box :no_start_at?, checked: false %>
     </div>
     <div class="top_content_form_no_start_date_label">
-      <%= form.label :no_start_date %>
+      <%= form.label :no_start_at %>
     </div>
   </div>
 
   <div class="top_content_form_start_date_label">
-    <%= form.label :start_date %>
+    <%= form.label :start_at %>
   </div>
   <div class="top_content_form_date_select">
-    <%= form.datetime_select :start_date %>
+    <%= form.datetime_select :start_at %>
   </div>
     (※掲載開始日時を指定した際には、掲載終了日の指定も必要になります)
   <div class="finish_date_box_row">
     <div class="top_content_form_no_finish_date_ck_box">
-      <%= form.check_box :no_finish_date?, checked: false %>
+      <%= form.check_box :no_finish_at?, checked: false %>
     </div>
     <div class="top_content_form_no_finish_date_label">
-      <%= form.label :no_finish_date %>
+      <%= form.label :no_finish_at %>
     </div>
   </div>
   <div class="top_content_form_finish_date">
-    <%= form.label :finish_date %>
+    <%= form.label :finish_at %>
   </div>
   <div class="top_content_form_date_select">
-    <%= form.datetime_select :finish_date %>
+    <%= form.datetime_select :finish_at %>
   </div>
 </div>
