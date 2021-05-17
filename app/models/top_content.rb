@@ -5,7 +5,7 @@ class TopContent < ApplicationRecord
   validate :url_size
 
   def no_start_at?
-    start_date.nil?
+    start_at.nil?
   end
 
   def no_start_at=(val)
@@ -13,7 +13,7 @@ class TopContent < ApplicationRecord
   end
 
   def no_finish_at?
-    finish_date.nil?
+    finish_at.nil?
   end
 
   def no_finish_at=(val)
