@@ -145,14 +145,24 @@
   margin-bottom: 1rem;
 }
 
-// ★★★★★★★★★  cover_story_newページ  ★★★★★★★★
+// 「掲載されているカバーストーリーはありません」位置調整
+.cover_story_index_info {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0 1rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+
+// ★★★★★★★★★  cover_story_newページ  ★★★★★★★★★★★★★★★★★★★★
 .cover_stroy_index_wrapper {
   margin: 0 1rem;
   margin: auto;
   width: 100%;
 }
 
-// ★★★★★★★★★  cover_story_showページ  ★★★★★★★★★
+// ★★★★★★★★★  cover_story_showページ  ★★★★★★★★★★★★★★★
 .cover_story_show_wrapper {
   display: flex;
   flex-direction: column;
@@ -163,8 +173,9 @@
 .cover_story_show_title {
   display: flex;
   justify-content: center;
-  font-size: 1.3rem;
+  margin-top: 1.3rem;
   padding: 1rem 3rem;
+  font-size: 1.3rem;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
 }
@@ -173,8 +184,9 @@
 .cover_story_show_content .trix-content {
   justify-content: center;
   width: 600px;  //写真を枠内にきれいに掲載するには600px指定が必要
+  padding: 0 1rem;
   font-size: 0.8rem;
-  line-height: 1.7;
+  line-height: 1.9;
 }
 
 // 記事が入るボックス
@@ -208,7 +220,7 @@
 .cover_story_show_toolbar {
   display: flex;
   justify-content: flex-end;
-  margin-right: 3rem;
+  margin: 1rem 3rem 0 0;
 }
 
 // ★★★★★★★★★  cover_story_indexページ  ★★★★★★★★★
