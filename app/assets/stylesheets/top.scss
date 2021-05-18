@@ -81,6 +81,8 @@
 .top_cover_story {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
   padding: 1.5rem;
   // max-width: 600px;  //半角英数連続文字列突き抜け防止
   // max-width: 25rem;  //半角英数連続文字列突き抜け防止
