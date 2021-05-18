@@ -55,35 +55,110 @@
   width: 32%;
 }
 
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-// /* フッター */
-footer {
-  font: 0.7em Verdana;
-  color: #888;
-  margin-bottom: 1.5rem;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  border: 1px solid;
-}
-
-// ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-// 【ナビゲーション】
-// ヘッダーロゴとナビメニューを１列に配置
-.header_nav_container {
+// ★★★★★★★★★★★★★★★ footer ★★★★★★★★★★★★★★★★★★★★
+.footer_wrapper {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.4rem;
+  font-family: 'Times New Roman';
+  font-size: 0.8rem;
+  height: 5rem;
+  border-radius: 4px;
+  box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
+  background-color: #afafb0;
 }
 
-// ロゴのサイズ設定
-.header_nav_container img {
-  margin: 0 0 0 0.5rem;
-  width: 7rem;
-  height: 4rem;  //.nav_for_positionの高さ指定4remに合わせる
+// 「会社概要」ボックス
+.footer_about {
+  margin-right: 1rem;
 }
 
-.header_nav_container video {
-  margin: 0 0 0 0.5rem;
-  width: 7rem;
-  height: 4rem;  //.nav_for_positionの高さ指定4remに合わせる
+.footer_about a {
+  color: black;
+}
+
+// Copyrightが入るボックス
+.footer_about_cory_right {
+  color: #333631;
+}
+
+.footer_about_cory_right a {
+  color: black;
+}
+// ★★★★★★★★★★★★★★★ aboutページ ★★★★★★★★★★★★★★★★★★★★★★★
+// aboutページ全体枠
+.top_about_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+// 「会社概要」
+.about_page_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+// 「会社概要」説明文
+.about_page_desciption {
+  margin: 1rem 2.5rem;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+// 写真位置調整
+.about_page_image_box {
+  display: flex;
+  justify-content: center;
+}
+
+// 「会社案内」以下を収納するボックス
+.company_brochure {
+  display: flex;
+  flex-direction: column;
+}
+
+// 「会社案内」位置調整
+.company_brochure_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.company_brochure_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.company_brochure_list li {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 2.5rem;
+  line-height: 1.9;
+  font-family: 'Garamond';
+  font-size: 0.8rem;
+}
+
+.campany_brochure_dscription {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2.5rem;
+}
+
+// 「北羽新報の紹介」タイトル位置調整
+.campany_brochure_dscription h5 {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+// 「北羽新報の紹介」説明文
+.campany_brochure_dscription p {
+  font-size: 0.6rem;
+  line-height: 1.8;
 }
 
 
@@ -121,6 +196,7 @@ footer {
 
   html {
     width: 100%;
+    height: auto;
   }
 
   .container {
@@ -145,5 +221,104 @@ footer {
 
   #aside {
     width: 100%;
+  }
+
+  // ★★★★★★★★★★★★★★★ aboutページ ★★★★★★★★★★★★★★★★★
+
+  // aboutページ全体枠
+  .top_about_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  // 「会社概要」
+  .about_page_title {
+    display: flex;
+    justify-content: center;
+  }
+
+  // 「会社概要」タイトルサイズ調整
+  .about_page_title h5 {
+    font-size: 1rem;
+  }
+
+  // 「会社概要」説明文
+  .about_page_desciption {
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+
+  // 写真位置調整
+  .about_page_image_box {
+    display: flex;
+    justify-content: center;
+    margin: 0 0.5rem;
+  }
+
+  // 「会社案内」以下を収納するボックス
+  .company_brochure {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 「会社案内」位置調整
+  .company_brochure_title {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  // 「会社案内」タイトルサイズ調整
+  .company_brochure_title h5 {
+    font-size: 1rem;
+  }
+  .company_brochure_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .company_brochure_list li {
+    display: flex;
+    justify-content: flex-start;
+    line-height: 1.9;
+    font-family: 'Garamond';
+    font-size: 0.5rem;
+  }
+
+  .campany_brochure_dscription {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2.5rem;
+  }
+
+  // 「北羽新報の紹介」タイトル位置調整
+  .campany_brochure_dscription h5 {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    font-size: 1rem;
+  }
+
+  // 「北羽新報の紹介」説明文
+  .campany_brochure_dscription p {
+    font-size: 0.6rem;
+    line-height: 1.8;
+  }
+
+  // ★★★★★★★★★★★★★★★ footer ★★★★★★★★★★★★★★★★★★★★
+  .footer_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 5rem;
+    // border: 1px solid;
+    border-radius: 4px;
+    box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
+    background-color: #afafb0;
   }
 }
