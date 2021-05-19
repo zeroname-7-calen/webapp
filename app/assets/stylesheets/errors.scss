@@ -1,12 +1,16 @@
+// ★★★★★★★★★★★★ layouts/error.html.erb ★★★★★★★★★★★★★★★★
 /* エラー表示 */
 // エラーページのロゴサイズ
 header .logo img {
-  width: 400px;
-  height: 100px;
+  margin-top: 1rem;
+  width: 200px;
+  height: 80px;
 }
 
-.menubar {
-  padding-top: 1em;
+// 「TOPへ」位置調整
+.error_page_menubar {
+  margin-left: 1.5rem;
+  padding-top: 1rem;
 }
 
  #container {

@@ -56,18 +56,26 @@
 }
 
 // ★★★★★★★★★★★★★★★ footer ★★★★★★★★★★★★★★★★★★★★
+// フッター全体枠
 .footer_wrapper {
+  display: flex;
+  width: 100%;
+}
+
+// フッターの各要素が入るボックス
+.footer_content {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
   width: 100%;
-  margin-bottom: 0.4rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
   font-family: 'Times New Roman';
   font-size: 0.8rem;
   height: 5rem;
   border-radius: 4px;
   box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
-  background-color: #afafb0;
+  background-color: #e9dacb;
 }
 
 // 「会社概要」ボックス
@@ -308,17 +316,26 @@
   }
 
   // ★★★★★★★★★★★★★★★ footer ★★★★★★★★★★★★★★★★★★★★
+  // フッター全体枠
   .footer_wrapper {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
     width: 100%;
+  }
+
+  // フッターの各要素が入るボックス
+  .footer_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    margin: -1rem 0.3rem 0.5rem 0.3rem;
+    font-family: 'Times New Roman';
+    font-size: 0.5rem;
     height: 5rem;
-    // border: 1px solid;
     border-radius: 4px;
     box-shadow: 0 0 6px #d3d3d3;  //左右上下対称に全体枠を装飾
-    background-color: #afafb0;
+    background-color: #946c45;
   }
 }

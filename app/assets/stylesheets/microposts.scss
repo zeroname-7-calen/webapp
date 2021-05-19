@@ -401,6 +401,11 @@
   border-bottom: 2px solid #000;
 }
 
+// 「Tweetを作成する」位置調整
+.micropost_new_indicate {
+  display: flex;
+  justify-content: center;
+}
 // 本文入力欄を中央配置
 .micropost_new_form {
   display: flex;
@@ -447,6 +452,13 @@
   border-bottom: 2px solid #000;
 }
 
+// 「Tweetを編集する」位置調整
+.micropost_edit_indicate {
+  display: flex;
+  justify-content: center;
+}
+
+// 「ツイートの表示に戻る」ボタン位置調整
 .micropst_edit_toolbar {
   display: flex;
   justify-content:  center;
