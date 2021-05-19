@@ -13,6 +13,25 @@ header .logo img {
   padding-top: 1rem;
 }
 
+// ★★★★★★★★★★★★ errorディレクトリファイル共通 ★★★★★★★★★★★★★★★★
+.error_page_wrapper {
+  margin: 1rem;
+  // background-color: pink;
+}
+
+.error_page_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// 「404 Not Found」など位置調整
+.error_page_content h4 {
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid #4682b4;
+}
+
  #container {
 
    main h5 {
