@@ -6,7 +6,7 @@
   <% end %>
 </div>
 
-<div id="advertisement_box" class="carousel slide" data-ride="carousel" data-interval="15000">
+<div id="advertisement_box" class="carousel slide carousel-fade" data-ride="carousel" data-interval="15000">
   <div class="carousel-inner">
     <% @advertisements = Advertisement.order(created_at: :desc) %>
       <% if @advertisements.present? %>
