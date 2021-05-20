@@ -1,6 +1,8 @@
 <div class="error_page_wrapper">
-  <% @page_title = "ログインが必要です" %>
-  <h4><%= @page_title %></h4>
-  <p>ログインしてください</p>
-  <%= render "devise/shared/links" %>
+  <div class="error_page_content">
+    <% @page_title = "ログインが必要です" %>
+    <h4><%= @page_title %></h4>
+    <p>ログインしてください</p>
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
