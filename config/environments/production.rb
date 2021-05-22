@@ -110,4 +110,19 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+
+  # herokuでメールを送信するための設定
+  config.action_mailer.delivery_method = :smtp
+  host = "#{ENV['HOKUU-ONLINES']}.herokuapp.com"
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.gmail.com',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['GMAIL_USERNAME'],
+    :password       => ENV['GMAIL_PASSWORD'],
+    :domain         => 'gmail.com',
+    :enable_starttls_auto => true
+  }
 end
