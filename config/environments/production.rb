@@ -114,7 +114,7 @@ Rails.application.configure do
 
   # herokuでメールを送信するための設定
   config.action_mailer.delivery_method = :smtp
-  host = "#{ENV['HOKUU-ONLINES']}.herokuapp.com"
+  host = "#{ENV['hokuu-onlines']}.herokuapp.com"
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.gmail.com',
