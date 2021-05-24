@@ -112,19 +112,6 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  #　 以下を追記   #
-  # config.action_mailer.default_url_options = { host: 'hokuu-onlines.herokuapp.com' }
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   port:                 587,
-  #   address:              'smtp.gmail.com',
-  #   domain:               'smtp.gmail.com',
-  #   user_name:            ENV['WELCOME_MAILER_ADDRESS'],
-  #   password:             ENV['WELCOME_MAILER_PASSWORD'],
-  #   authentication:       'login',
-  #   enable_starttls_auto: true
-  # }
-
   # herokuでメールを送信するための設定
   config.action_mailer.delivery_method = :smtp
   host = "hokuu-onlines.herokuapp.com"
