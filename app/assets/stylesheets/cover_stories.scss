@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 @charset "UTF-8";
-// ★★★★★★★★★  cover_story_formページ  ★★★★★★★★
+// ★★★★★★★★★  cover_story_formページ  ★★★★★★★★★★★★★★★★★★★★★★
 // フォーム全体枠調整
 .cover_story_form_wrapper {
   margin: 1rem;
@@ -78,7 +78,35 @@
 .cover_story_form_no_finish_date_ck_box {
   margin-right: 0.5rem;
 }
-// ★★★★★★★★★  cover_story_indexページ  ★★★★★★★★
+// ★★★★★★★★★  cover_story_editページ  ★★★★★★★★★★★★★★★★★★★★★★
+.cover_story_edit_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+// 「カバーストーリーの編集」位置調整
+.cover_story_edit_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+// 「カバーストーリーに戻る」ボタン
+.cover_story_edit_toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1.5rem;
+}
+
+// 「更新する」ボタン位置調整
+.cover_story_edit_button {
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+// ★★★★★★★★★  cover_story_indexページ  ★★★★★★★★★★★★★★★★★★★★★★
+
 // 全体枠調整
 .cover_story_index_wrapper {
   width: 100%;
@@ -100,10 +128,11 @@
   justify-content: center;
 }
 
-// タイトル
+// タイトル位置調整
 .cover_story_index_title {
   display: flex;
   justify-content: center;
+  margin: 1rem 2rem 0.5rem 2rem;
   font-size: 1.1rem;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
@@ -119,6 +148,7 @@
 
 // 本文が入るボックス
 .cover_story_index_content {
+  margin-bottom: 0.5rem;
   font-size: 0.8rem;
   word-wrap: break-word;   //半角英数連続文字列突き抜け防止
   word-break: break-all;   //半角英数連続文字列突き抜け防止
@@ -162,7 +192,7 @@
   width: 100%;
 }
 
-// ★★★★★★★★★  cover_story_showページ  ★★★★★★★★★★★★★★★
+// ★★★★★★★★★  cover_story_showページ  ★★★★★★★★★★★★★★★★★★★★★★
 .cover_story_show_wrapper {
   display: flex;
   flex-direction: column;
@@ -221,17 +251,6 @@
   display: flex;
   justify-content: flex-end;
   margin: 1rem 3rem 0 0;
-}
-
-// ★★★★★★★★★  cover_story_indexページ  ★★★★★★★★★
-.cover_stroy_index_wrapper {
-  padding: 1rem 3rem;
-}
-// 記事タイトル位置調整
-.cover_story_index_title {
-  display: flex;
-  justify-content: center;
-  margin: 1.5rem 0;
 }
 
 @media screen and (max-width: 767px) {

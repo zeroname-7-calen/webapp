@@ -1,42 +1,80 @@
 @charset "UTF-8";
 //
+// ★★★★★★★★ devise/confirmations/new(パスワード再設定用メールを送信する)  ★★★★★
+.devise_confirmations_new_wrappre {
+  display: flex;
+  flex-direction: column;
+}
 
-// // ログイン画面
-//
-// .container-login {
-  // @extend .container-fruid;
-  // max-width: 576px;
-//   max-width: 700px;
-//   padding: 2rem;
-// }
-//
-// // 「ログインしました」などのフラッシュ用スタイル
-//
-// .alert-notice {
-//   @extend .alert-info;
-// }
-//
-// .alert-alert {
-//   @extend .alert-danger;
-// }
-// p {
-//   margin: 0 0 1em;
-// }
-//
+// 「パスワード再設定用メールを送信する」位置調整
+.devise_confirmations_new_title h5 {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+// 「メールアドレス」と入力欄が一緒に入るボックス
+.devise_confirmations_new_field {
+  margin-bottom: 1rem;
+}
+
+// アドレスを入録する欄
+.devise_confirmations_new_field input {
+  width: 70%;
+  height: 1.5rem;
+}
+
+// 「送信する」ボタン
+.devise_confirmations_new_actions_button {
+  margin-bottom: 1rem;
+}
+
+// ★★★★★★★★★  password/new(newだけどパスワード更新用)  ★★★★★★★★★★★★★
+.devise_password_new_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+// 「パスワードを忘れてしまったら…」位置調整
+.devise_password_new_title h5 {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+// ユーザーネーム、メールアドレス入力欄を収納するボックス
+.devise_password_new_form .field{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+// ユーザーネーム、メールアドレス入力欄
+.devise_password_new_form .field input {
+  width: 90%;
+}
+
+// 「パスワードリセット用メールを送る」ボタン位置調整
+.devise_password_new_button {
+  margin: 0.5rem 0 1rem 0;
+}
+
+// ★★★★★★★★★★★★  sessions/new  ★★★★★★★★★★★★★★★★★★★★★
 .session_new_body {
+  display: flex;
+  flex-direction: column;
   padding-top: 1em;
   padding-left: 1em;
 }
 
-h1 {
-  // color: #3399FF;
-  font-size: 0.5em;
-  margin: 0 0 1em;
-}
-
+// 「ログインページ」位置調整
 h4 {
-  text-align: left;
+  display: flex;
+  justify-content: center;
   white-space: nowrap;
+  // margin-top: 1rem;
 }
 
 // ユーザーネーム入力欄整形
@@ -75,4 +113,180 @@ dd input {
   font-size: 12px;
   padding: 10px 10px 20px 10px;
   // float: right;
+}
+
+// ★★★★★★★★★  registrations/new(サインアップ)  ★★★★★★★★★★★★★
+.devise_registrations_new_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+// 「サインアップ」位置調整
+.devise_registrations_new_title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+// 入力欄４本を収納するボックス
+.devise_registrations_new_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // box-sizing: border-box;
+  // width: 100%;
+  // background-color: red;
+}
+
+// 入力欄のボックス
+.devise_registrations_new_form_field {
+  width: 90%;
+  margin-bottom: 1rem;
+}
+
+// 入力欄
+.devise_registrations_new_form_field input {
+  display: flex;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.devise_registrations_new_form_action_button {
+  margin: 0.5rem 0;
+}
+
+// ★★★★★★★★★★★★★★★  shared/_linksページ  ★★★★★★★★★★★★★★★★★
+.devise_shared_links_wrapper {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+// ★★★★★★★★★★★★★★★  メディアクエリ  ★★★★★★★★★★★★★★★★★
+// ★★★★★★★★★★★★★★★  max-767  ★★★★★★★★★★★★★★★★★
+@media screen and (max-width: 767px) {
+  // ★★★★★★★★ devise/confirmations/new(パスワード再設定用メールを送信する)  ★★★★★
+  .devise_confirmations_new_wrappre {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 「パスワード再設定用メールを送信する」位置調整
+  .devise_confirmations_new_title h5 {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+  }
+
+  // 「メールアドレス」と入力欄が一緒に入るボックス
+  .devise_confirmations_new_field {
+    margin-bottom: 1rem;
+  }
+
+  // アドレスを入録する欄
+  .devise_confirmations_new_field input {
+    width: 90%;
+    height: 1.5rem;
+  }
+
+  // 「送信する」ボタン
+  .devise_confirmations_new_actions_button {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+// ★★★★★★★★★★★★  password/new(newだけどパスワード更新用)  ★★★★★★★★★★★★★★★
+  .devise_password_new_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 「パスワードを忘れてしまったら…」位置調整
+  .devise_password_new_title h5 {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    font-size: 0.7rem;
+  }
+
+  // ユーザーネーム、メールアドレス入力欄を収納するボックス
+  .devise_password_new_form .field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  // ユーザーネーム、メールアドレス入力欄
+  .devise_password_new_form .field input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  // 「パスワードリセット用メールを送る」ボタンを収納する位置調整
+  .devise_password_new_button {
+    display: flex;
+    width: 100%;
+  }
+
+// パスワードリセット用メールを送る」ボタン
+  .devise_password_new_button input {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  // ★★★★★★★★★  registrations/new(サインアップ)  ★★★★★★★★★★★★★
+  .devise_registrations_new_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 「サインアップ」位置調整
+  .devise_registrations_new_title {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  // 入力欄４本を収納するボックス
+  .devise_registrations_new_form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 入力欄のボックス
+  .devise_registrations_new_form_field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  // 入力欄
+  .devise_registrations_new_form_field input {
+    display: flex;
+    flex-direction: column;
+  }
+
+// サインアップボタン
+  .devise_registrations_new_form_action_button {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem 0.5rem 0 0;
+  }
+
+
+  // ★★★★★★★★★★★★★★★  shared/_linksページ  ★★★★★★★★★★★★★★★★★
+  .devise_shared_links_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0 0 1rem;
+  }
 }
