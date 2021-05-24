@@ -1,22 +1,27 @@
-<h4>サインアップ</h4>
-
+<div class="devise_registrations_new_wrapper">
+  <div class="devise_registrations_new_title">
+    <h5>サインアップ</h5>
+  </div>
+  <div class="devise_registrations_new_form">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="field">
+      <div class="devise_registrations_new_form_field">
         <dd><%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザーネーム" %></dd>
       </div>
-      <div class="field">
+      <div class="devise_registrations_new_form_field">
         <dd><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %></dd>
       </div>
-      <div class="field">
+      <div class="devise_registrations_new_form_field">
         <dd><%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(６文字以上)" %></dd>
       </div>
-      <div class="field">
+      <div class="devise_registrations_new_form_field">
         <dd><%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワードの再確認" %></dd>
       </div>
-    <div class="actions">
+    </div>
+    <div class="devise_registrations_new_form_action_button">
       <%= f.submit "サインアップ", class: "btn btn-primary" %>
     </div>
   <% end %>
 
   <%= render "devise/shared/links" %>
+</div>

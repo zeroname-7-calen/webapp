@@ -1,15 +1,17 @@
-<div class="confirmations_new_wrappre">
-  <h5>パスワード再設定用メールを送信する</h5>
+<div class="devise_confirmations_new_wrappre">
+  <div class="devise_confirmations_new_title">
+    <h5>パスワード再設定用メールを送信する</h5>
+  </div>
 
   <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
+    <div class="devise_confirmations_new_field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
     </div>
 
-    <div class="actions">
+    <div class="devise_confirmations_new_actions_button">
       <%= f.submit "送信する" %>
     </div>
   <% end %>

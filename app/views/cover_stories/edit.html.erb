@@ -1,14 +1,14 @@
 <% if current_user && loyalty(@cover_story, :cover_stories).index? %>
-  <div class="cover_story_edit_header">
-    <div class="cover_story_edit_title">
-      <% @page_title = "カバーストーリーの編集" %>
-      <h5><%= @page_title %></h5>
-    </div>
-  </div>
-  <div class="toolbar">
-    <%= link_to "カバーストーリーに戻る", @cover_story, class: "btn btn-outline-primary btn-sm" %>
-  </div>
   <div class="cover_story_edit_wrapper">
+    <div class="cover_story_edit_header">
+      <div class="cover_story_edit_title">
+        <% @page_title = "カバーストーリーの編集" %>
+          <h5><%= @page_title %></h5>
+      </div>
+    </div>
+    <div class="cover_story_edit_toolbar">
+      <%= link_to "カバーストーリーに戻る", @cover_story, class: "btn btn-outline-primary btn-sm" %>
+    </div>
     <div class="cover_story_edit_form">
       <%= form_for @cover_story do |form| %>
         <%= render "form", form: form %>
