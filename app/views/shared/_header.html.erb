@@ -50,11 +50,14 @@
           <li class="nav-item">
             <div class="nav-link"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
           </li>
-        <% else %>
+        <% elsif %>
           <li class="nav-item">
             <div class="nav-link"><%= link_to "ログイン", new_user_session_path %></div>
           </li>
         <% end %>
+        <li class="nav-item">
+          <div class="nav-link"><%= link_to "新規会員登録", new_user_registration_path %></div>
+        </li>
       </ul>
     </div>
   </nav>
