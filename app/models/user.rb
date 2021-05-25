@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include Discard::Model
+  default_scope -> { kept }
 
   validates :name, uniqueness: true
   validates :email, uniqueness: true
