@@ -1147,6 +1147,8 @@ GEM
       warden (~> 1.2.3)
     devise-bootstrap-views (1.1.0)
     devise-i18n-views (0.3.7)
+    discard (1.2.0)
+      activerecord (>= 4.2, < 7)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
@@ -1347,6 +1349,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views (~> 1.0)
   devise-i18n-views
+  discard (~> 1.0)
   dotenv-rails
   fog-aws
   font-awesome-sass
