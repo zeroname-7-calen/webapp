@@ -70,11 +70,12 @@
 }
 
 // 「ログインページ」位置調整
+// 「ログイン」文字位置調整
 h4 {
   display: flex;
   justify-content: center;
   white-space: nowrap;
-  // margin-top: 1rem;
+  margin-left: 5rem;
 }
 
 // ユーザーネーム入力欄整形
